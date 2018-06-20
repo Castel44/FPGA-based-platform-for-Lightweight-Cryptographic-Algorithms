@@ -1,0 +1,318 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 9992
+License: Customer
+
+Current time: 	Wed Jun 20 18:37:54 CEST 2018
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 90 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Andrea
+User home directory: C:/Users/Andrea
+User working directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/vivado.log
+Vivado journal file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/vivado.jou
+Engine tmp dir: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/.Xil/Vivado-9992-DESKTOP-II8OTGJ
+
+GUI allocated memory:	203 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 575 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 57 MB (+57619kb) [00:00:09]
+// [Engine Memory]: 526 MB (+400202kb) [00:00:09]
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\Xilinx_contest\Skinny\Skinny_128_64_parallel\Skinny_128_64_parallel.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 71 MB (+11508kb) [00:00:12]
+// [Engine Memory]: 578 MB (+27137kb) [00:00:12]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel' 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 44 MB. Current time: 6/20/18 6:37:56 PM CEST
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 617 MB (+10243kb) [00:00:17]
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 859.305 ; gain = 109.000 
+// [Engine Memory]: 658 MB (+10422kb) [00:00:21]
+// Project name: Skinny_128_64_parallel; location: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 75 MB (+77kb) [00:00:28]
+// Elapsed time: 31 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// PAPropertyPanels.initPanels (ZYBO_Master.xdc) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, ZYBO_Master.xdc]", 4, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, ZYBO_Master.xdc]", 4, false, false, false, false, false, true); // B (D, ch) - Double Click
+// [GUI Memory]: 83 MB (+4954kb) [00:00:58]
+// Elapsed time: 37 seconds
+selectCodeEditor("ZYBO_Master.xdc", 1, 277); // cd (w, ch)
+// Elapsed time: 307 seconds
+selectCodeEditor("ZYBO_Master.xdc", 2, 639); // cd (w, ch)
+// Elapsed time: 10 seconds
+selectCodeEditor("ZYBO_Master.xdc", 534, 379); // cd (w, ch)
+selectCodeEditor("ZYBO_Master.xdc", 534, 379, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("ZYBO_Master.xdc", 559, 400); // cd (w, ch)
+selectCodeEditor("ZYBO_Master.xdc", 559, 400, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 15 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd)]", 2); // B (D, ch)
+selectCodeEditor("Testing_IP.vhd", 169, 331); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_REG : reg(Behavioral) (reg.vhd)]", 14, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_REG : reg(Behavioral) (reg.vhd)]", 14, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("reg.vhd", 591, 310); // cd (w, ch)
+selectCodeEditor("reg.vhd", 213, 180); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_LFSR : lfsr(Behavioral) (lfsr.vhd)]", 17, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_LFSR : lfsr(Behavioral) (lfsr.vhd)]", 17, false, false, false, false, false, true); // B (D, ch) - Double Click
+// [GUI Memory]: 89 MB (+1775kb) [00:07:49]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd)]", 16, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_8 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 19, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("TK2_schedule.vhd", 41, 13); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_15 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 18, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_15 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 18, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("LFSR_TK2.vhd", 36, 72); // cd (w, ch)
+// [GUI Memory]: 94 MB (+88kb) [00:07:56]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false, false, false, false, false, true); // B (D, ch) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd)]", 16); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd)]", 16, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_8 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 19, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_9 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 17, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd), LFSR_UPDATE_9 : LFSR_TK2(Behavioral) (LFSR_TK2.vhd)]", 17, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd)]", 16, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_SCHEDULE : TK2_schedule(Behavioral) (TK2_schedule.vhd)]", 16, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_SCHEDULE : TK1_schedule(Behavioral) (tw_schedule.vhd)]", 15, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("tw_schedule.vhd", 49, 26); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 15, 38); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 587, 618); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 668 MB. GUI used memory: 53 MB. Current time: 6/20/18 6:46:01 PM CEST
+selectCodeEditor("tw_schedule.vhd", 431, 500); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 139, 377); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 38, 366); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 46, 340); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 9, 281); // cd (w, ch)
+selectCodeEditor("tw_schedule.vhd", 53, 636); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_MixColumns : MixColumns(Behavioral) (MixColumns.vhd)]", 12, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_MixColumns : MixColumns(Behavioral) (MixColumns.vhd)]", 12, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_ShiftRows : ShiftRows(Behavioral) (ShiftRows.vhd)]", 11, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_ShiftRows : ShiftRows(Behavioral) (ShiftRows.vhd)]", 11, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_ADDROUNDTWEAKEY : AddRoundTweakey(Behavioral) (AddRoundTweakey.vhd)]", 10, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_ADDROUNDTWEAKEY : AddRoundTweakey(Behavioral) (AddRoundTweakey.vhd)]", 10, false, false, false, false, false, true); // B (D, ch) - Double Click
+// [GUI Memory]: 100 MB (+1086kb) [00:08:39]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_AddRoundConstants : AddRoundConstants(Behavioral) (AddRoundConstants.vhd)]", 9, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_AddRoundConstants : AddRoundConstants(Behavioral) (AddRoundConstants.vhd)]", 9, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_SUBCELLS : SubCells_64(Behavioural) (SubCells_64.vhd)]", 8, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_SUBCELLS : SubCells_64(Behavioural) (SubCells_64.vhd), subcells_gen[2].subcells : SubCells_nibble(Behavioural) (Subcells_nibble.vhd)]", 11, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_SUBCELLS : SubCells_64(Behavioural) (SubCells_64.vhd), subcells_gen[0].subcells : SubCells_nibble(Behavioural) (Subcells_nibble.vhd)]", 9, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_SUBCELLS : SubCells_64(Behavioural) (SubCells_64.vhd), subcells_gen[0].subcells : SubCells_nibble(Behavioural) (Subcells_nibble.vhd)]", 9, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_IS_REG : reg(Behavioral) (reg.vhd)]", 7, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_IS_REG : reg(Behavioral) (reg.vhd)]", 7, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_REG_MUX_IN : MUX(Behavioral) (mux.vhd)]", 6, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK2_REG_MUX_IN : MUX(Behavioral) (mux.vhd)]", 6, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_REG_MUX_IN : MUX(Behavioral) (mux.vhd)]", 5, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_TK1_REG_MUX_IN : MUX(Behavioral) (mux.vhd)]", 5, false, false, false, false, false, true); // B (D, ch) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), SKINNY_128_DUT : SKINNY_64_128_parallel(Behavioral) (SKINNY_128_64_parallel.vhd), INST_SUBCELLS : SubCells_64(Behavioural) (SubCells_64.vhd)]", 8); // B (D, ch)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1); // B (D, ch)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (ch): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bv (ch):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (ch)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// an (ch): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (an)
+// bv (ch):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// f (ch): Launch Runs: addNotify
+dismissDialog("Save Project"); // an (ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 712 MB (+22016kb) [00:08:57]
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 57 MB. Current time: 6/20/18 6:46:41 PM CEST
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bv (ch):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ch)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 8 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Jun 20 18:46:47 2018] Launched synth_1... Run output will be captured here: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.runs/synth_1/runme.log [Wed Jun 20 18:46:47 2018] Launched impl_1... Run output will be captured here: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bv (ch)
+// Elapsed time: 19 seconds
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux.vhd", 14, true, false); // k (j, ch) - Popup Trigger
+selectMenuItem((HResource) null, "Chiudi tutto"); // JMenuItem (JidePopupMenu)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // D
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectButton(PAResourceCommand.PACommandNames_PROJECT_SUMMARY, "project_summary"); // B (f, ch)
+// Run Command: PAResourceCommand.PACommandNames_PROJECT_SUMMARY
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (ch): Implementation Completed: addNotify
+// [GUI Memory]: 105 MB (+627kb) [00:13:03]
+// Elapsed time: 595 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Implementation Completed"); // ah (ch)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "123", 11, false); // ax (O, ch)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.6s
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "123", 11, false); // ax (O, ch)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:46:54 CEST 2018 ; 00:01:16 ; Vivado Synthesis Defaults (Vivado Synthesis 2018) ; Vivado Synthesis Default Reports (Vivado Synthesis 2018) ; xc7z010clg400-1 ; Vivado Synthesis Defaults", 0, "123", 11, true); // ax (O, ch) - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:46:54 CEST 2018 ; 00:01:16 ; Vivado Synthesis Defaults (Vivado Synthesis 2018) ; Vivado Synthesis Default Reports (Vivado Synthesis 2018) ; xc7z010clg400-1 ; Vivado Synthesis Defaults", 0, (String) null, 10, true); // ax (O, ch) - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "0", 10, false); // ax (O, ch)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.2s
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "123", 11, false); // ax (O, ch)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "206", 12, false); // ax (O, ch)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 2.046005964279175 ; 0.0 ; 0.07787348330020905 ; 0.0 ; 0.0 ; 0.09209201484918594 ; 0 ; 123 ; 206 ; 0.0 ; 0 ; 0 ; Wed Jun 20 18:48:27 CEST 2018 ; 00:01:22 ; Vivado Implementation Defaults* (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "0.0", 13, false); // ax (O, ch)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ch)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_IMPLEMENTATION_TIMING, "Run Post-Implementation Timing Simulation"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_IMPLEMENTATION_TIMING
+// TclEventType: FILE_SET_CHANGE
+// e (ch):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation -mode post-implementation -type timing 
+// Tcl Message: INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead. 
+// HMemoryUtils.trashcanNow. Engine heap size: 764 MB. GUI used memory: 62 MB. Current time: 6/20/18 6:57:27 PM CEST
+// [Engine Memory]: 855 MB (+113098kb) [00:19:47]
+// [Engine Memory]: 1,028 MB (+136152kb) [00:19:57]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 62 MB. Current time: 6/20/18 6:57:41 PM CEST
+// [Engine Memory]: 1,085 MB (+6274kb) [00:20:07]
+// [Engine Memory]: 1,225 MB (+90009kb) [00:20:17]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,464 MB. GUI used memory: 62 MB. Current time: 6/20/18 6:58:01 PM CEST
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,476 MB. GUI used memory: 62 MB. Current time: 6/20/18 6:58:02 PM CEST
+// [Engine Memory]: 1,476 MB (+198952kb) [00:20:20]
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: C:/Xilinx/Vivado/2018.1/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_detail.xgd elapsed time: 1.1s
+// [Engine Memory]: 1,556 MB (+6333kb) [00:20:21]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 1.2s
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.4s
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2018.1 INFO: [Device 21-403] Loading part xc7z010clg400-1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.142 . Memory (MB): peak = 1744.277 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.142 . Memory (MB): peak = 1744.277 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: open_run: Time (s): cpu = 00:00:49 ; elapsed = 00:00:42 . Memory (MB): peak = 1818.680 ; gain = 880.914 
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// [GUI Memory]: 125 MB (+14856kb) [00:20:25]
+// Tcl Message: INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'... INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.v" INFO: [SIM-utils-34] Writing SDF file... INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.sdf" 
+// Tcl Message: INFO: [SIM-utils-36] Netlist generated:F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.v INFO: [SIM-utils-37] SDF generated:F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.sdf INFO: [SIM-utils-54] Inspecting design source files for 'Testing_TB' in fileset 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj Testing_TB_vlog.prj" 
+// Tcl Message: INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module SKINNY_64_128_parallel INFO: [VRFC 10-311] analyzing module Testing_IP INFO: [VRFC 10-311] analyzing module lfsr INFO: [VRFC 10-311] analyzing module reg INFO: [VRFC 10-311] analyzing module reg_0 INFO: [VRFC 10-311] analyzing module reg_1 INFO: [VRFC 10-311] analyzing module glbl "xvhdl --incr --relax -prj Testing_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '5' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim' 
+// Tcl Message: Vivado Simulator 2018.1 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 436fac53232146c9bab3fdaa27c2fd1b --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot Testing_TB_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.Testing_TB xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration Completed static elaboration Starting simulation data flow analysis 
+// [GUI Memory]: 138 MB (+7761kb) [00:20:38]
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,603 MB. GUI used memory: 101 MB. Current time: 6/20/18 6:58:35 PM CEST
+// Tcl Message: Built simulation snapshot Testing_TB_time_impl 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1819.719 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim/sim_1/impl/timing/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Testing_TB_time_impl -key {Post-Implementation:sim_1:Timing:Testing_TB} -tclbatch {Testing_TB.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.1 
+// Elapsed time: 100 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (e)
+// 'd' command handler elapsed time: 100 seconds
+selectButton("HStatusBar_ProgressStatusItem_Annulla", "Annulla"); // NullButton (af, ch)
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. 
+closeMainWindow("Skinny_128_64_parallel - [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.xpr] - Vivado 2018.1"); // ch
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit Vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
