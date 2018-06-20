@@ -1,0 +1,5 @@
+# Ignore folder
+AES/AES.sim
+Skinny/Skinny_64_64_parallel/Skinny_64_64_parallel.sim
+Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.sim
+Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim
