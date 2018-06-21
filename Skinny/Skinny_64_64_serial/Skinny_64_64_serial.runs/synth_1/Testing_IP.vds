@@ -1,0 +1,457 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Jun 21 04:03:46 2018
+# Process ID: 1096
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1
+# Command line: vivado.exe -log Testing_IP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Testing_IP.tcl
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1/Testing_IP.vds
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Testing_IP.tcl -notrace
+Command: synth_design -top Testing_IP -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9272 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 394.309 ; gain = 98.512
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Testing_IP' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd:16]
+INFO: [Synth 8-3491] module 'Skinny_64_64' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:4' bound to instance 'Skinny_DUT' of component 'Skinny_64_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'Skinny_64_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:17]
+INFO: [Synth 8-5534] Detected attribute (* fsm_safe_state = "default_state" *) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:130]
+INFO: [Synth 8-3491] module 'skinny_shift_reg_64' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:6' bound to instance 'INST_IS' of component 'skinny_shift_reg_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:198]
+INFO: [Synth 8-638] synthesizing module 'skinny_shift_reg_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:28]
+INFO: [Synth 8-3491] module 'IS_shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:5' bound to instance 'INST_FIRST_ROW_SHIFT_REG' of component 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'IS_shift_reg' (1#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:19]
+INFO: [Synth 8-3491] module 'IS_shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:5' bound to instance 'INST_SECOND_ROW_SHIFT_REG' of component 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:65]
+INFO: [Synth 8-3491] module 'IS_shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:5' bound to instance 'INST_THIRD_ROW_SHIFT_REG' of component 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:74]
+INFO: [Synth 8-3491] module 'IS_shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd:5' bound to instance 'INST_FOURTH_ROW_SHIFT_REG' of component 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:84]
+INFO: [Synth 8-256] done synthesizing module 'skinny_shift_reg_64' (2#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd:28]
+INFO: [Synth 8-3491] module 'shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/TW_shift_reg.vhd:6' bound to instance 'INST_TW_REG' of component 'shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/TW_shift_reg.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'shift_reg' (3#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/TW_shift_reg.vhd:19]
+INFO: [Synth 8-3491] module 'SubCells' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/SubCells_4bit.vhd:6' bound to instance 'INST_SubCells' of component 'SubCells' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:221]
+INFO: [Synth 8-638] synthesizing module 'SubCells' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/SubCells_4bit.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'SubCells' (4#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/SubCells_4bit.vhd:13]
+INFO: [Synth 8-3491] module 'AddConstant' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddConstant.vhd:5' bound to instance 'INST_AddConstant' of component 'AddConstant' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:228]
+INFO: [Synth 8-638] synthesizing module 'AddConstant' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddConstant.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'AddConstant' (5#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddConstant.vhd:16]
+INFO: [Synth 8-3491] module 'AddRoundTweakey' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddRoundTweakey.vhd:5' bound to instance 'INST_AddRoundTweakey' of component 'AddRoundTweakey' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:237]
+INFO: [Synth 8-638] synthesizing module 'AddRoundTweakey' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddRoundTweakey.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'AddRoundTweakey' (6#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/AddRoundTweakey.vhd:17]
+INFO: [Synth 8-3491] module 'lfsr' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/lfsr.vhd:6' bound to instance 'INST_LFSR' of component 'lfsr' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:246]
+INFO: [Synth 8-638] synthesizing module 'lfsr' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/lfsr.vhd:16]
+WARNING: [Synth 8-6014] Unused sequential element feedback_reg was removed.  [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/lfsr.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'lfsr' (7#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/lfsr.vhd:16]
+INFO: [Synth 8-3491] module 'SKINNY_CNT' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/Element_Cnt.vhd:5' bound to instance 'INST_SKINNY_CNT' of component 'skinny_cnt' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:255]
+INFO: [Synth 8-638] synthesizing module 'SKINNY_CNT' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/Element_Cnt.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'SKINNY_CNT' (8#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/Element_Cnt.vhd:18]
+INFO: [Synth 8-3491] module 'rnd_key_update' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/rnd_key_update.vhd:8' bound to instance 'INST_KEY_UPDATE' of component 'rnd_key_update' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:264]
+INFO: [Synth 8-638] synthesizing module 'rnd_key_update' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/rnd_key_update.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'rnd_key_update' (9#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/rnd_key_update.vhd:18]
+INFO: [Synth 8-3491] module 'MixColumns' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/MixColumn.vhd:4' bound to instance 'INST_MIXCOLUMNS' of component 'MixColumns' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:272]
+INFO: [Synth 8-638] synthesizing module 'MixColumns' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/MixColumn.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'MixColumns' (10#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/MixColumn.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'Skinny_64_64' (11#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd:17]
+	Parameter size bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'CNT' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd:6' bound to instance 'INST_CNT' of component 'cnt' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'CNT' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd:16]
+	Parameter size bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CNT' (12#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Testing_IP' (13#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 450.199 ; gain = 154.402
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 450.199 ; gain = 154.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 450.199 ; gain = 154.402
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+Finished Parsing XDC File [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Testing_IP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Testing_IP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 791.141 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Skinny_64_64'
+INFO: [Synth 8-5546] ROM "IS_enable1_buf" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IS_enable1_buf" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IS_enable4_buf" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "nx_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "nx_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "nx_state" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 loading |                              000 |                              000
+                    idle |                              001 |                              001
+              processing |                              010 |                              010
+                  shiftr |                              011 |                              011
+                  mixcol |                              100 |                              100
+                 rnd_end |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Skinny_64_64'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      4 Bit         XORs := 7     
+	   2 Input      1 Bit         XORs := 4     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 6     
+	   8 Input      4 Bit        Muxes := 2     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 7     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Testing_IP 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 5     
+Module IS_shift_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module shift_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+Module SubCells 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 4     
+Module AddConstant 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      4 Bit         XORs := 3     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+Module AddRoundTweakey 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module lfsr 
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+Module SKINNY_CNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+Module rnd_key_update 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module MixColumns 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      4 Bit         XORs := 3     
+Module Skinny_64_64 
+Detailed RTL Component Info : 
++---Muxes : 
+	   6 Input      4 Bit        Muxes := 6     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 9     
+Module CNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 791.141 ; gain = 495.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.711 ; gain = 514.914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                      | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Testing_IP  | Skinny_DUT/INST_TW_REG/temp_reg_reg[31]                       | 8      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|Testing_IP  | Skinny_DUT/INST_IS/INST_FIRST_ROW_SHIFT_REG/temp_reg_reg[15]  | 4      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|Testing_IP  | Skinny_DUT/INST_IS/INST_SECOND_ROW_SHIFT_REG/temp_reg_reg[15] | 4      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|Testing_IP  | Skinny_DUT/INST_IS/INST_THIRD_ROW_SHIFT_REG/temp_reg_reg[15]  | 4      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|Testing_IP  | Skinny_DUT/INST_IS/INST_FOURTH_ROW_SHIFT_REG/temp_reg_reg[15] | 4      | 4     | NO           | NO                 | YES               | 4      | 0       | 
++------------+---------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |LUT1   |     2|
+|3     |LUT2   |    16|
+|4     |LUT3   |    13|
+|5     |LUT4   |    11|
+|6     |LUT5   |    15|
+|7     |LUT6   |    67|
+|8     |SRL16E |    20|
+|9     |FDCE   |     4|
+|10    |FDRE   |    68|
+|11    |FDSE   |     1|
+|12    |IBUF   |     3|
+|13    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------+--------------------+------+
+|      |Instance                        |Module              |Cells |
++------+--------------------------------+--------------------+------+
+|1     |top                             |                    |   222|
+|2     |  INST_CNT                      |CNT                 |    25|
+|3     |  Skinny_DUT                    |Skinny_64_64        |   186|
+|4     |    INST_IS                     |skinny_shift_reg_64 |    59|
+|5     |      INST_FIRST_ROW_SHIFT_REG  |IS_shift_reg        |    18|
+|6     |      INST_FOURTH_ROW_SHIFT_REG |IS_shift_reg_0      |    15|
+|7     |      INST_SECOND_ROW_SHIFT_REG |IS_shift_reg_1      |    13|
+|8     |      INST_THIRD_ROW_SHIFT_REG  |IS_shift_reg_2      |    13|
+|9     |    INST_LFSR                   |lfsr                |    12|
+|10    |    INST_SKINNY_CNT             |SKINNY_CNT          |    38|
+|11    |    INST_TW_REG                 |shift_reg           |    70|
++------+--------------------------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 813.883 ; gain = 177.145
+Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 813.883 ; gain = 518.086
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+63 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:08 . Memory (MB): peak = 813.883 ; gain = 530.023
+INFO: [Common 17-1381] The checkpoint 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1/Testing_IP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Testing_IP_utilization_synth.rpt -pb Testing_IP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 813.883 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 21 04:05:06 2018...

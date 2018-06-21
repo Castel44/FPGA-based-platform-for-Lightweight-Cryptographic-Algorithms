@@ -1,0 +1,1 @@
+-wto "435b4aa883c14bf3a4b0fa432f3f6c29" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "Skinny_tb_func_impl" "xil_defaultlib.Skinny_tb" -log "elaborate.log" 

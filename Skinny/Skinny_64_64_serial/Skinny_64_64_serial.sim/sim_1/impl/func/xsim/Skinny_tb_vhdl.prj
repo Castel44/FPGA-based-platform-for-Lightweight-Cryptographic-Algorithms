@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"Skinny_tb_func_impl.vhd" \
+"../../../../../Skinny_64_64_serial.srcs/sim_1/imports/new/skinny_NEW_TB.vhd" \
+
+# Do not sort compile order
+nosort
