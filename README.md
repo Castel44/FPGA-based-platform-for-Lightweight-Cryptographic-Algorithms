@@ -4,4 +4,4 @@ Board: Zybo
 
 Complete Vivado project files, sources and hardware files.
 
-IMPORTANT: Do not add the /<project>.sim folder, its file are too long for GitHub
+IMPORTANT: Sometimes files in  /<project>.sim folder are too long for GitHub, disable those folders to fix it when occurs.
