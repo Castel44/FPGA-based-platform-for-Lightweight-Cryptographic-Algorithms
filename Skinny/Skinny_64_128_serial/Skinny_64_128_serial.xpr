@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.xpr">
+<Project Version="7" Minor="36" Path="F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="435b4aa883c14bf3a4b0fa432f3f6c29"/>
+    <Option Name="Id" Val="64889b2b09fe4e2f98b0e1aecc64e0c5"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -33,7 +33,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zybo"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="18"/>
+    <Option Name="WTXSimLaunchSim" Val="10"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -59,7 +59,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/new/AddConstant.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/AddConstant.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/AddConstant.vhd"/>
           <Attr Name="ImportTime" Val="1503324522"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -67,23 +67,23 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/AddRoundTweakey.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/AddRoundTweakey.vhd"/>
-          <Attr Name="ImportTime" Val="1503324561"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/AddRoundTweakey.vhd"/>
+          <Attr Name="ImportTime" Val="1504885984"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/Element_Cnt.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/Element_Cnt.vhd"/>
-          <Attr Name="ImportTime" Val="1505126968"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/Element_Cnt.vhd"/>
+          <Attr Name="ImportTime" Val="1505150394"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/IS_Shift_Reg.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/IS_Shift_Reg.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/IS_Shift_Reg.vhd"/>
           <Attr Name="ImportTime" Val="1503355778"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -91,7 +91,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/MixColumn.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/MixColumn.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/MixColumn.vhd"/>
           <Attr Name="ImportTime" Val="1503249546"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -99,15 +99,15 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/NEWSKINNY.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/NEWSKINNY.vhd"/>
-          <Attr Name="ImportTime" Val="1504977485"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/NEWSKINNY.vhd"/>
+          <Attr Name="ImportTime" Val="1504976769"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/SubCells_4bit.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/SubCells_4bit.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/SubCells_4bit.vhd"/>
           <Attr Name="ImportTime" Val="1502726116"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -115,21 +115,23 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/TW_shift_reg.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/TW_shift_reg.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/TW_shift_reg.vhd"/>
           <Attr Name="ImportTime" Val="1504213238"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/cnt.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/new/cnt.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd"/>
+          <Attr Name="ImportTime" Val="1529543176"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/is_shift_reg_NEW.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/is_shift_reg_NEW.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/is_shift_reg_NEW.vhd"/>
           <Attr Name="ImportTime" Val="1503356212"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -137,22 +139,32 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/lfsr.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/lfsr.vhd"/>
-          <Attr Name="ImportTime" Val="1505126990"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/lfsr.vhd"/>
+          <Attr Name="ImportTime" Val="1505150369"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/lfsr_TK2.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/lfsr_TK2.vhd"/>
+          <Attr Name="ImportTime" Val="1505150405"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/rnd_key_update.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sources_1/new/rnd_key_update.vhd"/>
-          <Attr Name="ImportTime" Val="1504213262"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/rnd_key_update.vhd"/>
+          <Attr Name="ImportTime" Val="1504886050"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/Testing_IP.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/new/Testing_IP.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd"/>
+          <Attr Name="ImportTime" Val="1529546611"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -167,7 +179,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/Desktop/ZYBO_Master.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_parallel/Skinny_64_64_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc"/>
           <Attr Name="ImportTime" Val="1529513090"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -179,8 +191,10 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/new/Testing_IP_TB.vhd">
+      <File Path="$PSRCDIR/sim_1/imports/new/Testing_IP_TB.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/sim_1/new/Testing_IP_TB.vhd"/>
+          <Attr Name="ImportTime" Val="1529544290"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -188,8 +202,8 @@
       <File Path="$PSRCDIR/sim_1/imports/new/skinny_NEW_TB.vhd">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_64_4bit_serial/Skinny_serial4bit_definitive.srcs/sim_1/new/skinny_NEW_TB.vhd"/>
-          <Attr Name="ImportTime" Val="1529164880"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sim_1/new/skinny_NEW_TB.vhd"/>
+          <Attr Name="ImportTime" Val="1505839600"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -198,11 +212,11 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Testing_IP_TB"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>

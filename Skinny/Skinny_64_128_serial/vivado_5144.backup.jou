@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Jun 21 14:17:31 2018
+# Process ID: 5144
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7336 F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\VIVADO-lightweight-crypto-project\Skinny\Skinny_64_128_serial\Skinny_64_128_serial.xpr
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/vivado.log
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.xpr}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sim_1/new/skinny_NEW_TB.vhd}}
+import_files -fileset sim_1 -norecurse {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sim_1/new/skinny_NEW_TB.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source Skinny_64_64_tb.tcl
+run all
+export_ip_user_files -of_objects  [get_files {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/ShiftRow.vhd}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Round_Cnt.vhd}}] -no_script -reset -force -quiet
+remove_files  {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/ShiftRow.vhd} {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Round_Cnt.vhd}}
+file delete -force {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/ShiftRow.vhd} {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Round_Cnt.vhd}
+update_compile_order -fileset sim_1
+add_files -norecurse -scan_for_includes {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd} {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd}}
+import_files -norecurse {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd} {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sim_1/new/Testing_IP_TB.vhd}}
+import_files -fileset sim_1 -norecurse {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sim_1/new/Testing_IP_TB.vhd}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sim_1/imports/new/skinny_NEW_TB.vhd}}]
+update_compile_order -fileset sim_1
+launch_simulation
+source Testing_IP_TB.tcl
+add_bp {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd} 147
+remove_bps -file {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd} -line 147
+add_bp {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd} 147
+remove_bps -file {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd} -line 147
+run all
+close_sim
+close_sim
+launch_simulation
+source Testing_IP_TB.tcl
+run all
+relaunch_sim
+run all
+restart
+run all
+set_property STEPS.POWER_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+update_ip_catalog
+update_ip_catalog
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_sim

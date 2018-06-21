@@ -1,0 +1,129 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 10488
+License: Customer
+
+Current time: 	Thu Jun 21 14:06:08 CEST 2018
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 90 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Andrea
+User home directory: C:/Users/Andrea
+User working directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/vivado.log
+Vivado journal file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/vivado.jou
+Engine tmp dir: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/.Xil/Vivado-10488-DESKTOP-II8OTGJ
+
+GUI allocated memory:	210 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 572 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 92 MB (+94075kb) [00:00:09]
+// [Engine Memory]: 526 MB (+400501kb) [00:00:09]
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\VIVADO-lightweight-crypto-project\Skinny\Skinny_64_64_serial\Skinny_64_64_serial.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial' 
+// [GUI Memory]: 105 MB (+9038kb) [00:00:11]
+// [Engine Memory]: 570 MB (+17856kb) [00:00:11]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 678 MB. GUI used memory: 42 MB. Current time: 6/21/18 2:06:10 PM CEST
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// [Engine Memory]: 679 MB (+84194kb) [00:00:16]
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 722 MB (+9792kb) [00:00:18]
+// [Engine Memory]: 768 MB (+10151kb) [00:00:22]
+// Tcl Message: open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:13 . Memory (MB): peak = 889.813 ; gain = 131.891 
+// Project name: Skinny_64_64_serial; location: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 120 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// PAPropertyPanels.initPanels (loader_reg.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources, loader_reg.vhd]", 3, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Disabled Sources, loader_reg.vhd]", 3, false, false, false, false, true, false); // B (D, ch) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac (ai, ch)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aF (ch): Remove Sources: addNotify
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete the project local file/directory from disk", true); // g (Q, aF): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aF)
+dismissDialog("Remove Sources"); // aF (ch)
+// Tcl Message: export_ip_user_files -of_objects  [get_files {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/loader_reg.vhd}}] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// aF (ch): Remove Sources: addNotify
+// bv (aF):  Remove Sources : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/loader_reg.vhd}} 
+// Tcl Message: file delete -force {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/loader_reg.vhd} 
+dismissDialog("Remove Sources"); // bv (aF)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 5, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Disabled Sources]", 6, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Disabled Sources]", 6, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Disabled Sources]", 6, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Disabled Sources]", 6, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// Elapsed time: 15 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, ch)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // Z (ch)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // Z (ch)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (ch)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 771 MB. GUI used memory: 51 MB. Current time: 6/21/18 2:36:10 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 771 MB. GUI used memory: 48 MB. Current time: 6/21/18 3:06:11 PM CEST

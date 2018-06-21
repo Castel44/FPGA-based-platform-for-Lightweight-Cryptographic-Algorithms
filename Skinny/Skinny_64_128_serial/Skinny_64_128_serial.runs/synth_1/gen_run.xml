@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1529586493">
+  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Testing_IP_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Testing_IP_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Testing_IP.vds"/>
+  <File Type="RDS-UTIL" Name="Testing_IP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Testing_IP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Testing_IP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Testing_IP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Testing_IP_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/AddConstant.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/AddConstant.vhd"/>
+        <Attr Name="ImportTime" Val="1503324522"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/AddRoundTweakey.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/AddRoundTweakey.vhd"/>
+        <Attr Name="ImportTime" Val="1504885984"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Element_Cnt.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/Element_Cnt.vhd"/>
+        <Attr Name="ImportTime" Val="1505150394"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/IS_Shift_Reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/IS_Shift_Reg.vhd"/>
+        <Attr Name="ImportTime" Val="1503355778"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/MixColumn.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/MixColumn.vhd"/>
+        <Attr Name="ImportTime" Val="1503249546"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/NEWSKINNY.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/NEWSKINNY.vhd"/>
+        <Attr Name="ImportTime" Val="1504976769"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/SubCells_4bit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/SubCells_4bit.vhd"/>
+        <Attr Name="ImportTime" Val="1502726116"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/TW_shift_reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/TW_shift_reg.vhd"/>
+        <Attr Name="ImportTime" Val="1504213238"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/cnt.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/cnt.vhd"/>
+        <Attr Name="ImportTime" Val="1529543176"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/is_shift_reg_NEW.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/is_shift_reg_NEW.vhd"/>
+        <Attr Name="ImportTime" Val="1503356212"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/lfsr.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/lfsr.vhd"/>
+        <Attr Name="ImportTime" Val="1505150369"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/lfsr_TK2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/lfsr_TK2.vhd"/>
+        <Attr Name="ImportTime" Val="1505150405"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/rnd_key_update.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Skinny/Skinny_64_128_serial/skinny_64_128_serial_ME.srcs/sources_1/new/rnd_key_update.vhd"/>
+        <Attr Name="ImportTime" Val="1504886050"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Testing_IP.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/sources_1/new/Testing_IP.vhd"/>
+        <Attr Name="ImportTime" Val="1529546611"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Testing_IP"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Desktop/ZYBO_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Skinny_64_64_serial/Skinny_64_64_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1529513090"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
