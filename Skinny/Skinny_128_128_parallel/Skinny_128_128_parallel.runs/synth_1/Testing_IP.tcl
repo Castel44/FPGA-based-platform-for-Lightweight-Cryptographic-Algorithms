@@ -21,26 +21,26 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/wt} [current_project]
-set_property parent.project_path {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.xpr} [current_project]
+set_property webtalk.parent_dir /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/wt [current_project]
+set_property parent.project_path /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
-set_property ip_output_repo {f:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/ip} [current_project]
+set_property ip_output_repo /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundConstants.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundTweakey.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/MixColumns.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SBOX_8bit.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SKINNY_128_128_parallel.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/ShiftRows.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SubCells_128.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/lfsr.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/mux.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/reg.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/tw_schedule.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/new/Testing_IP.vhd}
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundConstants.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundTweakey.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/MixColumns.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SBOX_8bit.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SKINNY_128_128_parallel.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/ShiftRows.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SubCells_128.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/lfsr.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/mux.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/reg.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/tw_schedule.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/new/Testing_IP.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -50,8 +50,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}
-set_property used_in_implementation false [get_files {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}]
+read_xdc /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc
+set_property used_in_implementation false [get_files /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

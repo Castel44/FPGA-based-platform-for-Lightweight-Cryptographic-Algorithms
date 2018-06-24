@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.sim/sim_1/synth/timing/xsim/Testing_IP_TB_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CNT
+INFO: [VRFC 10-311] analyzing module Simon_32_64_parallel
+INFO: [VRFC 10-311] analyzing module Testing_IP
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz_0_clk_wiz
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-311] analyzing module normal_shift_reg
+INFO: [VRFC 10-311] analyzing module parallel_tapped_shift_reg
+INFO: [VRFC 10-311] analyzing module reg
+INFO: [VRFC 10-311] analyzing module reg_0
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sim_1/new/Testing_IP_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testing_IP_TB

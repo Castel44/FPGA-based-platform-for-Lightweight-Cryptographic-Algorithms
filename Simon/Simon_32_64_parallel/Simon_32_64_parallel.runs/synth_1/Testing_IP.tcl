@@ -21,25 +21,32 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.cache/wt} [current_project]
-set_property parent.project_path {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.xpr} [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.cache/wt [current_project]
+set_property parent.project_path /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
-set_property ip_output_repo {f:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.cache/ip} [current_project]
+set_property ip_output_repo /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/Simon_32_64_parallel.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/src/cnt.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/key_schedule_function.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/lfsr.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/mux.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/reg.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/rnd_function_parallel.vhd}
-  {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/new/Testing_IP.vhd}
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/Simon_32_64_parallel.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/src/cnt.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/key_schedule_function.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/lfsr.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/mux.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/reg.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/rnd_function_parallel.vhd
+  /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/new/Testing_IP.vhd
 }
+read_ip -quiet /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -48,8 +55,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}
-set_property used_in_implementation false [get_files {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}]
+read_xdc /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc
+set_property used_in_implementation false [get_files /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

@@ -69,12 +69,12 @@ set rc [catch {
   set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/wt} [current_project]
-  set_property parent.project_path {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.xpr} [current_project]
-  set_property ip_output_repo {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/ip}} [current_project]
+  set_property webtalk.parent_dir /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/wt [current_project]
+  set_property parent.project_path /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.xpr [current_project]
+  set_property ip_output_repo /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.runs/synth_1/Testing_IP.dcp}}
-  read_xdc {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}
+  add_files -quiet /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.runs/synth_1/Testing_IP.dcp
+  read_xdc /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc
   link_design -top Testing_IP -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -163,6 +163,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force Testing_IP.mmi }
+  write_bitstream -force Testing_IP.bit 
+  catch {write_debug_probes -quiet -force Testing_IP}
+  catch {file copy -force Testing_IP.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

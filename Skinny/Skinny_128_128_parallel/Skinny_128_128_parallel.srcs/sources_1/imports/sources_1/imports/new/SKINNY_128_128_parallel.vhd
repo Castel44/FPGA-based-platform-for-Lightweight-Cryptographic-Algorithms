@@ -105,8 +105,6 @@ SIGNAL current_state : state := idle;
 signal OUT_MUX_SEL: std_logic; 
 signal IN_MUX_SEL: std_logic; 
 
---signal OUTPUT_MUX_OUT: std_logic_vector(127 downto 0); 
-
 signal IS_REG_IN: std_logic_vector(127 downto 0); 
 signal IS_REG_OUT: std_logic_vector(127 downto 0); 
 signal TW_REG_IN: std_logic_vector(127 downto 0); 
@@ -158,7 +156,7 @@ INST_TW_REG_MUX_IN: mux
 			 
 );   
    
- 
+-- Internal state register
 INST_IS_REG: reg 
    port map ( 
              ce=> regs_ce,
@@ -167,12 +165,14 @@ INST_IS_REG: reg
 			 Q=> IS_REG_OUT
 ); 
 
+-- Skinny SubCells operation (Substitution Box) 
 INST_SUBCELLS: SubCells_128 
    port map ( 
                SubCells_IN => IS_REG_OUT,
 			   SubCells_OUT => SUBCELLS_OUT
 ); 
-   
+
+
 INST_AddRoundConstants: AddRoundConstants 
    port map ( 
              lfsr_in => lfsr_out, 
@@ -180,7 +180,7 @@ INST_AddRoundConstants: AddRoundConstants
 			 output=> AddRoundConstants_OUT
 );    
 
-
+-- Skinny AddRoundTweakey operation (xor between internal state and round key)
 INST_ADDROUNDTWEAKEY: AddRoundTweakey 
  port map ( 
            tweakey_in=> TW_REG_OUT(127 downto 64), -- only first two rows are xored
@@ -188,22 +188,22 @@ INST_ADDROUNDTWEAKEY: AddRoundTweakey
            AddRoundTweakey_out=> AddRoundTWEAKEY_OUT 
  ); 
 
-
+-- Skinny ShiftRows operation
 INST_ShiftRows: ShiftRows
     PORT MAP(
         ShiftRows_in => AddRoundTWEAKEY_OUT,
         ShiftRows_out => ShiftRows_OUT       
 ); 
    
-   
-    
+-- Skinny MixColumns Operation   
 INST_MixColumns: MixColumns 
     PORT MAP(	
         MIXCOL_in => ShiftRows_OUT,
         MIXCOL_out => MixColumns_OUT       
    ); 
    
-   
+
+-- Key register
 INST_TW_REG: reg   
   port map ( 
              ce => regs_ce,
@@ -212,10 +212,9 @@ INST_TW_REG: reg
 			 Q => TW_REG_OUT
 ); 
  
-
+-- key scheduling 
 INST_KEY_SCHEDULE: tw_schedule
  port map ( 
-     	  --perform_permutation => perform_permutation,
 		  TWEAKEY_SCHEDULE_in => TW_REG_OUT, 
 		  TWEAKEY_SCHEDULE_out => TW_SCHEDULE_OUT
 ); 
@@ -234,7 +233,7 @@ STATE_MACHINE_MAIN : PROCESS (clk, data_ready, nx_state)
 BEGIN
     IF rising_edge(CLK) THEN 
         IF (data_ready = '1') THEN 
-            current_state <= LOADING; -- continua a caricare 
+            current_state <= LOADING; -- keeps loading (used as an idle state to spare logic) 
         ELSE
             current_state <= nx_state;
         END IF; 
@@ -253,7 +252,7 @@ begin
         OUT_MUX_SEL <= '0';         
         regs_ce <= '1';         
         lfsr_rst <= '1';                 
-        nx_state <= idle; --loading happens in 1 clk cycle
+        nx_state <= idle; --loading in 1 clk cycle
                     
     when idle =>                     
         BUSY <= '0'; 
@@ -270,7 +269,11 @@ begin
      when processing =>            
           IN_MUX_SEL <= '0';        
           regs_ce <= '1';         
-          lfsr_rst <= '0';        
+          lfsr_rst <= '0';  
+          
+          -- the lfsr is used to generate round constant  
+          -- is is also used here to check if the encryption is complete
+              
           if lfsr_out = b"011010" then 
                OUT_MUX_SEL <= '1'; 
                BUSY <= '0';

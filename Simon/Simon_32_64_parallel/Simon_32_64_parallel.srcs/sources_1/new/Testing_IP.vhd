@@ -28,6 +28,18 @@ component Simon_32_64_parallel is
        
 end component;
 
+component clk_wiz_0
+port
+ (-- Clock in ports
+  -- Clock out ports
+  clk_out1          : out    std_logic;
+  -- Status and control signals
+  reset             : in     std_logic;
+  locked            : out    std_logic;
+  clk_in1           : in     std_logic
+ );
+end component;
+
 
 component cnt
  generic( size:integer:= 5   ); 
@@ -39,7 +51,9 @@ component cnt
  end component; 
 
 
--- internal signal 
+-- internal signals
+signal clk_wiz_res: std_logic;
+signal div_clk: std_logic; 
 signal key_tst: std_logic_vector(Datapath*4 - 1 downto 0) := X"1918111009080100"; 
 signal plaintext_tst: std_logic_vector(Datapath*4 - 1 downto 0) := (X"00000000" & X"65656877" );
 signal ciphertext_out_W: std_logic_vector(Datapath - 1 downto 0) ;
@@ -63,7 +77,7 @@ begin
 
 Simon_DUT: Simon_32_64_parallel 
     port map ( 
-      clk => clk,
+      clk => div_clk,
       plaintext_in => plaintext_reg, 
       key_in => key_reg,
       start => start_W, 
@@ -76,20 +90,35 @@ Simon_DUT: Simon_32_64_parallel
 INST_CNT: cnt 
     generic map ( size => 3) 
     port map ( 
-        clk=> clk, 
+        clk=> div_clk, 
         ce=> cnt_ce_W, 
         rst=> cnt_rst_W, 
         cnt_out => cnt_out_W 
     ); 
+    
+    
+ clock_div:  clk_wiz_0
+ 
+       port map ( 
+      -- Clock out ports  
+       clk_out1 => div_clk,
+      -- Status and control signals                
+       reset => '0', 
+       -- Clock in ports
+       clk_in1 => clk
+       
+     );
 
 
-STATE_MACHINE_MAIN: process(clk,rst)  
+STATE_MACHINE_MAIN: process(div_clk,rst)  
 begin 
-    IF rising_edge(CLK) then        
+    IF rising_edge(div_CLK) then        
         IF (rst = '1') then              
-            current_state <= idle;                    
+            current_state <= idle;  
+                              
         ELSE        
-            current_state <= nx_state;                            
+            current_state <= nx_state; 
+                                         
         end if;          
     end if;    
 end process; 
