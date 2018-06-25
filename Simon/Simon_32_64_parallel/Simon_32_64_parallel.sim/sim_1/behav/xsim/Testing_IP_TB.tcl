@@ -8,4 +8,8 @@ if { [string length $curr_wave] == 0 } {
   }
 }
 
+open_saif "/home/sam/Desktop/simon_scaled.saif"
+log_saif [get_objects -filter {type==in_port || type==out_port || type==inout_port} *]
+
 run 7640ns
+close_saif

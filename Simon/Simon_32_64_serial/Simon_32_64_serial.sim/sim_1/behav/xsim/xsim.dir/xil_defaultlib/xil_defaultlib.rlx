@@ -1,0 +1,17 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1529776823,vhdl,,,,testing_ip_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sim_1/imports/new/simon_32_64_bitserial_TB.vhd,1505902657,vhdl,,,,simeck_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/CONSTANT_GEN_MUX.vhd,1505406961,vhdl,,,,constant_gen_mux,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd,1505385142,vhdl,,,,end_encrypt_shift_reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/IS_SHIFT_REG.vhd,1505470650,vhdl,,,,is_shift_reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/KEY_SCHEDULE_FUNC.vhd,1505404743,vhdl,,,,key_schedule_func,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/RND_FUNCTION.vhd,1505418712,vhdl,,,,rnd_function,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/Simon_32_64_bit_serial.vhd,1529869474,vhdl,,,,simon_32_64_bit_serial,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/Testing_IP.vhd,1529869970,vhdl,,,,testing_ip,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/cnt.vhd,1505381400,vhdl,,,,cnt,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/key_shiftreg.vhd,1505475803,vhdl,,,,key_shiftreg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/lfsr.vhd,1505407038,vhdl,,,,lfsr,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_serial/Simon_32_64_serial.srcs/sources_1/imports/new/mux.vhd,1505381329,vhdl,,,,mux,,,,,,,,

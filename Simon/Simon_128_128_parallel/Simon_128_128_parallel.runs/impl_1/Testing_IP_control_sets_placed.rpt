@@ -1,0 +1,81 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Mon Jun 25 17:22:56 2018
+| Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
+| Design       : Testing_IP
+| Device       : xc7z010
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    12 |
+| Unused register locations in slices containing registers |    56 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            3 |
+|      5 |            2 |
+|      8 |            1 |
+|      9 |            1 |
+|     10 |            1 |
+|    16+ |            4 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               5 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             160 |           33 |
+| Yes          | No                    | Yes                    |              11 |            4 |
+| Yes          | Yes                   | No                     |              96 |           33 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------------------+---------------------------------------------------+------------------+----------------+
+|  Clock Signal  |                              Enable Signal                              |                  Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++----------------+-------------------------------------------------------------------------+---------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | INST_CNT/ce                                                             | INST_CNT/cnt_internal_value[1]_i_3_n_0            |                1 |              2 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/t_sequence[1]_i_1_n_0                               | Simon_DUT/lfsr_rst                                |                1 |              2 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/cnt_internal_value_reg[0]_CE_cooolgate_en_sig_4 | Simon_DUT/lfsr_rst                                |                1 |              2 |
+|  clk_IBUF_BUFG |                                                                         |                                                   |                3 |              5 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/lfsr_internal_reg[0]_CE_cooolgate_en_sig_2          | Simon_DUT/lfsr_rst                                |                1 |              5 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/E[0]                                            | Simon_DUT/INST_KEY_SHIFT_REG/temp_reg[59]_i_1_n_0 |                6 |              8 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/IS_CE                                           | Simon_DUT/INST_IS_REG/temp_reg[59]_i_1_n_0        |                4 |              9 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/IS_CE                                           | Simon_DUT/INST_IS_REG/temp_reg[57]_i_1_n_0        |                4 |             10 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/IS_CE                                           | Simon_DUT/INST_IS_REG/temp_reg[63]_i_1_n_0        |                8 |             25 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/E[0]                                            | Simon_DUT/INST_KEY_SHIFT_REG/temp_reg[63]_i_1_n_0 |               11 |             44 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/E[0]                                            |                                                   |               17 |             76 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/IS_CE                                           |                                                   |               16 |             84 |
++----------------+-------------------------------------------------------------------------+---------------------------------------------------+------------------+----------------+
+
+

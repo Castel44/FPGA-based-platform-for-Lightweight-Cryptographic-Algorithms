@@ -1,0 +1,56 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Mon Jun 25 17:23:25 2018
+| Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
+| Command      : report_methodology -file Testing_IP_methodology_drc_routed.rpt -pb Testing_IP_methodology_drc_routed.pb -rpx Testing_IP_methodology_drc_routed.rpx
+| Design       : Testing_IP
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 4
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay | 3          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell INST_CNT/cnt_internal_value[1]_i_3, with 2 or more inputs, drives asynchronous reset pin(s) INST_CNT/cnt_internal_value_reg[0]/CLR, INST_CNT/cnt_internal_value_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on rst relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on start relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on led_out relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+

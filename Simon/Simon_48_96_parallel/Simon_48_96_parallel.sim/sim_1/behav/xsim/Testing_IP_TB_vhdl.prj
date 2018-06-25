@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/Simon_48_96_parallel.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/Testing_IP.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/src/cnt.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/end_encrypt_shift_reg.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/key_schedule_function.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/lfsr.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/mux.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/reg.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sources_1/imports/new/rnd_function_parallel.vhd" \
+"../../../../Simon_48_96_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd" \
+
+# Do not sort compile order
+nosort

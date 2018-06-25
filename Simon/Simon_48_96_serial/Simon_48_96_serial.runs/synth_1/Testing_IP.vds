@@ -1,0 +1,492 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon Jun 25 17:56:40 2018
+# Process ID: 4088
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.runs/synth_1
+# Command line: vivado.exe -log Testing_IP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Testing_IP.tcl
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.runs/synth_1/Testing_IP.vds
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Testing_IP.tcl -notrace
+Command: synth_design -top Testing_IP -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4432 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 394.480 ; gain = 98.793
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Testing_IP' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Testing_IP.vhd:17]
+	Parameter Datapath bound to: 24 - type: integer 
+INFO: [Synth 8-3491] module 'Simon_48_96_bit_serial' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:7' bound to instance 'Simon_DUT' of component 'Simon_48_96_bit_serial' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Testing_IP.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'Simon_48_96_bit_serial' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:25]
+	Parameter Datapath bound to: 1 - type: integer 
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_IS_INPUT_MUX' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:313]
+INFO: [Synth 8-638] synthesizing module 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:17]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'MUX' (1#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:17]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 48 - type: integer 
+INFO: [Synth 8-3491] module 'IS_SHIFT_REG' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/IS_SHIFT_REG.vhd:7' bound to instance 'INST_IS_SHIFTREG' of component 'IS_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:327]
+INFO: [Synth 8-638] synthesizing module 'IS_SHIFT_REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/IS_SHIFT_REG.vhd:31]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 48 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'IS_SHIFT_REG' (2#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/IS_SHIFT_REG.vhd:31]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'RND_FUNCTION' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/RND_FUNCTION.vhd:34' bound to instance 'INST_rnd_func' of component 'Rnd_function' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:349]
+INFO: [Synth 8-638] synthesizing module 'RND_FUNCTION' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/RND_FUNCTION.vhd:46]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RND_FUNCTION' (3#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/RND_FUNCTION.vhd:46]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_MUX1' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:366]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_MUX2' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:379]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_MUX8' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:393]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_KEY_REG_IN_MUX' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:412]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 96 - type: integer 
+INFO: [Synth 8-3491] module 'KEY_SHIFTREG' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/key_shiftreg.vhd:5' bound to instance 'INST_KEY_REG' of component 'key_shiftreg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:427]
+INFO: [Synth 8-638] synthesizing module 'KEY_SHIFTREG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/key_shiftreg.vhd:31]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 96 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'KEY_SHIFTREG' (4#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/key_shiftreg.vhd:31]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_KEYMUX3' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:449]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_KEYMUX4' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:463]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_KEYMUX1' of component 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:476]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'KEY_SCHEDULE_FUNC' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/KEY_SCHEDULE_FUNC.vhd:34' bound to instance 'INST_KEYSCHEDULE' of component 'KEY_SCHEDULE_FUNC' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:489]
+INFO: [Synth 8-638] synthesizing module 'KEY_SCHEDULE_FUNC' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/KEY_SCHEDULE_FUNC.vhd:53]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'KEY_SCHEDULE_FUNC' (5#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/KEY_SCHEDULE_FUNC.vhd:53]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'constant_gen_mux' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/CONSTANT_GEN_MUX.vhd:7' bound to instance 'INST_CONSTANT_GEN' of component 'CONSTANT_GEN_MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:507]
+INFO: [Synth 8-638] synthesizing module 'constant_gen_mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/CONSTANT_GEN_MUX.vhd:21]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'constant_gen_mux' (6#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/CONSTANT_GEN_MUX.vhd:21]
+INFO: [Synth 8-3491] module 'CNT24' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/cnt.vhd:6' bound to instance 'INST_SERIAL_CNT' of component 'CNT24' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:520]
+INFO: [Synth 8-638] synthesizing module 'CNT24' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/cnt.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'CNT24' (7#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/cnt.vhd:17]
+INFO: [Synth 8-3491] module 'lfsr' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/lfsr.vhd:5' bound to instance 'INST_lfsr' of component 'lfsr' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:531]
+INFO: [Synth 8-638] synthesizing module 'lfsr' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/lfsr.vhd:16]
+WARNING: [Synth 8-6014] Unused sequential element lfsr_feedback_reg was removed.  [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/lfsr.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'lfsr' (8#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/lfsr.vhd:16]
+INFO: [Synth 8-3491] module 'end_encrypt_shift_reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd:8' bound to instance 'INST_END_ENCRYPT_FSR' of component 'end_encrypt_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:544]
+INFO: [Synth 8-638] synthesizing module 'end_encrypt_shift_reg' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element feedback_reg was removed.  [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'end_encrypt_shift_reg' (9#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'Simon_48_96_bit_serial' (10#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Simon_48_96_bit_serial.vhd:25]
+	Parameter size bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'CNT' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/new/cnt.vhd:6' bound to instance 'INST_CNT' of component 'cnt' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Testing_IP.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'CNT' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/new/cnt.vhd:19]
+	Parameter size bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CNT' (11#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/new/cnt.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'Testing_IP' (12#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/sources_1/imports/new/Testing_IP.vhd:17]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 449.414 ; gain = 153.727
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 449.414 ; gain = 153.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 449.414 ; gain = 153.727
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+Finished Parsing XDC File [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Testing_IP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Testing_IP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 790.543 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Simon_48_96_bit_serial'
+INFO: [Synth 8-5546] ROM "MUX1_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IS_ce" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "end_encrypt_ce" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sel_IN" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lfsr_rst" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Testing_IP'
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 loading |                               00 |                               00
+                    idle |                               01 |                               01
+              processing |                               10 |                               10
+             end_encrypt |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Simon_48_96_bit_serial'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                          0000001 |                              011
+                 loading |                          0000010 |                              001
+                 waiting |                          0000100 |                              101
+               start_enc |                          0001000 |                              000
+                     enc |                          0010000 |                              100
+                  ending |                          0100000 |                              010
+                 success |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'Testing_IP'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+	   6 Input      1 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 12    
+	   7 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Testing_IP 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   7 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 4     
+Module MUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module IS_SHIFT_REG 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 1     
+Module RND_FUNCTION 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module KEY_SHIFTREG 
+Detailed RTL Component Info : 
++---Registers : 
+	               96 Bit    Registers := 1     
+Module KEY_SCHEDULE_FUNC 
+Detailed RTL Component Info : 
++---XORs : 
+	   6 Input      1 Bit         XORs := 1     
+Module constant_gen_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module CNT24 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module lfsr 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
+Module end_encrypt_shift_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module Simon_48_96_bit_serial 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 12    
+Module CNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 790.543 ; gain = 494.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                    | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Testing_IP  | Simon_DUT/INST_IS_SHIFTREG/temp_reg_reg[40] | 6      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|Testing_IP  | Simon_DUT/INST_IS_SHIFTREG/temp_reg_reg[23] | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simon_DUT/INST_IS_SHIFTREG/temp_reg_reg[0]  | 16     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simon_DUT/INST_KEY_REG/temp_reg_reg[76]     | 20     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|Testing_IP  | Simon_DUT/INST_KEY_REG/temp_reg_reg[52]     | 23     | 2     | NO           | NO                 | YES               | 0      | 2       | 
+|Testing_IP  | Simon_DUT/INST_KEY_REG/temp_reg_reg[25]     | 26     | 1     | NO           | NO                 | YES               | 0      | 1       | 
++------------+---------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |LUT1    |     3|
+|3     |LUT2    |     9|
+|4     |LUT3    |     6|
+|5     |LUT4    |    10|
+|6     |LUT5    |    13|
+|7     |LUT6    |    20|
+|8     |MUXF7   |     1|
+|9     |SRL16E  |     4|
+|10    |SRLC32E |     4|
+|11    |FDCE    |    17|
+|12    |FDPE    |     2|
+|13    |FDRE    |    24|
+|14    |FDSE    |     1|
+|15    |IBUF    |     3|
+|16    |OBUF    |     1|
++------+--------+------+
+
+Report Instance Areas: 
++------+-------------------------+-----------------------+------+
+|      |Instance                 |Module                 |Cells |
++------+-------------------------+-----------------------+------+
+|1     |top                      |                       |   119|
+|2     |  INST_CNT               |CNT                    |    30|
+|3     |  Simon_DUT              |Simon_48_96_bit_serial |    76|
+|4     |    INST_END_ENCRYPT_FSR |end_encrypt_shift_reg  |     2|
+|5     |    INST_IS_SHIFTREG     |IS_SHIFT_REG           |    21|
+|6     |    INST_KEY_REG         |KEY_SHIFTREG           |    13|
+|7     |    INST_SERIAL_CNT      |CNT24                  |    22|
+|8     |    INST_lfsr            |lfsr                   |    14|
++------+-------------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:46 . Memory (MB): peak = 810.246 ; gain = 173.430
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 810.246 ; gain = 514.559
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+72 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:06 . Memory (MB): peak = 810.656 ; gain = 527.094
+INFO: [Common 17-1381] The checkpoint 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_48_96_serial/Simon_48_96_serial.runs/synth_1/Testing_IP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Testing_IP_utilization_synth.rpt -pb Testing_IP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 810.656 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 25 17:57:58 2018...

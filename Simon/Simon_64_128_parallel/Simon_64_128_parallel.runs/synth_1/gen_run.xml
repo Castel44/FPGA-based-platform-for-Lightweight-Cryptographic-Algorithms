@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1529779259">
+  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Testing_IP_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Testing_IP_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Testing_IP.vds"/>
+  <File Type="RDS-UTIL" Name="Testing_IP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Testing_IP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Testing_IP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Testing_IP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Testing_IP_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/Simon_64_128.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/Simon_64_128.vhd"/>
+        <Attr Name="ImportTime" Val="1505901273"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/cnt.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Simon_48_96_parallel/Simon_48_96_parallel.srcs/sources_1/imports/src/cnt.vhd"/>
+        <Attr Name="ImportTime" Val="1529491392"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/end_encrypt_shift_reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/end_encrypt_shift_reg.vhd"/>
+        <Attr Name="ImportTime" Val="1504878905"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/key_schedule_function.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/key_schedule_function.vhd"/>
+        <Attr Name="ImportTime" Val="1504800997"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/lfsr.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/lfsr.vhd"/>
+        <Attr Name="ImportTime" Val="1504879301"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/mux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/mux.vhd"/>
+        <Attr Name="ImportTime" Val="1504778253"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/normal_shift_reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/normal_shift_reg.vhd"/>
+        <Attr Name="ImportTime" Val="1504796071"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/parallel_tapped_shift_reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/parallel_tapped_shift_reg.vhd"/>
+        <Attr Name="ImportTime" Val="1504778300"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/reg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/reg.vhd"/>
+        <Attr Name="ImportTime" Val="1504792457"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/rnd_function_parallel.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../PSI CIPHERS 3.0/Simon/Simon_64_128_parallel/SIMON_64_128_parallel_DEF.srcs/sources_1/new/rnd_function_parallel.vhd"/>
+        <Attr Name="ImportTime" Val="1504800743"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Testing_IP.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Simon_48_96_parallel/Simon_48_96_parallel.srcs/sources_1/imports/new/Testing_IP.vhd"/>
+        <Attr Name="ImportTime" Val="1529775129"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Testing_IP"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Desktop/ZYBO_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/Andrea/Desktop/ZYBO_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1529513090"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
