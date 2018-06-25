@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1529771380">
-  <File Type="BITSTR-NKY" Name="Testing_IP.nky"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BITSTR-SYSDEF" Name="Testing_IP.sysdef"/>
   <File Type="BG-DRC" Name="Testing_IP.drc"/>
-  <File Type="BITSTR-LTX" Name="Testing_IP.ltx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Testing_IP_methodology_drc_routed.rpt"/>
   <File Type="BG-BGN" Name="Testing_IP.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="Testing_IP.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="Testing_IP.ltx"/>
   <File Type="BITSTR-MMI" Name="Testing_IP.mmi"/>
   <File Type="BITSTR-BMM" Name="Testing_IP_bd.bmm"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Testing_IP_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-NKY" Name="Testing_IP.nky"/>
   <File Type="BITSTR-RBT" Name="Testing_IP.rbt"/>
-  <File Type="ROUTE-DRC-RPX" Name="Testing_IP_drc_routed.rpx"/>
   <File Type="BITSTR-MSK" Name="Testing_IP.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Testing_IP_methodology_drc_routed.pb"/>
   <File Type="BG-BIN" Name="Testing_IP.bin"/>
   <File Type="BG-BIT" Name="Testing_IP.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Testing_IP_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Testing_IP_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Testing_IP_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Testing_IP_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Testing_IP_postroute_physopt.dcp"/>
-  <File Type="RDI-RDI" Name="Testing_IP.vdi"/>
   <File Type="ROUTE-CLK" Name="Testing_IP_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="Testing_IP_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-TIMING-RPX" Name="Testing_IP_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="Testing_IP_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="Testing_IP_timing_summary_routed.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="Testing_IP_route_status.pb"/>
   <File Type="ROUTE-STATUS" Name="Testing_IP_route_status.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="Testing_IP_power_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="Testing_IP_reports.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="Testing_IP_power_summary_routed.pb"/>
-  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
   <File Type="ROUTE-PWR" Name="Testing_IP_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Testing_IP_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Testing_IP_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Testing_IP_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="Testing_IP_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="Testing_IP_drc_routed.pb"/>
   <File Type="ROUTE-DRC" Name="Testing_IP_drc_routed.rpt"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="Testing_IP_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="Testing_IP_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="Testing_IP_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="Testing_IP_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="Testing_IP_drc_physopted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Testing_IP_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Testing_IP_timing_summary_postplace_pwropted.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Testing_IP_postplace_pwropt.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Testing_IP_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Testing_IP_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-CTRL" Name="Testing_IP_control_sets_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="Testing_IP_utilization_placed.pb"/>
   <File Type="PLACE-UTIL" Name="Testing_IP_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Testing_IP_clock_utilization_placed.rpt"/>
   <File Type="PLACE-IO" Name="Testing_IP_io_placed.rpt"/>
+  <File Type="RDI-RDI" Name="Testing_IP.vdi"/>
+  <File Type="PWROPT-TIMING" Name="Testing_IP_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Testing_IP_drc_pwropted.rpt"/>
+  <File Type="OPT-TIMING" Name="Testing_IP_timing_summary_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="Testing_IP.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Testing_IP_methodology_drc_opted.rpt"/>
   <File Type="OPT-DRC" Name="Testing_IP_drc_opted.rpt"/>
-  <File Type="PA-DCP" Name="Testing_IP.dcp"/>
   <File Type="OPT-DCP" Name="Testing_IP_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="Testing_IP_timing_summary_init.rpt"/>
   <File Type="PWROPT-DCP" Name="Testing_IP_pwropt.dcp"/>
+  <File Type="REPORTS-TCL" Name="Testing_IP_reports.tcl"/>
   <File Type="PLACE-DCP" Name="Testing_IP_placed.dcp"/>
+  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
+  <File Type="PLACE-TIMING" Name="Testing_IP_timing_summary_placed.rpt"/>
+  <File Type="PA-DCP" Name="Testing_IP.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/new/Simon_32_64_parallel.vhd">
@@ -151,7 +167,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
