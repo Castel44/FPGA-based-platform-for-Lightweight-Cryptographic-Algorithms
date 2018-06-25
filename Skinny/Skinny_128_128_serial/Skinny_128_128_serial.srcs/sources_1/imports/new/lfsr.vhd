@@ -1,7 +1,6 @@
  library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- NB after reset the output is 00, the constant for first round is 01 so after reset before it could be used one should wait till the next clock rising edge
 
 entity lfsr is
     port( clk,ce: in std_logic;

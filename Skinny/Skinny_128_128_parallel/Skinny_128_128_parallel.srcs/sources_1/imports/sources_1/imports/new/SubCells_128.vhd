@@ -3,6 +3,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_std.all;
 use IEEE.NUMERIC_BIT ;
 
+-- in the skinny cipher the sbox can be described with logic operations 
+
 entity SubCells_128 is         
 
 Port (  SubCells_IN: in std_logic_vector (127 downto 0);         

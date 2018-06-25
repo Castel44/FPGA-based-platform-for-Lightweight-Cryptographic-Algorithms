@@ -1,6 +1,9 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+
+-- subcells is simply an sbox which can be expressed as simple logic operations
+
 entity SubCells is         
 
 Port (  SubCells_IN: in std_logic_vector (7 downto 0);         

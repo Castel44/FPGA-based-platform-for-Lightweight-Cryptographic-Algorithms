@@ -7,17 +7,17 @@ ENTITY Skinny_128_128 IS
 	
 		CLK : IN STD_LOGIC; 
  
-		PLAINTEXT_IN : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- plaintext and tweakey is loaded in parallel 
+		PLAINTEXT_IN : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- plaintext and tweakey is loaded 8 bit word by 8 bit word
  
-		TWEAKEY_IN : IN STD_LOGIC_VECTOR (7 DOWNTO 0); -- tweakey also is loaded in parallel 
+		TWEAKEY_IN : IN STD_LOGIC_VECTOR (7 DOWNTO 0);  
  
-		data_ready : IN std_logic; -- data ready usato per caricare key e plaintext
+		data_ready : IN std_logic; -- data ready is used to start the loading phase
  
-		start : IN std_logic;
+		start : IN std_logic; -- when start goes high the cipher starts encrypting 
  
-		BUSY : OUT STD_LOGIC := '0'; -- done will be mapped to rnd counter overflow flag 
+		BUSY : OUT STD_LOGIC := '0'; -- when loading or processing is high 
  
-		CIPHERTEXT_OUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0') 
+		CIPHERTEXT_OUT : OUT STD_LOGIC_VECTOR (7 DOWNTO 0) := (OTHERS => '0') -- output is also serial 
  
 		);
  
@@ -25,17 +25,28 @@ ENTITY Skinny_128_128 IS
 	ARCHITECTURE Behavioral OF Skinny_128_128 IS
 
 		----Sub Components Definitions
+		
+		-- a shift register is used to store the internal state which is in matrix form (skinny paper)
+		-- in this way, as the register shifts, each word will be processed by the cipher operations such as subcells, addroundconstant etc. 
+		
+		-- in the cipher specification the internal state is represented as a matrix and the same applies to the key.
+		-- This is because skinny is a SPN cipher like the AES.
+        -- Each row of the cipher internal state is implemented as a shift register. 
+        -- the internal state is implemented via a shift register. 
+        
 		COMPONENT skinny_shift_reg_64
 			PORT (
-
+                
+                -- inputs and outputs for each row in the shift register are necessary to perform mixcolumns operations
 				serial_in_first_row : IN std_logic_vector (7 DOWNTO 0); 
 				serial_in_second_row : IN std_logic_vector (7 DOWNTO 0); 
 				serial_in_third_row : IN std_logic_vector (7 DOWNTO 0); 
 				serial_in_fourth_row : IN std_logic_vector (7 DOWNTO 0); 
  
 				clock : IN std_logic;
- 
-				enable_1, enable_2, enable_3, enable_4 : IN std_logic; --enable shifting for individual rows
+                
+                -- enables for individual rows will allow to perform shiftrows in an efficient manner
+				enable_1, enable_2, enable_3, enable_4 : IN std_logic; 
  
 				serial_output_first_row : OUT std_logic_vector (7 DOWNTO 0) := (OTHERS => '0');
 				serial_output_second_row : OUT std_logic_vector (7 DOWNTO 0) := (OTHERS => '0');
@@ -45,12 +56,14 @@ ENTITY Skinny_128_128 IS
 				);
 
 			END COMPONENT;
-
-			-- purtroppo shift reg diverso per la tweakey
-
+			
+            -- a shift register is used for storing the key
 			COMPONENT shift_reg
 				PORT (
-
+                    
+                    -- a parallel in and parallel out port is needed because the cipher specification 
+                    -- requires a permutation on the entire key register as part of the key schedule.                   
+                    
 					parallel_in : IN std_logic_vector (63 DOWNTO 0); 
 					serial_in : IN std_logic_vector(7 DOWNTO 0);
 					clock, enable_in : IN std_logic;
@@ -61,7 +74,8 @@ ENTITY Skinny_128_128 IS
 					);
 
 				END COMPONENT;
-
+                
+                -- Skinny Subcells operation (simply an SBOX)
 				COMPONENT SubCells
 					PORT (
  
@@ -72,38 +86,50 @@ ENTITY Skinny_128_128 IS
 				END COMPONENT SubCells;
 
  
- 
+                -- Skinny Addconstant operation (xoring with a round-dependant constant generatedby a lfsr)
 				COMPONENT AddConstant
 
 					PORT (
-						perform_AddConstant : IN std_logic_vector (4 DOWNTO 0); 
-						lfsr_in : IN std_logic_vector(5 DOWNTO 0); -- mappato internamente al clock dell lfsr, deve variare tale ingresso ogni RND 
-						AddConstant_IN : IN std_logic_vector (7 DOWNTO 0); 
-						AddConstant_OUT : OUT std_logic_vector (7 DOWNTO 0)  
+						perform_AddConstant : IN std_logic_vector (4 DOWNTO 0);  -- enable signal must be used for signaling the element to be xored 
+                                                                                 -- not all elements are to be xored 
+                                                                                 -- the same counter used for the loaing phase is used to spare logic
+						lfsr_in : IN std_logic_vector(5 DOWNTO 0); -- input for the lfsr generated constant 
+						AddConstant_IN : IN std_logic_vector (7 DOWNTO 0); -- input for plaintext word 
+						AddConstant_OUT : OUT std_logic_vector (7 DOWNTO 0)  -- output word 
 					); 
  
 				END COMPONENT AddConstant;
  
  
- 
+                -- Skinny AddRoundTweakey (xoring part of the internal state with the round key)
 				COMPONENT AddRoundTweakey
 					PORT (
  
 						perform_AddRoundTweakey : IN std_logic_vector (4 DOWNTO 0); -- enable signal must be used for signaling the element to be xored 
-						AddRoundTweakey_TWEAKEY_IN : IN std_logic_vector(7 DOWNTO 0); 
-						AddRoundTweakey_IS_IN : IN std_logic_vector(7 DOWNTO 0); -- qui da TWEAKEY shift reg out 
-						AddRoundTweakey_IS_OUT : OUT std_logic_vector(7 DOWNTO 0) --deve rimetterli in IS shift reg serial in; si usa lo stesso contatore da 0 a 15 ELEMENT_COUNTER; IS SHIFT REGISTER alla fine può anche essere messo come subcomponent di questa entity 
+						                                                            -- not all elements are to be xored 
+						                                                            -- the same counter used for the loaing phase is used to spare logic
+						                                                            
+  						AddRoundTweakey_TWEAKEY_IN : IN std_logic_vector(7 DOWNTO 0); -- input for the key word to be xored 
+						AddRoundTweakey_IS_IN : IN std_logic_vector(7 DOWNTO 0); -- input for the plaintext word 
+						AddRoundTweakey_IS_OUT : OUT std_logic_vector(7 DOWNTO 0) -- output 
 					); 
 				END COMPONENT AddRoundTweakey; 
-
-				COMPONENT lfsr -- usato per contare anche i rounds
+                
+                -- the linear feedback shift register used to generate round-unique constants 
+                -- to spare logic is also used to determine when the encryption is done. 
+                
+				COMPONENT lfsr 
 					PORT (
 						clk,ce : IN std_logic;
 						reset : IN std_logic;
 						lfsr_out : OUT std_logic_vector (5 DOWNTO 0)
 					);
-
-				END COMPONENT lfsr;
+              
+				END COMPONENT lfsr; 
+				
+				-- this counter is used to handle the loading for plaintext and key but also in addroundtweakey and addroundconstant 
+				-- to control for which word the xoring has to be made.
+				
 				COMPONENT skinny_cnt
 					PORT (
 
@@ -114,6 +140,11 @@ ENTITY Skinny_128_128 IS
 					);
 
 				END COMPONENT;
+				
+				-- this component performs the key scheduling algorithm 
+				-- which is a permutation over the entire key reg 
+				-- unfortunately this operation can't be serialized 
+				
 				COMPONENT rnd_key_update
 
 					PORT (
@@ -124,14 +155,16 @@ ENTITY Skinny_128_128 IS
 						);
  
 					END COMPONENT rnd_key_update; 
-					COMPONENT ShiftRows
-
-						PORT (
- 
-							ShiftRows_In : IN std_logic_vector(7 DOWNTO 0); 
-							ShiftRows_Out : OUT std_logic_vector(7 DOWNTO 0)  
-						); 
-					END COMPONENT ShiftRows; 
+					
+					-- mixcolumns operation
+					 
+					-- this operation is performed on the rows and it consists of  xoring some rows together or simply 
+					-- mix up the rows. this can be done serially taking each first internal state 8-bit word row element 
+					-- at the same time and perform the required operations on them. the result of the operations is then 
+					-- placed at the last position in each row of the internal state. 
+					-- in this way this operation requires 4 clock cycles but it spares logic. 
+					
+					
 					COMPONENT MixColumns
 						PORT (
 							MixColumns_first_row_in : IN std_logic_vector(7 DOWNTO 0);
@@ -149,12 +182,16 @@ ENTITY Skinny_128_128 IS
 					END COMPONENT MixColumns;
 
 					-- STATE MACHINE SIGNAL DECLARATION
-
+					
+                    -- state machine states
+                    -- shiftrows is entirely performed in the state machine
+                    -- mixcolumns has its own state 
+                    -- in rnd_end the key scheduling algorithm is performed
+                    
 					TYPE state IS (LOADING, IDLE, PROCESSING, ShiftR, MixCol, RND_END);
 					SIGNAL nx_state : state; -- cipher possible states
 					SIGNAL current_state : state := idle;
-					--attribute fsm_encoding : string;
-					--attribute fsm_encoding of nx_state : signal is "auto";
+					
 					attribute fsm_safe_state : string;
 					attribute fsm_safe_state of nx_state : signal is "default_state";
 					-- internal signals for interconnections
@@ -311,7 +348,8 @@ ENTITY Skinny_128_128 IS
 						IF rising_edge(CLK) THEN 
 							IF (data_ready = '1') THEN 
 
-								current_state <= LOADING; -- continua a caricare 
+								current_state <= LOADING; 
+								
  
 							ELSE
  
@@ -323,7 +361,7 @@ ENTITY Skinny_128_128 IS
  
 					END PROCESS; 
  
-					--IS_serial_output_fourth_row_buf,IS_serial_output_third_row_buf,IS_serial_output_second_row_buf,plaintext_in,tweakey_in,MixColumns_first_row_out_buf,MixColumns_second_row_out_buf,IS_serial_output_first_row_buf,TW_REG_serial_out_buf,MixColumns_third_row_out_buf,MixColumns_fourth_row_out_buf,AddRoundTweakey_IS_OUT_BUF 
+					
  
 					STATE_MACHINE_BODY : PROCESS (start, current_state, cnt_out_buf, lfsr_out_buf, IS_serial_output_first_row_buf, IS_serial_output_fourth_row_buf, IS_serial_output_third_row_buf, IS_serial_output_second_row_buf, tweakey_in, plaintext_in, Mixcolumns_fourth_row_out_buf, Mixcolumns_first_row_out_buf, Mixcolumns_second_row_out_buf, Mixcolumns_third_row_out_buf, Tw_REG_serial_out_buf, AddRoundTweakey_IS_OUT_BUF) 
 
@@ -358,8 +396,6 @@ ENTITY Skinny_128_128 IS
 								TW_REG_enable_in_buf <= '1';
  
  
- 
- 
 								-- LFSR
 								LFSR_RST_BUF <= '1';
 								LFSR_ENABLE_BUF <= '0';
@@ -367,13 +403,13 @@ ENTITY Skinny_128_128 IS
  
 								--enable cnt and start counting to load the words.
  
-								ENABLE_CNT_BUF <= '1'; -- conta e scorre
+								ENABLE_CNT_BUF <= '1'; -- counting the words 
 								RST_CNT_BUF <= '0';
  
 
-								IF (cnt_out_buf = b"01111") THEN
+								IF (cnt_out_buf = b"01111") THEN 
  
-									nx_state <= idle;
+									nx_state <= idle; -- plaintext and key have been loaded
  
 								ELSE
  
@@ -381,9 +417,8 @@ ENTITY Skinny_128_128 IS
  
 								END IF;
  
- 
 								--MixColumns
-								MixColumns_first_row_in_buf <= (OTHERS => '-');
+								MixColumns_first_row_in_buf <= (OTHERS => '-'); -- don't care 
 								MixColumns_second_row_in_buf <= (OTHERS => '-');
 								MixColumns_third_row_in_buf <= (OTHERS => '-');
 								MixColumns_fourth_row_in_buf <= (OTHERS => '-');
@@ -391,21 +426,24 @@ ENTITY Skinny_128_128 IS
 								--output signals
 								CIPHERTEXT_OUT <= (OTHERS => '0');
  
-								BUSY <= '1';
+								BUSY <= '1'; -- loading ! busy is high 
  
  
 							WHEN idle => 
  
  
-								IF (lfsr_out_buf = b"011010") THEN
- 
+								IF (lfsr_out_buf = b"011010") THEN -- the cipher has done encrypting !!
+								    	
+                                    -- enable the IS shift register
+                                    -- and output each word sequentially from ciphertext_out port 
+                                    
 									IS_enable1_buf <= '1';
 									IS_enable2_buf <= '1';
 									IS_enable3_buf <= '1';
 									IS_enable4_buf <= '1';
 									CIPHERTEXT_OUT <= IS_serial_output_first_row_buf;
  
-								ELSE
+								ELSE -- cipher has not even started working freeze the loaded internal state
 									IS_enable1_buf <= '0';
 									IS_enable2_buf <= '0';
 									IS_enable3_buf <= '0';
@@ -415,20 +453,21 @@ ENTITY Skinny_128_128 IS
 								END IF;
  
 
- 
+                                -- the internal state is simply connected sequentially as one contiguos vector 
+                                -- as the idle state is also the same state when the cipher has done encypting and must output the ciphertext
+                                -- in this way the ciphertext is output serially word by word                                 
+                                
 								IS_serial_in_third_row_buf <= IS_serial_output_fourth_row_buf;
 								IS_serial_in_second_row_buf <= IS_serial_output_third_row_buf;
-								IS_serial_in_first_row_buf <= IS_serial_output_second_row_buf; 
- 
-								-- IS_serial_in_fourth_row_buf <= plaintext_in;
+								IS_serial_in_first_row_buf <= IS_serial_output_second_row_buf; 								
 								IS_serial_in_fourth_row_buf <= MixColumns_fourth_row_out_buf;
  
-								Subcells_in_buf <= (OTHERS => '-');
+								Subcells_in_buf <= (OTHERS => '-'); -- don't care 
  
-								---- stop shifting the TW reg 
+								---- stop shifting the TW reg cipher is in idle 
  
-								TW_REG_enable_in_buf <= '0';
-								TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering 
+								TW_REG_enable_in_buf <= '0'; -- not shifting 
+								TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering of key reg 
 								enable_TW_permutation_buf <= '0';
 								TW_REG_enable_parallel_loading_buf <= '0';
  
@@ -442,8 +481,6 @@ ENTITY Skinny_128_128 IS
  
 								END IF;
  
- 
- 
 								--LFSR 
 								LFSR_RST_BUF <= '0'; 
 								LFSR_ENABLE_BUF <= '0';
@@ -454,64 +491,67 @@ ENTITY Skinny_128_128 IS
 								ENABLE_CNT_BUF <= '0';
  
  
- 
 								--MixColumns
 								MixColumns_first_row_in_buf <= (OTHERS => '-'); 
 								MixColumns_second_row_in_buf <= (OTHERS => '-');
 								MixColumns_third_row_in_buf <= (OTHERS => '-');
 								MixColumns_fourth_row_in_buf <= (OTHERS => '-');
  
-								BUSY <= '0'; -- not busy
+								BUSY <= '0'; -- not busy cipher is in idle or encryption has done 
 								
-							WHEN processing => -- perform SubCells, AddRoundTweakey and AddConstants
+							WHEN processing => -- perform SubCells, AddRoundTweakey and AddConstants sequentially
+                                               -- mixcolumns and shiftows are performed separately as they can't be performed fully sequentially 
+                                               -- as they operate on the internal state rows and not on a singular word/cell.
                                   
-                                  -- outputs
-                                  
+                                  -- outputs                                  
                                   CIPHERTEXT_OUT <= (OTHERS => '0');
                                   BUSY <= '1';
                               
                                   --CNT
-                                  ENABLE_CNT_BUF <= '1'; --counter is enabled
+                                  ENABLE_CNT_BUF <= '1'; --counter is enabled because it controls which words are to be xored in addroundconstant 
+                                                         -- and addroundtweakey 
                                   rst_CNT_buf <= '0';
                                   
                                   --LFSR
                                   lfsr_enable_buf <= '0';
                                   lfsr_rst_buf <= '0';
-                                                                    
-
-                                  
-                                  
-                                  
+                                                                                                                                
                                   --IS shifts
                                   IS_enable1_buf <= '1';
                                   IS_enable2_buf <= '1';
                                   IS_enable3_buf <= '1';
                                   IS_enable4_buf <= '1';
-                             
+                                  
+                                  -- the internal state shifts normally as a contiguos vector
+                                  --  each word is processed by subcells addroundconstants and addroundtweakey and then put 
+                                  -- back at the end of the internal state
                                   IS_serial_in_third_row_buf <= IS_serial_output_fourth_row_buf;
                                   IS_serial_in_second_row_buf <= IS_serial_output_third_row_buf;
                                   IS_serial_in_first_row_buf <= IS_serial_output_second_row_buf; 
                              
                                  -- IS and subcells and addRoundTweakey
                                 IS_serial_in_fourth_row_buf <= AddRoundTweakey_IS_out_buf; -- put result of addrndtweakey back onto IS
-                                SubCells_in_buf <= IS_serial_output_first_row_buf; --output m0 to subcells
+                                SubCells_in_buf <= IS_serial_output_first_row_buf; --output m0 to subcells (m0 is te first cell in the IS)
                              
                               --TW
-                             TW_REG_enable_in_buf <= '1';
-                             TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering
-                            enable_TW_permutation_buf <= '0';
+                             TW_REG_enable_in_buf <= '1'; -- keep shiting the key reg on itself 
+                             TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering 
+                             -- the key register shifts circularly and the first word at each clock cycle is used 
+                             -- in the AddRoundTweakey operation 
+                             enable_TW_permutation_buf <= '0'; -- no key scheduling the round is not complete 
                              TW_REG_enable_parallel_loading_buf <= '0';
                              
                              --MixColumns
                           MixColumns_first_row_in_buf <= (OTHERS => '-'); 
-                            MixColumns_second_row_in_buf <= (OTHERS => '-');
-                            MixColumns_third_row_in_buf <= (OTHERS => '-');
-                                            MixColumns_fourth_row_in_buf <= (OTHERS => '-');                            
+                          MixColumns_second_row_in_buf <= (OTHERS => '-');
+                          MixColumns_third_row_in_buf <= (OTHERS => '-');
+                          MixColumns_fourth_row_in_buf <= (OTHERS => '-');    
+                                                  
                              
-                     -- nx_state transition 
-                     
+                     -- nx_state transition                     
                      if cnt_out_buf = b"01111" then 
-                      nx_state <= SHIFTR;
+                      nx_state <= SHIFTR; -- the internal state is aligned and all the three operations are complete
+                                          -- proceed with shiftrows
                       
                       else
                       
@@ -529,7 +569,7 @@ ENTITY Skinny_128_128 IS
       BUSY <= '1';
                                   
       --CNT
-       ENABLE_CNT_BUF <= '1'; --counter is enabled
+       ENABLE_CNT_BUF <= '1'; --counter is enabled it is used to count the necessary shifts for each row 
        rst_CNT_buf <= '0';
                                       
            --LFSR
@@ -545,13 +585,13 @@ ENTITY Skinny_128_128 IS
     IS_enable1_buf <= '0'; -- first row is not shifted
     IS_serial_in_first_row_buf <= (others => '-'); 
 
-    --circular shifting on others rows row
+    --circular shifting on others rows 
     IS_serial_in_second_row_buf <= IS_serial_output_second_row_buf;
     IS_serial_in_third_row_buf <= IS_serial_output_third_row_buf;
     IS_serial_in_fourth_row_buf <= IS_serial_output_fourth_row_buf;
     
     --TW reg 
-     TW_REG_enable_in_buf <= '1'; -- keep shfting 
+     TW_REG_enable_in_buf <= '1'; -- keep shifting the key on itself 
      TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering
      enable_TW_permutation_buf <= '0';
      TW_REG_enable_parallel_loading_buf <= '0';
@@ -566,6 +606,7 @@ ENTITY Skinny_128_128 IS
     MixColumns_fourth_row_in_buf <= (OTHERS => '-');
     
     --shifting other rows 
+    -- the counter and enables are used to shift circularly each row accordingly to the cipher specification 
     
     if cnt_out_buf = b"10001" THEN 
     
@@ -611,10 +652,13 @@ when MIXCOL => -- perform MIXCOLUMNS
             --LFSR
             lfsr_enable_buf <= '0';
             lfsr_rst_buf <= '0';
-             
-             
+                        
  
 			 --all rows mapped to mixcolumns
+			 -- mixcolumns must be performed on all rows on the same time 
+			 -- each row of the internal state shifts and the first element is processed by mixcolumns
+			 -- this operation requires 4 clock cycles.
+			 
 	 		MixColumns_first_row_in_buf <= IS_serial_output_first_row_buf;
 			IS_serial_in_first_row_buf <= MixColumns_first_row_out_buf;
  
@@ -632,10 +676,10 @@ when MIXCOL => -- perform MIXCOLUMNS
 			SubCells_in_buf <= (OTHERS => '-');
  
 		--TW 
-		 -- shifting 
+		 
 		TW_REG_serial_in_buf <= TW_REG_serial_out_buf; --circular buffering
-	    TW_REG_enable_in_buf <= '1';    
-        enable_TW_permutation_buf <= '0';
+	    TW_REG_enable_in_buf <= '1'; -- shifting on itself 
+        enable_TW_permutation_buf <= '0'; 
         TW_REG_enable_parallel_loading_buf <= '0';  
  
              
@@ -649,14 +693,14 @@ when MIXCOL => -- perform MIXCOLUMNS
       IS_enable3_buf <= '0'; 
       IS_enable2_buf <= '0';
                 
-         IF  lfsr_out_buf = b"011010" THEN       
+         IF  lfsr_out_buf = b"011010" THEN  -- cipher has done encrypting go to idle and output ciphertext
          nx_state <= IDLE; 
          ELSE 
-        nx_state <= RND_END; 
+        nx_state <= RND_END; -- rnd_end operation 
         END IF; 
       
         
-        ELSE -- keep performing MIXCOL
+        ELSE -- keep performing MIXCOLUMNS
         
       IS_enable1_buf <= '1';
        IS_enable4_buf <= '1'; 
@@ -671,12 +715,14 @@ when MIXCOL => -- perform MIXCOLUMNS
 
 WHEN RND_END => 
 
+   -- in rnd_end operation the key schedule is performed
+
    CIPHERTEXT_OUT <= (OTHERS => '0');
  
 	BUSY <= '1';
 
     --IS 
-	IS_enable1_buf <= '0';
+	IS_enable1_buf <= '0'; -- internal state is not shifted 
     IS_enable2_buf <= '0';
 	IS_enable3_buf <= '0';
     IS_enable4_buf <= '0';
@@ -691,25 +737,25 @@ WHEN RND_END =>
  
 			--TW -- perform permutation
 			TW_REG_enable_in_buf <= '0'; -- not shifting
-			enable_TW_permutation_buf <= '1';
+			enable_TW_permutation_buf <= '1'; -- perform permutation on the tweakey reg 
 		   TW_REG_enable_parallel_loading_buf <= '1';
 		TW_REG_serial_in_buf <= TW_REG_serial_out_buf;
  
  
 			--LFSR
 	    	lfsr_rst_buf <= '0';
-			lfsr_enable_buf <= '1'; -- increase the lfsr count
+			lfsr_enable_buf <= '1'; -- increase the lfsr count because one round is complete
  
 			--CNT
-			rst_CNT_buf <= '1';
+			rst_CNT_buf <= '1'; -- reset the counter 
 			ENABLE_CNT_BUF <= '1';
-			-- enable is on top
+			
  
 		--state
 		nx_state <= processing;
  
 							--MixColumns
-							MixColumns_first_row_in_buf <= (OTHERS => '-');
+							MixColumns_first_row_in_buf <= (OTHERS => '-'); -- don't care the result has been placed in the IS in the preceding state
 							MixColumns_second_row_in_buf <= (OTHERS => '-');
 							MixColumns_third_row_in_buf <= (OTHERS => '-');
 							MixColumns_fourth_row_in_buf <= (OTHERS => '-'); 

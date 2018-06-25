@@ -22,17 +22,17 @@ signal tweakey_perm_out_internal: std_logic_vector(63 downto 0);
 begin
 
 
-
-
-
 PERMUTATION : PROCESS(enable_permutation,TWEAKEY_permutation_IN)
 
+-- the permutation is unfortunately made over the entire key reg 
+-- this is inefficient in software and fpgas but very efficient in hardware ASIC implementations 
+-- with scan flip flops
 
 begin
 
 
 
-if enable_permutation = '1' then
+if enable_permutation = '1' then                                               -- tweakey cell:
     tweakey_perm_out_internal <=  TWEAKEY_permutation_IN(55 downto 48)   &     --9
                     TWEAKEY_permutation_IN(7 downto 0)     &     --15
                     TWEAKEY_permutation_IN(63 downto 56)   &     -- 8

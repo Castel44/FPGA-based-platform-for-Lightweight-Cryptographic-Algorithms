@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Jun 23 19:01:06 2018
+# Process ID: 3768
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon_32_64_parallel_10Mhz
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8556 F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\VIVADO-lightweight-crypto-project\Simon_32_64_parallel_10Mhz\Simon_32_64_parallel_10Mhz.xpr
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon_32_64_parallel_10Mhz/vivado.log
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon_32_64_parallel_10Mhz\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon_32_64_parallel_10Mhz/Simon_32_64_parallel_10Mhz.xpr}
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1

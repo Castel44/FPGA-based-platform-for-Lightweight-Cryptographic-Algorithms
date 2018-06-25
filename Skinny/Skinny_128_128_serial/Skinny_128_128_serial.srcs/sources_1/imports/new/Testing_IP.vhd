@@ -1,3 +1,12 @@
+-- top entity used for experimental measurements of power consumption on the Zybo board 
+-- this top entity is kept omogeneous among all ciphers as much as possible to allow a fair comparison
+-- it is implemented via a state machine. 
+
+-- this top entity has only three ports plus clock. 
+-- the three ports are mapped to Zybo GPIOs and the connections are specified in the XDC constraints file
+-- More in detail, start is mapped to Pmod JA N16 pin, rst to Pmod JA L15 pin and led_out to LED PIN M14
+-- the led out is only a visual cue for cipher proper functioning and encryption success.
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
@@ -38,11 +47,11 @@ component cnt
  end component; 
 
 
--- internal signal 
-signal tweakey_tst: std_logic_vector(127 downto 0) := X"4f55cfb0520cac52fd92c15f37073e93"; 
-signal plaintext_tst: std_logic_vector(127 downto 0) := X"f20adb0eb08b648a3b2eeed1f0adda14";
+-- internal signals 
+signal tweakey_tst: std_logic_vector(127 downto 0) := X"4f55cfb0520cac52fd92c15f37073e93"; -- key test vector 
+signal plaintext_tst: std_logic_vector(127 downto 0) := X"f20adb0eb08b648a3b2eeed1f0adda14"; -- plaintext test vector 
 signal ciphertext_out_W: std_logic_vector(7 downto 0) ;
-signal correct_ciphertext: std_logic_vector(127 downto 0):= X"22ff30d498ea62d7e45b476e33675b74";
+signal correct_ciphertext: std_logic_vector(127 downto 0):= X"22ff30d498ea62d7e45b476e33675b74"; -- ciphertext test vector 
 
 signal plaintext_reg: std_logic_vector(7 downto 0):= (others => '0');
 signal tweakey_reg: std_logic_vector(7 downto 0):= (others => '0');
@@ -53,6 +62,7 @@ signal cnt_ce_W: std_logic;
 signal cnt_rst_W: std_logic; 
 signal cnt_out_W: std_logic_vector(3 downto 0); 
 
+-- state machine states
 type state is (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS ); 
 signal nx_state : state;
 signal current_state : state := IDLE; 
@@ -71,7 +81,7 @@ Skinny_DUT: Skinny_128_128
       busy => busy_W  
     ); 
 
-
+-- this counter is used to handle the correct loading of plaintext and key 
 INST_CNT: cnt 
     generic map ( size => 4) 
     port map ( 
@@ -189,6 +199,7 @@ begin
         led_out <= '0'; 
         
         -- transition 
+        -- control the first part of ciphertext if it is correct 
         if (busy_W='0') and (ciphertext_out_W = correct_ciphertext(127 downto 120)) then 
             nx_state <= ending;          
         else           
@@ -210,6 +221,7 @@ begin
         led_out<= '0';     
         
         -- transition    
+        -- control the last part of the ciphertext if it is correct 
         if (cnt_out_W = b"1110") and (ciphertext_out_W = correct_ciphertext(119-8*(to_integer(unsigned(cnt_out_W))) downto 112-8*(to_integer(unsigned(cnt_out_W))))) then     
             nx_state <= success;     
         else    
@@ -228,7 +240,7 @@ begin
         cnt_rst_W <= '1'; -- reset cnt 
         
         -- output ports         
-        led_out<= '1'; 
+        led_out<= '1'; -- Success! led should turn on 
          
         -- transition            
         nx_state <= success;                  

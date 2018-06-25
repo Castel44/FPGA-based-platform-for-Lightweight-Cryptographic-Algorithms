@@ -1,11 +1,12 @@
 library IEEE;
 
+ 
 
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity skinny_shift_reg_64 is
 
-  --  4 bit datapath (64 bit IS)
+ 
     
 	port(serial_in_first_row: in std_logic_vector (7 downto 0);  	     
 	     serial_in_second_row: in std_logic_vector (7 downto 0);  
@@ -40,16 +41,6 @@ component IS_shift_reg port (
 end component; 
 
 
---signal serial_in_first_row_buf: std_logic_vector(3 downto 0); 
---signal serial_in_second_row_buf: std_logic_vector(3 downto 0); 
---signal serial_in_third_row_buf: std_logic_vector(3 downto 0); 
---signal serial_in_fourth_row_buf: std_logic_vector(3 downto 0); 
-
-
---signal serial_output_first_row_buf: std_logic_vector(3 downto 0); 
---signal serial_output_second_row_buf: std_logic_vector(3 downto 0); 
---signal serial_output_third_row_buf: std_logic_vector(3 downto 0); 
---signal serial_output_fourth_row_buf: std_logic_vector(3 downto 0); 
 
 
 begin 
