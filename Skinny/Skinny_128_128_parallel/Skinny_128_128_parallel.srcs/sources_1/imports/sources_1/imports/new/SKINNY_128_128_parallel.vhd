@@ -1,14 +1,15 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
---n=128;    s=8bit;     t=n;    z=1;
+-- Skinny 128/128 (128 bits key and 128 bits plaintext)
+-- fully parallel (datapath 128 bits; 1 clock cycle per round) 
 
 entity SKINNY_128_128_parallel is 
   Port ( 
         CLK : in STD_LOGIC;
         PLAINTEXT_IN : in  STD_LOGIC_VECTOR (127 downto 0);
         tweakey_in : in  STD_LOGIC_VECTOR (127 downto 0);
-        START,DATA_READY : in  STD_LOGIC;
+        START,DATA_READY : in  STD_LOGIC; 
         BUSY : out  STD_LOGIC:= '0';
         CIPHERTEXT_OUT : out  STD_LOGIC_VECTOR (127 downto 0):= (others => '0')
         ); 
@@ -233,7 +234,7 @@ STATE_MACHINE_MAIN : PROCESS (clk, data_ready, nx_state)
 BEGIN
     IF rising_edge(CLK) THEN 
         IF (data_ready = '1') THEN 
-            current_state <= LOADING; -- keeps loading (used as an idle state to spare logic) 
+            current_state <= LOADING;
         ELSE
             current_state <= nx_state;
         END IF; 

@@ -74,7 +74,7 @@ begin
     end if;    
 end process; 
             
--- simple state machine 
+
 
 STATE_MACHINE_BODY : process(current_state,start, ciphertext_out_W, busy_W)
 begin  

@@ -7,8 +7,7 @@ entity AddRoundTweakey is
              
        perform_AddRoundTweakey: in std_logic_vector (4 downto 0);            
        AddRoundTweakey_TWEAKEY_IN : IN std_logic_vector(7 downto 0);     
-       AddRoundTweakey_IS_IN : IN std_logic_vector(7 downto 0);                     
-       --AddRoundTweakey_TWEAKEY_OUT : OUT std_logic_vector(3 downto 0):= (others => '0');        
+       AddRoundTweakey_IS_IN : IN std_logic_vector(7 downto 0);                          
        AddRoundTweakey_IS_OUT : OUT std_logic_vector(7 downto 0):= (others => '0')    
        );      
        
@@ -20,7 +19,7 @@ begin
     
 ELEMENTWISE_XORING : PROCESS (perform_AddRoundTweakey,AddRoundTweakey_IS_IN,AddRoundTweakey_TWEAKEY_IN)
 begin
-if perform_AddRoundTweakey <= 7 then
+if perform_AddRoundTweakey <= 7 then -- only the first and second rows are xored (first 8 words in the internal state)
 
     AddRoundTweakey_IS_OUT <= AddRoundTweakey_IS_IN XOR AddRoundTweakey_TWEAKEY_IN;
 else
