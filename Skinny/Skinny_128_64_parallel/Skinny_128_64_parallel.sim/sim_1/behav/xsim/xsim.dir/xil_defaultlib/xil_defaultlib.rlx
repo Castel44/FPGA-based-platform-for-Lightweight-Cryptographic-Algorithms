@@ -1,0 +1,20 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sim_1/imports/new/Skinny_64_64_parallel_TB.vhd,1529499461,vhdl,,,,skinny_64128tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sim_1/imports/new/Testing_TB.vhd,1529497727,vhdl,,,,testing_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundConstants.vhd,1504619916,vhdl,,,,addroundconstants,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundTweakey.vhd,1504732572,vhdl,,,,addroundtweakey,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/LFSR_TK2.vhd,1504747957,vhdl,,,,lfsr_tk2,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/MixColumns.vhd,1504622844,vhdl,,,,mixcolumns,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd,1529500128,vhdl,,,,skinny_64_128_parallel,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/ShiftRows.vhd,1504622644,vhdl,,,,shiftrows,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd,1504615756,vhdl,,,,subcells_64,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd,1504615701,vhdl,,,,subcells_nibble,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd,1504750067,vhdl,,,,tk2_schedule,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd,1529500059,vhdl,,,,testing_ip,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd,1505151224,vhdl,,,,lfsr,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd,1504617580,vhdl,,,,mux,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd,1505151175,vhdl,,,,reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/tw_schedule.vhd,1504749564,vhdl,,,,tk1_schedule,,,,,,,,

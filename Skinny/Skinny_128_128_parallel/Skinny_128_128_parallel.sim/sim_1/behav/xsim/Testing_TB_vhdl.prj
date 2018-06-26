@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundConstants.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/AddRoundTweakey.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/MixColumns.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SBOX_8bit.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SKINNY_128_128_parallel.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/ShiftRows.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/SubCells_128.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/new/Testing_IP.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/lfsr.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/mux.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/reg.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sources_1/imports/sources_1/imports/new/tw_schedule.vhd" \
+"../../../../Skinny_128_128_parallel.srcs/sim_1/imports/sim_1/new/Testing_TB.vhd" \
+
+# Do not sort compile order
+nosort

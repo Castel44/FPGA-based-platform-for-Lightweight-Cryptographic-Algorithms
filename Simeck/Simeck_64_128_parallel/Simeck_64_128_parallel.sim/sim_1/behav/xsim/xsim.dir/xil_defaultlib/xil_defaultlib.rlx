@@ -1,0 +1,15 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1529775585,vhdl,,,,testing_ip_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/simeck_parallel_TB.vhd,1504447730,vhdl,,,,simeck_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/CNT.vhd,1529963796,vhdl,,,,cnt,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/MUX.vhd,1504014677,vhdl,,,,mux,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/RND_FUNCTION.vhd,1504446449,vhdl,,,,rnd_function_parallel,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/Simeck32_64_parallel.vhd,1529963796,vhdl,,,,simeck_64_128_parallel,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/Testing_IP.vhd,1529963934,vhdl,,,,testing_ip,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/key_schedule_function_parallel.vhd,1504446449,vhdl,,,,key_schedule_function_parallel,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/lfsr.vhd,1505486512,vhdl,,,,lfsr,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd,1504292536,vhdl,,,,normal_shift_reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd,1504292258,vhdl,,,,parallel_tapped_shift_reg,,,,,,,,

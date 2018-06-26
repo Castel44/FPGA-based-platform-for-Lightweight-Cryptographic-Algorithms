@@ -1,0 +1,18 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1529588304,vhdl,,,,testing_ip_tb,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/AddConstant.vhd,1505086373,vhdl,,,,addconstant,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/AddRoundTweakey.vhd,1505086424,vhdl,,,,addroundtweakey,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/Element_Cnt.vhd,1505091295,vhdl,,,,skinny_cnt,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/IS_Shift_Reg.vhd,1505086609,vhdl,,,,skinny_shift_reg_64,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/MixColumn.vhd,1505086597,vhdl,,,,mixcolumns,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/NEWSKINNY.vhd,1505086944,vhdl,,,,skinny_128_128,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/SubCells_4bit.vhd,1505085993,vhdl,,,,subcells,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/TW_shift_reg.vhd,1505092249,vhdl,,,,shift_reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd,1529588654,vhdl,,,,testing_ip,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/cnt.vhd,1529543176,vhdl,,,,cnt,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/is_shift_reg_NEW.vhd,1505091455,vhdl,,,,is_shift_reg,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/lfsr.vhd,1505090992,vhdl,,,,lfsr,,,,,,,,
+F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.srcs/sources_1/imports/new/rnd_key_update.vhd,1505086572,vhdl,,,,rnd_key_update,,,,,,,,

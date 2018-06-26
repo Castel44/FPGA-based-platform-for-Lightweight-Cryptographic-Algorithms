@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/CNT.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/END_ENCRYPT_SHIFT_REG.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/MUX.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/RND_FUNCTION.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/Simeck_48_96.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/Testing_IP.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/key_schedule_function_parallel.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/lfsr.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd" \
+"../../../../Simeck_48_96_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd" \
+
+# Do not sort compile order
+nosort

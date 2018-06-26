@@ -1,9 +1,1 @@
-# Xilinx creates a huge bunch of auxiliary files,
 
-# so we use a whitelisting approach here.
-
-# Ignore all but source files and constraint and vivado project files
-/*
-!*.vhd
-!*.xdc
-!*.xpr

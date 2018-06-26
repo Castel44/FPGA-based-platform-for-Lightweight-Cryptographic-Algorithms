@@ -1,0 +1,15 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/CNT_48.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/Simeck_bit_serial.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/cnt.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/lfsr.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/mux.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/normal_shift_reg.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/rnd_constants_function.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/rnd_function.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sources_1/imports/new/tapped_shift_reg.vhd" \
+"../../../../Simeck_48_96_serial.srcs/sim_1/imports/new/Simeck_serial_TB.vhd" \
+
+# Do not sort compile order
+nosort

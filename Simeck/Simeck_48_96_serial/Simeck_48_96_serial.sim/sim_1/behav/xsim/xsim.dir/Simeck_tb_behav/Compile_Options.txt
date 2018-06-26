@@ -1,0 +1,1 @@
+-wto "792ee3f932974929a9ea1228891664e0" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "Simeck_tb_behav" "xil_defaultlib.Simeck_tb" -log "elaborate.log" 
