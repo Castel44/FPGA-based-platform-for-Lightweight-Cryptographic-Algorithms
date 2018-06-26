@@ -1,63 +1,52 @@
-library IEEE;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+-- Tweakey shift register
+ENTITY shift_reg IS
+	PORT (
+		parallel_in : IN std_logic_vector (63 DOWNTO 0); -- parallel in and out used for key scheduling permutation
+		serial_in : IN std_logic_vector(7 DOWNTO 0);
+		clock, enable_in : IN std_logic;
+		enable_parallel_loading : IN std_logic; -- this enables will be set high when permutation has to be performed
+		serial_output : OUT std_logic_vector (7 DOWNTO 0) := (OTHERS => '0');
+		parallel_output : OUT std_logic_vector (63 DOWNTO 0) := (OTHERS => '0')
+	);
+END shift_reg;
 
-use IEEE.STD_LOGIC_1164.ALL;
+ARCHITECTURE behavioural OF shift_reg IS
 
-entity shift_reg is
- 
-    
-	port(parallel_in: in std_logic_vector (63 downto 0);  -- parallel in and out used for key scheduling permutation
-	     serial_in :in std_logic_vector(7 downto 0); 
-		 clock,enable_in : in std_logic;
-		 enable_parallel_loading : in std_logic ; -- this enables will be set high when permutation has to be performed
-         serial_output: out std_logic_vector (7 downto 0):= (Others => '0') ; 
-		 parallel_output: out std_logic_vector (63 downto 0):= (Others => '0')	 
-		);		
-end shift_reg;
+	SIGNAL temp_reg : std_logic_vector(127 DOWNTO 0) := (OTHERS => '0');
+	TYPE STATES IS (loading, shifting);
+	SIGNAL state : states;
+BEGIN
 
-architecture behavioural of shift_reg is
+	PROCESS (enable_in, enable_parallel_loading)
+	BEGIN
+		IF (enable_parallel_loading = '1') THEN -- perform permutation and load from the parallel in                    
+			state <= loading;
+		ELSIF (enable_in = '1') THEN
+			state <= shifting;
+		ELSE
+			state <= loading;
+		END IF;
 
-signal temp_reg: std_logic_vector(127 downto 0) := (Others => '0');
-TYPE STATES is (loading, shifting);
-signal state: states; 
+	END PROCESS;
 
+	PROCESS (clock, state)
+	BEGIN
+		IF rising_edge(clock) THEN
+			CASE state IS
+				WHEN loading =>
+					temp_reg(127 DOWNTO 64) <= parallel_in;
+				WHEN shifting =>
+					temp_reg <= temp_reg(119 DOWNTO 0) & serial_in;
 
-begin 
-   
-process(enable_in,enable_parallel_loading)	
-begin	
+			END CASE;
+		END IF;
+	END PROCESS;
 
-    if(enable_parallel_loading = '1') then -- perform permutation and load from the parallel in                    
-        state <= loading;                        
-    elsif(enable_in ='1')    then
-         state <= shifting;        
-    else
-        state <= loading;                                   
-    end if;
-
-end process;
-
-process(clock, state)  
-begin 
-  
-       
-        
-               
-    if rising_edge(clock) then	    
-        case state is 
-            when loading =>						                
-                 temp_reg(127 downto 64) <= parallel_in;
-                 
-                
-            when shifting => 
-                temp_reg <= temp_reg(119 downto 0) & serial_in;
-                                 
-        end case;
-    end if;
-end process;
-			
-serial_output <= temp_reg(127 downto 120); 
-parallel_output <= temp_reg(127 downto 64) ; 	
-
-
-end behavioural;
+	serial_output <= temp_reg(127 DOWNTO 120);
+	parallel_output <= temp_reg(127 DOWNTO 64);
+	
+	
+END behavioural;

@@ -7,8 +7,7 @@ entity AddRoundTweakey is
              
        perform_AddRoundTweakey: in std_logic_vector (4 downto 0);            
        AddRoundTweakey_TWEAKEY_IN : IN std_logic_vector(3 downto 0);     
-       AddRoundTweakey_IS_IN : IN std_logic_vector(3 downto 0);                     
-       --AddRoundTweakey_TWEAKEY_OUT : OUT std_logic_vector(3 downto 0):= (others => '0');        
+       AddRoundTweakey_IS_IN : IN std_logic_vector(3 downto 0);                                  
        AddRoundTweakey_IS_OUT : OUT std_logic_vector(3 downto 0):= (others => '0')    
        );      
        

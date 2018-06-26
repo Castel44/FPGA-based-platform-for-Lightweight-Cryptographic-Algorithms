@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- it is simply a fixed permutation on the key register
 
 entity tw_schedule is
   Port ( TWEAKEY_schedule_IN : IN std_logic_vector(127 downto 0);
@@ -12,7 +11,7 @@ end tw_schedule;
 architecture Behavioral of tw_schedule is
 
 begin
-                                                                      -- 8 bits word: 
+
 TWEAKEY_schedule_OUT <=     Tweakey_schedule_IN(55 downto 48)   &     --9
                             Tweakey_schedule_IN(7 downto 0)     &     --15
                             Tweakey_schedule_IN(63 downto 56)   &     -- 8

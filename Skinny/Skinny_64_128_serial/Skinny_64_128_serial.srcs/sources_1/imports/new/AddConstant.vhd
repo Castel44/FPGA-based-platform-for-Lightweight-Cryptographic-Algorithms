@@ -1,31 +1,28 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
---use work.lfsr_skinny_64.vhd ;   NON CREDO CHE SERVA, LO METTO COME COMPONENT
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity AddConstant is
-    Port (  --RST : IN std_logic; 
-       perform_AddConstant: in std_logic_vector (4 downto 0) ;      --ELEMENT COUNTER    
-       lfsr_in: in std_logic_vector(5 downto 0); 
-       AddConstant_IN : IN std_logic_vector (3 downto 0);       
-       AddConstant_OUT : OUT std_logic_vector (3 downto 0)     
-       
-       );    
-       
-end AddConstant;
+ENTITY AddConstant IS
+	PORT (--RST : IN std_logic; 
+		perform_AddConstant : IN std_logic_vector (4 DOWNTO 0); --ELEMENT COUNTER    
+		lfsr_in : IN std_logic_vector(5 DOWNTO 0);
+		AddConstant_IN : IN std_logic_vector (3 DOWNTO 0);
+		AddConstant_OUT : OUT std_logic_vector (3 DOWNTO 0)
 
-architecture Behavioral of AddConstant is
+	);
 
--- internal signals 
-constant c2: std_logic_vector(3 downto 0) := "0010" ; 
+END AddConstant;
 
-begin
+ARCHITECTURE Behavioral OF AddConstant IS
 
+	-- internal signals 
+	CONSTANT c2 : std_logic_vector(3 DOWNTO 0) := "0010";
 
-with perform_AddConstant select 
+BEGIN
+	WITH perform_AddConstant SELECT
 
-AddConstant_OUT <=  AddConstant_IN xor lfsr_in (3 downto 0)                when b"00000",  -- m0 xored with c0
-                    AddConstant_IN xor '0' & '0' & lfsr_in(5 downto 4)     when b"00100",  --m4 xored with c1
-                    AddConstant_IN xor c2                                   when b"01000",  --m8 xored with c2
-                    AddConstant_IN                                          when others; 
+		AddConstant_OUT <= AddConstant_IN XOR lfsr_in (3 DOWNTO 0) WHEN b"00000", -- m0 xored with c0
+		AddConstant_IN XOR '0' & '0' & lfsr_in(5 DOWNTO 4) WHEN b"00100", --m4 xored with c1
+		AddConstant_IN XOR c2 WHEN b"01000", --m8 xored with c2
+		AddConstant_IN WHEN OTHERS;
 
-end Behavioral;
+END Behavioral;

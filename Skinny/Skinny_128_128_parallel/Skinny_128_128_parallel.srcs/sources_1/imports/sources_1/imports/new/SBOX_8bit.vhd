@@ -1,46 +1,38 @@
-library IEEE;
-use IEEE.Std_logic_1164.all;
-   
+LIBRARY IEEE;
+USE IEEE.Std_logic_1164.ALL;
 
+ENTITY SBOX_8bit IS
 
-entity SBOX_8bit is         
+	PORT (
+		SBOX_byte_in : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		SBOX_byte_out : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
 
-port (      
-      SBOX_byte_in :in STD_LOGIC_VECTOR (7 downto 0) ;
-      SBOX_byte_out :out STD_LOGIC_VECTOR (7 downto 0) 
-	  );
-	  
-end SBOX_8bit;
+END SBOX_8bit;
 
-architecture Behavioural of SBOX_8bit is 
-begin
+ARCHITECTURE Behavioural OF SBOX_8bit IS
+BEGIN
 
-process(SBOX_byte_in)
+	PROCESS (SBOX_byte_in)
 
-variable x: std_logic_vector (7 downto 0);  -- initillize and declare variable
+		VARIABLE x : std_logic_vector (7 DOWNTO 0); -- initillize and declare variable
 
-begin
+	BEGIN
 
-x := SBOX_byte_in;
-                      
-	
-	x := x(7 downto 5) &  ( x(4) xor ( not ( x(7) or x(6) ) ) ) & x(3 downto 1) & ( x(0) xor ( not ( x(3) or x(2) ) ) ) ; 
-    x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5) ;  
-    
-	x := x(7 downto 5) &  ( x(4) xor ( not ( x(7) or x(6) ) ) ) & x(3 downto 1) & ( x(0) xor ( not ( x(3) or x(2) ) ) ) ; 
-    x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5) ;  
-    
-	x := x(7 downto 5) &  ( x(4) xor ( not ( x(7) or x(6) ) ) ) & x(3 downto 1) & ( x(0) xor ( not ( x(3) or x(2) ) ) ) ; 
-    x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5) ;  
-    
-	x := x(7 downto 5) &  ( x(4) xor ( not ( x(7) or x(6) ) ) ) & x(3 downto 1) & ( x(0) xor ( not ( x(3) or x(2) ) ) ) ; 
-    x := x(7 downto 3) & x(1) & x(2) & x(0) ;  
-		
-SBOX_byte_out <= x;
-	
-end process;
+		x := SBOX_byte_in;
+		x := x(7 DOWNTO 5) & (x(4) XOR (NOT (x(7) OR x(6)))) & x(3 DOWNTO 1) & (x(0) XOR (NOT (x(3) OR x(2))));
+		x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5);
 
+		x := x(7 DOWNTO 5) & (x(4) XOR (NOT (x(7) OR x(6)))) & x(3 DOWNTO 1) & (x(0) XOR (NOT (x(3) OR x(2))));
+		x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5);
 
-end Behavioural; 
+		x := x(7 DOWNTO 5) & (x(4) XOR (NOT (x(7) OR x(6)))) & x(3 DOWNTO 1) & (x(0) XOR (NOT (x(3) OR x(2))));
+		x := x(2) & x(1) & x(7) & x(6) & x(4) & x(0) & x(3) & x(5);
 
+		x := x(7 DOWNTO 5) & (x(4) XOR (NOT (x(7) OR x(6)))) & x(3 DOWNTO 1) & (x(0) XOR (NOT (x(3) OR x(2))));
+		x := x(7 DOWNTO 3) & x(1) & x(2) & x(0);
 
+		SBOX_byte_out <= x;
+
+	END PROCESS;
+END Behavioural;

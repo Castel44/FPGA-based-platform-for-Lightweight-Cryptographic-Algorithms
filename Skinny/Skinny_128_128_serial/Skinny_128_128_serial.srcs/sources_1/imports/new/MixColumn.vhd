@@ -21,7 +21,6 @@ end MixColumns;
 architecture Behavioral of MixColumns is
 
 
-
 begin
 
 -- page 7 of skinny specification 

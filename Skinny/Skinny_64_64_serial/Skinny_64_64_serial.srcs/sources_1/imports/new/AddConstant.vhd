@@ -1,9 +1,9 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
---use work.lfsr_skinny_64.vhd ;   NON CREDO CHE SERVA, LO METTO COME COMPONENT
+
 
 entity AddConstant is
-    Port (  --RST : IN std_logic; 
+    Port (  
        perform_AddConstant: in std_logic_vector (4 downto 0) ;      --ELEMENT COUNTER    
        lfsr_in: in std_logic_vector(5 downto 0); 
        AddConstant_IN : IN std_logic_vector (3 downto 0);       

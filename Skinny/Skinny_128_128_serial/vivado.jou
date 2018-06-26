@@ -2,35 +2,21 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Thu Jun 21 15:45:03 2018
-# Process ID: 10680
-# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2948 F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\Xilinx_contest\Skinny\Skinny_128_128_serial\Skinny_128_128_serial.xpr
-# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/vivado.log
-# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial\vivado.jou
+# Start of session at: Tue Jun 26 11:57:40 2018
+# Process ID: 10612
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9348 F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\VIVADO-lightweight-crypto-project\Skinny\Skinny_128_128_serial\Skinny_128_128_serial.xpr
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/vivado.log
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.xpr}
+open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.xpr}
 update_compile_order -fileset sources_1
 launch_simulation
 launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
 source Testing_IP_TB.tcl
-run all
 restart
 run all
-close_sim
-set_property STEPS.POWER_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
-update_ip_catalog
-update_ip_catalog
-update_ip_catalog
+reset_run synth_1
 launch_runs impl_1 -jobs 8
 wait_on_run impl_1
-launch_simulation -mode post-implementation -type timing
-source Testing_IP_TB.tcl
-run all
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-wait_on_run impl_1
-close_sim

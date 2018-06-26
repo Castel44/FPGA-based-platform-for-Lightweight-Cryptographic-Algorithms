@@ -1,9 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- mixes internal state columns 
--- can be espressed as xors and permutation of the internal state rows
-
 entity MixColumns is
 PORT(   MixCol_In : IN std_logic_vector(127 downto 0);      
         MixCol_Out : OUT std_logic_vector(127 downto 0):=(others => '0') 
@@ -36,7 +33,7 @@ first_row   := MixCol_in(127 downto 96);
     temp1 := first_row;  -- second row 
     temp2 := second_row xor third_row; --third row
     temp3 := first_row xor third_row xor fourth_row; --first row 
-    temp4 := first_row xor third_row; --fourth row                 
+    temp4 := first_row xor third_row; --fourth row            --fourth row       
 
 
 MixCol_out <=  temp3 & temp1 & temp2 & temp4 ;  

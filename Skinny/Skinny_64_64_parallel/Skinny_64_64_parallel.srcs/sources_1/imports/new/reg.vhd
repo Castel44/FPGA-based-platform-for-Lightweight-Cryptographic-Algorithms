@@ -1,26 +1,26 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity reg is  Port ( 
-     clk,ce: std_logic; 
-     D:in std_logic_vector(63 downto 0); 
-     Q:out std_logic_vector(63 downto 0)
+ENTITY reg IS PORT (
+	clk, ce : std_logic;
+	D : IN std_logic_vector(63 DOWNTO 0);
+	Q : OUT std_logic_vector(63 DOWNTO 0)
 );
-end reg;
+END reg;
 
-architecture Behavioral of reg is
+ARCHITECTURE Behavioral OF reg IS
 
-begin
+BEGIN
 
-process(D,clk,ce) 
+	PROCESS (D, clk, ce)
 
-begin
-    if rising_edge(clk) then 
-        if ce = '1' then                              
-            Q<= D; 
-        end if;                           
-    end if;  
-   
-end process; 
+	BEGIN
+		IF rising_edge(clk) THEN
+			IF ce = '1' THEN
+				Q <= D;
+			END IF;
+		END IF;
 
-end Behavioral;
+	END PROCESS;
+
+END Behavioral;

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1'
+HD_PWD='F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

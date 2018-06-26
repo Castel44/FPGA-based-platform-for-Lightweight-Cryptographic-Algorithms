@@ -1,66 +1,53 @@
-library IEEE;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY shift_reg IS
 
-use IEEE.STD_LOGIC_1164.ALL;
+	--  4 bit datapath (64 bit IS)
 
-entity shift_reg is
+	PORT (
+		parallel_in : IN std_logic_vector (31 DOWNTO 0); -- only first two rows
+		serial_in : IN std_logic_vector(3 DOWNTO 0);
+		clock, enable_in : IN std_logic;
+		enable_parallel_loading : IN std_logic;
+		serial_output : OUT std_logic_vector (3 DOWNTO 0) := (OTHERS => '0');
+		parallel_output : OUT std_logic_vector (31 DOWNTO 0) := (OTHERS => '0')
+	);
+END shift_reg;
 
-  --  4 bit datapath (64 bit IS)
-    
-	port(parallel_in: in std_logic_vector (31 downto 0);  -- only first two rows
-	     serial_in :in std_logic_vector(3 downto 0); 
-		 clock,enable_in : in std_logic;
-		 enable_parallel_loading : in std_logic ; 
-         serial_output: out std_logic_vector (3 downto 0):= (Others => '0') ; 
-		 parallel_output: out std_logic_vector (31 downto 0):= (Others => '0')	 
-		);		
-end shift_reg;
+ARCHITECTURE behavioural OF shift_reg IS
 
-architecture behavioural of shift_reg is
+	SIGNAL temp_reg : std_logic_vector(63 DOWNTO 0) := (OTHERS => '0');
+	TYPE STATES IS (loading, shifting);
+	SIGNAL state : states;
+BEGIN
 
-signal temp_reg: std_logic_vector(63 downto 0) := (Others => '0');
-TYPE STATES is (loading, shifting);
-signal state: states; 
+	PROCESS (enable_in, enable_parallel_loading)
+	BEGIN
+		IF (enable_parallel_loading = '1') THEN
+			state <= loading;
+		ELSIF (enable_in = '1') THEN
+			state <= shifting;
+		ELSE
+			state <= loading;
+		END IF;
+	END PROCESS;
 
+	PROCESS (clock, state)
+	BEGIN
+		--enable_out <= '0';  
 
-begin 
-   
-process(enable_in,enable_parallel_loading)	
-begin	
+		IF rising_edge(clock) THEN
+			CASE state IS
+				WHEN loading =>
+					temp_reg(63 DOWNTO 32) <= parallel_in;
+				WHEN shifting =>
+					temp_reg <= temp_reg(59 DOWNTO 0) & serial_in;               
+			END CASE;
+		END IF;
+	END PROCESS;
 
-    if(enable_parallel_loading = '1') then 	                   
-        state <= loading;                        
-    elsif(enable_in ='1')    then
-         state <= shifting;        
-    else
-        state <= loading;                                   
-    end if;
-end process;
+	serial_output <= temp_reg(63 DOWNTO 60);
+	parallel_output <= temp_reg(63 DOWNTO 32);
 
-process(clock, state)  
-begin 
-  
-       
-        --enable_out <= '0';  
-               
-    if rising_edge(clock) then	    
-        case state is 
-            when loading =>						                
-                 temp_reg(63 downto 32) <= parallel_in;
-                --enable_out <= '0'; 
-                
-            when shifting => 
-                temp_reg <= temp_reg(59 downto 0) & serial_in;
-                --state <= shifting;	
-                		
-                --parallel_output <= temp_reg;                    
-               -- serial_output <= temp_reg(63 downto 60);                   
-        end case;
-    end if;
-end process;
-			
-serial_output <= temp_reg(63 downto 60); 
-parallel_output <= temp_reg(63 downto 32) ; 	
---enable_out <= enable_in; --propagate the enable
-
-end behavioural;
+END behavioural;

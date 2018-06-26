@@ -1,43 +1,42 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_std.all;
-use IEEE.NUMERIC_BIT ;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_std.ALL;
+USE IEEE.NUMERIC_BIT;
 
-entity SubCells_64 is         
+-- TOP Entity for SubCells
+ENTITY SubCells_64 IS
 
-Port (  SubCells_IN: in std_logic_vector (63 downto 0);         
-        SubCells_OUT: out std_logic_vector (63 downto 0)
-        ); 
+	PORT (
+		SubCells_IN : IN std_logic_vector (63 DOWNTO 0);
+		SubCells_OUT : OUT std_logic_vector (63 DOWNTO 0)
+	);
 
-end SubCells_64;
+END SubCells_64;
 
-architecture Behavioural of SubCells_64 is 
+ARCHITECTURE Behavioural OF SubCells_64 IS
 
-component Subcells_nibble 
+	COMPONENT Subcells_nibble
 
-port( 
-    SubCells_in: in std_logic_vector(3 downto 0); 
-    SubCells_out: out std_logic_vector(3 downto 0)
-    
- ); 
-end component; 
+		PORT (
+			SubCells_in : IN std_logic_vector(3 DOWNTO 0);
+			SubCells_out : OUT std_logic_vector(3 DOWNTO 0)
 
-begin 
+		);
+	END COMPONENT;
 
-subcells_gen: for i in 0 to 15 generate 
- 
- begin 
- 
- subcells: subcells_nibble port map ( 
- 
- subcells_in => SubCells_IN(((i+1)*4)-1 downto i*4) ,
- subcells_out => SubCells_OUT(((i+1)*4)-1 downto i*4) 
- 
- ); 
+BEGIN
 
+	subcells_gen : FOR i IN 0 TO 15 GENERATE
 
+	BEGIN
 
-end generate ;
-	
-end Behavioural; 
+		subcells : subcells_nibble PORT MAP(
+		
+			subcells_in => SubCells_IN(((i + 1) * 4) - 1 DOWNTO i * 4),
+			subcells_out => SubCells_OUT(((i + 1) * 4) - 1 DOWNTO i * 4)
 
+		);
+
+	END GENERATE;
+
+END Behavioural;

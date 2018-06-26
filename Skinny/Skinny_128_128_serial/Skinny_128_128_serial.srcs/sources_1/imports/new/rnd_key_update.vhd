@@ -1,57 +1,44 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY rnd_key_update IS
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	PORT (
+		TWEAKEY_permutation_IN : IN std_logic_vector(63 DOWNTO 0);
+		TWEAKEY_permutation_OUT : OUT std_logic_vector(63 DOWNTO 0) := (OTHERS => '0');
+		enable_permutation : IN std_logic);
 
+END rnd_key_update;
 
+ARCHITECTURE Behavioral OF rnd_key_update IS
 
-entity rnd_key_update is
+	SIGNAL tweakey_perm_out_internal : std_logic_vector(63 DOWNTO 0);
 
-  Port ( TWEAKEY_permutation_IN : IN std_logic_vector(63 downto 0);
-         TWEAKEY_permutation_OUT : OUT std_logic_vector(63 downto 0):= (others => '0');  
-         enable_permutation : IN std_logic     );       
-  
+BEGIN
 
+	PERMUTATION : PROCESS (enable_permutation, TWEAKEY_permutation_IN)
+		-- the permutation is unfortunately made over the entire key reg 
+		-- this is inefficient in software and fpgas but very efficient in hardware ASIC implementations 
+		-- with scan flip flops
 
-end rnd_key_update;
+	BEGIN
+		-- tweakey cell:
+		IF enable_permutation = '1' THEN
+			tweakey_perm_out_internal <= TWEAKEY_permutation_IN(55 DOWNTO 48) & --9
+				TWEAKEY_permutation_IN(7 DOWNTO 0) & --15
+				TWEAKEY_permutation_IN(63 DOWNTO 56) & -- 8
+				TWEAKEY_permutation_IN(23 DOWNTO 16) & --13
+				TWEAKEY_permutation_IN(47 DOWNTO 40) & --10
+				TWEAKEY_permutation_IN(15 DOWNTO 8) & --14
+				TWEAKEY_permutation_IN(31 DOWNTO 24) & --12
+				TWEAKEY_permutation_IN(39 DOWNTO 32); --11
 
-architecture Behavioral of rnd_key_update is
+		ELSE
+			tweakey_perm_out_internal <= TWEAKEY_permutation_IN;
+		END IF;
 
-signal tweakey_perm_out_internal: std_logic_vector(63 downto 0); 
+	END PROCESS;
 
-begin
+	TWEAKEY_permutation_OUT <= tweakey_perm_out_internal;
 
-
-PERMUTATION : PROCESS(enable_permutation,TWEAKEY_permutation_IN)
-
--- the permutation is unfortunately made over the entire key reg 
--- this is inefficient in software and fpgas but very efficient in hardware ASIC implementations 
--- with scan flip flops
-
-begin
-
-
-
-if enable_permutation = '1' then                                               -- tweakey cell:
-    tweakey_perm_out_internal <=  TWEAKEY_permutation_IN(55 downto 48)   &     --9
-                    TWEAKEY_permutation_IN(7 downto 0)     &     --15
-                    TWEAKEY_permutation_IN(63 downto 56)   &     -- 8
-                    TWEAKEY_permutation_IN(23 downto 16)    &     --13
-                    TWEAKEY_permutation_IN(47 downto 40)   &     --10
-                    TWEAKEY_permutation_IN(15 downto 8)     &     --14
-                    TWEAKEY_permutation_IN(31 downto 24)   &     --12
-                    TWEAKEY_permutation_IN(39 downto 32);        --11
-                   
-  else                   
-  
-    tweakey_perm_out_internal <=  TWEAKEY_permutation_IN;          
-     
-end if;
-
-
-
-end process;
-
-TWEAKEY_permutation_OUT <= tweakey_perm_out_internal;
-
-end Behavioral;
+END Behavioral;

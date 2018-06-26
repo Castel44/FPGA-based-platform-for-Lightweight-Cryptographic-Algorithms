@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Thu Jun 21 04:03:46 2018
-# Process ID: 1096
+# Start of session at: Tue Jun 26 13:48:38 2018
+# Process ID: 6532
 # Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1
 # Command line: vivado.exe -log Testing_IP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Testing_IP.tcl
 # Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_64_serial/Skinny_64_64_serial.runs/synth_1/Testing_IP.vds

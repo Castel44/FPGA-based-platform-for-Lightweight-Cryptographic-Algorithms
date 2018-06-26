@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Wed Jun 20 18:49:49 2018
+| Date         : Tue Jun 26 17:20:46 2018
 | Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Testing_IP_timing_summary_routed.rpt -pb Testing_IP_timing_summary_routed.pb -rpx Testing_IP_timing_summary_routed.rpx -warn_on_violation
 | Design       : Testing_IP
@@ -189,7 +189,7 @@ PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Vio
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             2.046ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/C
+  Source:                 SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            FSM_onehot_current_state_reg[5]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
@@ -217,37 +217,37 @@ Slack (MET) :             2.046ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.758     5.426    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X40Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/C
+                         net (fo=206, routed)         1.758     5.426    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X40Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y48         FDRE (Prop_fdre_C_Q)         0.456     5.882 r  SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/Q
-                         net (fo=4, routed)           1.477     7.359    SKINNY_128_DUT/INST_IS_REG/IS_REG_OUT[51]
-    SLICE_X38Y49         LUT6 (Prop_lut6_I1_O)        0.124     7.483 r  SKINNY_128_DUT/INST_IS_REG/Q[32]_i_1__0/O
-                         net (fo=3, routed)           0.743     8.226    SKINNY_128_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[48]
-    SLICE_X39Y45         LUT5 (Prop_lut5_I4_O)        0.124     8.350 f  SKINNY_128_DUT/INST_IS_REG/Q[0]_i_1/O
-                         net (fo=4, routed)           0.821     9.171    SKINNY_128_DUT/INST_IS_REG/mixcolumns_out[0]
-    SLICE_X41Y45         LUT5 (Prop_lut5_I0_O)        0.124     9.295 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39/O
-                         net (fo=1, routed)           0.000     9.295    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39_n_0
+    SLICE_X40Y48         FDRE (Prop_fdre_C_Q)         0.456     5.882 r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/Q
+                         net (fo=4, routed)           1.477     7.359    SKINNY_128_64_DUT/INST_IS_REG/IS_REG_OUT[51]
+    SLICE_X38Y49         LUT6 (Prop_lut6_I1_O)        0.124     7.483 r  SKINNY_128_64_DUT/INST_IS_REG/Q[32]_i_1__0/O
+                         net (fo=3, routed)           0.743     8.226    SKINNY_128_64_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[48]
+    SLICE_X39Y45         LUT5 (Prop_lut5_I4_O)        0.124     8.350 f  SKINNY_128_64_DUT/INST_IS_REG/Q[0]_i_1/O
+                         net (fo=4, routed)           0.821     9.171    SKINNY_128_64_DUT/INST_IS_REG/mixcolumns_out[0]
+    SLICE_X41Y45         LUT5 (Prop_lut5_I0_O)        0.124     9.295 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39/O
+                         net (fo=1, routed)           0.000     9.295    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39_n_0
     SLICE_X41Y45         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.532     9.827 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31/CO[3]
-                         net (fo=1, routed)           0.000     9.827    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31_n_0
+                                                      0.532     9.827 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31/CO[3]
+                         net (fo=1, routed)           0.000     9.827    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31_n_0
     SLICE_X41Y46         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     9.941 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26/CO[3]
-                         net (fo=1, routed)           0.000     9.941    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26_n_0
+                                                      0.114     9.941 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     9.941    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26_n_0
     SLICE_X41Y47         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.055 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13/CO[3]
-                         net (fo=1, routed)           0.000    10.055    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13_n_0
+                                                      0.114    10.055 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    10.055    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13_n_0
     SLICE_X41Y48         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.169 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.169    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6_n_0
+                                                      0.114    10.169 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    10.169    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6_n_0
     SLICE_X41Y49         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.283 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3/CO[3]
-                         net (fo=1, routed)           0.001    10.284    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3_n_0
+                                                      0.114    10.283 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3/CO[3]
+                         net (fo=1, routed)           0.001    10.284    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3_n_0
     SLICE_X41Y50         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.441 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_2/CO[1]
-                         net (fo=2, routed)           0.460    10.901    SKINNY_128_DUT/INST_LFSR/CO[0]
-    SLICE_X42Y52         LUT6 (Prop_lut6_I3_O)        0.329    11.230 r  SKINNY_128_DUT/INST_LFSR/FSM_onehot_current_state[5]_i_1/O
-                         net (fo=1, routed)           0.000    11.230    SKINNY_128_DUT_n_0
+                                                      0.157    10.441 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_2/CO[1]
+                         net (fo=2, routed)           0.460    10.901    SKINNY_128_64_DUT/INST_LFSR/CO[0]
+    SLICE_X42Y52         LUT6 (Prop_lut6_I3_O)        0.329    11.230 r  SKINNY_128_64_DUT/INST_LFSR/FSM_onehot_current_state[5]_i_1/O
+                         net (fo=1, routed)           0.000    11.230    SKINNY_128_64_DUT_n_0
     SLICE_X42Y52         FDRE                                         r  FSM_onehot_current_state_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
@@ -270,7 +270,7 @@ Slack (MET) :             2.046ns  (required time - arrival time)
                          slack                                  2.046    
 
 Slack (MET) :             2.056ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/C
+  Source:                 SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            FSM_onehot_current_state_reg[4]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
@@ -298,37 +298,37 @@ Slack (MET) :             2.056ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.758     5.426    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X40Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/C
+                         net (fo=206, routed)         1.758     5.426    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X40Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y48         FDRE (Prop_fdre_C_Q)         0.456     5.882 r  SKINNY_128_DUT/INST_IS_REG/Q_reg[51]/Q
-                         net (fo=4, routed)           1.477     7.359    SKINNY_128_DUT/INST_IS_REG/IS_REG_OUT[51]
-    SLICE_X38Y49         LUT6 (Prop_lut6_I1_O)        0.124     7.483 r  SKINNY_128_DUT/INST_IS_REG/Q[32]_i_1__0/O
-                         net (fo=3, routed)           0.743     8.226    SKINNY_128_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[48]
-    SLICE_X39Y45         LUT5 (Prop_lut5_I4_O)        0.124     8.350 f  SKINNY_128_DUT/INST_IS_REG/Q[0]_i_1/O
-                         net (fo=4, routed)           0.821     9.171    SKINNY_128_DUT/INST_IS_REG/mixcolumns_out[0]
-    SLICE_X41Y45         LUT5 (Prop_lut5_I0_O)        0.124     9.295 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39/O
-                         net (fo=1, routed)           0.000     9.295    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39_n_0
+    SLICE_X40Y48         FDRE (Prop_fdre_C_Q)         0.456     5.882 r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[51]/Q
+                         net (fo=4, routed)           1.477     7.359    SKINNY_128_64_DUT/INST_IS_REG/IS_REG_OUT[51]
+    SLICE_X38Y49         LUT6 (Prop_lut6_I1_O)        0.124     7.483 r  SKINNY_128_64_DUT/INST_IS_REG/Q[32]_i_1__0/O
+                         net (fo=3, routed)           0.743     8.226    SKINNY_128_64_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[48]
+    SLICE_X39Y45         LUT5 (Prop_lut5_I4_O)        0.124     8.350 f  SKINNY_128_64_DUT/INST_IS_REG/Q[0]_i_1/O
+                         net (fo=4, routed)           0.821     9.171    SKINNY_128_64_DUT/INST_IS_REG/mixcolumns_out[0]
+    SLICE_X41Y45         LUT5 (Prop_lut5_I0_O)        0.124     9.295 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39/O
+                         net (fo=1, routed)           0.000     9.295    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state[5]_i_39_n_0
     SLICE_X41Y45         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.532     9.827 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31/CO[3]
-                         net (fo=1, routed)           0.000     9.827    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31_n_0
+                                                      0.532     9.827 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31/CO[3]
+                         net (fo=1, routed)           0.000     9.827    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_31_n_0
     SLICE_X41Y46         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     9.941 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26/CO[3]
-                         net (fo=1, routed)           0.000     9.941    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26_n_0
+                                                      0.114     9.941 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     9.941    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_26_n_0
     SLICE_X41Y47         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.055 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13/CO[3]
-                         net (fo=1, routed)           0.000    10.055    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13_n_0
+                                                      0.114    10.055 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    10.055    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_13_n_0
     SLICE_X41Y48         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.169 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6/CO[3]
-                         net (fo=1, routed)           0.000    10.169    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6_n_0
+                                                      0.114    10.169 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    10.169    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_6_n_0
     SLICE_X41Y49         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    10.283 r  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3/CO[3]
-                         net (fo=1, routed)           0.001    10.284    SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3_n_0
+                                                      0.114    10.283 r  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3/CO[3]
+                         net (fo=1, routed)           0.001    10.284    SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_3_n_0
     SLICE_X41Y50         CARRY4 (Prop_carry4_CI_CO[1])
-                                                      0.157    10.441 f  SKINNY_128_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_2/CO[1]
-                         net (fo=2, routed)           0.450    10.891    SKINNY_128_DUT/INST_LFSR/CO[0]
-    SLICE_X42Y52         LUT6 (Prop_lut6_I3_O)        0.329    11.220 r  SKINNY_128_DUT/INST_LFSR/FSM_onehot_current_state[4]_i_1/O
-                         net (fo=1, routed)           0.000    11.220    SKINNY_128_DUT_n_1
+                                                      0.157    10.441 f  SKINNY_128_64_DUT/INST_IS_REG/FSM_onehot_current_state_reg[5]_i_2/CO[1]
+                         net (fo=2, routed)           0.450    10.891    SKINNY_128_64_DUT/INST_LFSR/CO[0]
+    SLICE_X42Y52         LUT6 (Prop_lut6_I3_O)        0.329    11.220 r  SKINNY_128_64_DUT/INST_LFSR/FSM_onehot_current_state[4]_i_1/O
+                         net (fo=1, routed)           0.000    11.220    SKINNY_128_64_DUT_n_1
     SLICE_X42Y52         FDRE                                         r  FSM_onehot_current_state_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
@@ -351,9 +351,9 @@ Slack (MET) :             2.056ns  (required time - arrival time)
                          slack                                  2.056    
 
 Slack (MET) :             3.135ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[32]/R
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[32]/R
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -379,14 +379,14 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.643     9.553    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X38Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[32]/R
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.643     9.553    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X38Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[32]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -396,11 +396,11 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.579    12.971    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X38Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[32]/C
+                         net (fo=206, routed)         1.579    12.971    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X38Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[32]/C
                          clock pessimism              0.277    13.248    
                          clock uncertainty           -0.035    13.212    
-    SLICE_X38Y48         FDRE (Setup_fdre_C_R)       -0.524    12.688    SKINNY_128_DUT/INST_IS_REG/Q_reg[32]
+    SLICE_X38Y48         FDRE (Setup_fdre_C_R)       -0.524    12.688    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[32]
   -------------------------------------------------------------------
                          required time                         12.688    
                          arrival time                          -9.553    
@@ -408,9 +408,9 @@ Slack (MET) :             3.135ns  (required time - arrival time)
                          slack                                  3.135    
 
 Slack (MET) :             3.135ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[35]/S
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[35]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -436,14 +436,14 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.643     9.553    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[35]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.643     9.553    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[35]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -453,11 +453,11 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.579    12.971    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[35]/C
+                         net (fo=206, routed)         1.579    12.971    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[35]/C
                          clock pessimism              0.277    13.248    
                          clock uncertainty           -0.035    13.212    
-    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_DUT/INST_IS_REG/Q_reg[35]
+    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[35]
   -------------------------------------------------------------------
                          required time                         12.688    
                          arrival time                          -9.553    
@@ -465,9 +465,9 @@ Slack (MET) :             3.135ns  (required time - arrival time)
                          slack                                  3.135    
 
 Slack (MET) :             3.135ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[41]/S
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[41]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -493,14 +493,14 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.643     9.553    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[41]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.643     9.553    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[41]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -510,11 +510,11 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.579    12.971    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[41]/C
+                         net (fo=206, routed)         1.579    12.971    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[41]/C
                          clock pessimism              0.277    13.248    
                          clock uncertainty           -0.035    13.212    
-    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_DUT/INST_IS_REG/Q_reg[41]
+    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[41]
   -------------------------------------------------------------------
                          required time                         12.688    
                          arrival time                          -9.553    
@@ -522,9 +522,9 @@ Slack (MET) :             3.135ns  (required time - arrival time)
                          slack                                  3.135    
 
 Slack (MET) :             3.135ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK2_REG/Q_reg[40]/S
+  Destination:            SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[40]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -550,14 +550,14 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.643     9.553    SKINNY_128_DUT/INST_TK2_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[40]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.643     9.553    SKINNY_128_64_DUT/INST_TK2_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[40]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -567,11 +567,11 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.579    12.971    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[40]/C
+                         net (fo=206, routed)         1.579    12.971    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[40]/C
                          clock pessimism              0.277    13.248    
                          clock uncertainty           -0.035    13.212    
-    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_DUT/INST_TK2_REG/Q_reg[40]
+    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[40]
   -------------------------------------------------------------------
                          required time                         12.688    
                          arrival time                          -9.553    
@@ -579,9 +579,9 @@ Slack (MET) :             3.135ns  (required time - arrival time)
                          slack                                  3.135    
 
 Slack (MET) :             3.135ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK2_REG/Q_reg[43]/S
+  Destination:            SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[43]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -607,14 +607,14 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.643     9.553    SKINNY_128_DUT/INST_TK2_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[43]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.643     9.553    SKINNY_128_64_DUT/INST_TK2_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[43]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -624,11 +624,11 @@ Slack (MET) :             3.135ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.579    12.971    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X38Y48         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[43]/C
+                         net (fo=206, routed)         1.579    12.971    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X38Y48         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[43]/C
                          clock pessimism              0.277    13.248    
                          clock uncertainty           -0.035    13.212    
-    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_DUT/INST_TK2_REG/Q_reg[43]
+    SLICE_X38Y48         FDSE (Setup_fdse_C_S)       -0.524    12.688    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[43]
   -------------------------------------------------------------------
                          required time                         12.688    
                          arrival time                          -9.553    
@@ -636,9 +636,9 @@ Slack (MET) :             3.135ns  (required time - arrival time)
                          slack                                  3.135    
 
 Slack (MET) :             3.159ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[0]/R
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[0]/R
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -664,14 +664,14 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.620     9.530    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X42Y47         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[0]/R
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.620     9.530    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X42Y47         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[0]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -681,11 +681,11 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.580    12.972    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X42Y47         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[0]/C
+                         net (fo=206, routed)         1.580    12.972    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X42Y47         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[0]/C
                          clock pessimism              0.277    13.249    
                          clock uncertainty           -0.035    13.213    
-    SLICE_X42Y47         FDRE (Setup_fdre_C_R)       -0.524    12.689    SKINNY_128_DUT/INST_IS_REG/Q_reg[0]
+    SLICE_X42Y47         FDRE (Setup_fdre_C_R)       -0.524    12.689    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[0]
   -------------------------------------------------------------------
                          required time                         12.689    
                          arrival time                          -9.530    
@@ -693,9 +693,9 @@ Slack (MET) :             3.159ns  (required time - arrival time)
                          slack                                  3.159    
 
 Slack (MET) :             3.159ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[1]/S
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[1]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -721,14 +721,14 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.620     9.530    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X42Y47         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[1]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.620     9.530    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X42Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[1]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -738,11 +738,11 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.580    12.972    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X42Y47         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[1]/C
+                         net (fo=206, routed)         1.580    12.972    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X42Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[1]/C
                          clock pessimism              0.277    13.249    
                          clock uncertainty           -0.035    13.213    
-    SLICE_X42Y47         FDSE (Setup_fdse_C_S)       -0.524    12.689    SKINNY_128_DUT/INST_IS_REG/Q_reg[1]
+    SLICE_X42Y47         FDSE (Setup_fdse_C_S)       -0.524    12.689    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[1]
   -------------------------------------------------------------------
                          required time                         12.689    
                          arrival time                          -9.530    
@@ -750,9 +750,9 @@ Slack (MET) :             3.159ns  (required time - arrival time)
                          slack                                  3.159    
 
 Slack (MET) :             3.159ns  (required time - arrival time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[52]/S
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[52]/S
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
@@ -778,14 +778,14 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.741     5.409    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X41Y52         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
+                         net (fo=206, routed)         1.741     5.409    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X41Y52         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/Q
-                         net (fo=9, routed)           0.921     6.787    SKINNY_128_DUT/INST_TK1_REG/out[0]
-    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_DUT/INST_TK1_REG/Q[62]_i_1__0/O
-                         net (fo=188, routed)         2.620     9.530    SKINNY_128_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
-    SLICE_X42Y47         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[52]/S
+    SLICE_X41Y52         FDRE (Prop_fdre_C_Q)         0.456     5.865 f  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/Q
+                         net (fo=9, routed)           0.921     6.787    SKINNY_128_64_DUT/INST_TK1_REG/out[0]
+    SLICE_X42Y50         LUT2 (Prop_lut2_I1_O)        0.124     6.911 r  SKINNY_128_64_DUT/INST_TK1_REG/Q[62]_i_1__0/O
+                         net (fo=188, routed)         2.620     9.530    SKINNY_128_64_DUT/INST_IS_REG/FSM_sequential_current_state_reg[1]
+    SLICE_X42Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[52]/S
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -795,11 +795,11 @@ Slack (MET) :             3.159ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         1.580    12.972    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X42Y47         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[52]/C
+                         net (fo=206, routed)         1.580    12.972    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X42Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[52]/C
                          clock pessimism              0.277    13.249    
                          clock uncertainty           -0.035    13.213    
-    SLICE_X42Y47         FDSE (Setup_fdse_C_S)       -0.524    12.689    SKINNY_128_DUT/INST_IS_REG/Q_reg[52]
+    SLICE_X42Y47         FDSE (Setup_fdse_C_S)       -0.524    12.689    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[52]
   -------------------------------------------------------------------
                          required time                         12.689    
                          arrival time                          -9.530    
@@ -813,9 +813,9 @@ Slack (MET) :             3.159ns  (required time - arrival time)
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             0.078ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK1_REG/Q_reg[35]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[35]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK1_REG/Q_reg[3]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -836,12 +836,12 @@ Slack (MET) :             0.078ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.593     1.505    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X36Y48         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[35]/C
+                         net (fo=206, routed)         0.593     1.505    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X36Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[35]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y48         FDRE (Prop_fdre_C_Q)         0.128     1.633 r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[35]/Q
-                         net (fo=2, routed)           0.237     1.870    SKINNY_128_DUT/INST_TK1_REG/Q_reg[31]_0[3]
-    SLICE_X38Y51         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[3]/D
+    SLICE_X36Y48         FDRE (Prop_fdre_C_Q)         0.128     1.633 r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[35]/Q
+                         net (fo=2, routed)           0.237     1.870    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[31]_0[3]
+    SLICE_X38Y51         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -851,10 +851,10 @@ Slack (MET) :             0.078ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.857     2.016    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X38Y51         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[3]/C
+                         net (fo=206, routed)         0.857     2.016    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X38Y51         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[3]/C
                          clock pessimism             -0.247     1.769    
-    SLICE_X38Y51         FDRE (Hold_fdre_C_D)         0.023     1.792    SKINNY_128_DUT/INST_TK1_REG/Q_reg[3]
+    SLICE_X38Y51         FDRE (Hold_fdre_C_D)         0.023     1.792    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[3]
   -------------------------------------------------------------------
                          required time                         -1.792    
                          arrival time                           1.870    
@@ -862,9 +862,9 @@ Slack (MET) :             0.078ns  (arrival time - required time)
                          slack                                  0.078    
 
 Slack (MET) :             0.086ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK1_REG/Q_reg[46]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[46]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK1_REG/Q_reg[14]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[14]/D
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -885,12 +885,12 @@ Slack (MET) :             0.086ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.589     1.501    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X40Y50         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[46]/C
+                         net (fo=206, routed)         0.589     1.501    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X40Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[46]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y50         FDRE (Prop_fdre_C_Q)         0.141     1.642 r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[46]/Q
-                         net (fo=2, routed)           0.279     1.920    SKINNY_128_DUT/INST_TK1_REG/Q_reg[31]_0[12]
-    SLICE_X38Y47         FDSE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[14]/D
+    SLICE_X40Y50         FDRE (Prop_fdre_C_Q)         0.141     1.642 r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[46]/Q
+                         net (fo=2, routed)           0.279     1.920    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[31]_0[12]
+    SLICE_X38Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -900,10 +900,10 @@ Slack (MET) :             0.086ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.862     2.021    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X38Y47         FDSE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[14]/C
+                         net (fo=206, routed)         0.862     2.021    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X38Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[14]/C
                          clock pessimism             -0.247     1.774    
-    SLICE_X38Y47         FDSE (Hold_fdse_C_D)         0.060     1.834    SKINNY_128_DUT/INST_TK1_REG/Q_reg[14]
+    SLICE_X38Y47         FDSE (Hold_fdse_C_D)         0.060     1.834    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[14]
   -------------------------------------------------------------------
                          required time                         -1.834    
                          arrival time                           1.920    
@@ -911,9 +911,9 @@ Slack (MET) :             0.086ns  (arrival time - required time)
                          slack                                  0.086    
 
 Slack (MET) :             0.087ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK1_REG/Q_reg[48]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[48]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK1_REG/Q_reg[16]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[16]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -934,12 +934,12 @@ Slack (MET) :             0.087ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.593     1.505    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X36Y47         FDSE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[48]/C
+                         net (fo=206, routed)         0.593     1.505    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X36Y47         FDSE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[48]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X36Y47         FDSE (Prop_fdse_C_Q)         0.128     1.633 r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[48]/Q
-                         net (fo=2, routed)           0.217     1.849    SKINNY_128_DUT/INST_TK1_REG/Q_reg[31]_0[14]
-    SLICE_X36Y50         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[16]/D
+    SLICE_X36Y47         FDSE (Prop_fdse_C_Q)         0.128     1.633 r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[48]/Q
+                         net (fo=2, routed)           0.217     1.849    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[31]_0[14]
+    SLICE_X36Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[16]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -949,10 +949,10 @@ Slack (MET) :             0.087ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.857     2.016    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X36Y50         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[16]/C
+                         net (fo=206, routed)         0.857     2.016    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X36Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[16]/C
                          clock pessimism             -0.247     1.769    
-    SLICE_X36Y50         FDRE (Hold_fdre_C_D)        -0.007     1.762    SKINNY_128_DUT/INST_TK1_REG/Q_reg[16]
+    SLICE_X36Y50         FDRE (Hold_fdre_C_D)        -0.007     1.762    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[16]
   -------------------------------------------------------------------
                          required time                         -1.762    
                          arrival time                           1.849    
@@ -960,9 +960,9 @@ Slack (MET) :             0.087ns  (arrival time - required time)
                          slack                                  0.087    
 
 Slack (MET) :             0.096ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK1_REG/Q_reg[49]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[49]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK1_REG/Q_reg[17]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[17]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -983,12 +983,12 @@ Slack (MET) :             0.096ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.592     1.504    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X37Y46         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[49]/C
+                         net (fo=206, routed)         0.592     1.504    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X37Y46         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[49]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y46         FDRE (Prop_fdre_C_Q)         0.141     1.645 r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[49]/Q
-                         net (fo=2, routed)           0.266     1.911    SKINNY_128_DUT/INST_TK1_REG/Q_reg[31]_0[15]
-    SLICE_X37Y50         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[17]/D
+    SLICE_X37Y46         FDRE (Prop_fdre_C_Q)         0.141     1.645 r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[49]/Q
+                         net (fo=2, routed)           0.266     1.911    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[31]_0[15]
+    SLICE_X37Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[17]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -998,10 +998,10 @@ Slack (MET) :             0.096ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.857     2.016    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X37Y50         FDRE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[17]/C
+                         net (fo=206, routed)         0.857     2.016    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X37Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[17]/C
                          clock pessimism             -0.247     1.769    
-    SLICE_X37Y50         FDRE (Hold_fdre_C_D)         0.046     1.815    SKINNY_128_DUT/INST_TK1_REG/Q_reg[17]
+    SLICE_X37Y50         FDRE (Hold_fdre_C_D)         0.046     1.815    SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[17]
   -------------------------------------------------------------------
                          required time                         -1.815    
                          arrival time                           1.911    
@@ -1009,9 +1009,9 @@ Slack (MET) :             0.096ns  (arrival time - required time)
                          slack                                  0.096    
 
 Slack (MET) :             0.100ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK2_REG/Q_reg[31]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[31]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK2_REG/Q_reg[52]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[52]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1032,14 +1032,14 @@ Slack (MET) :             0.100ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.587     1.499    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X37Y51         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[31]/C
+                         net (fo=206, routed)         0.587     1.499    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X37Y51         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X37Y51         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[31]/Q
-                         net (fo=1, routed)           0.281     1.920    SKINNY_128_DUT/INST_TK2_REG/Q_reg_n_0_[31]
-    SLICE_X37Y49         LUT3 (Prop_lut3_I2_O)        0.045     1.965 r  SKINNY_128_DUT/INST_TK2_REG/Q[52]_i_1__0/O
-                         net (fo=1, routed)           0.000     1.965    SKINNY_128_DUT/INST_TK2_REG/Q[52]_i_1__0_n_0
-    SLICE_X37Y49         FDRE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[52]/D
+    SLICE_X37Y51         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[31]/Q
+                         net (fo=1, routed)           0.281     1.920    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg_n_0_[31]
+    SLICE_X37Y49         LUT3 (Prop_lut3_I2_O)        0.045     1.965 r  SKINNY_128_64_DUT/INST_TK2_REG/Q[52]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.965    SKINNY_128_64_DUT/INST_TK2_REG/Q[52]_i_1__0_n_0
+    SLICE_X37Y49         FDRE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[52]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1049,10 +1049,10 @@ Slack (MET) :             0.100ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.862     2.021    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X37Y49         FDRE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[52]/C
+                         net (fo=206, routed)         0.862     2.021    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X37Y49         FDRE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[52]/C
                          clock pessimism             -0.247     1.774    
-    SLICE_X37Y49         FDRE (Hold_fdre_C_D)         0.091     1.865    SKINNY_128_DUT/INST_TK2_REG/Q_reg[52]
+    SLICE_X37Y49         FDRE (Hold_fdre_C_D)         0.091     1.865    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[52]
   -------------------------------------------------------------------
                          required time                         -1.865    
                          arrival time                           1.965    
@@ -1060,9 +1060,9 @@ Slack (MET) :             0.100ns  (arrival time - required time)
                          slack                                  0.100    
 
 Slack (MET) :             0.115ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK1_REG/Q_reg[58]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[58]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[10]/D
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1083,16 +1083,16 @@ Slack (MET) :             0.115ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.587     1.499    SKINNY_128_DUT/INST_TK1_REG/clk_IBUF_BUFG
-    SLICE_X39Y51         FDSE                                         r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[58]/C
+                         net (fo=206, routed)         0.587     1.499    SKINNY_128_64_DUT/INST_TK1_REG/clk_IBUF_BUFG
+    SLICE_X39Y51         FDSE                                         r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[58]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y51         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_DUT/INST_TK1_REG/Q_reg[58]/Q
-                         net (fo=2, routed)           0.120     1.760    SKINNY_128_DUT/INST_IS_REG/TK1_in[24]
-    SLICE_X38Y50         LUT5 (Prop_lut5_I3_O)        0.045     1.805 r  SKINNY_128_DUT/INST_IS_REG/Q[42]_i_1/O
-                         net (fo=5, routed)           0.131     1.936    SKINNY_128_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[58]
-    SLICE_X39Y48         LUT4 (Prop_lut4_I3_O)        0.045     1.981 r  SKINNY_128_DUT/INST_IS_REG/Q[10]_i_1/O
-                         net (fo=1, routed)           0.000     1.981    SKINNY_128_DUT/INST_IS_REG/mixcolumns_out[10]
-    SLICE_X39Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[10]/D
+    SLICE_X39Y51         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_64_DUT/INST_TK1_REG/Q_reg[58]/Q
+                         net (fo=2, routed)           0.120     1.760    SKINNY_128_64_DUT/INST_IS_REG/TK1_in[24]
+    SLICE_X38Y50         LUT5 (Prop_lut5_I3_O)        0.045     1.805 r  SKINNY_128_64_DUT/INST_IS_REG/Q[42]_i_1/O
+                         net (fo=5, routed)           0.131     1.936    SKINNY_128_64_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[58]
+    SLICE_X39Y48         LUT4 (Prop_lut4_I3_O)        0.045     1.981 r  SKINNY_128_64_DUT/INST_IS_REG/Q[10]_i_1/O
+                         net (fo=1, routed)           0.000     1.981    SKINNY_128_64_DUT/INST_IS_REG/mixcolumns_out[10]
+    SLICE_X39Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1102,10 +1102,10 @@ Slack (MET) :             0.115ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.862     2.021    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X39Y48         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[10]/C
+                         net (fo=206, routed)         0.862     2.021    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X39Y48         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]/C
                          clock pessimism             -0.247     1.774    
-    SLICE_X39Y48         FDRE (Hold_fdre_C_D)         0.092     1.866    SKINNY_128_DUT/INST_IS_REG/Q_reg[10]
+    SLICE_X39Y48         FDRE (Hold_fdre_C_D)         0.092     1.866    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]
   -------------------------------------------------------------------
                          required time                         -1.866    
                          arrival time                           1.981    
@@ -1113,9 +1113,9 @@ Slack (MET) :             0.115ns  (arrival time - required time)
                          slack                                  0.115    
 
 Slack (MET) :             0.117ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/C
+  Source:                 SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK2_REG/Q_reg[56]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[56]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1136,14 +1136,14 @@ Slack (MET) :             0.117ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.589     1.501    SKINNY_128_DUT/clk_IBUF_BUFG
-    SLICE_X42Y51         FDRE                                         r  SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/C
+                         net (fo=206, routed)         0.589     1.501    SKINNY_128_64_DUT/clk_IBUF_BUFG
+    SLICE_X42Y51         FDRE                                         r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y51         FDRE (Prop_fdre_C_Q)         0.164     1.665 r  SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/Q
-                         net (fo=11, routed)          0.285     1.950    SKINNY_128_DUT/INST_TK2_REG/out[0]
-    SLICE_X37Y49         LUT3 (Prop_lut3_I0_O)        0.048     1.998 r  SKINNY_128_DUT/INST_TK2_REG/Q[56]_i_1__0/O
-                         net (fo=1, routed)           0.000     1.998    SKINNY_128_DUT/INST_TK2_REG/Q[56]_i_1__0_n_0
-    SLICE_X37Y49         FDRE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[56]/D
+    SLICE_X42Y51         FDRE (Prop_fdre_C_Q)         0.164     1.665 r  SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/Q
+                         net (fo=11, routed)          0.285     1.950    SKINNY_128_64_DUT/INST_TK2_REG/out[0]
+    SLICE_X37Y49         LUT3 (Prop_lut3_I0_O)        0.048     1.998 r  SKINNY_128_64_DUT/INST_TK2_REG/Q[56]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.998    SKINNY_128_64_DUT/INST_TK2_REG/Q[56]_i_1__0_n_0
+    SLICE_X37Y49         FDRE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[56]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1153,10 +1153,10 @@ Slack (MET) :             0.117ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.862     2.021    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X37Y49         FDRE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[56]/C
+                         net (fo=206, routed)         0.862     2.021    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X37Y49         FDRE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[56]/C
                          clock pessimism             -0.247     1.774    
-    SLICE_X37Y49         FDRE (Hold_fdre_C_D)         0.107     1.881    SKINNY_128_DUT/INST_TK2_REG/Q_reg[56]
+    SLICE_X37Y49         FDRE (Hold_fdre_C_D)         0.107     1.881    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[56]
   -------------------------------------------------------------------
                          required time                         -1.881    
                          arrival time                           1.998    
@@ -1164,9 +1164,9 @@ Slack (MET) :             0.117ns  (arrival time - required time)
                          slack                                  0.117    
 
 Slack (MET) :             0.119ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_IS_REG/Q_reg[11]/C
+  Source:                 SKINNY_128_64_DUT/INST_IS_REG/Q_reg[11]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[61]/D
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[61]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1187,14 +1187,14 @@ Slack (MET) :             0.119ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.592     1.504    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X39Y46         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[11]/C
+                         net (fo=206, routed)         0.592     1.504    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X39Y46         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y46         FDSE (Prop_fdse_C_Q)         0.141     1.645 r  SKINNY_128_DUT/INST_IS_REG/Q_reg[11]/Q
-                         net (fo=6, routed)           0.289     1.934    SKINNY_128_DUT/INST_IS_REG/IS_REG_OUT[11]
-    SLICE_X39Y50         LUT5 (Prop_lut5_I2_O)        0.045     1.979 r  SKINNY_128_DUT/INST_IS_REG/Q[61]_i_1/O
-                         net (fo=1, routed)           0.000     1.979    SKINNY_128_DUT/INST_IS_REG/mixcolumns_out[61]
-    SLICE_X39Y50         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[61]/D
+    SLICE_X39Y46         FDSE (Prop_fdse_C_Q)         0.141     1.645 r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[11]/Q
+                         net (fo=6, routed)           0.289     1.934    SKINNY_128_64_DUT/INST_IS_REG/IS_REG_OUT[11]
+    SLICE_X39Y50         LUT5 (Prop_lut5_I2_O)        0.045     1.979 r  SKINNY_128_64_DUT/INST_IS_REG/Q[61]_i_1/O
+                         net (fo=1, routed)           0.000     1.979    SKINNY_128_64_DUT/INST_IS_REG/mixcolumns_out[61]
+    SLICE_X39Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[61]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1204,10 +1204,10 @@ Slack (MET) :             0.119ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.857     2.016    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X39Y50         FDRE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[61]/C
+                         net (fo=206, routed)         0.857     2.016    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X39Y50         FDRE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[61]/C
                          clock pessimism             -0.247     1.769    
-    SLICE_X39Y50         FDRE (Hold_fdre_C_D)         0.091     1.860    SKINNY_128_DUT/INST_IS_REG/Q_reg[61]
+    SLICE_X39Y50         FDRE (Hold_fdre_C_D)         0.091     1.860    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[61]
   -------------------------------------------------------------------
                          required time                         -1.860    
                          arrival time                           1.979    
@@ -1215,9 +1215,9 @@ Slack (MET) :             0.119ns  (arrival time - required time)
                          slack                                  0.119    
 
 Slack (MET) :             0.127ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_LFSR/lfsr_internal_reg[2]/C
+  Source:                 SKINNY_128_64_DUT/INST_LFSR/lfsr_internal_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_IS_REG/Q_reg[46]/D
+  Destination:            SKINNY_128_64_DUT/INST_IS_REG/Q_reg[46]/D
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1238,14 +1238,14 @@ Slack (MET) :             0.127ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.589     1.501    SKINNY_128_DUT/INST_LFSR/clk_IBUF_BUFG
-    SLICE_X41Y51         FDRE                                         r  SKINNY_128_DUT/INST_LFSR/lfsr_internal_reg[2]/C
+                         net (fo=206, routed)         0.589     1.501    SKINNY_128_64_DUT/INST_LFSR/clk_IBUF_BUFG
+    SLICE_X41Y51         FDRE                                         r  SKINNY_128_64_DUT/INST_LFSR/lfsr_internal_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y51         FDRE (Prop_fdre_C_Q)         0.141     1.642 r  SKINNY_128_DUT/INST_LFSR/lfsr_internal_reg[2]/Q
-                         net (fo=4, routed)           0.083     1.724    SKINNY_128_DUT/INST_IS_REG/Q[2]
-    SLICE_X40Y51         LUT6 (Prop_lut6_I0_O)        0.045     1.769 r  SKINNY_128_DUT/INST_IS_REG/Q[46]_i_1/O
-                         net (fo=5, routed)           0.199     1.969    SKINNY_128_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[62]
-    SLICE_X40Y49         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[46]/D
+    SLICE_X41Y51         FDRE (Prop_fdre_C_Q)         0.141     1.642 r  SKINNY_128_64_DUT/INST_LFSR/lfsr_internal_reg[2]/Q
+                         net (fo=4, routed)           0.083     1.724    SKINNY_128_64_DUT/INST_IS_REG/Q[2]
+    SLICE_X40Y51         LUT6 (Prop_lut6_I0_O)        0.045     1.769 r  SKINNY_128_64_DUT/INST_IS_REG/Q[46]_i_1/O
+                         net (fo=5, routed)           0.199     1.969    SKINNY_128_64_DUT/INST_IS_REG/AddRoundTWEAKEY_OUT[62]
+    SLICE_X40Y49         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[46]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1255,10 +1255,10 @@ Slack (MET) :             0.127ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.864     2.023    SKINNY_128_DUT/INST_IS_REG/clk_IBUF_BUFG
-    SLICE_X40Y49         FDSE                                         r  SKINNY_128_DUT/INST_IS_REG/Q_reg[46]/C
+                         net (fo=206, routed)         0.864     2.023    SKINNY_128_64_DUT/INST_IS_REG/clk_IBUF_BUFG
+    SLICE_X40Y49         FDSE                                         r  SKINNY_128_64_DUT/INST_IS_REG/Q_reg[46]/C
                          clock pessimism             -0.247     1.776    
-    SLICE_X40Y49         FDSE (Hold_fdse_C_D)         0.066     1.842    SKINNY_128_DUT/INST_IS_REG/Q_reg[46]
+    SLICE_X40Y49         FDSE (Hold_fdse_C_D)         0.066     1.842    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[46]
   -------------------------------------------------------------------
                          required time                         -1.842    
                          arrival time                           1.969    
@@ -1266,9 +1266,9 @@ Slack (MET) :             0.127ns  (arrival time - required time)
                          slack                                  0.127    
 
 Slack (MET) :             0.130ns  (arrival time - required time)
-  Source:                 SKINNY_128_DUT/INST_TK2_REG/Q_reg[22]/C
+  Source:                 SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[22]/C
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            SKINNY_128_DUT/INST_TK2_REG/Q_reg[47]/D
+  Destination:            SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[47]/D
                             (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1289,12 +1289,12 @@ Slack (MET) :             0.130ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.587     1.499    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X39Y50         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[22]/C
+                         net (fo=206, routed)         0.587     1.499    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X39Y50         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[22]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y50         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[22]/Q
-                         net (fo=2, routed)           0.067     1.707    SKINNY_128_DUT/INST_TK2_REG/Q_reg_n_0_[22]
-    SLICE_X39Y50         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[47]/D
+    SLICE_X39Y50         FDSE (Prop_fdse_C_Q)         0.141     1.640 r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[22]/Q
+                         net (fo=2, routed)           0.067     1.707    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg_n_0_[22]
+    SLICE_X39Y50         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[47]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1304,10 +1304,10 @@ Slack (MET) :             0.130ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
-                         net (fo=206, routed)         0.857     2.016    SKINNY_128_DUT/INST_TK2_REG/clk_IBUF_BUFG
-    SLICE_X39Y50         FDSE                                         r  SKINNY_128_DUT/INST_TK2_REG/Q_reg[47]/C
+                         net (fo=206, routed)         0.857     2.016    SKINNY_128_64_DUT/INST_TK2_REG/clk_IBUF_BUFG
+    SLICE_X39Y50         FDSE                                         r  SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[47]/C
                          clock pessimism             -0.517     1.499    
-    SLICE_X39Y50         FDSE (Hold_fdse_C_D)         0.078     1.577    SKINNY_128_DUT/INST_TK2_REG/Q_reg[47]
+    SLICE_X39Y50         FDSE (Hold_fdse_C_D)         0.078     1.577    SKINNY_128_64_DUT/INST_TK2_REG/Q_reg[47]
   -------------------------------------------------------------------
                          required time                         -1.577    
                          arrival time                           1.707    
@@ -1333,29 +1333,29 @@ Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.00
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X43Y52    FSM_onehot_current_state_reg[3]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y52    FSM_onehot_current_state_reg[4]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y52    FSM_onehot_current_state_reg[5]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X41Y52    SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y51    SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y48    SKINNY_128_DUT/INST_IS_REG/Q_reg[10]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X41Y52    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y51    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y48    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]/C
 Low Pulse Width   Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[0]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[1]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    FSM_onehot_current_state_reg[2]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    FSM_onehot_current_state_reg[3]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[4]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[5]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X41Y52    SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y51    SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y51    SKINNY_128_DUT/INST_IS_REG/Q_reg[60]/C
-Low Pulse Width   Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X40Y51    SKINNY_128_DUT/INST_IS_REG/Q_reg[62]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X41Y52    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y51    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y51    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[60]/C
+Low Pulse Width   Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X40Y51    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[62]/C
 High Pulse Width  Fast    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[0]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[1]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    FSM_onehot_current_state_reg[2]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y52    FSM_onehot_current_state_reg[3]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[4]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y52    FSM_onehot_current_state_reg[5]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X41Y52    SKINNY_128_DUT/FSM_sequential_current_state_reg[0]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y51    SKINNY_128_DUT/FSM_sequential_current_state_reg[1]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y48    SKINNY_128_DUT/INST_IS_REG/Q_reg[10]/C
-High Pulse Width  Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X39Y46    SKINNY_128_DUT/INST_IS_REG/Q_reg[11]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X41Y52    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y51    SKINNY_128_64_DUT/FSM_sequential_current_state_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y48    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[10]/C
+High Pulse Width  Slow    FDSE/C   n/a            0.500         4.000       3.500      SLICE_X39Y46    SKINNY_128_64_DUT/INST_IS_REG/Q_reg[11]/C
 
 
 

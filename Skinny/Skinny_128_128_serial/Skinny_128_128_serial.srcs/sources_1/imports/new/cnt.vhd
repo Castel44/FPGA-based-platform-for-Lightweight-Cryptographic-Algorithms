@@ -10,7 +10,6 @@ entity CNT is
       cnt_out: out std_logic_vector(size-1 downto 0); 
       ce,rst,clk: in std_logic 
     ); 
-
 end CNT;
 
 architecture Behavioral of CNT is

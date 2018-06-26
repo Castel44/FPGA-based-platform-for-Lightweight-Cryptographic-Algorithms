@@ -1,48 +1,46 @@
- library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+-- 6bit LFSR to generate round constants
+ENTITY lfsr IS
+	PORT (
+		clk, ce : IN std_logic;
+		reset : IN std_logic;
+		lfsr_out : OUT std_logic_vector (5 DOWNTO 0) := (OTHERS => '0')
+	);
+END lfsr;
 
 
-entity lfsr is
-    port( clk,ce: in std_logic;
-        reset:in std_logic; 
-        lfsr_out: out std_logic_vector (5 downto 0):= (others => '0')
-         );
-       
-         
-end lfsr;
+ARCHITECTURE Behavioral OF lfsr IS
 
+BEGIN
+	PROCESS (clk, reset, ce)
 
-architecture Behavioral of lfsr is
+		VARIABLE lfsr_internal : std_logic_vector (5 DOWNTO 0) := (OTHERS => '0');
+		VARIABLE feedback : std_logic := '0';
 
-begin
-process(clk,reset,ce) 
-    
-variable lfsr_internal : std_logic_vector (5 downto 0) := (others=> '0' ) ; 
-variable feedback: std_logic := '0'; 
-        
-begin 
-if (rising_edge(clk)) then 
-    if (reset='1') then 
-        lfsr_internal := "000001";
+	BEGIN
+		IF (rising_edge(clk)) THEN
+			IF (reset = '1') THEN
+				lfsr_internal := "000001";
+				
+			ELSIF ce = '1' THEN
+                -- update function defined by skinny specs
+				feedback := lfsr_internal(5) XOR lfsr_internal(4) XOR '1';
+				lfsr_internal(5) := lfsr_internal(4);
+				lfsr_internal(4) := lfsr_internal(3);
+				lfsr_internal(3) := lfsr_internal(2);
+				lfsr_internal(2) := lfsr_internal(1);
+				lfsr_internal(1) := lfsr_internal(0);
+				lfsr_internal(0) := feedback;
 
-            
-     elsif ce ='1' then 
-    
-        feedback := lfsr_internal(5) xor lfsr_internal(4) xor '1';                            
-        lfsr_internal(5) := lfsr_internal(4);                            
-        lfsr_internal(4) := lfsr_internal(3);                            
-        lfsr_internal(3) := lfsr_internal(2);                            
-        lfsr_internal(2) := lfsr_internal(1);                             
-        lfsr_internal(1) := lfsr_internal(0);                             
-        lfsr_internal(0) :=  feedback;                                                                              
-        
-    else 
-        lfsr_internal := lfsr_internal; 
-    end if; 
-end if;                   
-          
-lfsr_out <= lfsr_internal; 
+			ELSE
+				lfsr_internal := lfsr_internal;
+			END IF;
+		END IF;
 
-end process;     
+		lfsr_out <= lfsr_internal;
 
-end Behavioral;
+	END PROCESS;
+
+END Behavioral;

@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Wed Jun 20 18:46:50 2018
-# Process ID: 7272
+# Start of session at: Tue Jun 26 17:17:48 2018
+# Process ID: 10416
 # Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.runs/synth_1
 # Command line: vivado.exe -log Testing_IP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Testing_IP.tcl
 # Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.runs/synth_1/Testing_IP.vds
@@ -15,62 +15,62 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6784 
+INFO: Helper process launched with PID 11040 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 393.758 ; gain = 97.957
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 394.324 ; gain = 99.473
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Testing_IP' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:14]
-INFO: [Synth 8-3491] module 'SKINNY_64_128_parallel' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:6' bound to instance 'SKINNY_128_DUT' of component 'SKINNY_64_128_parallel' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'SKINNY_64_128_parallel' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:17]
-INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_OUTPUT_MUX' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:140]
-INFO: [Synth 8-638] synthesizing module 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:15]
-INFO: [Synth 8-226] default block is never used [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'MUX' (1#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:15]
-INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_IS_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:150]
-INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_TK1_REG_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:160]
-INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:6' bound to instance 'INST_TK2_REG_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:169]
-INFO: [Synth 8-3491] module 'reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:4' bound to instance 'INST_IS_REG' of component 'REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:180]
-INFO: [Synth 8-638] synthesizing module '\reg ' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:14]
-INFO: [Synth 8-256] done synthesizing module '\reg ' (2#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:14]
-INFO: [Synth 8-3491] module 'SubCells_64' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:6' bound to instance 'INST_SUBCELLS' of component 'subcells_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:189]
-INFO: [Synth 8-638] synthesizing module 'SubCells_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:14]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-638] synthesizing module 'SubCells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'SubCells_nibble' (3#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:12]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:5' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'SubCells_64' (4#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:14]
-INFO: [Synth 8-3491] module 'AddRoundConstants' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundConstants.vhd:4' bound to instance 'INST_AddRoundConstants' of component 'addRoundConstants' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'Testing_IP' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:22]
+INFO: [Synth 8-3491] module 'SKINNY_64_128_parallel' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:11' bound to instance 'SKINNY_128_64_DUT' of component 'SKINNY_64_128_parallel' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'SKINNY_64_128_parallel' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:22]
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:4' bound to instance 'INST_OUTPUT_MUX' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'MUX' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:12]
+INFO: [Synth 8-226] default block is never used [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'MUX' (1#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:12]
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:4' bound to instance 'INST_IS_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:161]
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:4' bound to instance 'INST_TK1_REG_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:170]
+INFO: [Synth 8-3491] module 'MUX' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/mux.vhd:4' bound to instance 'INST_TK2_REG_MUX_IN' of component 'mux' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:179]
+INFO: [Synth 8-3491] module 'reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:4' bound to instance 'INST_IS_REG' of component 'REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:188]
+INFO: [Synth 8-638] synthesizing module '\reg ' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:12]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (2#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:12]
+INFO: [Synth 8-3491] module 'SubCells_64' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:6' bound to instance 'INST_SUBCELLS' of component 'subcells_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'SubCells_64' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:15]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'SubCells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'SubCells_nibble' (3#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:11]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-3491] module 'SubCells_nibble' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Subcells_nibble.vhd:3' bound to instance 'subcells' of component 'Subcells_nibble' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'SubCells_64' (4#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SubCells_64.vhd:15]
+INFO: [Synth 8-3491] module 'AddRoundConstants' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundConstants.vhd:4' bound to instance 'INST_AddRoundConstants' of component 'addRoundConstants' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:202]
 INFO: [Synth 8-638] synthesizing module 'AddRoundConstants' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundConstants.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'AddRoundConstants' (5#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundConstants.vhd:15]
-INFO: [Synth 8-3491] module 'AddRoundTweakey' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundTweakey.vhd:7' bound to instance 'INST_ADDROUNDTWEAKEY' of component 'AddRoundTweakey' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:204]
+INFO: [Synth 8-3491] module 'AddRoundTweakey' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundTweakey.vhd:7' bound to instance 'INST_ADDROUNDTWEAKEY' of component 'AddRoundTweakey' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:209]
 INFO: [Synth 8-638] synthesizing module 'AddRoundTweakey' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundTweakey.vhd:17]
 INFO: [Synth 8-256] done synthesizing module 'AddRoundTweakey' (6#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/AddRoundTweakey.vhd:17]
-INFO: [Synth 8-3491] module 'ShiftRows' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/ShiftRows.vhd:6' bound to instance 'INST_ShiftRows' of component 'ShiftRows' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:213]
+INFO: [Synth 8-3491] module 'ShiftRows' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/ShiftRows.vhd:6' bound to instance 'INST_ShiftRows' of component 'ShiftRows' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:217]
 INFO: [Synth 8-638] synthesizing module 'ShiftRows' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/ShiftRows.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'ShiftRows' (7#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/ShiftRows.vhd:13]
-INFO: [Synth 8-3491] module 'MixColumns' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/MixColumns.vhd:4' bound to instance 'INST_MixColumns' of component 'MixColumns' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:221]
+INFO: [Synth 8-3491] module 'MixColumns' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/MixColumns.vhd:4' bound to instance 'INST_MixColumns' of component 'MixColumns' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:223]
 INFO: [Synth 8-638] synthesizing module 'MixColumns' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/MixColumns.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'MixColumns' (8#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/MixColumns.vhd:12]
-INFO: [Synth 8-3491] module 'reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:4' bound to instance 'INST_TK1_REG' of component 'REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:229]
+INFO: [Synth 8-3491] module 'reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:4' bound to instance 'INST_TK1_REG' of component 'REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:230]
 INFO: [Synth 8-3491] module 'reg' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/reg.vhd:4' bound to instance 'INST_TK2_REG' of component 'REG' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:239]
-INFO: [Synth 8-3491] module 'TK1_schedule' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/tw_schedule.vhd:5' bound to instance 'INST_TK1_SCHEDULE' of component 'TK1_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:248]
+INFO: [Synth 8-3491] module 'TK1_schedule' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/tw_schedule.vhd:5' bound to instance 'INST_TK1_SCHEDULE' of component 'TK1_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:247]
 INFO: [Synth 8-638] synthesizing module 'TK1_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/tw_schedule.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'TK1_schedule' (9#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/tw_schedule.vhd:15]
-INFO: [Synth 8-3491] module 'TK2_schedule' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:6' bound to instance 'INST_TK2_SCHEDULE' of component 'TK2_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:255]
+INFO: [Synth 8-3491] module 'TK2_schedule' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:6' bound to instance 'INST_TK2_SCHEDULE' of component 'TK2_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:253]
 INFO: [Synth 8-638] synthesizing module 'TK2_schedule' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:12]
 INFO: [Synth 8-3491] module 'LFSR_TK2' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/LFSR_TK2.vhd:5' bound to instance 'LFSR_UPDATE_9' of component 'LFSR_TK2' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'LFSR_TK2' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/LFSR_TK2.vhd:12]
@@ -83,14 +83,14 @@ INFO: [Synth 8-3491] module 'LFSR_TK2' declared at 'F:/Documenti 2/University/Ma
 INFO: [Synth 8-3491] module 'LFSR_TK2' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/LFSR_TK2.vhd:5' bound to instance 'LFSR_UPDATE_12' of component 'LFSR_TK2' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:55]
 INFO: [Synth 8-3491] module 'LFSR_TK2' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/LFSR_TK2.vhd:5' bound to instance 'LFSR_UPDATE_11' of component 'LFSR_TK2' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:60]
 INFO: [Synth 8-256] done synthesizing module 'TK2_schedule' (11#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/TK2_schedule.vhd:12]
-INFO: [Synth 8-3491] module 'lfsr' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd:6' bound to instance 'INST_LFSR' of component 'LFSR' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:263]
+INFO: [Synth 8-3491] module 'lfsr' declared at 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd:6' bound to instance 'INST_LFSR' of component 'LFSR' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'lfsr' [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd:13]
 WARNING: [Synth 8-6014] Unused sequential element feedback_reg was removed.  [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'lfsr' (12#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/lfsr.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'SKINNY_64_128_parallel' (13#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'Testing_IP' (14#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'SKINNY_64_128_parallel' (13#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/SKINNY_128_64_parallel.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'Testing_IP' (14#1) [F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.srcs/sources_1/imports/new/Testing_IP.vhd:22]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 450.473 ; gain = 154.672
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 450.578 ; gain = 155.727
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -103,10 +103,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 450.473 ; gain = 154.672
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 450.578 ; gain = 155.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 450.473 ; gain = 154.672
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 450.578 ; gain = 155.727
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -122,22 +122,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 791.805 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 792.246 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SKINNY_64_128_parallel'
 INFO: [Synth 8-5546] ROM "BUSY" won't be mapped to RAM because it is too sparse
@@ -167,7 +167,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'Testing_IP'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -266,7 +266,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,13 +278,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:01:00 . Memory (MB): peak = 791.805 ; gain = 496.004
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:02 . Memory (MB): peak = 792.246 ; gain = 497.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 815.879 ; gain = 520.078
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 815.395 ; gain = 520.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -296,7 +296,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -320,7 +320,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -333,7 +333,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -345,25 +345,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -394,22 +394,22 @@ Report Cell Usage:
 +------+-------+------+
 
 Report Instance Areas: 
-+------+-----------------+-----------------------+------+
-|      |Instance         |Module                 |Cells |
-+------+-----------------+-----------------------+------+
-|1     |top              |                       |   364|
-|2     |  SKINNY_128_DUT |SKINNY_64_128_parallel |   351|
-|3     |    INST_IS_REG  |\reg                   |   194|
-|4     |    INST_LFSR    |lfsr                   |    14|
-|5     |    INST_TK1_REG |reg_0                  |    69|
-|6     |    INST_TK2_REG |reg_1                  |    72|
-+------+-----------------+-----------------------+------+
++------+--------------------+-----------------------+------+
+|      |Instance            |Module                 |Cells |
++------+--------------------+-----------------------+------+
+|1     |top                 |                       |   364|
+|2     |  SKINNY_128_64_DUT |SKINNY_64_128_parallel |   351|
+|3     |    INST_IS_REG     |\reg                   |   194|
+|4     |    INST_LFSR       |lfsr                   |    14|
+|5     |    INST_TK1_REG    |reg_0                  |    69|
+|6     |    INST_TK2_REG    |reg_1                  |    72|
++------+--------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 824.422 ; gain = 529.570
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 824.906 ; gain = 187.773
-Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 824.906 ; gain = 529.105
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:49 . Memory (MB): peak = 824.422 ; gain = 187.902
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 824.422 ; gain = 529.570
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -421,8 +421,8 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 91 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:07 . Memory (MB): peak = 824.906 ; gain = 540.715
+synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:10 . Memory (MB): peak = 824.422 ; gain = 541.508
 INFO: [Common 17-1381] The checkpoint 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_128_64_parallel/Skinny_128_64_parallel.runs/synth_1/Testing_IP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Testing_IP_utilization_synth.rpt -pb Testing_IP_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.030 . Memory (MB): peak = 824.906 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 20 18:48:10 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 824.422 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 17:19:10 2018...

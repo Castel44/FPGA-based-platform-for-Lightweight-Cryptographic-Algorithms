@@ -1,33 +1,32 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_unsigned.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
 
-entity AddRoundTweakey is
-     PORT (      		
-             
-       perform_AddRoundTweakey: in std_logic_vector (4 downto 0);            
-       AddRoundTweakey_TK1_IN : IN std_logic_vector(3 downto 0);    
-       AddRoundTweakey_TK2_IN : IN std_logic_vector(3 downto 0);      
-       AddRoundTweakey_IS_IN : IN std_logic_vector(3 downto 0);                     
-       --AddRoundTweakey_TWEAKEY_OUT : OUT std_logic_vector(3 downto 0):= (others => '0');        
-       AddRoundTweakey_IS_OUT : OUT std_logic_vector(3 downto 0):= (others => '0')    
-       );      
-       
-end AddRoundTweakey;
+ENTITY AddRoundTweakey IS
+	PORT (
 
-architecture Behavioral of AddRoundTweakey is
+		perform_AddRoundTweakey : IN std_logic_vector (4 DOWNTO 0);
+		AddRoundTweakey_TK1_IN : IN std_logic_vector(3 DOWNTO 0);
+		AddRoundTweakey_TK2_IN : IN std_logic_vector(3 DOWNTO 0);
+		AddRoundTweakey_IS_IN : IN std_logic_vector(3 DOWNTO 0);
+		AddRoundTweakey_IS_OUT : OUT std_logic_vector(3 DOWNTO 0) := (OTHERS => '0')
+	);
 
-begin
-    
-ELEMENTWISE_XORING : PROCESS (perform_AddRoundTweakey,AddRoundTweakey_IS_IN,AddRoundTweakey_TK1_IN, AddRoundTweakey_TK2_IN)
-begin
-if perform_AddRoundTweakey <= 7 then
+END AddRoundTweakey;
 
-    AddRoundTweakey_IS_OUT <= AddRoundTweakey_IS_IN XOR AddRoundTweakey_TK1_IN XOR AddRoundTweakey_TK2_IN;
-else
-    AddRoundTweakey_IS_OUT <= AddRoundTweakey_IS_IN;
-end if;
+ARCHITECTURE Behavioral OF AddRoundTweakey IS
 
-end process;
+BEGIN
 
-end Behavioral;
+	ELEMENTWISE_XORING : PROCESS (perform_AddRoundTweakey, AddRoundTweakey_IS_IN, AddRoundTweakey_TK1_IN, AddRoundTweakey_TK2_IN)
+	BEGIN
+		IF perform_AddRoundTweakey <= 7 THEN
+
+			AddRoundTweakey_IS_OUT <= AddRoundTweakey_IS_IN XOR AddRoundTweakey_TK1_IN XOR AddRoundTweakey_TK2_IN;
+		ELSE
+			AddRoundTweakey_IS_OUT <= AddRoundTweakey_IS_IN;
+		END IF;
+
+	END PROCESS;
+
+END Behavioral;

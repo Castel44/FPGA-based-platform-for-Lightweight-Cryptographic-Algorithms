@@ -1,53 +1,35 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY IS_shift_reg IS
 
+	PORT (
 
-entity IS_shift_reg is 
+		serial_in : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- serial input 4 bit 
+		CLK : IN STD_LOGIC;
+		CE : IN STD_LOGIC; --enable shifting 
+		serial_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) --serial output 4 bit 
 
-port (
- 
-     serial_in : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- serial input 4 bit 
-     CLK : IN STD_LOGIC;
-     CE: IN STD_LOGIC; --enable shifting 
-     serial_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) --serial output 4 bit 
-	 
-		);		
-		
-end IS_shift_reg;
+	);
 
+END IS_shift_reg;
+ARCHITECTURE behavioral OF IS_shift_reg IS
 
-architecture behavioral of IS_shift_reg is 
+	SIGNAL temp_reg : std_logic_vector(15 DOWNTO 0) := (OTHERS => '0');
 
-signal temp_reg: std_logic_vector(15 downto 0) := (Others => '0');
-TYPE STATES is (idle, shifting);
-signal state: states; 
+BEGIN
+	PROCESS (CLK, CE)
+	BEGIN
 
+		IF rising_edge(CLK) THEN
+			IF (CE = '1') THEN
+				temp_reg <= temp_reg(11 DOWNTO 0) & serial_in;
 
-begin 
-   
+			ELSE
 
-process(CLK,CE)  
-begin 
-            
-    if rising_edge(CLK) then	    
-        if (CE = '1') then 
-                temp_reg <= temp_reg(11 downto 0) & serial_in;
-                
-              else  
-               
-               temp_reg <= temp_reg; 
-                --state <= shifting;	
-                		
-                --parallel_output <= temp_reg;                    
-               -- serial_output <= temp_reg(63 downto 60);                   
-        
-    end if;
-   end if;  
-end process;
-			
-serial_out <= temp_reg(15 downto 12); 
+				temp_reg <= temp_reg;
+			END IF;
+		END IF;
+	END PROCESS;
 
---enable_out <= enable_in; --propagate the enable
-
-end behavioral;
-
+	serial_out <= temp_reg(15 DOWNTO 12);
+END behavioral;

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Thu Jun 21 15:10:45 2018
+| Date         : Tue Jun 26 14:25:29 2018
 | Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
 | Design       : Testing_IP
@@ -64,21 +64,21 @@ Table of Contents
 +----------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
 |  Clock Signal  |                                Enable Signal                               |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
 +----------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG | Skinny_DUT/FSM_sequential_current_state_reg[1]_CE_cooolgate_en_sig_7       |                                               |                1 |              1 |
 |  clk_IBUF_BUFG | Skinny_DUT/FSM_sequential_current_state_reg[2]_CE_cooolgate_en_sig_8       |                                               |                1 |              1 |
+|  clk_IBUF_BUFG | Skinny_DUT/FSM_sequential_current_state_reg[1]_CE_cooolgate_en_sig_7       |                                               |                1 |              1 |
 |  clk_IBUF_BUFG |                                                                            |                                               |                3 |              4 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/temp_reg_reg[40]                                |                                               |                4 |              4 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_TK1_REG/temp_reg_reg[60]_CE_cooolgate_en_sig_6             |                                               |                2 |              4 |
 |  clk_IBUF_BUFG | INST_CNT/ce                                                                | INST_CNT/cnt_internal_value[4]_i_3__0_n_0     |                2 |              5 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/cnt_internal_value_reg[0]_CE_cooolgate_en_sig_4 | Skinny_DUT/INST_SKINNY_CNT/rst_CNT_buf        |                1 |              5 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_LFSR/lfsr_internal[5]_i_2_n_0                              | Skinny_DUT/INST_LFSR/lfsr_internal[5]_i_1_n_0 |                2 |              6 |
-|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/state                                           |                                               |                2 |              8 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable4_buf                                  |                                               |                2 |              8 |
-|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable1_buf                                  |                                               |                2 |              8 |
-|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/state_0                                         |                                               |                2 |              8 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/temp_reg_reg[40]_0                              |                                               |                3 |              8 |
-|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable3_buf                                  |                                               |                2 |              8 |
+|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/state                                           |                                               |                2 |              8 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable2_buf                                  |                                               |                2 |              8 |
+|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable1_buf                                  |                                               |                2 |              8 |
+|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/IS_enable3_buf                                  |                                               |                2 |              8 |
+|  clk_IBUF_BUFG | Skinny_DUT/INST_SKINNY_CNT/state_0                                         |                                               |                2 |              8 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_TK1_REG/temp_reg_reg[32]_CE_cooolgate_en_sig_1             |                                               |                8 |             24 |
 |  clk_IBUF_BUFG | Skinny_DUT/INST_TK2_REG/temp_reg_reg[32]_CE_cooolgate_en_sig_2             |                                               |                7 |             24 |
 +----------------+----------------------------------------------------------------------------+-----------------------------------------------+------------------+----------------+

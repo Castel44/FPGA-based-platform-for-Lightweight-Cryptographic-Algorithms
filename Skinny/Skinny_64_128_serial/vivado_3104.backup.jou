@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Jun 21 14:46:34 2018
+# Process ID: 3104
+# Current directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_128_serial
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11120 F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\Xilinx_contest\Skinny\Skinny_64_128_serial\Skinny_64_128_serial.xpr
+# Log file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_128_serial/vivado.log
+# Journal file: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_128_serial\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Skinny/Skinny_64_128_serial/Skinny_64_128_serial.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_simulation -mode post-implementation -type timing
+source Testing_IP_TB.tcl
+run all
+launch_simulation -mode post-implementation -type functional
+source Testing_IP_TB.tcl
+run all
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+current_sim simulation_1
+close_sim
+close_design
+launch_simulation -mode post-implementation -type timing
+source Testing_IP_TB.tcl
+run all
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_sim
+close_design
+launch_simulation -mode post-implementation -type timing
+source Testing_IP_TB.tcl
+run all
+synth_design -rtl -name rtl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_design
+close_design
+synth_design -rtl -name rtl_1
+open_run synth_1 -name synth_1
+close_sim
+launch_simulation -mode post-implementation -type timing
+source Testing_IP_TB.tcl
+run all
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+close_sim
+close_design
+close_design
+close_design

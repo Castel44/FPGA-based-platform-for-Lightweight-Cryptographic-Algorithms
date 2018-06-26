@@ -1,45 +1,30 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY SubCells_nibble IS
 
+	PORT (
+		SubCells_IN : IN std_logic_vector (3 DOWNTO 0);
+		SubCells_OUT : OUT std_logic_vector (3 DOWNTO 0));
 
-entity SubCells_nibble is         
+END SubCells_nibble;
 
-Port (  SubCells_IN: in std_logic_vector (3 downto 0);         
-        SubCells_OUT: out std_logic_vector (3 downto 0)); 
+ARCHITECTURE Behavioural OF SubCells_nibble IS
 
-end SubCells_nibble;
+BEGIN
+	PROCESS (SubCells_IN)
 
-architecture Behavioural of SubCells_nibble is 
+		VARIABLE x : std_logic_vector (3 DOWNTO 0) := (OTHERS => '0');
+	BEGIN
+		x := SubCells_IN;
 
+		x(0) := x(0) XOR (NOT(x(3) OR x(2)));
+		x := x(2 DOWNTO 0) & x(3);
+		x(0) := x(0) XOR (NOT(x(3) OR x(2)));
+		x := x(2 DOWNTO 0) & x(3);
+		x(0) := x(0) XOR (NOT(x(3) OR x(2)));
+		x := x(2 DOWNTO 0) & x(3);
+		x(0) := x(0) XOR (NOT(x(3) OR x(2)));
+		SubCells_OUT <= x;
 
-
-begin 
-
-
-process (SubCells_IN) 
-
-variable x: std_logic_vector (3 downto 0) := (others => '0') ;  
-
-
-begin 
-
-
- x:= SubCells_IN; 
-
-        x(0) := x(0) XOR (NOT(x(3) OR x(2))); 
-        x := x(2 downto 0) & x(3);
-        x(0) := x(0) XOR (NOT(x(3) OR x(2))); 
-        x := x(2 downto 0) & x(3);
-        x(0) := x(0) XOR (NOT(x(3) OR x(2))); 
-        x := x(2 downto 0) & x(3);
-        x(0) := x(0) XOR (NOT(x(3) OR x(2))); 
-        
-     
-        SubCells_OUT <= x ;        
-
-end process; 
-	
-	
-end Behavioural; 
-
-
+	END PROCESS;
+END Behavioural;

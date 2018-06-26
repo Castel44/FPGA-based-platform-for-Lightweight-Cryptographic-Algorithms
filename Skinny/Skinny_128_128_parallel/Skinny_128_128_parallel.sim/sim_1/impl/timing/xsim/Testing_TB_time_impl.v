@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Thu Jun 21 00:44:25 2018
+// Date        : Wed Jun 20 14:28:57 2018
 // Host        : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file {F:/Documenti
 //               2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL
-//               projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.v}
+//               projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim/sim_1/impl/timing/xsim/Testing_TB_time_impl.v}
 // Design      : Testing_IP
 // Purpose     : This verilog netlist is a timing simulation representation of the design and should not be modified or
 //               synthesized. Please ensure that this netlist is used with the corresponding SDF file.

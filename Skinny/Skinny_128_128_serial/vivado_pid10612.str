@@ -1,0 +1,2267 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 10612
+License: Customer
+
+Current time: 	Tue Jun 26 11:58:14 CEST 2018
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 88 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Andrea
+User home directory: C:/Users/Andrea
+User working directory: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/Andrea/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/vivado.log
+Vivado journal file location: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/vivado.jou
+Engine tmp dir: 	F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/.Xil/Vivado-10612-DESKTOP-II8OTGJ
+
+GUI allocated memory:	141 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 526 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 74 MB (+75424kb) [00:00:18]
+// [Engine Memory]: 520 MB (+394009kb) [00:00:18]
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: F:\Documenti 2\University\Magistrale\Progettazione di Sistemi Integrati\VHDL projects\VIVADO-lightweight-crypto-project\Skinny\Skinny_128_128_serial\Skinny_128_128_serial.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial' 
+// HMemoryUtils.trashcanNow. Engine heap size: 555 MB. GUI used memory: 43 MB. Current time: 6/26/18 11:58:16 AM CEST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [Engine Memory]: 565 MB (+19496kb) [00:00:25]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 605 MB (+12413kb) [00:00:33]
+// [Engine Memory]: 636 MB (+1238kb) [00:00:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 648 MB. GUI used memory: 49 MB. Current time: 6/26/18 11:58:37 AM CEST
+// Project name: Skinny_128_128_serial; location: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial; part: xc7z010clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:38 ; elapsed = 00:00:26 . Memory (MB): peak = 816.004 ; gain = 130.246 
+dismissDialog("Open Project"); // bv (ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (Testing_IP.vhd) elapsed time: 0.2s
+// Elapsed time: 48 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// [Engine Memory]: 668 MB (+227kb) [00:01:35]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// [GUI Memory]: 80 MB (+1996kb) [00:01:37]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// [GUI Memory]: 86 MB (+2184kb) [00:02:04]
+// Elapsed time: 89 seconds
+selectCodeEditor("Testing_IP.vhd", 421, 228); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// [GUI Memory]: 91 MB (+211kb) [00:04:26]
+// Elapsed time: 89 seconds
+selectCodeEditor("Testing_IP.vhd", 449, 76); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 688 MB. GUI used memory: 52 MB. Current time: 6/26/18 12:02:47 PM CEST
+// Elapsed time: 14 seconds
+selectCodeEditor("Testing_IP.vhd", 95, 588); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("Testing_IP.vhd", 534, 269); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectCodeEditor("Testing_IP.vhd", 128, 366); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 148, 363); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 19 seconds
+selectCodeEditor("Testing_IP.vhd", 626, 431); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 240, 12); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 393, 5); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 393, 5, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 393, 5); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 352, 16); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 352, 16, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 190, 29); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 190, 29, false, false, false, false, true); // cd (w, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectCodeEditor("Testing_IP.vhd", 270, 119); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 270, 119, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 376, 121); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 376, 121, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 425, 112); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 425, 112, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 352, 115); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 352, 115, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 298, 123); // cd (w, ch)
+// Elapsed time: 47 seconds
+selectCodeEditor("Testing_IP.vhd", 140, 53); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 140, 53, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 199, 26); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 199, 26, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 154, 28); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 154, 28, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 162, 28); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 162, 28, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 205, 20); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 205, 20, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 271, 27); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 218, 121); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 218, 121, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 153, 364); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 150, 416); // cd (w, ch)
+// Elapsed time: 30 seconds
+selectCodeEditor("Testing_IP.vhd", 174, 368); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 13 seconds
+selectCodeEditor("Testing_IP.vhd", 209, 586); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 0, 600); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 94, 600); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 94, 602, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 216, 604); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 406, 604); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 296, 610); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 296, 610, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 472, 608); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 536, 599); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 486, 620); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 518, 605); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 518, 605, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 480, 622); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 568, 599); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 568, 599, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 514, 606); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 514, 606, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 460, 607); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 460, 607, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 517, 603); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 775, 602); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 574, 624); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 68, 378); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 68, 378, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 136, 533); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 64, 536); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 311, 400); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("Testing_IP.vhd", 95, 632); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 95, 632, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 66, 220); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 46, 241); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 46, 241, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 91, 262); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 91, 262, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 112, 411); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 112, 411, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 138, 396); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 138, 396, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 56, 380); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 148, 415); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 148, 415, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 158, 471); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 158, 471, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 230, 466); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 230, 466, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 329, 508); // cd (w, ch)
+// [GUI Memory]: 97 MB (+1468kb) [00:09:09]
+// Elapsed time: 60 seconds
+selectCodeEditor("Testing_IP.vhd", 48, 503); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 247, 506); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 247, 506, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 375, 506); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 375, 506, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 458, 509); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 458, 509, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 531, 504); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 52, 91); // cd (w, ch)
+// Elapsed time: 33 seconds
+selectCodeEditor("Testing_IP.vhd", 73, 196); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 127, 398); // cd (w, ch)
+// Elapsed time: 24 seconds
+selectCodeEditor("Testing_IP.vhd", 89, 232); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 75, 347); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 75, 347, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 56, 276); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 47, 617); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 47, 617, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 51, 676); // cd (w, ch)
+// Elapsed time: 26 seconds
+selectCodeEditor("Testing_IP.vhd", 348, 401); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("Testing_IP.vhd", 174, 588); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 174, 588, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 23, 606); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 704, 248); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 704, 248, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 752, 264); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 752, 264, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 818, 262); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 818, 262, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 775, 300); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 776, 300, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 491, 261); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 422, 280); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 436, 280); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 32, 286); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 27, 286); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 907, 282); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 19 seconds
+selectCodeEditor("Testing_IP.vhd", 170, 392); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 184, 383); // cd (w, ch)
+// [GUI Memory]: 103 MB (+1494kb) [00:12:48]
+selectCodeEditor("Testing_IP.vhd", 88, 433); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 134, 229); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 134, 229, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 100, 320); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 56, 730); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 28 seconds
+selectCodeEditor("Testing_IP.vhd", 138, 25); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 138, 25, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 31, 436); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 29, 442); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("Testing_IP.vhd", 137, 429); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 162, 265); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 162, 265, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 10 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Testing_IP.vhd", 132, 254); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 132, 254, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 141, 280); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 141, 280, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 134, 281); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 175, 634); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 175, 634, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 161, 619); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 161, 619, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 159, 824); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 159, 824, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 178, 650); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 178, 650, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 201, 469); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 201, 469, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 263, 466); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 263, 466, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 341, 460); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 341, 460, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 432, 463); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 432, 463, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 500, 471); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 238, 433); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 238, 433, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 300, 431); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 300, 431, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 139, 368); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 176, 421); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 176, 421, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 175, 743); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 175, 743, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 99, 457); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 29, 256); // cd (w, ch)
+// Elapsed time: 53 seconds
+selectCodeEditor("Testing_IP.vhd", 233, 482); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 59, 676); // cd (w, ch)
+// Elapsed time: 18 seconds
+selectCodeEditor("Testing_IP.vhd", 97, 94); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 97, 94, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 132, 36); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 132, 36, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 167, 23); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 167, 23, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 21, 12); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 217, 17); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 217, 17, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 190, 42); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 190, 42, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 287, 39); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 287, 39, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 333, 28); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 83, 78); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 298, 103); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 298, 103, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 229, 102); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 229, 102, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 217, 76); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 405, 104); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 405, 104, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 366, 107); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 366, 107, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 264, 128); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 264, 128, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 339, 116); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 641, 129); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 145, 432); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 145, 432, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 654, 129); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 42 seconds
+selectCodeEditor("Testing_IP.vhd", 465, 334); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 465, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 396, 338); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 466, 329); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 513, 328); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 233, 529); // cd (w, ch)
+// Elapsed time: 40 seconds
+selectCodeEditor("Testing_IP.vhd", 422, 525); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 422, 525, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 465, 529); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 465, 529, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 572, 525); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 536, 531); // cd (w, ch)
+// Elapsed time: 36 seconds
+selectCodeEditor("Testing_IP.vhd", 647, 532); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 685, 534); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectCodeEditor("Testing_IP.vhd", 216, 535); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 519, 532); // cd (w, ch)
+// [GUI Memory]: 109 MB (+1609kb) [00:19:19]
+// Elapsed time: 40 seconds
+selectCodeEditor("Testing_IP.vhd", 148, 398); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 148, 398, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 183, 402); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 183, 402, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 199, 400); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 199, 400, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 214, 372); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 212, 377); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 212, 377, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 204, 408); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 204, 408, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 218, 413); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 218, 413, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 233, 415); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 233, 415, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 247, 455); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 484, 340); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 484, 340, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 538, 336); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 538, 336, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 677, 337); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 677, 337, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 751, 332); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 751, 332, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 790, 328); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 841, 337); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 812, 326); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 234, 38); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 234, 38, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 287, 24); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 287, 24, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 220, 43); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 220, 43, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 228, 93); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 236, 113); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 236, 113, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 198, 125); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 198, 125, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 289, 118); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 289, 118, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 68, 100); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 516, 98); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 516, 98, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 444, 106); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 444, 106, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 508, 94); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 508, 94, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 420, 115); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 650, 132); // cd (w, ch)
+// Elapsed time: 21 seconds
+selectCodeEditor("Testing_IP.vhd", 249, 164); // cd (w, ch)
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// Elapsed time: 38 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectCodeEditor("Testing_IP.vhd", 260, 162); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 195, 166); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 435, 226); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("Testing_IP.vhd", 263, 152); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 294, 159); // cd (w, ch)
+// Elapsed time: 22 seconds
+selectCodeEditor("Testing_IP.vhd", 279, 162); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 266, 162); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 36, 184); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 2, 180); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 76, 178); // cd (w, ch)
+// Elapsed time: 67 seconds
+selectCodeEditor("Testing_IP.vhd", 27, 434); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 539, 437); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 59, 693); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 52, 684); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 71, 688); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 90, 328); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 24, 348); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 61, 346); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 61, 346, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 254, 350); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 378, 354); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 378, 354, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 442, 355); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 506, 354); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 196, 144); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 331, 310); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 330, 310, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 304, 318); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 304, 318, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 269, 331); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 268, 331, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 247, 348); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("Testing_IP.vhd", 713, 260); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 713, 260, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 751, 258); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 751, 258, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 807, 260); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 838, 261); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 819, 270); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectCodeEditor("Testing_IP.vhd", 143, 266); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 143, 266, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 145, 261); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 145, 261, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 205, 280); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 205, 280, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 17 seconds
+selectCodeEditor("Testing_IP.vhd", 261, 71); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 230, 423); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 230, 423, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 174, 434); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 174, 434, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 262, 430); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 318, 386); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 318, 386, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 377, 380); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 294, 384); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 166, 542); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 166, 542, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 144, 514); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 144, 514, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 185, 506); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 282, 504); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 246, 500); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("Testing_IP.vhd", 267, 159); // cd (w, ch)
+// Elapsed time: 29 seconds
+selectCodeEditor("Testing_IP.vhd", 267, 366); // cd (w, ch)
+// Elapsed time: 38 seconds
+selectCodeEditor("Testing_IP.vhd", 377, 118); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 377, 118, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 185, 102); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 185, 102, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 162, 84); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 162, 84, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 80, 103); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 80, 103, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 182, 98); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 182, 98, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 87, 82); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 87, 82, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 167, 95); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 96, 38); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 96, 38, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 183, 38); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 183, 38, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 122, 80); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 122, 80, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 63, 80); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 20, 78); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectCodeEditor("Testing_IP.vhd", 259, 484); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 259, 484, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 324, 478); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 324, 478, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 367, 483); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 378, 484); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 377, 485, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 424, 484); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 256, 586); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 445, 595); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 461, 584); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 253, 384); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 414, 376); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 414, 376, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 337, 374); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 337, 374, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 324, 376); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 261, 382); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 244, 372); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 291, 378); // cd (w, ch)
+// Elapsed time: 23 seconds
+selectCodeEditor("Testing_IP.vhd", 170, 747); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 165, 750); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 192, 753); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 343, 574); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 264, 672); // cd (w, ch)
+// Elapsed time: 38 seconds
+selectCodeEditor("Testing_IP.vhd", 319, 693); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 319, 693, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 32 seconds
+selectCodeEditor("Testing_IP.vhd", 404, 537); // cd (w, ch)
+// Elapsed time: 22 seconds
+selectCodeEditor("Testing_IP.vhd", 136, 540); // cd (w, ch)
+// Elapsed time: 22 seconds
+selectCodeEditor("Testing_IP.vhd", 340, 658); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 340, 658, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 463, 664); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 485, 656); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 485, 656, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 134, 810); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 154, 608); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 230, 604); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 230, 604, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 209, 332); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 233, 508); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 286, 278); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 216, 656); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 216, 656, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 246, 653); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 234, 654); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("Testing_IP.vhd", 236, 504); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 158, 395); // cd (w, ch)
+// Elapsed time: 73 seconds
+selectCodeEditor("Testing_IP.vhd", 394, 483); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 394, 483, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 444, 480); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 444, 480, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 402, 482); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 402, 482, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 378, 486); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 376, 486, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 448, 488); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 448, 488, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 485, 489); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 485, 489, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Testing_IP.vhd", 408, 486); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 283, 486); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 296, 446); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 234, 345); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 192, 623); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 192, 555); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 171, 550); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 185, 456); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 182, 464); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 207, 448); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 208, 572); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 232, 568); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 259, 191); // cd (w, ch)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 15 seconds
+selectCodeEditor("Testing_IP.vhd", 110, 183); // cd (w, ch)
+// Elapsed time: 21 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 704 MB (+2028kb) [00:34:08]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 52 MB. Current time: 6/26/18 12:32:07 PM CEST
+selectCodeEditor("NEWSKINNY.vhd", 454, 260); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("NEWSKINNY.vhd", 402, 287); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 91, 104); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 62, 123); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 61, 139); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 64, 153); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 62, 176); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 59, 192); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 59, 214); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 47, 227); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 92, 300); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 1, 9); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 36, 12); // cd (w, ch)
+// Elapsed time: 63 seconds
+selectCodeEditor("NEWSKINNY.vhd", 125, 56); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 125, 56, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 81, 38); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 81, 38, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 156, 60); // cd (w, ch)
+// Elapsed time: 30 seconds
+selectCodeEditor("NEWSKINNY.vhd", 188, 72); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectCodeEditor("NEWSKINNY.vhd", 31, 99); // cd (w, ch)
+// Elapsed time: 10 seconds
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 144, 144); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 144, 144, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 520, 91); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 510, 259); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 510, 259, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 589, 258); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 589, 258, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 674, 262); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 674, 262, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 641, 268); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 641, 268, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 717, 268); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 717, 268, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 624, 265); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 624, 265, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 573, 266); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 331, 294); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 331, 294, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 430, 306); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 430, 306, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 514, 318); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 514, 318, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 424, 310); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 424, 310, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 357, 306); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 357, 306, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 438, 301); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 439, 301, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 376, 308); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 376, 308, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 311, 312); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 311, 312, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 393, 316); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 393, 316, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 465, 318); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 465, 318, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 537, 318); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 537, 318, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 465, 326); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 465, 326, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 387, 322); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 387, 322, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 457, 328); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 457, 328, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 292, 326); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 489, 334); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 489, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 436, 336); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 575, 348); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 575, 348, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 633, 350); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 633, 350, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 727, 360); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 679, 353); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 715, 344); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectCodeEditor("NEWSKINNY.vhd", 122, 466); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 122, 466, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 85, 483); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 85, 483, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 242, 503); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 242, 503, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 348, 504); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 348, 504, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("NEWSKINNY.vhd", 590, 490); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 590, 490, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 630, 490); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 630, 490, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 686, 494); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 698, 482); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 321, 486); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 138, 504); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("NEWSKINNY.vhd", 1130, 489); // cd (w, ch)
+// Elapsed time: 37 seconds
+selectCodeEditor("NEWSKINNY.vhd", 52, 481); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 194, 549); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 553); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 553, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 298, 553); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 320, 533); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 320, 533, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 234, 550); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 234, 550, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 302, 556); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 302, 556, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 166, 572); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 166, 572, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 226, 569); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 226, 569, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 288, 556); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 99, 303); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 49, 316); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 422, 280); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 809, 313); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 125, 245); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 125, 245, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 53, 248); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 113, 311); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("NEWSKINNY.vhd", 172, 322); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 172, 322, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 196, 289); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 196, 289, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 201, 286); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 201, 286, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 193, 330); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 193, 330, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 226, 320); // cd (w, ch)
+// Elapsed time: 10 seconds
+selectCodeEditor("NEWSKINNY.vhd", 44, 159); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("NEWSKINNY.vhd", 49, 587); // cd (w, ch)
+// Elapsed time: 35 seconds
+selectCodeEditor("NEWSKINNY.vhd", 474, 612); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 474, 612, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 407, 618); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 407, 618, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 454, 605); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 454, 605, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 383, 619); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 383, 619, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 444, 608); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 338, 623); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 338, 623, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 458, 631); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 120, 586); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 672, 604); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 201, 146); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 201, 146, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 112, 335); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 218, 518); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 551); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 551, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 426, 557); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 426, 557, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 124, 586); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 98, 428); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 624, 384); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 624, 384, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 694, 380); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 694, 380, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 758, 382); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 758, 382, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 832, 386); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 832, 386, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 926, 388); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 648, 389); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 648, 389, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 692, 384); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 692, 384, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 724, 383); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 724, 383, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 238, 328); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 238, 328, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 348, 338); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 348, 338, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 430, 341); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 430, 341, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 490, 331); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 490, 331, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 580, 335); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 580, 335, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("NEWSKINNY.vhd", 222, 514); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 151, 555); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 151, 555, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 344, 556); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 344, 556, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 265, 554); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 265, 554, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 372, 554); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 212, 551); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 440); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 440, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 294, 450); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 294, 450, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 232, 211); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 578, 212); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 500, 459); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 52, 301); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 59, 452); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 34, 676); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 78, 525); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 244, 487); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 244, 487, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 344, 488); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 344, 488, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 323, 498); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 323, 498, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 50, 485); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 108, 483); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 108, 483, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 576, 489); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 576, 489, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 742, 491); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 742, 491, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 172, 507); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 172, 507, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 376, 501); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 376, 501, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 446, 505); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 128, 449); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 45, 623); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 102, 585); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 102, 585, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 258, 604); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 258, 604, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 218, 350); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 218, 350, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 378, 351); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 378, 351, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 360, 351); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 360, 351, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 298, 353); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 353, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 380, 352); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 380, 352, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 269, 351); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 269, 351, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 203, 341); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 203, 341, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 306, 343); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 48, 380); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 23, 458); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 50, 473); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 53, 494); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 51, 503); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 634, 106); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 756, 143); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 30, 638); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 94, 516); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 94, 516, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 172, 512); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 172, 512, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 146, 537); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 145, 538, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 72, 553); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 72, 553, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 106, 534); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 106, 534, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 202, 533); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 185, 550); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 185, 550, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 103, 546); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 103, 546, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 162, 546); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 228, 551); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 228, 551, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 149, 548); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 149, 548, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 192, 544); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 192, 544, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 314, 551); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 314, 551, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 386, 552); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 386, 552, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("NEWSKINNY.vhd", 205, 450); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 542, 429); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 506, 520); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 316, 536); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 280, 543); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 512, 518); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 312, 547); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 234, 300); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 53, 553); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 53, 553, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 64, 572); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 122, 210); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 122, 210, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 116, 240); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 116, 240, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 177, 312); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 177, 312, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 134, 309); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 74, 343); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 490, 415); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 126, 515); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 126, 515, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 200, 522); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 504, 535); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 178, 466); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 82, 471); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 82, 471, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 89, 568); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 89, 568, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 219, 621); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 390, 640); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 292, 692); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 86, 400); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+typeControlKey(null, null, 'z');
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 222, 283); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 770, 282); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 102, 522); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 106, 370); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 59, 506); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 94, 571); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 88, 638); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 72, 741); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 78, 710); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 71, 773); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 92, 740); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 82, 813); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 78, 800); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 72, 696); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 74, 708); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 80, 642); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 96, 709); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 64, 711); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 126, 570); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 126, 570, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 1260, 484); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 1270, 499); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 220, 297); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 226, 312); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 146, 516); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 480, 485); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 322, 382); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 282, 451); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 148, 498); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 197, 551); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 165, 566); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 148, 589); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 137, 608); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 377, 522); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 366, 573); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 366, 573, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 444, 572); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 444, 572, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 514, 576); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 514, 576, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 408, 566); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 444, 470); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 542, 466); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 410, 456); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 160, 231); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 494 seconds
+selectCodeEditor("NEWSKINNY.vhd", 270, 334); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 270, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 212, 349); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 212, 349, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 295, 336); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 295, 336, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 252, 353); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 252, 353, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 342, 350); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 342, 350, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 229, 334); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 229, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 301, 340); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 301, 340, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 238, 326); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 238, 326, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 177, 342); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 177, 342, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 298, 338); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 298, 338, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 261, 351); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 261, 351, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 348, 354); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 348, 354, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 34 seconds
+selectCodeEditor("NEWSKINNY.vhd", 130, 85); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 138, 79); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 164, 220); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 164, 220, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 158, 229); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 158, 229, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 200, 250); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 200, 250, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 130, 251); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 174, 279); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 174, 279, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 272, 258); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 272, 258, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 252, 264); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 252, 264, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 250, 272); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 250, 272, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 317, 270); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 317, 270, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 317, 270); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 284, 281); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 284, 281, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 354, 277); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 354, 277, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 302, 274); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 323, 264); // cd (w, ch)
+// Elapsed time: 41 seconds
+selectCodeEditor("NEWSKINNY.vhd", 367, 284); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 367, 284, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 588, 285); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 588, 285, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 248, 329); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 248, 329, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 392, 334); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 392, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 365, 346); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 365, 346, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 378, 359); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 378, 359, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 253, 356); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 253, 356, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 554, 350); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 414, 338); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 414, 338, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 546, 342); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 149, 504); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 159, 514); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 159, 514, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 204, 504); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 204, 504, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 324, 498); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 324, 498, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 210, 500); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 210, 500, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 162, 523); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 162, 523, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 372, 525); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 372, 525, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 179, 534); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 179, 534, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 221, 548); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 221, 548, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 198, 580); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 257, 592); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 257, 592, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 436, 684); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 440, 686, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 545, 704); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 576, 694); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 576, 694, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 629, 690); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 629, 690, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 668, 692); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 387, 680); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 387, 680, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 431, 683); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 431, 683, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 389, 686); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 389, 686, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 367, 690); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 418, 693); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 418, 693, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 375, 692); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 375, 692, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 178, 617); // cd (w, ch)
+// Elapsed time: 36 seconds
+selectCodeEditor("NEWSKINNY.vhd", 240, 570); // cd (w, ch)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("NEWSKINNY.vhd", 250, 568); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 622); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 151, 685); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 160, 708); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 160, 708, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 244, 705); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 244, 705, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 187, 638); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 243, 384); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 243, 384, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 315, 384); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 315, 384, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 368, 222); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 218); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 134, 532); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 133, 566); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 166, 534); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 503, 538); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 145, 587); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 166, 756); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("NEWSKINNY.vhd", 147, 520); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 500, 594); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 489, 601); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 286, 635); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddConstant.vhd]", 3, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddConstant.vhd]", 3, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddRoundTweakey.vhd]", 4, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddRoundTweakey.vhd]", 4, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddConstant.vhd]", 3, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddConstant.vhd]", 3, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("AddConstant.vhd", 574, 246); // cd (w, ch)
+typeControlKey((HResource) null, "AddConstant.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 18 seconds
+selectCodeEditor("AddConstant.vhd", 375, 142); // cd (w, ch)
+typeControlKey((HResource) null, "AddConstant.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("AddConstant.vhd", 88, 94); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectCodeEditor("AddConstant.vhd", 409, 167); // cd (w, ch)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("AddConstant.vhd", 803, 418); // cd (w, ch)
+selectCodeEditor("AddConstant.vhd", 243, 395); // cd (w, ch)
+selectCodeEditor("AddConstant.vhd", 2, 4); // cd (w, ch)
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Testing_IP.vhd", 1); // k (j, ch)
+selectCodeEditor("Testing_IP.vhd", 244, 160); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 244, 160, false, false, false, false, true); // cd (w, ch) - Double Click
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AddRoundTweakey.vhd", 4); // k (j, ch)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AddConstant.vhd", 3); // k (j, ch)
+typeControlKey((HResource) null, "AddConstant.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("AddConstant.vhd", 242, 144); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AddRoundTweakey.vhd", 4); // k (j, ch)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AddConstant.vhd", 3); // k (j, ch)
+selectCodeEditor("AddConstant.vhd", 55, 37); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 38 seconds
+selectCodeEditor("AddConstant.vhd", 9, 360); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddRoundTweakey.vhd]", 4, false); // B (D, ch)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, AddRoundTweakey.vhd]", 4, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("AddRoundTweakey.vhd", 61, 112); // cd (w, ch)
+selectCodeEditor("AddRoundTweakey.vhd", 459, 108); // cd (w, ch)
+// Elapsed time: 10 seconds
+selectCodeEditor("AddRoundTweakey.vhd", 113, 362); // cd (w, ch)
+selectCodeEditor("AddRoundTweakey.vhd", 155, 348); // cd (w, ch)
+selectCodeEditor("AddRoundTweakey.vhd", 155, 348, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("AddRoundTweakey.vhd", 1, 351); // cd (w, ch)
+selectCodeEditor("AddRoundTweakey.vhd", 111, 432); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Element_Cnt.vhd]", 5, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Element_Cnt.vhd]", 5, false, false, false, false, false, true); // B (D, ch) - Double Click
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Element_Cnt.vhd", 98, 94); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 105, 164); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 45, 236); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 143, 468); // cd (w, ch)
+typeControlKey((HResource) null, "Element_Cnt.vhd", 'c'); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 52 MB. Current time: 6/26/18 1:02:07 PM CEST
+selectCodeEditor("Element_Cnt.vhd", 341, 179); // cd (w, ch)
+typeControlKey((HResource) null, "Element_Cnt.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 77, 141); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 77, 141, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 101, 179); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 99, 179, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 124, 284); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 124, 284, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 276, 345); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 276, 345, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 149, 448); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 149, 448, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 298, 455); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 298, 455, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 197, 480); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 197, 480, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("Element_Cnt.vhd", 336, 505); // cd (w, ch)
+selectCodeEditor("Element_Cnt.vhd", 336, 505, false, false, false, false, true); // cd (w, ch) - Double Click
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, IS_Shift_Reg.vhd]", 6, false); // B (D, ch)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, IS_Shift_Reg.vhd]", 6, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("IS_Shift_Reg.vhd", 363, 308); // cd (w, ch)
+typeControlKey((HResource) null, "IS_Shift_Reg.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 13 seconds
+selectCodeEditor("IS_Shift_Reg.vhd", 407, 194); // cd (w, ch)
+typeControlKey((HResource) null, "IS_Shift_Reg.vhd", 'v'); // cd (w, ch)
+// Elapsed time: 23 seconds
+selectCodeEditor("IS_Shift_Reg.vhd", 349, 107); // cd (w, ch)
+typeControlKey((HResource) null, "IS_Shift_Reg.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("IS_Shift_Reg.vhd", 68, 830); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, MixColumn.vhd]", 7, false); // B (D, ch)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, MixColumn.vhd]", 7, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("MixColumn.vhd", 28, 377); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 51, 457); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 51, 457, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("MixColumn.vhd", 135, 464); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 135, 464, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("MixColumn.vhd", 264, 481); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 264, 481, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("MixColumn.vhd", 347, 473); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 347, 473, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("MixColumn.vhd", 341, 492); // cd (w, ch)
+selectCodeEditor("MixColumn.vhd", 341, 492, false, false, false, false, true); // cd (w, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, TW_shift_reg.vhd]", 10, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, TW_shift_reg.vhd]", 10, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("TW_shift_reg.vhd", 113, 43); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 196, 121); // cd (w, ch)
+typeControlKey((HResource) null, "TW_shift_reg.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 415, 223); // cd (w, ch)
+typeControlKey((HResource) null, "TW_shift_reg.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 385, 830); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 571, 98); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 571, 98, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("TW_shift_reg.vhd", 633, 106); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 633, 106, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("TW_shift_reg.vhd", 44, 16); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 28, 21); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 17, 39); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("TW_shift_reg.vhd", 607, 165); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 607, 165, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("TW_shift_reg.vhd", 65, 553); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 89, 328); // cd (w, ch)
+selectCodeEditor("TW_shift_reg.vhd", 69, 536); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, cnt.vhd]", 11, false); // B (D, ch)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, cnt.vhd]", 11, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("cnt.vhd", 90, 64); // cd (w, ch)
+selectCodeEditor("cnt.vhd", 2, 213); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, is_shift_reg_NEW.vhd]", 12, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, is_shift_reg_NEW.vhd]", 12, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 291, 254); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 103, 649); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 53, 560); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 57, 522); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 38, 670); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 79, 346); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 79, 346, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 97, 384); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 97, 384, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 177, 382); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 146, 223); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectCodeEditor("is_shift_reg_NEW.vhd", 394, 222); // cd (w, ch)
+typeControlKey((HResource) null, "is_shift_reg_NEW.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 345, 210); // cd (w, ch)
+typeControlKey((HResource) null, "is_shift_reg_NEW.vhd", 'v'); // cd (w, ch)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("is_shift_reg_NEW.vhd", 258, 142); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 258, 142, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 435, 155); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 435, 155, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 477, 158); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 477, 158, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("is_shift_reg_NEW.vhd", 488, 114); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 223, 20); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 82, 75); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 73, 90); // cd (w, ch)
+selectCodeEditor("is_shift_reg_NEW.vhd", 53, 164); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lfsr.vhd]", 13, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lfsr.vhd]", 13, false, false, false, false, false, true); // B (D, ch) - Double Click
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 22 seconds
+selectCodeEditor("lfsr.vhd", 173, 109); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 173, 109, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("lfsr.vhd", 73, 52); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 223, 118); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 223, 118, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 167, 132); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 167, 132, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 264, 116); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 264, 116, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 179, 133); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 179, 133, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 337, 133); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 337, 133, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 301, 137); // cd (w, ch)
+// Elapsed time: 55 seconds
+selectCodeEditor("lfsr.vhd", 45, 174); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 131, 118); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 131, 118, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 119, 130); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 119, 130, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 202, 126); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 202, 126, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 125, 128); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 337, 326); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 337, 326, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 422, 330); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 422, 330, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 347, 335); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 347, 335, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 427, 334); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 427, 334, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("lfsr.vhd", 369, 337); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 47, 60); // cd (w, ch)
+// Elapsed time: 22 seconds
+selectCodeEditor("lfsr.vhd", 44, 46); // cd (w, ch)
+typeControlKey((HResource) null, "lfsr.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 26 seconds
+selectCodeEditor("lfsr.vhd", 409, 277); // cd (w, ch)
+typeControlKey((HResource) null, "lfsr.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 108, 176); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("lfsr.vhd", 320, 412); // cd (w, ch)
+selectCodeEditor("lfsr.vhd", 233, 467); // cd (w, ch)
+// Elapsed time: 13 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, rnd_key_update.vhd]", 14, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, rnd_key_update.vhd]", 14, false, false, false, false, false, true); // B (D, ch) - Double Click
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("rnd_key_update.vhd", 145, 454); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 145, 454, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 116, 461); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 116, 461, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 231, 453); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 231, 453, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 203, 471); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 202, 471, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 145, 470); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 102, 469); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 102, 469, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 326, 465); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 326, 465, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 268, 464); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 268, 464, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 375, 464); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 376, 464, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 292, 470); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 289, 471, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 116, 490); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 116, 490, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 161, 483); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 146, 485); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 146, 485, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 182, 475); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 122, 487); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 122, 488, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("rnd_key_update.vhd", 163, 480); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 548, 454); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 550, 452); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 49, 429); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 20, 430); // cd (w, ch)
+typeControlKey((HResource) null, "rnd_key_update.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 189, 265); // cd (w, ch)
+typeControlKey((HResource) null, "rnd_key_update.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 16 seconds
+selectCodeEditor("rnd_key_update.vhd", 675, 270); // cd (w, ch)
+typeControlKey((HResource) null, "rnd_key_update.vhd", 'v'); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 71, 282); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 65, 332); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("rnd_key_update.vhd", 91, 614); // cd (w, ch)
+selectCodeEditor("rnd_key_update.vhd", 93, 642); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation-Only Sources, sim_1, VHDL, xil_defaultlib, Testing_IP_TB.vhd]", 23, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation-Only Sources, sim_1, VHDL, xil_defaultlib, Testing_IP_TB.vhd]", 23, false, false, false, false, false, true); // B (D, ch) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Testing_IP.vhd]", 15, false); // B (D, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Testing_IP.vhd]", 15, false, false, false, false, false, true); // B (D, ch) - Double Click
+// Elapsed time: 11 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd), Skinny_DUT : Skinny_128_128(Behavioral) (NEWSKINNY.vhd)]", 2, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectCodeEditor("NEWSKINNY.vhd", 144, 362); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 144, 362, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 256, 356); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 256, 356, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 137, 381); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 374); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 188, 374, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 262, 364); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 262, 364, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 223, 520); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 223, 520, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 191, 539); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 191, 539, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 272, 538); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 272, 538, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 292, 538); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 74, 108); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 74, 108, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 102, 98); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 102, 98, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 162, 90); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 162, 90, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 250, 92); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 250, 92, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 366, 94); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 366, 95, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 438, 96); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 438, 96, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 488, 96); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 157, 64); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 53, 40); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 53, 40, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 66, 63); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 68, 63, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 68, 75); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 68, 75, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 138, 79); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 138, 79, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 99, 93); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 99, 93, false, false, false, false, true); // cd (w, ch) - Double Click
+selectCodeEditor("NEWSKINNY.vhd", 162, 88); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ch)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// an (ch): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (an)
+// bv (ch):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// e (ch):  Run Simulation : addNotify
+dismissDialog("Save Project"); // an (ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: LAUNCH_SIM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_simulation 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (e)
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' 
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: INFO: [Vivado 12-5357] 'setup' step aborted INFO: [Common 17-344] 'launch_simulation' was cancelled 
+// CommandFailedException: ERROR: [Common 17-69] Command failed:  
+// 'd' command handler elapsed time: 3 seconds
+dismissDialog("Run Simulation"); // e (ch)
+// [GUI Memory]: 116 MB (+840kb) [01:14:02]
+// [GUI Memory]: 123 MB (+1500kb) [01:14:05]
+// Elapsed time: 15 seconds
+selectCodeEditor("NEWSKINNY.vhd", 94, 46); // cd (w, ch)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true); // B (D, ch) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Testing_IP(Behavioral) (Testing_IP.vhd)]", 1, true, false, false, false, false, true); // B (D, ch) - Double Click - Node
+selectCodeEditor("Testing_IP.vhd", 767, 140); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 36 seconds
+selectCodeEditor("Testing_IP.vhd", 169, 296); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 33 seconds
+selectCodeEditor("Testing_IP.vhd", 27, 249); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 241, 298); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 63 seconds
+selectCodeEditor("Testing_IP.vhd", 169, 215); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 12 seconds
+selectCodeEditor("Testing_IP.vhd", 353, 124); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 358, 196); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 406, 217); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 39 seconds
+selectCodeEditor("Testing_IP.vhd", 108, 299); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 58 seconds
+selectCodeEditor("Testing_IP.vhd", 546, 211); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 515, 191); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("Testing_IP.vhd", 546, 309); // cd (w, ch)
+typeControlKey((HResource) null, "Testing_IP.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 33 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)
+selectCodeEditor("NEWSKINNY.vhd", 24, 123); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 24 seconds
+selectCodeEditor("NEWSKINNY.vhd", 416, 264); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 393, 268); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 404, 268); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 399, 266); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 13 seconds
+selectCodeEditor("NEWSKINNY.vhd", 590, 297); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 583, 313); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 529, 344); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 550, 334); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 735, 348); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 21 seconds
+selectCodeEditor("NEWSKINNY.vhd", 266, 401); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 37 seconds
+selectCodeEditor("NEWSKINNY.vhd", 81, 62); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 81, 195); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 28 seconds
+selectCodeEditor("NEWSKINNY.vhd", 658, 371); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 21 seconds
+selectCodeEditor("NEWSKINNY.vhd", 349, 127); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 26, 284); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 23 seconds
+selectCodeEditor("NEWSKINNY.vhd", 483, 334); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("NEWSKINNY.vhd", 85, 351); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 685, 384); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 635, 401); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 28, 335); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 84, 266); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 10 seconds
+selectCodeEditor("NEWSKINNY.vhd", 521, 294); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 11 seconds
+selectCodeEditor("NEWSKINNY.vhd", 480, 315); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 10 seconds
+selectCodeEditor("NEWSKINNY.vhd", 25, 247); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 27 seconds
+selectCodeEditor("NEWSKINNY.vhd", 549, 270); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 565, 259); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 29, 216); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 314, 338); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 27, 194); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 28, 230); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 39 seconds
+selectCodeEditor("NEWSKINNY.vhd", 430, 277); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 190 seconds
+selectCodeEditor("NEWSKINNY.vhd", 355, 214); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 15 seconds
+selectCodeEditor("NEWSKINNY.vhd", 557, 266); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 65 seconds
+selectCodeEditor("NEWSKINNY.vhd", 218, 332); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 35 seconds
+selectCodeEditor("NEWSKINNY.vhd", 252, 265); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 252, 265, false, false, false, false, true); // cd (w, ch) - Double Click
+// Elapsed time: 29 seconds
+selectCodeEditor("NEWSKINNY.vhd", 399, 247); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 24 seconds
+selectCodeEditor("NEWSKINNY.vhd", 865, 212); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 315, 212); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+selectCodeEditor("NEWSKINNY.vhd", 113, 246); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 24 seconds
+selectCodeEditor("NEWSKINNY.vhd", 280, 248); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 26 seconds
+selectCodeEditor("NEWSKINNY.vhd", 102, 267); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 63 MB. Current time: 6/26/18 1:32:08 PM CEST
+// Elapsed time: 45 seconds
+selectCodeEditor("NEWSKINNY.vhd", 420, 330); // cd (w, ch)
+typeControlKey((HResource) null, "NEWSKINNY.vhd", 'c'); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectCodeEditor("NEWSKINNY.vhd", 280, 268); // cd (w, ch)
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ch)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ac (ai, ch)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// an (ch): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (an)
+// bv (ch):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// e (ch):  Run Simulation : addNotify
+dismissDialog("Save Project"); // an (ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a (e)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("NEWSKINNY.vhd", 217, 248); // cd (w, ch)
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' 
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: INFO: [SIM-utils-54] Inspecting design source files for 'Testing_IP_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj Testing_IP_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message:  ****** Webtalk v2018.1 (64-bit)   **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018   **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.  source F:/Documenti -notrace invalid command name "%"     while executing "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current"     (file "F:/Documenti" line 1) INFO: [Common 17-206] Exiting Webtalk at Tue Jun 26 13:33:17 2018... 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Testing_IP_TB_behav -key {Behavioral:sim_1:Functional:Testing_IP_TB} -tclbatch {Testing_IP_TB.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.1 
+selectCodeEditor("NEWSKINNY.vhd", 282, 371); // cd (w, ch)
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source Testing_IP_TB.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 80 MB. Current time: 6/26/18 1:33:24 PM CEST
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: xsim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 954.309 ; gain = 16.188 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testing_IP_TB_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 954.309 ; gain = 18.457 
+dismissDialog("Run Simulation"); // e (ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; Testing_IP(Behavioral) ; VHDL Entity", 1, "uut", 0, true); // d (O, ch) - Node
+expandTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; Testing_IP(Behavioral) ; VHDL Entity", 1); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Skinny_DUT ; Skinny_128_128(Behavioral) ; VHDL Entity", 2, "Skinny_DUT", 0, true); // d (O, ch) - Node
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Skinny_DUT ; Skinny_128_128(Behavioral) ; VHDL Entity", 2, "Skinny_DUT", 0, true); // d (O, ch) - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; Testing_IP(Behavioral) ; VHDL Entity", 1, "uut", 0, true); // d (O, ch) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RESTART, "simulation_live_restart"); // B (f, ch)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RESTART
+// bv (ch):  Restart : addNotify
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 75 MB. Current time: 6/26/18 1:33:38 PM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// Tcl Message: restart 
+// Tcl Message: INFO: [Simtcl 6-17] Simulation restarted 
+dismissDialog("Restart"); // bv (ch)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, "simulation_live_run_all"); // B (f, ch)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run all 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:33:42 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:33:43 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 705, 418); // n (o, ch)
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:33:43 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 993, 360); // n (o, ch)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:45 PM CEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 962, 369); // n (o, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 522, 367); // n (o, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:51 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:51 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:52 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:53 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:53 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:54 PM CEST
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B (f, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B (f, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B (f, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:33:57 PM CEST
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // B (f, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:34:00 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:00 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:01 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:01 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:01 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:02 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 159, 291); // n (o, ch)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:03 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:04 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:04 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:05 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 73 MB. Current time: 6/26/18 1:34:05 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:06 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 72 MB. Current time: 6/26/18 1:34:07 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (O, ch) - Node
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation]", 2); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+selectCodeEditor("NEWSKINNY.vhd", 187, 98); // cd (w, ch)
+// Elapsed time: 11 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "TW_permutation_out"); // l (aP, ch)
+selectCodeEditor("NEWSKINNY.vhd", 23, 349); // cd (w, ch)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ch)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation]", 9, true); // u (O, ch) - Node
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_TASK
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 159, 291); // n (o, ch)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 159, 291); // n (o, ch)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 159, 291); // n (o, ch)Waveform: addNotify
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 77 MB. Current time: 6/26/18 1:34:50 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; Testing_IP(Behavioral) ; VHDL Entity", 1, "uut", 0, true); // d (O, ch) - Node
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Skinny_DUT ; Skinny_128_128(Behavioral) ; VHDL Entity", 2, "Skinny_DUT", 0, true); // d (O, ch) - Node
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_CNT ; CNT(Behavioral) ; VHDL Entity", 3, "INST_CNT", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Skinny_DUT ; Skinny_128_128(Behavioral) ; VHDL Entity", 2, "Skinny_DUT", 0, true); // d (O, ch) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+expandTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Skinny_DUT ; Skinny_128_128(Behavioral) ; VHDL Entity", 2); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_IS ; skinny_shift_reg_64(behavioral) ; VHDL Entity", 3, "INST_IS", 0, true); // d (O, ch) - Node
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_TW_REG ; shift_reg(behavioural) ; VHDL Entity", 4, "INST_TW_REG", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_SubCells ; SubCells(Behavioural) ; VHDL Entity", 5, "INST_SubCells", 0, false); // d (O, ch)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 334, 28); // n (o, ch)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 76 MB. Current time: 6/26/18 1:35:02 PM CEST
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_KEY_UPDATE ; rnd_key_update(Behavioral) ; VHDL Entity", 10, "INST_KEY_UPDATE", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_AddRoundTweakey ; AddRoundTweakey(Behavioral) ; VHDL Entity", 7, "INST_AddRoundTweakey", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_AddConstant ; AddConstant(Behavioral) ; VHDL Entity", 6, "INST_AddConstant", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_AddRoundTweakey ; AddRoundTweakey(Behavioral) ; VHDL Entity", 7, "INST_AddRoundTweakey", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_LFSR ; lfsr(Behavioral) ; VHDL Entity", 8, "INST_LFSR", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_SKINNY_CNT ; SKINNY_CNT(Behavioral) ; VHDL Entity", 9, "INST_SKINNY_CNT", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_KEY_UPDATE ; rnd_key_update(Behavioral) ; VHDL Entity", 10, "INST_KEY_UPDATE", 0, false); // d (O, ch)
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_KEY_UPDATE ; rnd_key_update(Behavioral) ; VHDL Entity", 10, "INST_KEY_UPDATE", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_MIXCOLUMNS ; MixColumns(Behavioral) ; VHDL Entity", 11, "INST_MIXCOLUMNS", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "INST_CNT ; CNT(Behavioral) ; VHDL Entity", 12, "INST_CNT", 0, false); // d (O, ch)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; Testing_IP(Behavioral) ; VHDL Entity", 1, "uut", 0, true); // d (O, ch) - Node
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "Testing_IP_TB ; Testing_IP_TB(Behavioral) ; VHDL Entity", 0, "Testing_IP_TB", 0, true); // d (O, ch) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 76 MB. Current time: 6/26/18 1:35:12 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 76 MB. Current time: 6/26/18 1:35:13 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 712 MB. GUI used memory: 76 MB. Current time: 6/26/18 1:35:13 PM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, ch)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (ch): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bv (ch):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (ch)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (ch): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bv (ch):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ch)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 8 
+// Tcl Message: [Tue Jun 26 13:35:22 2018] Launched synth_1... Run output will be captured here: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/runme.log [Tue Jun 26 13:35:22 2018] Launched impl_1... Run output will be captured here: F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bv (ch)
+// Elapsed time: 54 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (O, ch) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+// TclEventType: RUN_FAILED
+// ah (ch): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah (ch)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true); // ah (O, ch) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true, false, false, false, false, true); // ah (O, ch) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true); // ah (O, ch) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true, false, false, false, false, true); // ah (O, ch) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-729] Failed to open 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ//incrSyn/4248927445/u/g//global_name.straps.rtd': No such file or directory. ]", 1, false); // ah (O, ch)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-729] Failed to open 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ//incrSyn/4248927445/u/g//global_name.straps.rtd': No such file or directory. ]", 1, false, false, false, false, false, true); // ah (O, ch) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-729] Failed to open 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ//incrSyn/4248927445/u/g//global_name.straps.rtd': No such file or directory. ]", 1, false); // ah (O, ch)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-729] Failed to open 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ//incrSyn/4248927445/u/g//global_name.straps.rtd': No such file or directory. ]", 1, false, false, false, false, false, true); // ah (O, ch) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true); // ah (O, ch) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true, false, false, false, false, true); // ah (O, ch) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true); // ah (O, ch) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-787] cannot access rtd files in 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.. ]", 2, true, false, false, false, false, true); // ah (O, ch) - Double Click - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-729] Failed to open 'F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_serial/Skinny_128_128_serial.runs/synth_1/.Xil/Vivado-9696-DESKTOP-II8OTGJ//incrSyn/4248927445/u/g//global_name.straps.rtd': No such file or directory. ]", 1, false); // ah (O, ch)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ch)
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NEWSKINNY.vhd", 2); // k (j, ch)

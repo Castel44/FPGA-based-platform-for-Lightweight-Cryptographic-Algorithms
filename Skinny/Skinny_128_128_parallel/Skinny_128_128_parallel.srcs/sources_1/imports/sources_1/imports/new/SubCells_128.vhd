@@ -1,44 +1,40 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_std.all;
-use IEEE.NUMERIC_BIT ;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_std.ALL;
+USE IEEE.NUMERIC_BIT;
 
--- in the skinny cipher the sbox can be described with logic operations 
+ENTITY SubCells_128 IS
 
-entity SubCells_128 is         
+	PORT (
+		SubCells_IN : IN std_logic_vector (127 DOWNTO 0);
+		SubCells_OUT : OUT std_logic_vector (127 DOWNTO 0)
+	);
 
-Port (  SubCells_IN: in std_logic_vector (127 downto 0);         
-        SubCells_OUT: out std_logic_vector (127 downto 0)
-        ); 
+END SubCells_128;
 
-end SubCells_128;
+ARCHITECTURE Behavioural OF SubCells_128 IS
 
-architecture Behavioural of SubCells_128 is 
+	COMPONENT SBOX_8bit
 
-component SBOX_8bit 
+		PORT (
+			SBOX_byte_in : IN std_logic_vector(7 DOWNTO 0);
+			SBOX_byte_out : OUT std_logic_vector(7 DOWNTO 0)
 
-port( 
-    SBOX_byte_in: in std_logic_vector(7 downto 0); 
-    SBOX_byte_out: out std_logic_vector(7 downto 0)
-    
- ); 
-end component; 
+		);
+	END COMPONENT;
 
-begin 
+BEGIN
 
-subcells_gen: for i in 0 to 15 generate 
- 
- begin 
- 
- subcells: SBOX_8bit port map ( 
- 
- SBOX_byte_in => SubCells_IN(((i+1)*8)-1 downto i*8) ,
- SBOX_byte_out => SubCells_OUT(((i+1)*8)-1 downto i*8) 
- 
- ); 
+	subcells_gen : FOR i IN 0 TO 15 GENERATE
 
+	BEGIN
 
-end generate ;
-	
-end Behavioural; 
+		subcells : SBOX_8bit PORT MAP(
 
+			SBOX_byte_in => SubCells_IN(((i + 1) * 8) - 1 DOWNTO i * 8),
+			SBOX_byte_out => SubCells_OUT(((i + 1) * 8) - 1 DOWNTO i * 8)
+
+		);
+	END GENERATE;
+
+END Behavioural;
