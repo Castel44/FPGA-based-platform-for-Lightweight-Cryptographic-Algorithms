@@ -45,6 +45,5 @@ end process;
 			
 Q <= temp_reg(31 downto 16);
 
---enable_out <= enable_in; --propagate the enable
 
 end behavioral;

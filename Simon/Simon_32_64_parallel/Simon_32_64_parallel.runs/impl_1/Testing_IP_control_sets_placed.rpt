@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Sat Jun 23 18:30:31 2018
-| Host         : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Tue Jun 26 18:22:58 2018
+| Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
 | Design       : Testing_IP
 | Device       : xc7z010
@@ -47,27 +47,27 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               5 |            5 |
+| No           | No                    | No                     |               5 |            3 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |              85 |           18 |
 | Yes          | No                    | Yes                    |               8 |            3 |
-| Yes          | Yes                   | No                     |              11 |            3 |
+| Yes          | Yes                   | No                     |              11 |            6 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------+--------------------------------+----------------------------------------+------------------+----------------+
-|       Clock Signal       |          Enable Signal         |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
-+--------------------------+--------------------------------+----------------------------------------+------------------+----------------+
-|  clock_div/inst/clk_out1 | INST_CNT/ce                    | INST_CNT/cnt_internal_value[2]_i_3_n_0 |                1 |              3 |
-|  clock_div/inst/clk_out1 |                                |                                        |                5 |              5 |
-|  clock_div/inst/clk_out1 | Simon_DUT/INST_LFSR/lfsr_ce    | Simon_DUT/INST_LFSR/lfsr_rst           |                2 |              5 |
-|  clock_div/inst/clk_out1 | Simon_DUT/INST_LFSR/KEY_REG_CE | Simon_DUT/INST_LFSR/Q_reg[15]          |                3 |             11 |
-|  clock_div/inst/clk_out1 | Simon_DUT/INST_LFSR/E[0]       |                                        |                7 |             32 |
-|  clock_div/inst/clk_out1 | Simon_DUT/INST_LFSR/KEY_REG_CE |                                        |               11 |             53 |
-+--------------------------+--------------------------------+----------------------------------------+------------------+----------------+
++----------------+--------------------------------+----------------------------------------+------------------+----------------+
+|  Clock Signal  |          Enable Signal         |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++----------------+--------------------------------+----------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | INST_CNT/ce                    | INST_CNT/cnt_internal_value[2]_i_3_n_0 |                1 |              3 |
+|  clk_IBUF_BUFG |                                |                                        |                3 |              5 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/lfsr_ce    | Simon_DUT/INST_LFSR/lfsr_rst           |                2 |              5 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE | Simon_DUT/INST_LFSR/Q_reg[15]          |                6 |             11 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/E[0]       |                                        |                9 |             32 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE |                                        |                9 |             53 |
++----------------+--------------------------------+----------------------------------------+------------------+----------------+
 
 

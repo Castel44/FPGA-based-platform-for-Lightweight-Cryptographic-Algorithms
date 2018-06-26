@@ -1,60 +1,50 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY lfsr IS
 
+	PORT (
+		lfsr_out : OUT std_logic_vector(0 DOWNTO 0) := (OTHERS => '0');
+		lfsr_parallel_out : OUT std_logic_vector(4 DOWNTO 0) := (OTHERS => '0');
+		ce : IN std_logic;
+		clk, rst : std_logic
+	);
 
-entity lfsr is
- 
- Port (   
-       lfsr_out: out std_logic_vector(0 downto 0)  := (Others => '0'); 
-       lfsr_parallel_out: out std_logic_vector(4 downto 0):= (Others => '0'); 
-       ce : in std_logic; 
-       clk,rst: std_logic       
- ); 
- 
-end lfsr;
+END lfsr;
 
-architecture Behavioral of lfsr is
+ARCHITECTURE Behavioral OF lfsr IS
 
+BEGIN
+	PROCESS (clk, rst, ce)
+		VARIABLE feedback : std_logic := '0';
 
-      
-begin 
+		VARIABLE lfsr_internal : std_logic_vector(4 DOWNTO 0) := (OTHERS => '0');
 
+	BEGIN
 
-process(clk,rst,ce) 
-    
+		IF (rst = '1') THEN
+			lfsr_internal := "10000";
 
-variable feedback: std_logic:='0'; 
+		ELSIF (rising_edge(clk)) THEN
+			IF ce = '1' THEN
 
-variable lfsr_internal: std_logic_vector(4 downto 0) := (others => '0') ; 
-        
-begin 
+				--X5 + X4 + X2 + X + 1                
 
-    if (rst='1') then 
-        lfsr_internal := "10000";
+				feedback := lfsr_internal(2) XOR lfsr_internal(4);
+				lfsr_internal(3) := lfsr_internal(3) XOR lfsr_internal(4);
 
-    elsif (rising_edge(clk)) then          
-       if ce = '1' then  
-       
---X5 + X4 + X2 + X + 1                
+				lfsr_internal(4) := lfsr_internal(3);
+				lfsr_internal(3) := lfsr_internal(2);
+				lfsr_internal(2) := lfsr_internal(1);
+				lfsr_internal(1) := lfsr_internal(0);
+				lfsr_internal(0) := feedback;
+			ELSE
 
-        feedback:= lfsr_internal(2) xor lfsr_internal(4) ;
-        lfsr_internal(3) := lfsr_internal(3) xor lfsr_internal(4); 
-        
-        lfsr_internal(4) := lfsr_internal(3); 
-        lfsr_internal(3) := lfsr_internal(2);                    
-        lfsr_internal(2) := lfsr_internal(1);                            
-        lfsr_internal(1) := lfsr_internal(0);   
-        lfsr_internal(0) := feedback; 
-     
-     
-      else                                                                             
-                             
-      lfsr_internal := lfsr_internal;                            
-     end if;      
-    end if;                   
-          
-lfsr_out <= lfsr_internal(4 downto 4); 
-lfsr_parallel_out <= lfsr_internal; 
-end process;     
+				lfsr_internal := lfsr_internal;
+			END IF;
+		END IF;
 
-end Behavioral;
+		lfsr_out <= lfsr_internal(4 DOWNTO 4);
+		lfsr_parallel_out <= lfsr_internal;
+	END PROCESS;
+
+END Behavioral;

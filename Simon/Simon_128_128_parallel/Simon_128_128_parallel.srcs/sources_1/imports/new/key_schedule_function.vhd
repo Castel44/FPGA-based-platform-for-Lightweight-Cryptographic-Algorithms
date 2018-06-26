@@ -1,49 +1,35 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+ENTITY key_schedule_FUNCTION_parallel IS
+	GENERIC (
+		datapath : INTEGER
 
+	);
 
+	PORT (
 
-entity key_schedule_FUNCTION_parallel is
-  generic ( datapath: integer
-         
-          ); 
-          
-  port (         
-          
-         left_in,right_in: in std_logic_vector(Datapath -1 downto 0); 
-          rnd_out: out std_logic_vector(Datapath -1 downto 0);
-          z_in: std_logic_vector(0 downto 0)
-      
-         
-  ); 
-end key_schedule_FUNCTION_parallel;
+		left_in, right_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+		rnd_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0);
+		z_in : std_logic_vector(0 DOWNTO 0)
+	);
+END key_schedule_FUNCTION_parallel;
 
-architecture Behavioral of key_schedule_FUNCTION_parallel is
+ARCHITECTURE Behavioral OF key_schedule_FUNCTION_parallel IS
 
-constant c: std_logic_vector(63 downto 0):= X"FFFFFFFFFFFFFFFC" ; 
+	CONSTANT c : std_logic_vector(63 DOWNTO 0) := X"FFFFFFFFFFFFFFFC";
 
-begin
+BEGIN
 
-process(left_in,right_in,z_in) 
+	PROCESS (left_in, right_in, z_in)
 
-variable x: std_logic_vector(63 downto 0); 
+		VARIABLE x : std_logic_vector(63 DOWNTO 0);
+	BEGIN
+		x := ((left_in(2 DOWNTO 0) & left_in(63 DOWNTO 3)) XOR right_in);
+		x := (left_in(3 DOWNTO 0) & left_in(63 DOWNTO 4)) XOR x;
+		x := x XOR (c(63 DOWNTO 1) & (c(0) XOR z_in(0)));
 
+		rnd_out <= x;
 
-begin 
-   x:= ( ( left_in( 2 downto 0) & left_in(63 downto 3) ) xor right_in );
-   x:=  ( left_in( 3 downto 0) & left_in(63 downto 4))  xor x ; 
-   x:= x xor ( c(63 downto 1) & (c(0) xor z_in(0)) ); 
-   
-   rnd_out<= x; 
-   
- end process;   
-   
-
---X = ( ( left_in( 3 downto 0) & left_in(15 downto 4) ) xor right_in )
---Y = 
-
-  
---rnd_out <= (left_in and (left_in(10 downto 0) & left_in(15 downto 11)))  xor  right_in xor (left_in(14 downto 0)& left_in(15))  xor (c(15 downto 1) & (c(0) xor z_in(0)))  ;
-
-end Behavioral;
+	END PROCESS;
+END Behavioral;

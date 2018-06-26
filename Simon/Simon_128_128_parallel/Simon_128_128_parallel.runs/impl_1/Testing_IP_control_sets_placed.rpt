@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Jun 25 17:22:56 2018
+| Date         : Tue Jun 26 19:41:48 2018
 | Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
 | Design       : Testing_IP
@@ -64,9 +64,9 @@ Table of Contents
 +----------------+-------------------------------------------------------------------------+---------------------------------------------------+------------------+----------------+
 |  Clock Signal  |                              Enable Signal                              |                  Set/Reset Signal                 | Slice Load Count | Bel Load Count |
 +----------------+-------------------------------------------------------------------------+---------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/cnt_internal_value_reg[0]_CE_cooolgate_en_sig_4 | Simon_DUT/lfsr_rst                                |                1 |              2 |
 |  clk_IBUF_BUFG | INST_CNT/ce                                                             | INST_CNT/cnt_internal_value[1]_i_3_n_0            |                1 |              2 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/t_sequence[1]_i_1_n_0                               | Simon_DUT/lfsr_rst                                |                1 |              2 |
-|  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/cnt_internal_value_reg[0]_CE_cooolgate_en_sig_4 | Simon_DUT/lfsr_rst                                |                1 |              2 |
 |  clk_IBUF_BUFG |                                                                         |                                                   |                3 |              5 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/lfsr_internal_reg[0]_CE_cooolgate_en_sig_2          | Simon_DUT/lfsr_rst                                |                1 |              5 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_bit2_CNT/E[0]                                            | Simon_DUT/INST_KEY_SHIFT_REG/temp_reg[59]_i_1_n_0 |                6 |              8 |

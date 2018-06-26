@@ -1,442 +1,418 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+-- CIPHER TOP ENTITY
+-- Cipher: Simoon
+-- Key length: 96 bit
+-- Plaintext length: 48 bit
+-- Datapath: 24 bit
+-- Cipher specs from here : "https://eprint.iacr.org/2013/404.pdf"
+------------------------------------------------------------------------------------------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Simon_48_96_parallel IS
+
+	GENERIC (Datapath : INTEGER RANGE 0 TO 32 := 24);
+
+	PORT (
+		clk, data_ready, start : IN std_logic;
+		key_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+		plaintext_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+		busy : OUT std_logic := '0';
+		ciphertext_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0')
+	);
+
+END Simon_48_96_parallel;
+
+ARCHITECTURE Behavioral OF Simon_48_96_parallel IS
+
+------------------------------------------------------------------------------------------------------------
+----Sub Components Definitions
+
+    -- Multiplexer to correct route signals 
+	COMPONENT MUX
+		GENERIC (datapath : INTEGER := 24);
+		PORT (
+			l_in, r_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+			sel : IN std_logic;
+			mux_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
+		);
+	END COMPONENT;
+
+    -- Register, 24 bit
+	COMPONENT reg
+		GENERIC (width : INTEGER := 24);
+		PORT (
+			D : IN std_logic_vector(width - 1 DOWNTO 0);
+			clk, ce : IN std_logic;
+			Q : OUT std_logic_vector(width - 1 DOWNTO 0)
+
+		);
+	END COMPONENT;
+
+    -- Shift Register, 24 bit
+	COMPONENT normal_shift_reg
+		GENERIC (
+			width : INTEGER := 24; -- shift_reg width 
+			length : INTEGER := 2 -- shift_reg length 
+		);
+		PORT (
+			clk : IN std_logic;
+			D : IN std_logic_vector(width - 1 DOWNTO 0);
+			Q : OUT std_logic_vector(width - 1 DOWNTO 0);
+			CE : IN std_logic
+		);
+	END COMPONENT;
+
+    -- Shift Register 24 bit, with double output
+	COMPONENT parallel_tapped_shift_reg
+		GENERIC (
+			width : INTEGER := 24; -- shift_reg width 
+			length : INTEGER := 2 -- shift_reg length            
+		);
+		PORT (
+			clk : IN std_logic;
+			D : IN std_logic_vector(width - 1 DOWNTO 0);
+			right_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+			CE : IN std_logic;
+			left_out : OUT std_logic_vector(width - 1 DOWNTO 0)
+		);
+	END COMPONENT;
+	
+	-- Simon Round function
+	COMPONENT Rnd_function_parallel
+		GENERIC (
+			datapath : INTEGER := 24
+		);
+		PORT (
+			left_in, right_in, Ki_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+			rnd_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0)
+		);
+	END COMPONENT;
+
+    -- Simon key schedule function
+	COMPONENT Key_schedule_function_parallel
+		GENERIC (
+			datapath : INTEGER := 24
+		);
+		PORT (
+			left_in, right_in, ki_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+			z_in : std_logic_vector(0 DOWNTO 0);
+			rnd_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0)
+		);
+	END COMPONENT;
+
+    -- The linear feedback shift register used to generate round-unique constants 
+	COMPONENT lfsr
+		PORT (
+			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
+			clk : IN std_logic;
+			ce : IN std_logic;
+			rst : IN std_logic;
+			lfsr_parallel_out : OUT std_logic_vector(4 DOWNTO 0)
+		);
+	END COMPONENT;
+
+    -- Shift register with 0 and 1 as output, needed to ensure the correct ciphertext
+	COMPONENT end_encrypt_shift_reg
+		PORT (
+			ce, clk, rst : IN std_logic;
+			end_encrypt : OUT std_logic
+		);
+
+	END COMPONENT;
+
+------------------------------------------------------------------------------------------------------------	
+	--INTERNAL SIGNALS DECLARATION  
+
+	-- CIPHER FSM SIGNALS
+	TYPE state IS (LOADING, IDLE, PROCESSING, end_encrypt);
+	SIGNAL nx_state : state;
+	SIGNAL current_state : state := idle;
+
+    -- MUX SELECTOR
+	SIGNAL sel_IN : std_logic;
+
+	-- IS, IS MUX, REGISTERS AND RND FUNCTION  
+	SIGNAL rnd_function_out : std_logic_vector(Datapath - 1 DOWNTO 0);
+	SIGNAL MUX_IN_out : std_logic_vector(Datapath - 1 DOWNTO 0);
+	SIGNAL IS_CE : std_logic;
+	SIGNAL IS_left_reg_out : std_logic_vector(Datapath - 1 DOWNTO 0);
+	SIGNAL IS_right_reg_out : std_logic_vector(Datapath - 1 DOWNTO 0);
+	
+	SIGNAL end_encrypt_ce, end_encrypt_out : std_logic;
+
+	--KEY INPUT MUX
+	SIGNAL KEY_MUX_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
+	SIGNAL key_schedule_out : std_logic_vector(Datapath - 1 DOWNTO 0);
+
+	--KEY REG(s) 
+	SIGNAL KEY_REG_CE : std_logic;
+
+	SIGNAL ki3_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
+
+	SIGNAL ki2_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
+
+	SIGNAL ki0_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
+
+	--LFSR 
+	SIGNAL lfsr_ce : std_logic;
+	SIGNAL lfsr_out : std_logic_vector(0 DOWNTO 0);
+	SIGNAL lfsr_rst : std_logic;
+	SIGNAL lfsr_parallel_out : std_logic_vector(4 DOWNTO 0);
+    	
+
+BEGIN
+
+    -- SubComponents Instantiation
+    -- Internal State mux, loads the shift reg correclty to last operation of cipher or new plaintext
+	INST_INMUX : MUX
+	GENERIC MAP(
+		datapath => Datapath
+	)
+	PORT MAP(
+		l_in => Plaintext_in,
+		r_in => rnd_function_out,
+		sel => sel_IN,
+		mux_out => MUX_IN_out
+	);
+	
+	-- Shift register of  the internal state
+	INST_IS_REG : parallel_tapped_shift_reg
+	GENERIC MAP(
+		width => Datapath,
+		length => 2
+	)
+	PORT MAP(
+		CLK => clk,
+		D => MUX_in_out,      -- input of left portion is dictated by the input mux 
+		CE => IS_ce,
+		left_out => IS_left_reg_out,
+		right_out => IS_right_reg_out
+	);
+	
+	-- Round function of Simon, directly connected to the shift register
+	INST_RND_FUNCTION : Rnd_function_parallel
+	GENERIC MAP(
+		datapath => Datapath
+	)
+	PORT MAP(
+		left_in => IS_left_reg_out,
+		right_in => IS_right_reg_out,
+		Ki_in => ki0_KEY_REG_OUT,
+		rnd_out => rnd_function_out
+	);
+	
+	-- Key Mux
+	INST_KEY_MUX_IN : MUX
+	GENERIC MAP(datapath => Datapath)
+	PORT MAP(
+		l_in => key_in,
+		r_in => key_schedule_out,
+		sel => SEL_IN,
+		mux_out => KEY_MUX_OUT
+	);
+
+    -- Ki3 register
+	INST_Ki3 : reg
+	GENERIC MAP(width => Datapath)
+
+	PORT MAP(
+		clk => clk,
+		D => KEY_MUX_OUT,
+		CE => KEY_REG_CE,
+		Q => ki3_KEY_REG_OUT
+	);
+
+    -- Ki1 and ki2 shift register
+	INST_Ki2_Ki1 : normal_shift_reg
+	GENERIC MAP(
+		width => Datapath,
+		length => 2
+	)
+	PORT MAP(
+		clk => clk,
+		D => ki3_KEY_REG_OUT,
+		CE => KEY_REG_CE,
+		Q => ki2_KEY_REG_OUT
+	);
+
+    -- Ki0 register
+	INST_Ki0 : reg
+	GENERIC MAP(width => Datapath)
+	PORT MAP(
+		clk => clk,
+		D => ki2_KEY_REG_OUT,
+		CE => KEY_REG_CE,
+		Q => ki0_KEY_REG_OUT
+	);
+	
+	-- Simon key schedule
+	INST_KEY_SCHEDULE_FUNCTION : key_schedule_function_parallel
+	GENERIC MAP(
+		datapath => Datapath
+	)
+	PORT MAP(
+		left_in => ki3_KEY_REG_OUT,
+		ki_in => ki0_KEY_REG_OUT,
+		right_in => ki2_KEY_REG_OUT,
+		z_in => lfsr_out,
+		rnd_out => key_schedule_out
+	);
+	
+	
+	INST_END_ENCRYPT_SHIFT_REG : end_encrypt_shift_reg
+	PORT MAP(
+		ce => end_encrypt_ce,
+		rst => lfsr_rst,
+		clk => clk,
+		end_encrypt => end_encrypt_out
+	);
+	
+	
+	INST_LFSR : lfsr -- includes T sequence shift register                                             
+	PORT MAP(
+		lfsr_out => lfsr_out,
+		clk => clk,
+		ce => lfsr_ce,
+		rst => lfsr_rst,
+		lfsr_parallel_out => lfsr_parallel_out
+	);
+	
+------------------------------------------------------------------------------------------------------------	
+-- CIPHER FSM 
+    --next state transition process    
+	STATE_MACHINE_MAIN : PROCESS (clk, data_ready)
+	BEGIN
+		IF rising_edge(CLK) THEN
+			IF (data_ready = '1') THEN
+				current_state <= LOADING; -- keeploading                    
+			ELSE
+				current_state <= nx_state;
+			END IF;
+		END IF;
+	END PROCESS;
+	
+	
+	STATE_MACHINE_BODY : PROCESS (current_state, start, lfsr_parallel_out, IS_right_reg_out, end_encrypt_out) 
+	BEGIN
+		CASE current_state IS
+			WHEN loading =>
+				-- set outputs 
+				BUSY <= '1';
+				Ciphertext_out <= (OTHERS => '0');
+				
+				--lfsr 
+				lfsr_rst <= '0';
+				lfsr_ce <= '1';
+                
+                -- End encrypt reg enable
+				end_encrypt_ce <= '0';
+
+				--INPUT MUX 
+				--loading value from Input plaintext
+				SEL_IN <= '0'; --loading                                     
+
+				-- state transition      
+                -- lfsr output values used to count up clk cycles   
+				IF lfsr_parallel_out = b"00110" THEN-- plaintext has been loaded keep loading the key         
+					nx_state <= loading;
+					IS_CE <= '0';
+					KEY_REG_CE <= '1';
+				ELSIF lfsr_parallel_out = b"01101" THEN -- key loading
+					IS_CE <= '0';
+					KEY_REG_CE <= '1';
+					nx_state <= loading;
+				ELSIF lfsr_parallel_out = b"11111" THEN -- key has been loaded                
+					IS_CE <= '0';
+					KEY_REG_CE <= '0';
+					nx_state <= idle;
+				ELSE    --keep loading key and plaintext
+					nx_state <= loading;
+					IS_CE <= '1';
+					KEY_REG_CE <= '1';
+				END IF;
+
+			WHEN idle =>
+				-- set outputs 
+				BUSY <= '0';
+				Ciphertext_out <= (OTHERS => '0');
+				
+				--lfsr 
+				lfsr_rst <= '1';
+				lfsr_ce <= '0';
+
+                -- End encrypt reg enable
+				end_encrypt_ce <= '0';
+
+				--INPUT MUX 
+				SEL_IN <= '0'; --loading                             
+				IS_CE <= '0';
+				KEY_REG_CE <= '0';
+
+				--state transition          
+				IF start = '1' THEN
+					nx_state <= processing;
+				ELSE
+					nx_state <= idle;
+				END IF;
+
+			WHEN processing =>
+				-- set outputs 
+				BUSY <= '1';
+				Ciphertext_out <= (OTHERS => '0');
+				
+				--lfsr 
+				lfsr_rst <= '0';
+				lfsr_ce <= '1';
+				
+				--INPUT MUX 
+				SEL_IN <= '1';				
+				--MUX driving for rnd function                                                              
+				IS_CE <= '1';
+				KEY_REG_CE <= '1';
+				
+				--state transition     
+				-- lfsr period is short, so his value b"11111" shows 2 times in an encrypt cycle. A flag is needed when this occurs.                     
+				IF lfsr_parallel_out = b"11111" THEN				
+					IF end_encrypt_out = '1' THEN  -- encrypt is done!!
+						nx_state <= end_encrypt;
+					ELSE
+						nx_state <= processing;
+					END IF;
+									
+                    -- End encrypt reg enable
+					end_encrypt_ce <= '1';
+				ELSE
+					end_encrypt_ce <= '0';
+					nx_state <= processing;
+				END IF;
 
 
+			WHEN end_encrypt =>
+				--set output
+				BUSY <= '0';
+				Ciphertext_out <= IS_right_reg_out;
 
-entity Simon_48_96_parallel is
-       
-     Generic ( Datapath : integer range 0 to 32 := 24);
-       
-       Port ( 
-      clk,data_ready,start: in std_logic; 
-      key_in: in std_logic_vector(Datapath - 1 downto 0);  
-      plaintext_in: in std_logic_vector(Datapath - 1 downto 0);
-      busy: out std_logic:= '0';   
-      ciphertext_out: out std_logic_vector(Datapath - 1 downto 0):= (others => '0')
-      );      
+				--INPUT MUX 
+				SEL_IN <= '0'; --loading
+				IS_CE <= '1';
+				KEY_REG_CE <= '0';
+				
+				--lfsr
+				lfsr_rst <= '0';
+				lfsr_ce <= '1';
+				
+				-- End encrypt reg enable
+				end_encrypt_ce <= '0';
 
-end Simon_48_96_parallel;
+				--state transition               
+				IF lfsr_parallel_out = b"10101" THEN
+					nx_state <= idle;
+				ELSE
+					nx_state <= end_encrypt;
+				END IF;
+		END CASE;
 
-architecture Behavioral of Simon_48_96_parallel is
-
---SUBCOMPONENTS
-component MUX   
-generic( datapath: integer :=1 );         
-port  (                   
-        l_in,r_in: in std_logic_vector(datapath-1 downto 0); 
-        sel: in std_logic ;  
-        mux_out: out std_logic_vector(datapath-1 downto 0)
-        ); 
-end component; 
-
-component reg 
-
-generic (width: integer:= 16); 
-
-port ( D: in std_logic_vector(width-1 downto 0); 
-       clk,ce: in std_logic; 
-       Q: out std_logic_vector(width-1 downto 0)
-       
-       ); 
-end component;        
+	END PROCESS;
 
 
-
-component normal_shift_reg  
-
-generic( width: integer := 16 ; -- shift_reg width 
-        length: integer:= 2  -- shift_reg length 
-        );          
-        
-port (          
-        clk: in std_logic;
-        D : in std_logic_vector(width-1 downto 0 ); 
-        Q : out std_logic_vector(width-1 downto 0);
-        CE : in std_logic           
-        );
-end component;
-
-component c_shift_ram_0 
-  PORT (
-    D : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    CLK : IN STD_LOGIC;
-    CE : IN STD_LOGIC;
-    Q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
-  );
-end component;   
-  
-
-
-component parallel_tapped_shift_reg   
-generic( width: integer:= 16 ; -- shift_reg width 
-         length: integer:= 2  -- shift_reg length            
-          );           
-port (          
-        clk: in std_logic;
-        D : in std_logic_vector(width-1 downto 0 ); 
-        right_out : out std_logic_vector(width-1 downto 0); 
-        CE : in std_logic;           
-        left_out: out std_logic_vector(width-1 downto 0 )                         
-        );  
-end component; 
-
-
-component Rnd_function_parallel 
-generic ( datapath: integer:= 16         
-        );            
-port (                    
-        left_in,right_in,Ki_in: in std_logic_vector(Datapath - 1 downto 0); 
-        rnd_out: out std_logic_vector(Datapath - 1 downto 0)                     
-        );   
-end component;
-
-
-
-component Key_schedule_function_parallel 
-generic ( datapath: integer:= 16          
-        );            
-port (                    
-        left_in,right_in,ki_in: in std_logic_vector(Datapath - 1 downto 0); 
-        z_in: std_logic_vector(0 downto 0); 
-        rnd_out: out std_logic_vector(Datapath - 1 downto 0)                     
-        );   
-end component;  
-
-component lfsr         
-port (
-       lfsr_out: out std_logic_vector(0 downto 0); 
-       clk : in std_logic; 
-        ce: in std_logic;
-       rst:in std_logic; 
-       lfsr_parallel_out :out std_logic_vector(4 downto 0)
- );    
- end component; 
- 
-component end_encrypt_shift_reg
- 
-  Port ( 
-           ce,clk,rst: in std_logic; 
-           
-           end_encrypt: out std_logic
-  
-   );
-   
- end component;  
-
---INTERNAL SIGNALS DECLARATION  
- 
- -- CIPHER FSM SIGNALS
- ---------------------------- 
-type state is (LOADING,IDLE,PROCESSING,end_encrypt); 
-signal nx_state : state ; -- cipher possible states
-signal current_state : state := idle ; 
-
-signal sel_IN: std_logic; 
-
--- IS, IS MUX, REGISTERS AND RND FUNCTION  
-signal rnd_function_out: std_logic_vector(Datapath -1 downto 0); 
-signal MUX_IN_out: std_logic_vector(Datapath -1 downto 0);
-signal IS_CE: std_logic; 
-signal IS_left_reg_out: std_logic_vector(Datapath -1 downto 0); 
-signal IS_right_reg_out: std_logic_vector(Datapath -1 downto 0);
-
--- KEY SCHEDULE, KEY REG 
-
---KEY INPUT MUX
-signal KEY_MUX_OUT: std_logic_vector(Datapath -1 downto 0);
-signal key_schedule_out:  std_logic_vector(Datapath -1 downto 0);
-
---KEY REG(s) 
-signal KEY_REG_CE: std_logic;
-
-signal ki3_KEY_REG_OUT: std_logic_vector(Datapath -1 downto 0);
-
-signal ki2_KEY_REG_OUT: std_logic_vector(Datapath -1 downto 0);
-
-signal ki0_KEY_REG_OUT: std_logic_vector(Datapath -1 downto 0);
-
-
-
---LFSR 
-signal lfsr_ce:std_logic; 
-signal lfsr_out: std_logic_vector(0 downto 0); 
-signal lfsr_rst:std_logic; 
-signal lfsr_parallel_out: std_logic_vector(4 downto 0);
-
-signal end_encrypt_ce,end_encrypt_out:std_logic;  
-
-begin
-
---input mux 
-
-INST_INMUX: MUX 
-generic map (   datapath => Datapath
-            ) 
-port map (  l_in => Plaintext_in, 
-            r_in => rnd_function_out, 
-            sel => sel_IN, 
-            mux_out => MUX_IN_out
-            ); 
-            
-          
-INST_IS_REG: parallel_tapped_shift_reg 
-            generic map(    width => Datapath,
-                            length => 2
-                            )         
-            port map (          
-                        CLK => clk,
-                        D => MUX_in_out, 
-                        CE => IS_ce, 
-                        left_out => IS_left_reg_out, 
-                        right_out => IS_right_reg_out                 
-                        ); 
-
-
-
-
-INST_RND_FUNCTION: Rnd_function_parallel       
- generic map ( datapath => Datapath 
-            ) 
- port map (  
-             left_in => IS_left_reg_out,  
-             right_in =>IS_right_reg_out , 
-             Ki_in => ki0_KEY_REG_OUT,        
-             rnd_out => rnd_function_out 
-             ); 
-             
-             
------------------------------------------------------------------------------------------------------------------
- -- KEY REG AND KEY SCHEDULE
- -----------------------------------------------------------------------------------------------------------------                 
- -- LEFT PORTION OF THE KEY REG, no taps 
-              
-INST_KEY_MUX_IN: MUX      
-    generic map ( datapath => Datapath)      
-     port map ( 
-                  l_in => key_in, 
-                  r_in => key_schedule_out, 
-                  sel => SEL_IN, 
-                  mux_out => KEY_MUX_OUT     
-             );            
-             
-             
-             
-INST_Ki3: reg      
- generic map ( width => Datapath ) 
-                                                                                            
-port map ( 
-             clk=>clk,
-             D=>KEY_MUX_OUT, 
-             CE=>KEY_REG_CE, 
-             Q=> ki3_KEY_REG_OUT                  
-          );         
- 
- 
-
-INST_Ki2_Ki1: normal_shift_reg      
-           generic map ( width => Datapath, 
-                        length => 2
-                      )                                                                               
-          port map ( 
-                       clk=>clk,
-                       D=>ki3_KEY_REG_OUT, 
-                       CE=>KEY_REG_CE, 
-                       Q=> ki2_KEY_REG_OUT                  
-                    );   
-                    
-
-                                        
-                                        
-INST_Ki0: reg      
-                         generic map ( width => Datapath) 
-                                        
-                                                                                                                                         
-             port map ( 
-                           clk=>clk,
-                            D=>ki2_KEY_REG_OUT, 
-                            CE=>KEY_REG_CE, 
-                            Q=> ki0_KEY_REG_OUT                  
-                            
-                     );                                           
-                     
-                     
-INST_KEY_SCHEDULE_FUNCTION: key_schedule_function_parallel                               
-                     generic map ( datapath => Datapath
-                                 )                           
-                     port map (                           
-                                 left_in => ki3_KEY_REG_OUT ,  
-                                 ki_in => ki0_KEY_REG_OUT,
-                                 right_in => ki2_KEY_REG_OUT, 
-                                 z_in => lfsr_out, 
-                                 rnd_out => key_schedule_out                          
-                                 );                        
-                                 
-                              
-INST_END_ENCRYPT_SHIFT_REG: end_encrypt_shift_reg                                       
-                                           
-              port map ( 
-                                        ce => end_encrypt_ce, 
-                                     rst => lfsr_rst, 
-                                       clk => clk, 
-                                            
-                                      end_encrypt => end_encrypt_out 
-                                           
-            );                             
-                             
-                                 
-INST_LFSR: lfsr              -- includes T sequence shift register                                             
-
-port map (                                              
-            lfsr_out => lfsr_out, 
-            clk => clk,                          
-            ce => lfsr_ce,
-            rst => lfsr_rst,
-            lfsr_parallel_out => lfsr_parallel_out                                                                              
-            ); 
-                                                           
-                                                           
- -- CIPHER FSM 
-STATE_MACHINE_MAIN: process(clk,data_ready)  
-            begin 
-             IF rising_edge(CLK) then        
-                 IF (data_ready = '1') then              
-                    current_state <= LOADING; -- keeploading                    
-                  ELSE        
-                    current_state <= nx_state;                            
-                end if;          
-             end if;    
-            end process;  
-             
-            
-            STATE_MACHINE_BODY : PROCESS(current_state,start,lfsr_parallel_out,IS_right_reg_out,end_encrypt_out) --cnt_out 
-            begin  
-               case current_state is     
-                  when loading  =>        
-                  -- set outputs 
-                   BUSY <= '1' ; 
-                   Ciphertext_out <= (others => '0');        
-                   --lfsr 
-                   lfsr_rst <= '0';          
-                   lfsr_ce <= '1';                   
-                   
-                    end_encrypt_ce <= '0';
-
-                   SEL_IN <= '0'; --loading                                     
-                   
-                   -- state transition         
-                   if lfsr_parallel_out = b"00110" then-- plaintext has been loaded keep loading the key         
-                       nx_state <= loading ; 
-                       IS_CE <= '0'; 
-                       KEY_REG_CE <= '1';         
-                   elsif lfsr_parallel_out = b"01101" then -- key loading
-                       IS_CE <= '0'; 
-                       KEY_REG_CE <= '1'; 
-                       nx_state <= loading;          
-                   elsif lfsr_parallel_out = b"11111" then -- key has been loaded                
-                       IS_CE <= '0'; 
-                       KEY_REG_CE <= '0'; 
-                       nx_state <= idle;                         
-                   else          
-                       nx_state <= loading ; 
-                       IS_CE <= '1'; 
-                       KEY_REG_CE <= '1';                      
-                   end if ; 
-                       
-                   when idle =>         
-                   -- set outputs 
-                   BUSY <= '0' ;
-                   
-                 
-                   Ciphertext_out <= (others => '0')  ;                      
-                    
-                   
-                    --lfsr 
-                    lfsr_rst <= '1'; 
-                    lfsr_ce <= '0';    
-                                                                        
-                     end_encrypt_ce <= '0';
-
-                    --INPUT MUX 
-                    SEL_IN <= '0'; --loading                             
-                    IS_CE <= '0'; 
-                    KEY_REG_CE <= '0';         
-                                     
-                     --state transition          
-                     if start='1' then 
-                        nx_state <= processing;          
-                     else           
-                        nx_state <= idle;           
-                     end if;                               
-                   
-                  when processing =>       
-                       -- set outputs 
-                       BUSY <= '1' ; 
-                       Ciphertext_out <= (others => '0');                  
-                       --lfsr 
-                       lfsr_rst <= '0'; 
-                       lfsr_ce <= '1';                                    
-                       --INPUT MUX 
-                       SEL_IN <= '1';                   
-                       --MUX driving for rnd function                                                              
-                       IS_CE <= '1';   
-                       KEY_REG_CE <= '1';
-                       --state transition                            
-                      if lfsr_parallel_out = b"11111" then                             
-                       
-                      if end_encrypt_out = '1' then                        
-                      
-                                 nx_state <= end_encrypt;          
-                                              else
-                                              
-                                   nx_state <= processing;                                                            
-                                   
-                                end if;   
-                                              
-                                              
-                                end_encrypt_ce <= '1';
-                                
-                                   else 
-                                           
-                                   end_encrypt_ce <= '0';
-
-                                 nx_state <= processing; 
-                                 
-                      end if;   
-                       
-                        
-                   
-                       
-                   when end_encrypt =>
-                   
-                   
-                   --set output
-                   BUSY <= '0' ;   
-                   Ciphertext_out <= IS_right_reg_out  ;
-                   
-                    --INPUT MUX 
-                   SEL_IN <= '0'; --loading
-                   IS_CE <= '1';                                      
-                   KEY_REG_CE <= '0';     
-                   --lfsr
-                   lfsr_rst <= '0'; 
-                   lfsr_ce <= '1'; 
-                   end_encrypt_ce <= '0'; 
-                  
-                   --state transition               
-                   if lfsr_parallel_out = b"10101" then               
-                    nx_state <= idle;   
-                    else
-                    nx_state <= end_encrypt;
-                   end if;
-                 
-                             
-              end case; 
-                  
-           end process;        
-           
-           
-           
-
-           
-           
- end behavioral;         
+END behavioral;

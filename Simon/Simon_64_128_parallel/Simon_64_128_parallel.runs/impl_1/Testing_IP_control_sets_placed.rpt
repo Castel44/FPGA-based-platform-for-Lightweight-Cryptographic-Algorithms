@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sat Jun 23 20:43:31 2018
+| Date         : Tue Jun 26 19:24:30 2018
 | Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
 | Design       : Testing_IP
@@ -68,8 +68,8 @@ Table of Contents
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/E[0]                                       | Simon_DUT/INST_LFSR/AR[0]              |                1 |              2 |
 |  clk_IBUF_BUFG | INST_CNT/ce                                                    | INST_CNT/cnt_internal_value[2]_i_3_n_0 |                2 |              3 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE                                 |                                        |                3 |              4 |
-|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE                                 | Simon_DUT/INST_LFSR/Q_reg[28]          |                2 |              4 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE                                 | Simon_DUT/INST_LFSR/Q_reg[27]          |                2 |              4 |
+|  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/KEY_REG_CE                                 | Simon_DUT/INST_LFSR/Q_reg[28]          |                2 |              4 |
 |  clk_IBUF_BUFG |                                                                |                                        |                3 |              5 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/IS_CE                                      | INST_CNT/temp_reg_reg[0]               |                2 |              5 |
 |  clk_IBUF_BUFG | Simon_DUT/INST_LFSR/lfsr_internal_reg[0]_CE_cooolgate_en_sig_6 | Simon_DUT/INST_LFSR/AR[0]              |                2 |              5 |

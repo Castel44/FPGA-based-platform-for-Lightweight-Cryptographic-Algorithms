@@ -26,9 +26,9 @@ signal clk: std_logic := '0';
 signal start,rst : std_logic := '0';
 signal led_out: std_logic := '0'; 
 
-constant clock_period: time := 100 ns;
+constant clock_period: time := 8 ns;
 signal stop_the_clock: boolean;
-constant sys_clock_period: time := 8 ns;
+
 
 begin
 
@@ -45,8 +45,8 @@ port map (
 clocking: process
   begin
     while not stop_the_clock loop
-      CLK <= '0', '1' after  sys_clock_period/ 2;
-      wait for sys_clock_period;
+      CLK <= '0', '1' after clock_period / 2;
+      wait for clock_period;
     end loop;
     wait;
   end process;
@@ -54,19 +54,30 @@ clocking: process
   
 stimulus: process
 begin
-    wait for 15*clock_period;   
+    wait for clock_period;   
     rst <= '1';   
     wait for clock_period;
     rst <= '0';
-    wait for 1*clock_period;
-    start <= '1'; 
-    wait for 1*clock_period;
-    start <= '0'; 
-    wait for 1*clock_period;
+    wait for 10*clock_period;
     
+    start <= '1'; 
+    wait for clock_period;
+    start <= '0'; 
     while (led_out = '0') loop
     wait for clock_period;
     end loop;
+    
+    rst <= '1';   
+    wait for clock_period;
+    rst <= '0';
+    wait for 10*clock_period;
+    
+    start <= '1'; 
+    wait for clock_period;
+    start <= '0'; 
+    while (led_out = '0') loop
+        wait for clock_period;
+        end loop;
     
     stop_the_clock <= true;
     wait;

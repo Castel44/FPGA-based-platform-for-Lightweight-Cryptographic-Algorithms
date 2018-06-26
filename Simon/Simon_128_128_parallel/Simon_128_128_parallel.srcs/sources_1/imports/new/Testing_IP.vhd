@@ -1,248 +1,265 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_unsigned.all;
-use IEEE.numeric_std.all;
+-- Top entity used for experimental measurements of power consumption on the Zybo board 
+-- this top entity is kept omogeneous among all ciphers as much as possible to allow a fair comparison
+-- it is implemented via a state machine. 
 
-entity Testing_IP is
-  Generic ( Datapath : integer range 0 to 64 := 64);
-  Port (   
-      start: in std_logic; 
-      clk: in std_logic;   
-      rst: in std_logic;     
-      led_out: out std_logic    
-  );
-end Testing_IP;
+-- this top entity has only three ports plus clock. 
+-- the three ports are mapped to Zybo GPIOs and the connections are specified in the XDC constraints file
+-- More in detail, start is mapped to Pmod JA N16 pin, rst to Pmod JA L15 pin and led_out to LED PIN M14
+-- the led out is only a visual cue for cipher proper functioning and encryption success.
 
+-- The generic datapath is just for easily reuse of this top module with another ciphers.
+------------------------------------------------------------------------------------------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+USE IEEE.numeric_std.ALL;
 
-architecture Behavioral of Testing_IP is
+ENTITY Testing_IP IS
+	GENERIC (Datapath : INTEGER RANGE 0 TO 64 := 64);
+	PORT (
+		start : IN std_logic;
+		clk : IN std_logic;
+		rst : IN std_logic;
+		led_out : OUT std_logic
+	);
+END Testing_IP;
 
+ARCHITECTURE Behavioral OF Testing_IP IS
 
-component Simon_128_128_parallel is
- Port ( 
-        clk,data_ready,start: in std_logic;        
-        key_in: in std_logic_vector(Datapath - 1 downto 0);        
-        plaintext_in: in std_logic_vector(Datapath - 1 downto 0);       
-        busy: out std_logic:= '0';          
-        ciphertext_out: out std_logic_vector(Datapath - 1 downto 0):= (others => '0')       
-       );      
-       
-end component;
+------------------------------------------------------------------------------------------------------------
+-- Subcomponents delcaraton:
+	-- DUT: Simon with Block size = 128 bit; Key size = 128 bit
+	-- Datapath = 64 bit
+	COMPONENT Simon_128_128_parallel IS
+		PORT (
+			clk, data_ready, start : IN std_logic;
+			key_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+			plaintext_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+			busy : OUT std_logic := '0';
+			ciphertext_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0')
+		);
+	END COMPONENT;
+	
+    -- Counter with enable port.
+    -- It is used to handle the correct loading of plaintext and key 	
+	COMPONENT cnt
+		GENERIC (size : INTEGER := 5);
+		PORT (
+			ce, clk, rst : IN std_logic;
+			cnt_out : OUT std_logic_vector(size - 1 DOWNTO 0)
+		);
 
+	END COMPONENT;
+	
+	-- internal signal 
+	SIGNAL key_tst : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"0f0e0d0c0b0a09080706050403020100";       -- key test vector
+	SIGNAL plaintext_tst : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := (X"63736564207372656c6c657661727420");   -- plaintext test vector	
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"49681b1e1e54fe3f65aa832af84e0bbc";  -- ciphertext test vector
 
-component cnt
- generic( size:integer:= 5   ); 
-  Port ( 
-        ce,clk,rst: in std_logic;            
-        cnt_out: out std_logic_vector(size-1 downto 0)   
-   );
-   
- end component; 
+	SIGNAL plaintext_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL key_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL ciphertext_out_W : std_logic_vector(Datapath - 1 DOWNTO 0);
 
+	SIGNAL busy_W, data_ready_W, start_W : std_logic;
 
--- internal signal 
-signal key_tst: std_logic_vector(Datapath*2 - 1 downto 0) := X"0f0e0d0c0b0a09080706050403020100"; 
-signal plaintext_tst: std_logic_vector(Datapath*2 - 1 downto 0) := ( X"63736564207372656c6c657661727420" );
-signal ciphertext_out_W: std_logic_vector(Datapath - 1 downto 0) ;
-signal correct_ciphertext: std_logic_vector(Datapath*2 - 1 downto 0):= X"49681b1e1e54fe3f65aa832af84e0bbc";
+	SIGNAL cnt_ce_W : std_logic;
+	SIGNAL cnt_rst_W : std_logic;
+	SIGNAL cnt_out_W : std_logic_vector(1 DOWNTO 0);
 
-signal plaintext_reg: std_logic_vector(Datapath - 1 downto 0):= (others => '0');
-signal key_reg: std_logic_vector(Datapath - 1 downto 0):= (others => '0');
+    -- FSM signals
+	TYPE state IS (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS);
+	SIGNAL nx_state : state;
+	SIGNAL current_state : state := IDLE;
+	
+BEGIN
 
-signal busy_W, data_ready_W, start_W: std_logic; 
+------------------------------------------------------------------------------------------------------------
+-- Component Instantiation
 
-signal cnt_ce_W: std_logic; 
-signal cnt_rst_W: std_logic; 
-signal cnt_out_W: std_logic_vector(1 downto 0); 
+	-- Cipher under Test
+	Simon_DUT : Simon_128_128_parallel
+	PORT MAP(
+		clk => clk,
+		plaintext_in => plaintext_reg,
+		key_in => key_reg,
+		start => start_W,
+		data_ready => data_ready_W,
+		ciphertext_out => ciphertext_out_W,
+		busy => busy_W
+	);
+	
+	INST_CNT : cnt
+	GENERIC MAP(size => 2)
+	PORT MAP(
+		clk => clk,
+		ce => cnt_ce_W,
+		rst => cnt_rst_W,
+		cnt_out => cnt_out_W
+	);
+	
+------------------------------------------------------------------------------------------------------------
+    -- Finite state machine to handle the cipher.	
+	STATE_MACHINE_MAIN : PROCESS (clk, rst)
+	BEGIN
+		IF rising_edge(CLK) THEN
+			IF (rst = '1') THEN
+				current_state <= idle;
+			ELSE
+				current_state <= nx_state;
+			END IF;
+		END IF;
+	END PROCESS;
+	
+    -- Only 1 encryption is made, then it is checked for correctness. A led will light up if the results it's correct.
+    -- To start a new encryption the Testing_IP needs to be resetted via rst port.	
+	STATE_MACHINE_BODY : PROCESS (current_state, start, cnt_out_W, ciphertext_out_W, busy_W, key_tst, plaintext_tst, correct_ciphertext)
+	BEGIN
+		CASE current_state IS
 
-type state is (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS ); 
-signal nx_state : state;
-signal current_state : state := IDLE; 
+			WHEN idle =>
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '0';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
 
+				-- CNT 
+				cnt_ce_W <= '0';
+				cnt_rst_W <= '0';
 
-begin
+				-- output ports 
+				led_out <= '0';
 
-Simon_DUT: Simon_128_128_parallel 
-    port map ( 
-      clk => clk,
-      plaintext_in => plaintext_reg, 
-      key_in => key_reg,
-      start => start_W, 
-      data_ready => data_ready_W, 
-      ciphertext_out => ciphertext_out_W, 
-      busy => busy_W  
-    ); 
+				-- transition 
+				IF start = '1' THEN
+					nx_state <= loading;
+				ELSE
+					nx_state <= idle;
+				END IF;
 
+			WHEN loading =>
+				-- CIPHER inputs
+				data_ready_W <= '1'; -- data_ready goes high 
+				start_W <= '0';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
 
-INST_CNT: cnt 
-    generic map ( size => 2) 
-    port map ( 
-        clk=> clk, 
-        ce=> cnt_ce_W, 
-        rst=> cnt_rst_W, 
-        cnt_out => cnt_out_W 
-    ); 
+				-- CNT 
+				cnt_ce_W <= '0';
+				cnt_rst_W <= '1';
 
+				-- output ports 
+				led_out <= '0';
 
-STATE_MACHINE_MAIN: process(clk,rst)  
-begin 
-    IF rising_edge(CLK) then        
-        IF (rst = '1') then              
-            current_state <= idle;                    
-        ELSE        
-            current_state <= nx_state;                            
-        end if;          
-    end if;    
-end process; 
-            
+				-- transition         
+				nx_state <= waiting;
 
-STATE_MACHINE_BODY : process(current_state,start, cnt_out_W, ciphertext_out_W, busy_W, key_tst, plaintext_tst, correct_ciphertext)
-begin  
-    case current_state is     
-    
-    when idle  =>     
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '0'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');
-        
-        -- CNT 
-        cnt_ce_W <= '0';
-        cnt_rst_W <= '0'; 
-        
-        -- output ports 
-        led_out <= '0'; 
-        
-        -- transition 
-        if start='1' then 
-            nx_state <= loading;          
-        else           
-            nx_state <= idle;           
-        end if; 
-    
-    when loading =>   
-        -- CIPHER inputs
-        data_ready_W <= '1'; -- data_ready goes high 
-        start_W <= '0'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');  
-              
-        -- CNT 
-        cnt_ce_W <= '0';
-        cnt_rst_W <= '1'; 
-        
-        -- output ports 
-        led_out <= '0'; 
-        
-        -- transition         
-        nx_state <= waiting;    
-                
-    when waiting =>     
-        -- CNT 
-        cnt_ce_W <= '1';
-        cnt_rst_W <= '0'; 
-    
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '0'; 
-        plaintext_reg <= plaintext_tst(Datapath-1+Datapath*(to_integer(unsigned(cnt_out_W))) downto 0+Datapath*(to_integer(unsigned(cnt_out_W))));
-        key_reg <= key_tst(Datapath-1+Datapath*(to_integer(unsigned(cnt_out_W))) downto 0+Datapath*(to_integer(unsigned(cnt_out_W))));          
-                
-        -- output ports 
-        led_out <= '0'; 
-                
-        -- transition  
-        if cnt_out_W = b"01" then        
-            nx_state <= start_enc;          
-        else                 
-            nx_state <= waiting;          
-        end if;                     
-        
-    when start_enc =>     
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '1'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');
-        
-        -- CNT 
-        cnt_ce_W <= '1';
-        cnt_rst_W <= '0'; -- reset cnt 
-        
-        -- output ports 
-        led_out <= '0'; 
-           
-        -- transition  
-        if cnt_out_W = b"11" then        
-            nx_state <= enc;          
-        else                 
-            nx_state <= start_enc;          
-        end if;  
-        
-    when enc =>      
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '0'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');
-        
-        -- CNT 
-        cnt_ce_W <= '0';
-        cnt_rst_W <= '0'; 
-        
-        -- output ports 
-        led_out <= '0'; 
-        
-        -- transition 
-        if (busy_W='0') and (ciphertext_out_W = correct_ciphertext(Datapath - 1 downto 0)) then 
-            nx_state <= ending;          
-        else           
-            nx_state <= enc;           
-        end if; 
-        
-    when ending =>     
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '0'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');
-        
-        -- CNT 
-        cnt_ce_W <= '0';
-        cnt_rst_W <= '0'; -- reset cnt 
-        
-        -- output ports     
-        led_out<= '0';     
-        
-        -- transition    
-        if ciphertext_out_W = correct_ciphertext(Datapath*2 - 1 downto Datapath) then
-            nx_state <= success;     
-        else    
-            nx_state <= ending;                      
-        end if;             
-    
-    when success =>     
-        -- CIPHER inputs
-        data_ready_W <= '0'; 
-        start_W <= '0'; 
-        plaintext_reg <= (others => '0');
-        key_reg <= (others => '0');
-        
-        -- CNT 
-        cnt_ce_W <= '0';
-        cnt_rst_W <= '1'; -- reset cnt 
-        
-        -- output ports         
-        led_out<= '1'; 
-         
-        -- transition            
-        nx_state <= success;                  
-      
-    end case;           
+			WHEN waiting =>
+				-- CNT 
+				cnt_ce_W <= '1';
+				cnt_rst_W <= '0';
 
-end process;         
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '0';
+				plaintext_reg <= plaintext_tst(Datapath - 1 + Datapath * (to_integer(unsigned(cnt_out_W))) DOWNTO 0 + Datapath * (to_integer(unsigned(cnt_out_W))));
+				key_reg <= key_tst(Datapath - 1 + Datapath * (to_integer(unsigned(cnt_out_W))) DOWNTO 0 + Datapath * (to_integer(unsigned(cnt_out_W))));
 
+				-- output ports 
+				led_out <= '0';
 
- 
+				-- transition  
+                -- Since datapath is 64 bit, it takes 2 clk clycle to correct load new key and plaintext
+				IF cnt_out_W = b"01" THEN
+					nx_state <= start_enc;
+				ELSE
+					nx_state <= waiting;
+				END IF;
 
-end Behavioral;
+			WHEN start_enc =>
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '1';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
+
+				-- CNT 
+				cnt_ce_W <= '1';
+				cnt_rst_W <= '0'; -- reset cnt 
+
+				-- output ports 
+				led_out <= '0';
+
+				-- transition  
+				-- the cipher needs up to 2 clk cycle to set his register properly  
+				IF cnt_out_W = b"11" THEN
+					nx_state <= enc;
+				ELSE
+					nx_state <= start_enc;
+				END IF;
+
+			WHEN enc =>
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '0';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
+
+				-- CNT 
+				cnt_ce_W <= '0';
+				cnt_rst_W <= '0';
+
+				-- output ports 
+				led_out <= '0';
+
+				-- transition 
+                -- Control the first half of ciphertext if it is correct 
+				IF (busy_W = '0') AND (ciphertext_out_W = correct_ciphertext(Datapath - 1 DOWNTO 0)) THEN
+					nx_state <= ending;
+				ELSE
+					nx_state <= enc;
+				END IF;
+
+			WHEN ending =>
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '0';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
+
+				-- CNT 
+				cnt_ce_W <= '0';
+				cnt_rst_W <= '0'; -- reset cnt 
+
+				-- output ports     
+				led_out <= '0';
+
+				-- transition    
+				-- control the others half of the ciphertext if it is correct  				
+				IF ciphertext_out_W = correct_ciphertext(Datapath * 2 - 1 DOWNTO Datapath) THEN
+					nx_state <= success;
+				ELSE
+					nx_state <= ending;
+				END IF;
+
+			WHEN success =>
+				-- CIPHER inputs
+				data_ready_W <= '0';
+				start_W <= '0';
+				plaintext_reg <= (OTHERS => '0');
+				key_reg <= (OTHERS => '0');
+
+				-- CNT 
+				cnt_ce_W <= '0';
+				cnt_rst_W <= '1'; -- reset cnt 
+
+				-- output ports         
+                led_out <= '1';     -- Success! led should turn on 
+
+				-- transition            
+				nx_state <= success;
+
+		END CASE;
+
+	END PROCESS;
+END Behavioral;

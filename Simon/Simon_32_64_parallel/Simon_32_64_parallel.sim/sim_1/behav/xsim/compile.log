@@ -1,28 +1,20 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module clk_wiz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/Simon_32_64_parallel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/Simon_32_64_parallel.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Simon_32_64_parallel
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/new/Testing_IP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/new/Testing_IP.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Testing_IP
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/src/cnt.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/src/cnt.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity CNT
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/key_schedule_function.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/key_schedule_function.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity key_schedule_FUNCTION_parallel
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/lfsr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/lfsr.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity lfsr
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/mux.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/mux.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity MUX
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/normal_shift_reg.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity normal_shift_reg
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/parallel_tapped_shift_reg.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/reg.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity reg
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/rnd_function_parallel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sources_1/imports/new/rnd_function_parallel.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity RND_FUNCTION_parallel
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sim_1/new/Testing_IP_TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Testing_IP_TB

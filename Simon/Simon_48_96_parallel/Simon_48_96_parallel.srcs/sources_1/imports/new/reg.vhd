@@ -1,65 +1,32 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 05.09.2017 15:02:38
--- Design Name: 
--- Module Name: reg - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY reg IS
 
+	GENERIC (width : INTEGER := 16);
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	PORT (
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+		clk, ce : std_logic;
+		D : IN std_logic_vector(width - 1 DOWNTO 0);
+		Q : OUT std_logic_vector(width - 1 DOWNTO 0)
+	);
+END reg;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+ARCHITECTURE Behavioral OF reg IS
 
-entity reg is  
+BEGIN
 
-generic( width:integer:= 16 ); 
+	PROCESS (D, clk, ce)
 
-port (
+	BEGIN
 
- clk,ce: std_logic; 
- D:in std_logic_vector(width-1 downto 0); 
- Q:out std_logic_vector(width-1 downto 0)
+		IF ce = '1' THEN
+			IF rising_edge(clk) THEN
 
+				Q <= D;
+			END IF;
+		END IF;
 
-);
-end reg;
+	END PROCESS;
 
-architecture Behavioral of reg is
-
-begin
-
-process(D,clk,ce) 
-
-begin
-
-if ce = '1' then 
-if rising_edge(clk) then 
-                             
-    Q<= D; 
-   end if;                           
-  end if;  
-   
-end process; 
-
-end Behavioral;
+END Behavioral;

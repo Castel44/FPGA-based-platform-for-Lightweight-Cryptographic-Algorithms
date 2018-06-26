@@ -1,52 +1,22 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 28.08.2017 22:01:56
--- Design Name: 
--- Module Name: RND_FUNCTION - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY RND_FUNCTION_parallel IS
+	GENERIC (
+		datapath : INTEGER := 16
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	);
 
+	PORT (
 
+		left_in, right_in, Ki_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
+		rnd_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0)
+	);
+END RND_FUNCTION_parallel;
 
-entity RND_FUNCTION_parallel is
-  generic ( datapath: integer := 16
-         
-          ); 
-          
-  port (         
-          
-         left_in,right_in,Ki_in: in std_logic_vector(Datapath -1 downto 0); 
-          rnd_out: out std_logic_vector(Datapath -1 downto 0)
-          
-         
-  ); 
-end RND_FUNCTION_parallel;
+ARCHITECTURE Behavioral OF RND_FUNCTION_parallel IS
 
-architecture Behavioral of RND_FUNCTION_parallel is
+BEGIN
 
-
-
-begin
-
-
-
-  rnd_out <= ( (left_in(22 downto 0) & left_in(23)) and (left_in(15 downto 0) & left_in(23 downto 16)))  xor  right_in xor (left_in(21 downto 0) & left_in(23 downto 22))  xor  Ki_in ;
-
-
-end Behavioral;
+	rnd_out <= ((left_in(22 DOWNTO 0) & left_in(23)) AND (left_in(15 DOWNTO 0) & left_in(23 DOWNTO 16))) XOR right_in XOR (left_in(21 DOWNTO 0) & left_in(23 DOWNTO 22)) XOR Ki_in;
+END Behavioral;

@@ -1,50 +1,44 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY end_encrypt_shift_reg IS
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	PORT (
+		ce, clk, rst : IN std_logic;
 
+		end_encrypt : OUT std_logic := '0'
 
+	);
 
-entity end_encrypt_shift_reg is
+END end_encrypt_shift_reg;
 
-  Port ( 
-          ce,clk,rst: in std_logic; 
-          
-          end_encrypt: out std_logic:= '0'
- 
-  );
-  
-end end_encrypt_shift_reg;
+ARCHITECTURE Behavioral OF end_encrypt_shift_reg IS
 
-architecture Behavioral of end_encrypt_shift_reg is
+BEGIN
 
+	PROCESS (clk, ce, rst)
 
+		VARIABLE feedback : std_logic;
+		VARIABLE reg_internal : std_logic_vector(1 DOWNTO 0) := "01";
 
-begin
+	BEGIN
 
-process(clk,ce,rst) 
+		IF (rst = '1') THEN
+			reg_internal := "01";
 
-variable feedback: std_logic; 
-variable reg_internal: std_logic_vector(1 downto 0):= "01"; 
+		ELSIF rising_edge(clk) THEN
+			IF ce = '1' THEN
 
-begin 
-       
-     if (rst='1') then 
-       reg_internal := "01";
+				feedback := reg_internal(1);
+				reg_internal(1) := reg_internal(0);
+				reg_internal(0) := feedback;
 
-   elsif rising_edge(clk)  then          
-      if ce = '1' then  
-      
-         feedback := reg_internal(1) ; 
-         reg_internal(1) := reg_internal(0); 
-         reg_internal(0) := feedback; 
-         
-    end if; 
-    
-    end if; 
-    
-end_encrypt <= reg_internal(1) ; 
+			END IF;
 
-end process; 
+		END IF;
 
-end Behavioral;
+		end_encrypt <= reg_internal(1);
+
+	END PROCESS;
+
+END Behavioral;

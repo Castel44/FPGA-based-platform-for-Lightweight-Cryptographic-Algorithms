@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date             : Sat Jun 23 18:30:43 2018
-| Host             : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
+| Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date             : Tue Jun 26 18:23:24 2018
+| Host             : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
 | Command          : report_power -file Testing_IP_power_routed.rpt -pb Testing_IP_power_summary_routed.pb -rpx Testing_IP_power_routed.rpx
 | Design           : Testing_IP
 | Device           : xc7z010clg400-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.215        |
+| Total On-Chip Power (W)  | 0.096        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.121        |
-| Device Static (W)        | 0.094        |
+| Dynamic (W)              | 0.003        |
+| Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.5         |
-| Junction Temperature (C) | 27.5         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      207 |       --- |             --- |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      205 |       --- |             --- |
 |   LUT as Logic |    <0.001 |       76 |     17600 |            0.43 |
 |   Register     |    <0.001 |      109 |     35200 |            0.31 |
-|   Others       |     0.000 |       10 |       --- |             --- |
-| Signals        |    <0.001 |      161 |       --- |             --- |
-| MMCM           |     0.120 |        1 |         2 |           50.00 |
+|   Others       |     0.000 |        8 |       --- |             --- |
+| Signals        |    <0.001 |      159 |       --- |             --- |
 | I/O            |    <0.001 |        4 |       100 |            4.00 |
-| Static Power   |     0.094 |          |           |                 |
-| Total          |     0.215 |          |           |                 |
+| Static Power   |     0.093 |          |           |                 |
+| Total          |     0.096 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,8 +70,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.005 |       0.001 |      0.004 |
-| Vccaux    |       1.800 |     0.072 |       0.067 |      0.005 |
+| Vccint    |       1.000 |     0.006 |       0.003 |      0.004 |
+| Vccaux    |       1.800 |     0.005 |       0.000 |      0.005 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -84,7 +83,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpint   |       1.000 |     0.016 |       0.000 |      0.016 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -131,16 +130,11 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+----------------------+-----------------------------------+-----------------+
-| Clock                | Domain                            | Constraint (ns) |
-+----------------------+-----------------------------------+-----------------+
-| clk                  | clk                               |             8.0 |
-| clk_out1_clk_wiz_0   | clock_div/inst/clk_out1_clk_wiz_0 |            80.0 |
-| clk_out1_clk_wiz_0_1 | clock_div/inst/clk_out1_clk_wiz_0 |            80.0 |
-| clkfbout_clk_wiz_0   | clock_div/inst/clkfbout_clk_wiz_0 |            16.0 |
-| clkfbout_clk_wiz_0_1 | clock_div/inst/clkfbout_clk_wiz_0 |            16.0 |
-| sys_clk_pin          | clk                               |             8.0 |
-+----------------------+-----------------------------------+-----------------+
++-------------+--------+-----------------+
+| Clock       | Domain | Constraint (ns) |
++-------------+--------+-----------------+
+| sys_clk_pin | clk    |             8.0 |
++-------------+--------+-----------------+
 
 
 3. Detailed Reports
@@ -152,16 +146,14 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| Testing_IP       |     0.121 |
+| Testing_IP       |     0.003 |
 |   INST_CNT       |    <0.001 |
-|   Simon_DUT      |    <0.001 |
+|   Simon_DUT      |     0.002 |
 |     INST_IS_REG  |    <0.001 |
 |     INST_Ki0     |    <0.001 |
 |     INST_Ki2_Ki1 |    <0.001 |
 |     INST_Ki3     |    <0.001 |
 |     INST_LFSR    |    <0.001 |
-|   clock_div      |     0.120 |
-|     inst         |     0.120 |
 +------------------+-----------+
 
 
