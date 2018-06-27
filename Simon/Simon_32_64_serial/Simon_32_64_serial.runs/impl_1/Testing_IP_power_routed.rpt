@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun Jun 24 21:58:54 2018
-| Host             : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date             : Wed Jun 27 14:51:04 2018
+| Host             : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
 | Command          : report_power -file Testing_IP_power_routed.rpt -pb Testing_IP_power_summary_routed.pb -rpx Testing_IP_power_routed.rpx
 | Design           : Testing_IP
 | Device           : xc7z010clg400-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.094        |
+| Total On-Chip Power (W)  | 0.095        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.001        |
+| Dynamic (W)              | 0.002        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.9         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |    <0.001 |        3 |       --- |             --- |
-| Slice Logic             |    <0.001 |      115 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |       45 |     17600 |            0.26 |
+| Slice Logic             |    <0.001 |      111 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |       44 |     17600 |            0.25 |
 |   LUT as Shift Register |    <0.001 |        8 |      6000 |            0.13 |
-|   Register              |    <0.001 |       43 |     35200 |            0.12 |
+|   Register              |    <0.001 |       42 |     35200 |            0.12 |
 |   Others                |     0.000 |        7 |       --- |             --- |
-| Signals                 |    <0.001 |       82 |       --- |             --- |
+| Signals                 |    <0.001 |       80 |       --- |             --- |
 | I/O                     |    <0.001 |        4 |       100 |            4.00 |
 | Static Power            |     0.093 |          |           |                 |
-| Total                   |     0.094 |          |           |                 |
+| Total                   |     0.095 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| Testing_IP               |     0.001 |
+| Testing_IP               |     0.002 |
 |   INST_CNT               |    <0.001 |
 |   Simon_DUT              |    <0.001 |
 |     INST_END_ENCRYPT_FSR |    <0.001 |

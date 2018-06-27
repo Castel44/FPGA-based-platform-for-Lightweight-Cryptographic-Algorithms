@@ -27,7 +27,7 @@ END Testing_IP;
 ARCHITECTURE Behavioral OF Testing_IP IS
 
 	------------------------------------------------------------------------------------------------------------
-	-- Subcomponents delcaraton:
+	-- Subcomponents declaration:
 	-- DUT: Simon with Block size = 32 bit; Key size = 64 bit
 	-- Datapath = 1 bit
 	COMPONENT Simon_32_64_bit_serial IS
@@ -53,8 +53,9 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	
 	-- internal signal 
 	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1918111009080100";   --key test vector
-    SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"00000000" & X"65656877");      --plaintext text vector with some zeros concatenate on top of it, makes easier the correct loading into his register
-	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"c69be9bb";    -- cipheterxt test vector
+    SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"00000000" & X"65656877"); --plaintext text vector
+    -- with some zeros concatenate on top of it, makes easier the correct loading into Internal state register
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"c69be9bb"; -- cipheterxt test vector
 
 	SIGNAL plaintext_reg : std_logic_vector(0 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(0 DOWNTO 0) := (OTHERS => '0');
@@ -66,7 +67,7 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	SIGNAL cnt_rst_W : std_logic;
 	SIGNAL cnt_out_W : std_logic_vector(5 DOWNTO 0);
 
-    -- FSM signals
+    -- FSM states
 	TYPE state IS (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS);
 	SIGNAL nx_state : state;
 	SIGNAL current_state : state := IDLE;
@@ -97,7 +98,7 @@ BEGIN
 	);
 	
 ------------------------------------------------------------------------------------------------------------
-    -- Finite state machine to handle the cipher.	
+    -- Finite state machine to manage the cipher operations.	
 	STATE_MACHINE_MAIN : PROCESS (clk, rst)
 	BEGIN
 		IF rising_edge(CLK) THEN
@@ -168,7 +169,7 @@ BEGIN
 				led_out <= '0';
 
 				-- transition  
-                -- Since datapath is 1 bit, it takes 64 clk clycle to correct load new key and plaintext
+                -- Since datapath is 1 bit, it takes 64 clk cycles to correctly load the new key and plaintext
 				IF cnt_out_W = b"111111" THEN
 					nx_state <= start_enc;
 				ELSE
@@ -190,7 +191,7 @@ BEGIN
 				led_out <= '0';
 
 				-- transition 
-                -- the cipher needs up to 2 clk cycle to set his register properly  
+                -- the cipher needs up to 2 clk cycles to set his register properly  
 				IF cnt_out_W = b"000001" THEN
 					nx_state <= enc;
 				ELSE
@@ -241,7 +242,7 @@ BEGIN
 					ELSE
 						nx_state <= ending;
 					END IF;				
-				ELSE    -- if an error occours go in idle state
+				ELSE    -- if an error occurs go into idle state
 					nx_state <= idle;
 				END IF;
 

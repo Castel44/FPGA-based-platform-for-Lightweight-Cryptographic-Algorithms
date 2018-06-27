@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Sun Jun 24 21:58:26 2018
-| Host         : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Wed Jun 27 14:50:52 2018
+| Host         : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
 | Command      : report_control_sets -verbose -file Testing_IP_control_sets_placed.rpt
 | Design       : Testing_IP
 | Device       : xc7z010
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |     9 |
-| Unused register locations in slices containing registers |    29 |
+| Unused register locations in slices containing registers |    30 |
 +----------------------------------------------------------+-------+
 
 
@@ -38,7 +38,8 @@ Table of Contents
 |      2 |            2 |
 |      4 |            1 |
 |      5 |            1 |
-|      7 |            2 |
+|      6 |            1 |
+|      7 |            1 |
 |     11 |            1 |
 |     12 |            1 |
 +--------+--------------+
@@ -53,8 +54,8 @@ Table of Contents
 | No           | No                    | No                     |               1 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               9 |            4 |
-| Yes          | No                    | No                     |              15 |            5 |
-| Yes          | No                    | Yes                    |              18 |            9 |
+| Yes          | No                    | No                     |              15 |            6 |
+| Yes          | No                    | Yes                    |              17 |            6 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -66,14 +67,14 @@ Table of Contents
 |      Clock Signal      |          Enable Signal         |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +------------------------+--------------------------------+--------------------+------------------+----------------+
 |  clk_IBUF_BUFG         |                                |                    |                1 |              1 |
-|  clk_IBUF_BUFG         |                                | data_ready_W       |                1 |              2 |
+|  clk_IBUF_BUFG         |                                | data_ready_W       |                2 |              2 |
 |  clk_IBUF_BUFG         | Simon_DUT/INST_SERIAL_CNT/E[0] | Simon_DUT/lfsr_rst |                1 |              2 |
 |  clk_IBUF_BUFG         | Simon_DUT/INST_lfsr/E[0]       | Simon_DUT/lfsr_rst |                2 |              4 |
-|  Simon_DUT/lfsr_change | Simon_DUT/INST_lfsr/E[0]       | Simon_DUT/lfsr_rst |                2 |              5 |
-|  clk_IBUF_BUFG         |                                | rst_IBUF           |                3 |              7 |
-|  clk_IBUF_BUFG         | INST_CNT/cnt_ce_W              | INST_CNT/cnt_rst_W |                4 |              7 |
+|  Simon_DUT/lfsr_change | Simon_DUT/INST_lfsr/E[0]       | Simon_DUT/lfsr_rst |                1 |              5 |
+|  clk_IBUF_BUFG         | INST_CNT/cnt_ce_W              | INST_CNT/cnt_rst_W |                2 |              6 |
+|  clk_IBUF_BUFG         |                                | rst_IBUF           |                2 |              7 |
 |  clk_IBUF_BUFG         | Simon_DUT/INST_lfsr/IS_ce      |                    |                3 |             11 |
-|  clk_IBUF_BUFG         | Simon_DUT/INST_lfsr/KEY_REG_CE |                    |                5 |             12 |
+|  clk_IBUF_BUFG         | Simon_DUT/INST_lfsr/KEY_REG_CE |                    |                7 |             12 |
 +------------------------+--------------------------------+--------------------+------------------+----------------+
 
 

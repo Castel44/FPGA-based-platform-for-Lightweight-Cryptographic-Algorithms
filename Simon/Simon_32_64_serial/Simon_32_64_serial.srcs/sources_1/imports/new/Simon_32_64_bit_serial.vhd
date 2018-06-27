@@ -1,5 +1,5 @@
 -- CIPHER TOP ENTITY
--- Cipher: Simoon
+-- Cipher: Simon
 -- Key length: 64 bit
 -- Plaintext length: 32 bit
 -- Datapath: 1 bit
@@ -26,7 +26,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 ------------------------------------------------------------------------------------------------------------
 ----Sub Components Definitions
 
-    -- Multiplexer to correct route signals 
+    -- Multiplexer to route signals 
 	COMPONENT MUX
 		GENERIC (datapath : INTEGER := 1);
 		PORT (
@@ -38,6 +38,11 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	END COMPONENT;
 
     -- Internal State shift register
+    
+    -- output ports are specified on various locations of the register because together 
+    -- with multiplexers will be used to perform the rotate right operations in 
+    -- the round function
+    
 	COMPONENT IS_shift_reg
 		GENERIC (
 			width : INTEGER;
@@ -59,6 +64,11 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	END COMPONENT;
 	
 	-- Key Shift register
+	
+	-- output ports are specified on various locations of the register because together 
+    -- with multiplexers will be used to perform the rotate right operations in 
+    -- the key schedule. 
+	
 	COMPONENT key_shiftreg
 		GENERIC (width, length : INTEGER);
 		PORT (
@@ -78,6 +88,11 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	END COMPONENT;
 
     -- Simon round function
+    
+    -- is0_in is the rightmost bit in the internal state register
+    -- the other MUX inputs will be mapped to the outputs of the muxes used to perform the rotate right operations
+    -- this entity performs only XORs internally as the shifts will be done with muxes and control logic
+    
 	COMPONENT Rnd_function
 		GENERIC (
 			datapath : INTEGER
@@ -88,19 +103,8 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 		);
 	END COMPONENT;
 	
-	-- Simon key schedule
-	COMPONENT KEY_SCHEDULE_FUNC
-		GENERIC (datapath : INTEGER);
-		PORT (
-			const_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-			KEYMUX3_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-			KEYMUX4_in, KEYMUX1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-			Ki_in, ki1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-			key_schedule_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
-		);
-	END COMPONENT;
-
-    -- The linear feedback shift register used to generate round-unique constants 
+	
+    -- The linear feedback shift register is used to generate round-unique constants 
 	COMPONENT lfsr
 		PORT (
 			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
@@ -111,7 +115,9 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 		);
 	END COMPONENT;
 
-    -- Mux witch choose between constants
+    -- this multiplexer is used to choose the right z constant for each round
+    -- the last bit of the 4 bit element counter value is fed in the input since it determines which z constant has to be used 
+    
 	COMPONENT CONSTANT_GEN_MUX
 		GENERIC (datapath : INTEGER);
 		PORT (
@@ -120,8 +126,27 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 			Const_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+	-- Simon key schedule
+	
+    -- const_in is the round_dependant constant and is mapped to the output of CONSTANT_GEN_MUX
+    -- the MUX inputs are mapped to the output of the muxes used to perform rotate right operations
+    
+    
+        COMPONENT KEY_SCHEDULE_FUNC
+            GENERIC (datapath : INTEGER);
+            PORT (
+                const_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+                KEYMUX3_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+                KEYMUX4_in, KEYMUX1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+                Ki_in, ki1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+                key_schedule_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
+            );
+        END COMPONENT;
+
 
     -- Counter
+    
 	COMPONENT CNT
 		GENERIC (
 			size : INTEGER
@@ -134,7 +159,10 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 		);
 	END COMPONENT;
 
-    -- Shift reg witch shift 0 and 1, needed to ensure the correct ciphertext
+    -- This is a two bit Johnson counter (shift register)
+    -- used to determine wether the encryption operation is completed. 
+   
+    
 	COMPONENT end_encrypt_shift_reg
 		PORT (
 			ce, clk, rst : IN std_logic;
@@ -230,7 +258,12 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 BEGIN
 
     -- SubComponents Instantiation
-    -- Internal State mux, loads the shift reg correclty to last operation of cipher or new plaintext
+    
+    -- Internal State multiplexer
+    
+    -- this mux maps the internal state register input to the input port plaintext_in when loading
+    -- and when encrypting to the rnd function output 
+    
 	INST_IS_INPUT_MUX : MUX
 	GENERIC MAP(datapath => 1)
 	PORT MAP(
@@ -241,6 +274,9 @@ BEGIN
 	);
 
     -- Internal State shift register
+    
+    -- outputs are mapped to inputs of the muxes used for RORs operations
+    
 	INST_IS_SHIFTREG : IS_shift_reg
 	GENERIC MAP(
 		width => datapath,
@@ -260,7 +296,11 @@ BEGIN
 		IS_n8_out => IS_n8_out
 	);
 
-    -- Round function mux
+    -- Round function
+    
+    -- receives as input the outputs of the muxes used to perform RORs
+    -- also the rightmost bit of the internal state and the rnd key 
+    
 	INST_rnd_func : RND_FUNCTION
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -272,6 +312,9 @@ BEGIN
 		rnd_function_out => rnd_function_out
 	);
 	
+    -- used to perform the ROR by one bit specified in Simon IS update algorithm
+    -- MUX1_sel is chosen accordingly in the cipher state machine
+    	
 	INST_MUX1 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -280,6 +323,9 @@ BEGIN
 		sel => MUX1_sel,
 		mux_out => MUX1_out
 	);
+	
+	-- used to perform the ROR by two bit specified in Simon IS update algorithm
+    -- MUX2_sel is chosen accordingly in the cipher state machine
 
 	INST_MUX2 : mux
 	GENERIC MAP(datapath => datapath)
@@ -290,6 +336,9 @@ BEGIN
 		mux_out => MUX2_out
 	);
 	
+	-- used to perform the ROR by eight bit specified in Simon IS update algorithm
+    -- MUX8_sel is chosen accordingly in the cipher state machine
+	
 	INST_MUX8 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -298,6 +347,9 @@ BEGIN
 		sel => MUX8_sel,
 		mux_out => MUX8_out
 	);
+	
+	 -- this mux maps the key register input to the input port key_in when loading
+     -- and when encrypting to thekey schedule output 
 
 	INST_KEY_REG_IN_MUX : mux
 	GENERIC MAP(datapath => datapath)
@@ -310,6 +362,11 @@ BEGIN
 	);
 
     -- Key shift register
+    
+    -- outputs are mapped to inputs of the muxes used for RORs operations
+    -- Q is the round key 
+    
+    
 	INST_KEY_REG : key_shiftreg
 	GENERIC MAP(width => datapath, length => 64)
 	PORT MAP(
@@ -327,6 +384,9 @@ BEGIN
 		KEY_REG_1_out => KEY_REG_1_out
 	);
 	
+	-- used to perform the ROR by 3 bit specified in Simon key scheduling algorithm
+    -- KEYMUX3_sel is chosen accordingly in the cipher state machine
+	
 	INST_KEYMUX3 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -336,6 +396,9 @@ BEGIN
 		mux_out => KEYMUX3_out
 	);
 	
+	-- used to perform the ROR by 4 bit specified in Simon key scheduling algorithm
+    -- KEYMUX4_sel is chosen accordingly in the cipher state machine
+	
 	INST_KEYMUX4 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -344,6 +407,9 @@ BEGIN
 		sel => KEYMUX4_sel,
 		mux_out => KEYMUX4_out
 	);
+	
+	-- used to perform the ROR by 1 bit specified in Simon key scheduling algorithm
+    -- KEYMUX1_sel is chosen accordingly in the cipher state machine
 
 	INST_KEYMUX1 : mux
 	GENERIC MAP(datapath => datapath)
@@ -355,6 +421,10 @@ BEGIN
 	);
 
     -- Simon key schedule
+    -- as the RORs are performed by the muxes and control logic, 
+    -- this takes in input the output of those muxes and the round constant
+    -- this entity simply computes the xor between those signals
+    
 	INST_KEYSCHEDULE : KEY_SCHEDULE_FUNC
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -367,6 +437,10 @@ BEGIN
 		KEY_SCHEDULE_OUT => KEY_SCHEDULE_OUT
 	);
 	
+	
+	-- used for the round-dependant constants in the key schedule
+	-- takes in input the last bit of the counter used to count the individual bits processed in a round
+	
 	INST_CONSTANT_GEN : CONSTANT_GEN_MUX
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -377,6 +451,10 @@ BEGIN
 
 	);
 	
+	-- element counter 
+	-- this counter is used to count the individual bits processed by the cipher which are 32
+	
+	
 	INST_SERIAL_CNT : cnt
 	GENERIC MAP(size => 4) --32
 	PORT MAP(
@@ -386,6 +464,8 @@ BEGIN
 		ce => serial_ce
 	);
 	
+	-- lfsr used to generate round constants
+	
 	INST_lfsr : lfsr
 	PORT MAP(
 		lfsr_out => lfsr_out,
@@ -394,6 +474,8 @@ BEGIN
 		rst => lfsr_rst,
 		lfsr_parallel_out => lfsr_parallel_out
 	);
+	
+	-- end encrypt out will be used in the state machine to determine whether the cipher has done its work.
 
 	INST_END_ENCRYPT_FSR : end_encrypt_shift_reg
 	PORT MAP(
@@ -442,7 +524,7 @@ BEGIN
 				--INPUT MUX
 				SEL_IN <= '0';
 
-				--MUX driving for rnd function
+				--ROR MUX driving for rnd function
 				MUX1_sel <= '1';
 				MUX8_sel <= '1';
 				MUX2_sel <= '1';
@@ -453,7 +535,7 @@ BEGIN
 				KEYMUX4_sel <= '1';
 
 				-- state transition
-				-- lfsr out value is used to count up clk cycles
+				-- lfsr out value is used to count up if the loading has been completed
 				IF lfsr_parallel_out = b"10011" THEN -- plaintext has been loaded keep loading the key
 					nx_state <= loading;
 					IS_CE <= '0';
@@ -481,7 +563,7 @@ BEGIN
 				Ciphertext_out <= (OTHERS => '0');
 				
 				--lfsr
-				lfsr_rst <= '1';
+				lfsr_rst <= '1'; -- reset the lfsr 
 				lfsr_ce <= '0';
 				
 				--element_cnt is disabled
@@ -523,10 +605,10 @@ BEGIN
 
 				--lfsr
 				lfsr_rst <= '0';
-				lfsr_ce <= '1';
+				lfsr_ce <= '1'; -- enable the lfsr 
 				
 				--serial_cnt is enabled
-				serial_ce <= '1';
+				serial_ce <= '1'; -- count the individual bits 
 				serial_cnt_rst <= '0';
 
 				--ending cnt
@@ -536,41 +618,41 @@ BEGIN
 				SEL_IN <= '1';
 
 				--MUX driving for rnd function
-				IF serial_cnt_out = b"0000" THEN
+				IF serial_cnt_out = b"0000" THEN 
 					MUX1_sel <= '0';
 				ELSE
-					MUX1_sel <= '1';
+					MUX1_sel <= '1'; -- perform ROR by one 
 				END IF;
 
 				IF serial_cnt_out <= b"0001" THEN
 					MUX2_sel <= '0';
 				ELSE
-					MUX2_sel <= '1';
+					MUX2_sel <= '1'; -- perform ROR by two
 				END IF;
 
 				IF serial_cnt_out <= b"0111" THEN
 					MUX8_sel <= '0';
 				ELSE
-					MUX8_sel <= '1';
+					MUX8_sel <= '1'; -- ROR by eight 
 				END IF;
 
 				--MUX selects for key schedule 
 				IF serial_cnt_out < b"1111" THEN
 					KEYMUX1_sel <= '0';
 				ELSE
-					KEYMUX1_sel <= '1';
+					KEYMUX1_sel <= '1';-- ROR by 1 
 				END IF;
 
 				IF serial_cnt_out < b"1101" THEN
 					KEYMUX3_sel <= '0';
 				ELSE
-					KEYMUX3_sel <= '1';
+					KEYMUX3_sel <= '1'; -- ROR by 3
 				END IF;
 
 				IF serial_cnt_out < b"1100" THEN
 					KEYMUX4_sel <= '0';
 				ELSE
-					KEYMUX4_sel <= '1';
+					KEYMUX4_sel <= '1'; -- ROR by 4 
 				END IF;
 				
 				-- key register enable
@@ -579,16 +661,18 @@ BEGIN
 				--state transition
 				IF lfsr_parallel_out = b"10001" THEN
 
-					IF end_encrypt_out = '1' THEN
+					IF end_encrypt_out = '1' THEN -- only if this condition is met the cipher has finished
+					                              -- this is because we are using the lfsr also for the loading phase
+					                              -- we used this johnson counter trick to spare logic
 						IS_CE <= '0';
-						nx_state <= end_encrypt;
+						nx_state <= end_encrypt; 
 					ELSE
-						nx_state <= processing;
+						nx_state <= processing; 
 						IS_CE <= '1';
 					END IF;
-					IF serial_cnt_out = b"1111" THEN
+					IF serial_cnt_out = b"1111" THEN -- if the round has ended 
 
-						end_encrypt_ce <= '1';
+						end_encrypt_ce <= '1';  -- let the johnson counter increase
 					ELSE
 						end_encrypt_ce <= '0';
 					END IF;
@@ -641,7 +725,8 @@ BEGIN
 
 	END PROCESS;
 
-    -- lfsr change his value every round, a cnt will determine when this occours    
+    -- the lfsr should change his value every round, 
+    -- this happens whenever the element counter saturates
 	LFSR_CHANGE_constant : PROCESS (clk, serial_cnt_out)
 	BEGIN
 		IF rising_edge(clk) THEN
