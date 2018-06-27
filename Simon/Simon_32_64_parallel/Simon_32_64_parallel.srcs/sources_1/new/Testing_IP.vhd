@@ -191,7 +191,7 @@ BEGIN
 				led_out <= '0';
 
 				-- transition
-				-- the cipher needs up to 4 clk cycle to set his register properly  				
+				-- the cipher needs up to 4 clk cycle to set his registers properly  				
 				IF cnt_out_W = b"111" THEN
 					nx_state <= enc;
 				ELSE

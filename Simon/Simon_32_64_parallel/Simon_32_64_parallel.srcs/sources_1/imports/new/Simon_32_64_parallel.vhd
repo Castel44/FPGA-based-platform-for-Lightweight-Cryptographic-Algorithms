@@ -14,7 +14,7 @@ ENTITY Simon_32_64_parallel IS
 
 	PORT (
 		clk, data_ready, start : IN std_logic;
-		key_in : IN std_logic_vector(Datapath - 1 DOWNTO 0); -- metà caricata
+		key_in : IN std_logic_vector(Datapath - 1 DOWNTO 0); -- metï¿½ caricata
 		plaintext_in : IN std_logic_vector(Datapath - 1 DOWNTO 0);
 		busy : OUT std_logic := '0';
 		ciphertext_out : OUT std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0')
@@ -37,7 +37,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 		);
 	END COMPONENT;
 
-    -- Register, 16 bit
+    -- standard Register
 	COMPONENT reg
 		GENERIC (width : INTEGER := 16);
 		PORT (
@@ -47,7 +47,8 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register, 16 bit
+    -- standard Shift Register
+    
 	COMPONENT normal_shift_reg
 		GENERIC (
 			width : INTEGER := 16; -- shift_reg width 
@@ -61,7 +62,9 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register 16 bit, with double output
+    -- Shift Register with right and left 16 bits output (length is 2)
+    -- it will be used for the internal state 
+    
 	COMPONENT parallel_tapped_shift_reg
 		GENERIC (
 			width : INTEGER := 16; -- shift_reg width 
@@ -77,6 +80,10 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 	END COMPONENT;
 	
 	-- Simon Round function
+	
+	-- left in is the leftmost portion of the internal state (first 16 bits)
+	-- rigth_ in the rightmost (last 16 bits)
+	
 	COMPONENT Rnd_function_parallel
 		GENERIC (datapath : INTEGER := 16);
 		PORT (
@@ -86,6 +93,11 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 	END COMPONENT;
 	
 	-- Simon key schedule function
+	-- takes the ki_in which is the round key, and the 
+	-- other portion of the key register before ki_in (right_in below) 
+	-- and also left_in with its instead the leftmost portion of the key register 
+	-- and it implements the key schedule which consist in simply some RORs and XORs
+	
 	COMPONENT Key_schedule_function_parallel
 		GENERIC (datapath : INTEGER := 16);
 		PORT (
@@ -95,7 +107,9 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 		);
 	END COMPONENT;
 
-    -- The linear feedback shift register used to generate round-unique constants 
+    -- The linear feedback shift register is used to generate round-unique constants 
+    -- but also to determine whether the cipher has done its job. 
+    
 	COMPONENT lfsr
 		PORT (
 			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
@@ -144,7 +158,8 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 BEGIN
     
     -- SubComponents Instantiation
-    -- Internal State mux, loads the shift reg correclty to last operation of cipher or new plaintext
+    -- Internal State mux
+    
 	INST_INMUX : MUX
 	GENERIC MAP(
 		datapath => Datapath
@@ -156,7 +171,7 @@ BEGIN
 		mux_out => MUX_IN_out
 	);
 	
-	-- Shift register of internal state
+	-- internal state shift register
 	INST_IS_REG : parallel_tapped_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -191,8 +206,13 @@ BEGIN
 		sel => SEL_IN,
 		mux_out => KEY_MUX_OUT
 	);
+	
+	-- the KEY REGISTER is divided into 4 16 bit registers forming a
+	-- shift register of length 4 and size 16  
+	-- 4 different registers  are instantiated and the mapped together for convenience
 
     -- Ki3 register
+    -- part of the key register (leftmost register)
 	INST_Ki3 : reg
 	GENERIC MAP(width => Datapath)
 
@@ -203,7 +223,9 @@ BEGIN
 		Q => ki3_KEY_REG_OUT
 	);
 
-    -- Ki1 and ki2 shift register
+    -- Ki1 and ki2 shift register 
+    -- part of the key register (two middle registers)
+    
 	INST_Ki2_Ki1 : normal_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -215,8 +237,12 @@ BEGIN
 		CE => KEY_REG_CE,
 		Q => ki2_KEY_REG_OUT
 	);
-
+    
+    
     -- Ki0 register
+    -- rightmost register part of the key register 
+    -- at each round contains the round key 
+    
 	INST_Ki0 : reg
 	GENERIC MAP(width => Datapath)
 	PORT MAP(
@@ -227,6 +253,9 @@ BEGIN
 	);
 	
 	-- Simon key schedule
+	-- left in is mapped to ki3 ki_in to ki0 (is the round key)
+    -- etc 	
+	
 	INST_KEY_SCHEDULE_FUNCTION : key_schedule_function_parallel
 	GENERIC MAP(
 		datapath => Datapath
@@ -280,7 +309,9 @@ BEGIN
 				SEL_IN <= '0'; --loading   
 				                                  
 				-- state transition    
-                -- lfsr output values used to count up clk cycles
+                -- lfsr output values used to determine when loading is done 
+                -- this to spare the need for another counter
+                
 				IF lfsr_parallel_out = b"10011" THEN-- plaintext has been loaded keep loading the key         
 					nx_state <= loading;
 					IS_CE <= '0';
@@ -338,7 +369,9 @@ BEGIN
 				
 				--state transition           
 				-- lfsr used to count up rounds
-				-- check wtih start signal cause the b"10000" is the 1st lfsr output value                 
+				-- the AND condition is necessary as the "10000" is the default value for the lfsr 
+				-- and it happens also at the start of the encryption operation when start is high
+				-- again this spares the need for another counter              
 				IF lfsr_parallel_out = b"10000" AND start = '0' THEN
 					nx_state <= end_encrypt;
 				ELSE
@@ -360,7 +393,9 @@ BEGIN
 				lfsr_ce <= '1';
 				
 				--state transition               
-				IF lfsr_parallel_out = b"10011" THEN -- count uo to 2 clk cycles
+				IF lfsr_parallel_out = b"10011" THEN -- count up to 2 clk cycles 
+				                                     -- because two cycles are needed to output the ciphertext 
+				                     	             -- from internal state register
 					nx_state <= idle;
 				ELSE
 					nx_state <= end_encrypt;
