@@ -1,20 +1,16 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY AddRoundKey IS
+	PORT (
+		mixcol_in : IN std_logic_vector(127 DOWNTO 0);
+		output : OUT std_logic_vector(127 DOWNTO 0);
+		wkey_in : IN std_logic_vector(127 DOWNTO 0)
+	);
+END AddRoundKey;
+ARCHITECTURE Behavioral OF AddRoundKey IS
 
+BEGIN
 
-entity AddRoundKey is
-Port ( 
-    mixcol_in: in std_logic_vector(127 downto 0); 
-    output: out std_logic_vector(127 downto 0); 
-    wkey_in: in std_logic_vector(127 downto 0)   
-);
-end AddRoundKey;
+	output <= mixcol_in XOR wkey_in;
 
-
-architecture Behavioral of AddRoundKey is
-
-begin
-
-output <= mixcol_in xor wkey_in; 
-
-end Behavioral;
+END Behavioral;

@@ -1,72 +1,61 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY MixColumns IS
+	PORT (
+		input : IN std_logic_vector(127 DOWNTO 0);
+		output : OUT std_logic_vector(127 DOWNTO 0)
+	);
+END MixColumns;
 
+ARCHITECTURE Behavioral OF MixColumns IS
 
-entity MixColumns is
-Port (   
-    input:in std_logic_vector(127 downto 0); 
-    output: out  std_logic_vector(127 downto 0)  
-);
-end MixColumns;
+	COMPONENT mixcolumn
+		PORT (
+			In_DI : IN std_logic_vector(31 DOWNTO 0);
+			Out_DO : OUT std_logic_vector(31 DOWNTO 0)
+		);
+	END COMPONENT;
+	SIGNAL first_col_in : std_logic_vector(31 DOWNTO 0);
+	SIGNAL second_col_in : std_logic_vector(31 DOWNTO 0);
+	SIGNAL third_col_in : std_logic_vector(31 DOWNTO 0);
+	SIGNAL fourth_col_in : std_logic_vector(31 DOWNTO 0);
 
-architecture Behavioral of MixColumns is
+	SIGNAL first_col_out : std_logic_vector(31 DOWNTO 0);
+	SIGNAL second_col_out : std_logic_vector(31 DOWNTO 0);
+	SIGNAL third_col_out : std_logic_vector(31 DOWNTO 0);
+	SIGNAL fourth_col_out : std_logic_vector(31 DOWNTO 0);
+BEGIN
 
-component mixcolumn 
-port ( 
-    In_DI  : in std_logic_vector(31 downto 0);   
-    Out_DO : out std_logic_vector(31 downto 0)
-    ); 
-end component; 
+	first_col_in <= input(127 DOWNTO 120) & input(95 DOWNTO 88) & input(63 DOWNTO 56) & input(31 DOWNTO 24);
+	second_col_in <= input(119 DOWNTO 112) & input(87 DOWNTO 80) & input(55 DOWNTO 48) & input(23 DOWNTO 16);
+	third_col_in <= input(111 DOWNTO 104) & input(79 DOWNTO 72) & input(47 DOWNTO 40) & input(15 DOWNTO 8);
+	fourth_col_in <= input(103 DOWNTO 96) & input(71 DOWNTO 64) & input(39 DOWNTO 32) & input(7 DOWNTO 0);
+	inst_firstcolumn : mixcolumn
+	PORT MAP(
+		in_DI => first_col_in,
+		Out_DO => first_col_out
+	);
 
+	inst_secondcolumn : mixcolumn
+	PORT MAP(
+		in_DI => second_col_in,
+		Out_DO => second_col_out
+	);
 
-signal first_col_in: std_logic_vector(31 downto 0);
-signal second_col_in : std_logic_vector(31 downto 0);
-signal third_col_in : std_logic_vector(31 downto 0);
-signal fourth_col_in: std_logic_vector(31 downto 0);
+	inst_thirdcolumn : mixcolumn
+	PORT MAP(
+		in_DI => third_col_in,
+		Out_DO => third_col_out
+	);
 
-signal first_col_out: std_logic_vector(31 downto 0);
-signal second_col_out : std_logic_vector(31 downto 0);
-signal third_col_out : std_logic_vector(31 downto 0);
-signal fourth_col_out: std_logic_vector(31 downto 0);
-
-
-begin
-
-first_col_in <= input(127 downto 120) & input(95 downto 88) & input(63 downto 56) & input(31 downto 24) ; 
-second_col_in <= input(119 downto 112) & input(87 downto 80) & input(55 downto 48) & input(23 downto 16);
-third_col_in <=  input(111 downto 104) & input(79 downto 72) & input(47 downto 40) & input(15 downto 8);
-fourth_col_in <= input(103 downto 96) & input(71 downto 64) & input(39 downto 32) & input(7 downto 0);
-  
-  
-inst_firstcolumn: mixcolumn  
-port map (  
-    in_DI => first_col_in,
-    Out_DO =>  first_col_out
-);
-
-inst_secondcolumn: mixcolumn     
-port map (  
-    in_DI => second_col_in,
-    Out_DO =>second_col_out  
-);  
-        
-inst_thirdcolumn: mixcolumn         
-port map (  
-    in_DI => third_col_in,
-    Out_DO =>third_col_out  
-);  
-
-inst_fourthcolumn: mixcolumn         
-port map (  
-    in_DI => fourth_col_in,
-    Out_DO =>fourth_col_out  
-);  
-
-
-output <=   first_col_out(31 downto 24) & second_col_out(31 downto 24) & third_col_out(31 downto 24) & fourth_col_out(31 downto 24) 
-          & first_col_out(23 downto 16) & second_col_out(23 downto 16) & third_col_out(23 downto 16) & fourth_col_out(23 downto 16)
-          & first_col_out(15 downto 8) & second_col_out(15 downto 8) & third_col_out(15 downto 8) & fourth_col_out(15 downto 8)
-          & first_col_out(7 downto 0) & second_col_out(7 downto 0) & third_col_out(7 downto 0) & fourth_col_out(7 downto 0);
-
-
-end Behavioral;
+	inst_fourthcolumn : mixcolumn
+	PORT MAP(
+		in_DI => fourth_col_in,
+		Out_DO => fourth_col_out
+	);
+	output <= first_col_out(31 DOWNTO 24) & second_col_out(31 DOWNTO 24) & third_col_out(31 DOWNTO 24) & fourth_col_out(31 DOWNTO 24)
+		& first_col_out(23 DOWNTO 16) & second_col_out(23 DOWNTO 16) & third_col_out(23 DOWNTO 16) & fourth_col_out(23 DOWNTO 16)
+		& first_col_out(15 DOWNTO 8) & second_col_out(15 DOWNTO 8) & third_col_out(15 DOWNTO 8) & fourth_col_out(15 DOWNTO 8)
+		& first_col_out(7 DOWNTO 0) & second_col_out(7 DOWNTO 0) & third_col_out(7 DOWNTO 0) & fourth_col_out(7 DOWNTO 0);
+		
+END Behavioral;

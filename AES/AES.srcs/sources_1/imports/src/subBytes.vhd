@@ -1,34 +1,29 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY subBytes IS
+	PORT (
+		input : IN std_logic_vector(127 DOWNTO 0);
+		output : OUT std_logic_vector(127 DOWNTO 0)
+	);
+END subBytes;
+ARCHITECTURE behav OF subBytes IS
 
+	COMPONENT sbox
+		PORT (
+			input : IN std_logic_vector(7 DOWNTO 0);
+			output : OUT std_logic_vector(7 DOWNTO 0)
+		);
+	END COMPONENT;
 
-entity subBytes is
-    Port (  
-        input: in std_logic_vector(127 downto 0); 
-        output: out std_logic_vector(127 downto 0)
-    );    
-end subBytes;
+BEGIN
 
+	subbytes_gen : FOR i IN 0 TO 15 GENERATE
+	BEGIN
+		inst_subbytes : sbox PORT MAP(
+			input => input(((i + 1) * 8) - 1 DOWNTO i * 8),
+			output => output(((i + 1) * 8) - 1 DOWNTO i * 8)
+		);
 
-architecture behav of subBytes is
+	END GENERATE;
 
-component sbox 
-port ( 
-    input: in std_logic_vector(7 downto 0); 
-    output: out std_logic_vector(7 downto 0)
-); 
-end component; 
-
-begin
-
-subbytes_gen: for i in 0 to 15 generate 
-begin 
-    inst_subbytes: sbox port map (   
-        input => input(((i+1)*8)-1 downto i*8) ,
-        output => output(((i+1)*8)-1 downto i*8)   
-        );   
-        
-end generate ;
-
-end behav;
-
+END behav;
