@@ -1,47 +1,40 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_unsigned.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+ENTITY CNT IS
+
+	GENERIC (
+		size : INTEGER := 5
+
+	);
+
+	PORT (
+		cnt_out : OUT std_logic_vector(size - 1 DOWNTO 0);
+		ce, rst, clk : IN std_logic
+	);
+
+END CNT;
+
+ARCHITECTURE Behavioral OF CNT IS
+	SIGNAL cnt_internal_value : std_logic_vector (size - 1 DOWNTO 0) := (OTHERS => '0');
+BEGIN
+	PROCESS (clk, rst, cnt_internal_value, ce)
+	BEGIN
+
+		IF rst = '1' THEN
+			cnt_internal_value <= (OTHERS => '0');
 
 
-entity CNT is 
+		ELSIF rising_edge(clk) THEN
+			IF ce = '1' THEN
+				cnt_internal_value <= cnt_internal_value + '1';
+			ELSE
+				cnt_internal_value <= cnt_internal_value;
+			END IF;
+		END IF;
 
-    generic( size:integer:= 5 
-    
-    );
-    
-    port ( 
-      cnt_out: out std_logic_vector(size-1 downto 0); 
-      ce,rst,clk: in std_logic 
-    ); 
+	END PROCESS;
 
-end CNT;
+	CNT_OUT <= cnt_internal_value;
 
-architecture Behavioral of CNT is
-
-
-signal cnt_internal_value: std_logic_vector (size-1 downto 0):= (others => '0') ;
-
-
-begin
-process(clk,rst,cnt_internal_value,ce) 
-begin
-     
-   if rst= '1' then 
-          cnt_internal_value <= (others => '0') ;     
-        
-     
-            
-        
-   elsif rising_edge(clk)  then 
-          if ce = '1' then 
-            cnt_internal_value <= cnt_internal_value + '1' ;  
-           else 
-           cnt_internal_value <= cnt_internal_value;
-           end if; 
-     end if;    
-
-end  process;
-
-CNT_OUT <= cnt_internal_value ;
-
-end Behavioral;
+END Behavioral;

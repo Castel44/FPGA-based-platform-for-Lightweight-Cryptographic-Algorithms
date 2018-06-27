@@ -8,6 +8,7 @@
 -- the led out is only a visual cue for cipher proper functioning and encryption success.
 
 -- The generic datapath is just for easily reuse of this top module with another ciphers.
+-- It is not literally the datapath, but half the plaintext size.
 ------------------------------------------------------------------------------------------------------------
 
 LIBRARY IEEE;
@@ -51,11 +52,14 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 		);
 
 	END COMPONENT;
-	-- internal signal 
-	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1b1a1918131211100b0a090803020100";       -- key test vector
-	SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"0000000000000000" & X"656b696c20646e75");      --plaintext text vector with some zeros concatenate on top of it, makes easier the correct loading into his register
-	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"44c8fc20b9dfa07a";    -- ciphertext test vector 
 
+------------------------------------------------------------------------------------------------------------
+    -- TEST VECTOR
+	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1b1a1918131211100b0a090803020100";       
+	SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"0000000000000000" & X"656b696c20646e75");      --plaintext text vector with some zeros concatenate on top of it, makes easier the correct loading into his register
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"44c8fc20b9dfa07a";    
+
+	-- INTERNAL SIGNALS	
 	SIGNAL plaintext_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL ciphertext_out_W : std_logic_vector(Datapath - 1 DOWNTO 0);
@@ -139,7 +143,7 @@ BEGIN
 
 			WHEN loading =>
 				-- CIPHER inputs
-				data_ready_W <= '1'; -- data_ready goes high 
+				data_ready_W <= '1'; -- signal for cipher to start loading new key and plaintext
 				start_W <= '0';
 				plaintext_reg <= (OTHERS => '0');
 				key_reg <= (OTHERS => '0');

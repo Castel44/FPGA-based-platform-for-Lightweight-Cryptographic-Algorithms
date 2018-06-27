@@ -19,9 +19,9 @@ ENTITY SKINNY_64_64_parallel IS
 END SKINNY_64_64_parallel;
 
 ARCHITECTURE Behavioral OF SKINNY_64_64_parallel IS
-
 ------------------------------------------------------------------------------------------------------------
 ----Sub Components Definitions
+
     -- Multiplexer to correct route signals 
 	COMPONENT mux
 		PORT (

@@ -8,6 +8,7 @@
 -- the led out is only a visual cue for cipher proper functioning and encryption success.
 
 -- The generic datapath is just for easily reuse of this top module with another ciphers.
+-- It is not literally the datapath, but half the plaintext size.
 ------------------------------------------------------------------------------------------------------------
 
 LIBRARY IEEE;
@@ -26,7 +27,7 @@ ENTITY Testing_IP IS
 END Testing_IP;
 ARCHITECTURE Behavioral OF Testing_IP IS
 
-	------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 	-- Subcomponents delcaraton:
 	-- DUT: Simon with Block size = 48 bit; Tweakey size = 96 bit
 	-- Datapath = 24 bit
@@ -49,13 +50,15 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 			ce, clk, rst : IN std_logic;
 			cnt_out : OUT std_logic_vector(size - 1 DOWNTO 0)
 		);
-
 	END COMPONENT;
-	-- internal signal 
-	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1a19181211100a0908020100"; -- key test vector 
+	
+------------------------------------------------------------------------------------------------------------
+    -- TEST VECTOR
+	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1a19181211100a0908020100"; 
 	SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"000000000000" & X"72696320646e"); --plaintext text vector with some zeros concatenate on top of it, makes easier the correct loading into his register
-	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"6e06a5acf156"; -- ciphertext test vector 
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"6e06a5acf156"; 
 
+	-- INTERNAL SIGNALS
 	SIGNAL plaintext_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL ciphertext_out_W : std_logic_vector(Datapath - 1 DOWNTO 0);
@@ -70,6 +73,7 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	TYPE state IS (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS);
 	SIGNAL nx_state : state;
 	SIGNAL current_state : state := IDLE;
+	
 BEGIN
 
 ------------------------------------------------------------------------------------------------------------
@@ -138,7 +142,7 @@ BEGIN
 
 			WHEN loading =>
 				-- CIPHER inputs
-				data_ready_W <= '1'; -- data_ready goes high 
+				data_ready_W <= '1';  -- signal for cipher to start loading new key and plaintext
 				start_W <= '0';
 				plaintext_reg <= (OTHERS => '0');
 				key_reg <= (OTHERS => '0');

@@ -27,7 +27,7 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 ------------------------------------------------------------------------------------------------------------
 ----Sub Components Definitions
 
-    -- Multiplexer to correct route signals 
+    -- Multiplexer to correctly route signals 
 	COMPONENT MUX
 		GENERIC (datapath : INTEGER := 64);
 		PORT (
@@ -37,7 +37,7 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Register, 64 bit
+    -- Standard Register
 	COMPONENT reg
 		GENERIC (width : INTEGER := 64);
 		PORT (
@@ -47,7 +47,7 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register, 64 bit
+    -- Standard Shift Register
 	COMPONENT normal_shift_reg
 		GENERIC (
 			width : INTEGER := 64; -- shift_reg width 
@@ -61,7 +61,8 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register 24 bit, with double output
+    -- Shift Register with right and left 64 bits output (length is 2)
+    -- It will be used for the internal state 
 	COMPONENT parallel_tapped_shift_reg
 		GENERIC (
 			width : INTEGER := 64; -- shift_reg width 
@@ -76,7 +77,10 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 	
-	-- Simon Round function	
+	-- Simon Round function
+	
+	-- left in is the leftmost portion of the internal state (first 64 bits)
+	-- rigth_ in the rightmost (last 64 bits)
 	COMPONENT Rnd_function_parallel
 		GENERIC (
 			datapath : INTEGER := 64
@@ -87,7 +91,10 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Simon key schedule function
+    -- Simon key schedule function;
+	-- It takes the ki_in which is the round key, and the other portion of the key register before ki_in 
+	--(right_in below) and also left_in with its instead the leftmost portion of the key register 
+	-- and it implements the key schedule which consist in simply some RORs and XORs
 	COMPONENT Key_schedule_function_parallel
 		GENERIC (
 			datapath : INTEGER := 64
@@ -99,7 +106,9 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- The linear feedback shift register used to generate round-unique constants 
+    -- The linear feedback shift register is used to generate round-unique constants 
+    -- but also to determine whether the cipher has done its job.     
+	-- His generator polynome is: X5 + X4 + X2 + X + 1 
 	COMPONENT lfsr
 		PORT (
 			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
@@ -162,7 +171,7 @@ ARCHITECTURE Behavioral OF Simon_128_128_parallel IS
 BEGIN
 
     -- SubComponents Instantiation
-    -- Internal State mux, loads the shift reg correclty to last operation of cipher or new plaintext
+    -- Internal State mux
 	INST_INMUX : MUX
 	GENERIC MAP(
 		datapath => Datapath
@@ -174,7 +183,7 @@ BEGIN
 		mux_out => MUX_IN_out
 	);
 	
-	-- Shift register of  the internal state	
+	-- Internal state shift register
 	INST_IS_REG : parallel_tapped_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -246,8 +255,9 @@ BEGIN
 		cnt_out => cnt_out
 	);
 	
-	
-	INST_LFSR : lfsr -- includes T sequence shift register                                             
+	-- Lsfr used to generate round-unique constants 
+	-- lsfr_out is only the MSB (4th bit) of lfsr_parallel_out
+	INST_LFSR : lfsr                                         
 	PORT MAP(
 		lfsr_out => lfsr_out,
 		clk => clk,
@@ -271,7 +281,7 @@ BEGIN
 	END PROCESS;
 	
 	
-	STATE_MACHINE_BODY : PROCESS (current_state, start, lfsr_parallel_out, IS_right_reg_out, cnt_out) --cnt_out 
+	STATE_MACHINE_BODY : PROCESS (current_state, start, lfsr_parallel_out, IS_right_reg_out, cnt_out)
 	BEGIN
 		CASE current_state IS
 			WHEN loading =>
@@ -305,8 +315,7 @@ BEGIN
 			WHEN idle =>
 				-- set outputs 
 				BUSY <= '0';
-				Ciphertext_out <= (OTHERS => '0');
-				IS_CE <= '0';
+				Ciphertext_out <= (OTHERS => '0');				
 
 				--lfsr 
 				lfsr_rst <= '1';
@@ -318,7 +327,8 @@ BEGIN
 				
 				--INPUT MUX 
 				SEL_IN <= '0'; --loading                             
-				KEY_REG_CE <= '0'; --registers not enabled         
+				KEY_REG_CE <= '0'; --registers not enabled    
+				IS_CE <= '0';				
 
 				--state transition          
 				IF start = '1' THEN
@@ -345,20 +355,21 @@ BEGIN
 				KEY_REG_CE <= '1';
 				
 				--state transition     
-				-- lfsr period is short, so his value b"11001" shows 2 times in an encrypt cycle. A flag is needed when this occurs.  				                       
+				-- Since lfsr period is short, his value b"11001" shows up 2 times in an encrypt cycle. A flag is needed when this occurs.  				                       
 				IF lfsr_parallel_out = b"11001" THEN
-					IF cnt_out = b"10" THEN
-						IS_CE <= '0';
+					IF cnt_out = b"10" THEN			-- only if this condition is met the cipher has finished
+						IS_CE <= '0';	
 						nx_state <= end_encrypt;
 					ELSE
 						IS_CE <= '1';
 						nx_state <= processing;
 					END IF;
-
+					-- let the counter increase
 					cnt_ce <= '1';
 
 				ELSE
 					IS_CE <= '1';
+					-- dont let the counter increase
 					cnt_ce <= '0';
 					nx_state <= processing;
 				END IF;

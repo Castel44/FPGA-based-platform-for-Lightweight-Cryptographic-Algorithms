@@ -27,7 +27,7 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 ------------------------------------------------------------------------------------------------------------
 ----Sub Components Definitions
 
-    -- Multiplexer to correct route signals 
+    -- Multiplexer to correctly route signals 
 	COMPONENT MUX
 		GENERIC (datapath : INTEGER := 32);
 		PORT (
@@ -37,7 +37,7 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Register, 32 bit
+    -- Standard Register
 	COMPONENT reg
 		GENERIC (width : INTEGER := 32);
 		PORT (
@@ -48,10 +48,10 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register, 32 bit
+    -- Standard Shift Register
 	COMPONENT normal_shift_reg
 		GENERIC (
-			width : INTEGER := 16; -- shift_reg width 
+			width : INTEGER := 32; -- shift_reg width 
 			length : INTEGER := 2 -- shift_reg length 
 		);
 		PORT (
@@ -62,7 +62,8 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift Register 24 bit, with double output
+    -- Shift Register with right and left 32 bits output (length is 2)
+    -- It will be used for the internal state 
 	COMPONENT parallel_tapped_shift_reg
 		GENERIC (
 			width : INTEGER := 16; -- shift_reg width 
@@ -78,6 +79,9 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 	END COMPONENT;
 	
 	-- Simon Round function
+	
+	-- left in is the leftmost portion of the internal state (first 32 bits)
+	-- rigth_ in the rightmost (last 32 bits)
 	COMPONENT Rnd_function_parallel
 		GENERIC (
 			datapath : INTEGER := 16
@@ -88,7 +92,10 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Simon key schedule function
+    -- Simon key schedule function;
+	-- It takes the ki_in which is the round key, and the other portion of the key register before ki_in 
+	--(right_in below) and also left_in with its instead the leftmost portion of the key register 
+	-- and it implements the key schedule which consist in simply some RORs and XORs
 	COMPONENT Key_schedule_function_parallel
 		GENERIC (
 			datapath : INTEGER := 16
@@ -100,7 +107,9 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- The linear feedback shift register used to generate round-unique constants 
+    -- The linear feedback shift register is used to generate round-unique constants 
+    -- but also to determine whether the cipher has done its job.     
+	-- His generator polynome is: X5 + X4 + X2 + X + 1 
 	COMPONENT lfsr
 		PORT (
 			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
@@ -111,7 +120,8 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 		);
 	END COMPONENT;
 
-    -- Shift register with 0 and 1 as output, needed to ensure the correct ciphertext
+    -- This is a two bit Johnson counter (shift register)
+    -- used to determine wether the encryption operation is completed. 
 	COMPONENT end_encrypt_shift_reg
 		PORT (
 			ce, clk, rst : IN std_logic;
@@ -146,11 +156,8 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 
 	--KEY REG(s) 
 	SIGNAL KEY_REG_CE : std_logic;
-
 	SIGNAL ki3_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
-
 	SIGNAL ki2_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
-
 	SIGNAL ki0_KEY_REG_OUT : std_logic_vector(Datapath - 1 DOWNTO 0);
 
 	--LFSR 
@@ -164,7 +171,7 @@ ARCHITECTURE Behavioral OF Simon_64_128_parallel IS
 BEGIN
 
     -- SubComponents Instantiation
-    -- Internal State mux, loads the shift reg correclty to last operation of cipher or new plaintext
+    -- Internal State mux
 	INST_INMUX : MUX
 	GENERIC MAP(
 		datapath => Datapath
@@ -176,7 +183,7 @@ BEGIN
 		mux_out => MUX_IN_out
 	);
 	
-	-- Shift register of  the internal state
+	-- Internal state shift register
 	INST_IS_REG : parallel_tapped_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -212,7 +219,12 @@ BEGIN
 		mux_out => KEY_MUX_OUT
 	);
 
+	-- the KEY REGISTER is divided into 4 16 bit registers forming a
+	-- shift register of length 4 and size 16  
+	-- 4 different registers  are instantiated and the mapped together for convenience
+
     -- Ki3 register
+    -- part of the key register (leftmost register)
 	INST_Ki3 : reg
 	GENERIC MAP(width => Datapath)
 
@@ -224,6 +236,7 @@ BEGIN
 	);
 
     -- Ki1 and ki2 shift register
+	-- part of the key register (two middle registers)
 	INST_Ki2_Ki1 : normal_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -237,6 +250,8 @@ BEGIN
 	);
 
     -- Ki0 register
+    -- rightmost register part of the key register 
+    -- at each round contains the round key 
 	INST_Ki0 : reg
 	GENERIC MAP(width => Datapath)
 	PORT MAP(
@@ -247,6 +262,9 @@ BEGIN
 	);
 	
 	-- Simon key schedule
+	-- left in is mapped to ki3; right_in to ki2;
+	-- ki_in to ki0 (is the round key)
+    -- z_in is the MSB from the lsfr value 
 	INST_KEY_SCHEDULE_FUNCTION : key_schedule_function_parallel
 	GENERIC MAP(
 		datapath => Datapath
@@ -259,16 +277,18 @@ BEGIN
 		rnd_out => key_schedule_out
 	);
 	
+	-- end encrypt out will be used in the state machine to determine whether the cipher has done its work.
 	INST_END_ENCRYPT_SHIFT_REG : end_encrypt_shift_reg
 	PORT MAP(
 		ce => end_encrypt_ce,
 		rst => lfsr_rst,
 		clk => clk,
-
 		end_encrypt => end_encrypt_out
-
 	);
-	INST_LFSR : lfsr -- includes T sequence shift register                                             
+	
+	-- Lsfr used to generate round-unique constants 
+	-- lsfr_out is only the MSB (4th bit) of lfsr_parallel_out
+	INST_LFSR : lfsr                                        
 	PORT MAP(
 		lfsr_out => lfsr_out,
 		clk => clk,
@@ -303,15 +323,16 @@ BEGIN
 				lfsr_rst <= '0';
 				lfsr_ce <= '1';
 				
-				-- End encrypt reg enable
+				--ending sfr
 				end_encrypt_ce <= '0';
 				
 				--INPUT MUX 
 				--loading value from Input pin
 				SEL_IN <= '0'; --loading  
 				                                   
-				-- state transition   
-				-- lfsr output values used to count up clk cycles         
+				-- state transition    
+                -- lfsr output values is used to determine when loading is done, 
+                -- this to spare the need for another counter           
 				IF lfsr_parallel_out = b"00110" THEN-- plaintext has been loaded keep loading the key         
 					nx_state <= loading;
 					IS_CE <= '0';
@@ -339,7 +360,7 @@ BEGIN
 				lfsr_rst <= '1';
 				lfsr_ce <= '0';
 				
-				-- End encrypt reg enable
+				-- ending sfr
 				end_encrypt_ce <= '0';
 				
 				--INPUT MUX 
@@ -371,15 +392,16 @@ BEGIN
 				KEY_REG_CE <= '1';
 				
 				--state transition       
-				-- lfsr period is short, so his value b"10001" shows 2 times in an encrypt cycle. A flag is needed when this occurs.                      
 				IF lfsr_parallel_out = b"10001" THEN
-
-					IF end_encrypt_out = '1' THEN  -- encrypt is done!!
+					IF end_encrypt_out = '1' THEN   -- only if this condition is met the cipher has finished
+					                              -- this is because we are using the lfsr also for the loading phase
+					                              -- we used this johnson counter trick to spare logic
 						nx_state <= end_encrypt;
 					ELSE
 						nx_state <= processing;
 					END IF;
-
+									
+                    -- let the johnson counter increase
 					end_encrypt_ce <= '1';
 
 				ELSE
@@ -388,7 +410,7 @@ BEGIN
 				END IF;
 				
 			WHEN end_encrypt =>
-			     -- End encrypt reg enable
+			     -- ending sfr
 				end_encrypt_ce <= '0';
 				
 				--set output
@@ -404,8 +426,10 @@ BEGIN
 				lfsr_rst <= '0';
 				lfsr_ce <= '1';
 
-				--state transition, after 2 clk cycles    
-				IF lfsr_parallel_out = b"01011" THEN
+				--state transition  
+				IF lfsr_parallel_out = b"01011" THEN	-- count up to 2 clk cycles 
+														 -- because two cycles are needed to output the ciphertext 
+														 -- from internal state register
 					nx_state <= idle;
 				ELSE
 					nx_state <= end_encrypt;

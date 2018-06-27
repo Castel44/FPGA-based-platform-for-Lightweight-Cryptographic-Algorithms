@@ -1,82 +1,56 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY IS_SHIFT_REG IS
 
+	GENERIC (
+		width : INTEGER := 1;
+		length : INTEGER := 32
+	);
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	PORT (
+		clk : IN std_logic;
+		D : IN std_logic_vector(width - 1 DOWNTO 0);
+		Q : OUT std_logic_vector(width - 1 DOWNTO 0);
+		CE : IN std_logic;
 
+		IS_2n1_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+		IS_2n2_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+		IS_2n8_out : OUT std_logic_vector(width - 1 DOWNTO 0);
 
-entity IS_SHIFT_REG is
+		IS_n1_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+		IS_n2_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+		IS_n8_out : OUT std_logic_vector(width - 1 DOWNTO 0)
+	);
+END IS_SHIFT_REG;
 
-    generic( width: integer:=1; 
-             length:integer:=32
-        );   
-          
- port (          
-                   clk: in std_logic;
-                   D : in std_logic_vector(width-1 downto 0 ); 
-                   Q : out std_logic_vector(width-1 downto 0); 
-                   CE : in std_logic;           
-                 
-                   IS_2n1_out:out std_logic_vector(width-1 downto 0);          
-                   IS_2n2_out:out std_logic_vector(width-1 downto 0);
-                   IS_2n8_out:out std_logic_vector(width-1 downto 0);
-                               
-                 IS_n1_out:out std_logic_vector(width-1 downto 0);        
-                 IS_n2_out:out std_logic_vector(width-1 downto 0); 
-                 IS_n8_out:out std_logic_vector(width-1 downto 0)
-        );
-   
-   
-end IS_SHIFT_REG;
+ARCHITECTURE Behavioral OF IS_SHIFT_REG IS
 
-architecture Behavioral of IS_SHIFT_REG is
+	SIGNAL temp_reg : std_logic_vector((width * length) - 1 DOWNTO 0) := (OTHERS => '0');
+BEGIN
+	PROCESS (CLK, ce, D)
+	BEGIN
 
-signal temp_reg: std_logic_vector((width*length)-1 downto 0) := (Others => '0');
+		IF rising_edge(CLK) THEN
+			IF (CE = '1') THEN
+				temp_reg <= D & temp_reg((width * length) - 1 DOWNTO width);
+			ELSE
+				temp_reg <= temp_reg;
+			END IF;
+		END IF;
+	END PROCESS;
 
+	Q <= temp_reg((width * length) - (width * length) + width - 1 DOWNTO 0);
 
+	IS_2n1_out <= temp_reg(127 DOWNTO 127);
 
+	IS_2n2_out <= temp_reg(126 DOWNTO 126);
 
-begin 
-   
+	IS_2n8_out <= temp_reg(120 DOWNTO 120);
 
-process(CLK,ce,D)  
-begin 
-            
-    if rising_edge(CLK) then	    
-        if (CE = '1') then 
-                temp_reg <= D & temp_reg((width*length)-1 downto width)  ;
-         else        
-           temp_reg <= temp_reg;   
-           end if; 
-   end if;  
-end process;
-			
-Q <= temp_reg((width*length)-(width*length)+width-1 downto 0); 
+	IS_n1_out <= temp_reg(63 DOWNTO 63);
 
---IS_2n1_out <= temp_reg(width*length-1 downto width*length-width);
+	IS_n2_out <= temp_reg(62 DOWNTO 62);
 
---IS_2n2_out <= temp_reg((width*length-1*width)-1 downto ((width*length)-2*width));
-
---IS_2n8_out <= temp_reg((width*length-7*width)-1 downto ((width*length)-8*width));
-
---IS_n1_out <= temp_reg((((width*length)/2))-1 downto (((width*length)/2)-width));
-
---IS_n2_out <= temp_reg((((width*length)/2)-1*width)-1 downto (((width*length)/2)-2*width));
-
---IS_n8_out <= temp_reg((((width*length)/2)-7*width)-1 downto (((width*length)/2)-8*width));
-
-
-
-IS_2n1_out <= temp_reg(127 downto 127);
-
-IS_2n2_out <= temp_reg(126 downto 126);
-
-IS_2n8_out <= temp_reg(120 downto 120);
-
-IS_n1_out <= temp_reg(63 downto 63);
-
-IS_n2_out <= temp_reg(62 downto 62);
-
-IS_n8_out <= temp_reg(56 downto 56);
-
-
-end behavioral;
+	IS_n8_out <= temp_reg(56 DOWNTO 56);
+	
+END behavioral;

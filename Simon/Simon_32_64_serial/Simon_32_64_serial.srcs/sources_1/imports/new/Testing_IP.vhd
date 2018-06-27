@@ -26,7 +26,7 @@ ENTITY Testing_IP IS
 END Testing_IP;
 ARCHITECTURE Behavioral OF Testing_IP IS
 
-	------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 	-- Subcomponents declaration:
 	-- DUT: Simon with Block size = 32 bit; Key size = 64 bit
 	-- Datapath = 1 bit
@@ -51,12 +51,13 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 
 	END COMPONENT;
 	
-	-- internal signal 
-	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1918111009080100";   --key test vector
-    SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"00000000" & X"65656877"); --plaintext text vector
-    -- with some zeros concatenate on top of it, makes easier the correct loading into Internal state register
+------------------------------------------------------------------------------------------------------------
+    -- TEST VECTOR
+	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1918111009080100";   
+    SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"00000000" & X"65656877"); 	-- plaintext with some zeros concatenate on top of it, makes easier the correct loading into Internal state register   
 	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"c69be9bb"; -- cipheterxt test vector
 
+	-- INTERNAL SIGNALS	
 	SIGNAL plaintext_reg : std_logic_vector(0 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(0 DOWNTO 0) := (OTHERS => '0');
     SIGNAL ciphertext_out_W : std_logic_vector(0 DOWNTO 0);
@@ -88,6 +89,7 @@ BEGIN
 		ciphertext_out => ciphertext_out_W,
 		busy => busy_W
 	);
+	
 	INST_CNT : cnt
 	GENERIC MAP(size => 6)
 	PORT MAP(

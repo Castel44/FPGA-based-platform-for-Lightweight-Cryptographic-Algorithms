@@ -51,11 +51,12 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	END COMPONENT;
 	
 ------------------------------------------------------------------------------------------------------------
-    -- Internal signals declaration:
-	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1918111009080100";   -- key test vector 
+    -- TEST VECTOR
+	SIGNAL key_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := X"1918111009080100";  
 	SIGNAL plaintext_tst : std_logic_vector(Datapath * 4 - 1 DOWNTO 0) := (X"00000000" & X"65656877"); --plaintext text vector with some zeros concatenate on top of it, makes easier the correct loading into his register
-	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"c69be9bb";    -- ciphertext test vector 
-
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"c69be9bb";   
+	
+	-- INTERNAL SIGNALS
 	SIGNAL plaintext_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
     SIGNAL ciphertext_out_W : std_logic_vector(Datapath - 1 DOWNTO 0);
@@ -66,7 +67,7 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	SIGNAL cnt_rst_W : std_logic;
 	SIGNAL cnt_out_W : std_logic_vector(2 DOWNTO 0);
 
-    -- FSM signals
+	-- FSM SIGNALS
 	TYPE state IS (START_ENC, LOADING, ENDING, IDLE, ENC, WAITING, SUCCESS);
 	SIGNAL nx_state : state;
 	SIGNAL current_state : state := IDLE;
@@ -179,7 +180,7 @@ BEGIN
 			WHEN start_enc =>
 				-- CIPHER inputs
 				data_ready_W <= '0';
-				start_W <= '1';
+				start_W <= '1';		-- signal for cipher to start encrypting
 				plaintext_reg <= (OTHERS => '0');
 				key_reg <= (OTHERS => '0');
 

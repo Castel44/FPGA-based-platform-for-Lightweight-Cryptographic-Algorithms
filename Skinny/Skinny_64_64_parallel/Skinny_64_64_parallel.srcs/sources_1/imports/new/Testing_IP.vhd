@@ -37,18 +37,25 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 	END COMPONENT;
 	
 ------------------------------------------------------------------------------------------------------------	
-	-- internal signal 
+	-- TEST VECTORS
 	SIGNAL KEY_REG : std_logic_vector(63 DOWNTO 0) := X"f5269826fc681238";
 	SIGNAL PLAINTEXT_REG : std_logic_vector(63 DOWNTO 0) := X"06034f957724d19d";
+	
+	-- INTERNAL SIGNALS
 	SIGNAL ciphertext_out_W : std_logic_vector(63 DOWNTO 0);
 
 	SIGNAL busy_W, data_ready_W, start_W : std_logic;
+	
+	--FSM SIGNALS
 	TYPE state IS (START_ENC, LOADING, IDLE, WAITING, ENC, SUCCESS);
 	SIGNAL nx_state : state;
 	SIGNAL current_state : state := IDLE;
 	
 BEGIN
 
+-- Component Instantiation
+
+	-- Cipher under Test
 	SKINNY_64_DUT : SKINNY_64_64_parallel
 	PORT MAP(
 		clk => clk,
@@ -61,7 +68,7 @@ BEGIN
 	);
 	
 ------------------------------------------------------------------------------------------------------------
-	
+	-- Finite state machine to handle the cipher.	
 	STATE_MACHINE_MAIN : PROCESS (clk, rst)
 	BEGIN
 		IF rising_edge(CLK) THEN
@@ -73,8 +80,8 @@ BEGIN
 		END IF;
 	END PROCESS;
 	
-    -- Only 1 encryption is made, then it is checked to secure correctness. A led will light if results it's correct.
-    -- To start a new encryption needs to reset the FSM.
+    -- Only 1 encryption is made, then it is checked for correctness. A led will light up if the results it's correct.
+    -- To start a new encryption the Testing_IP needs to be resetted via rst port.   
 	STATE_MACHINE_BODY : PROCESS (current_state, start, ciphertext_out_W, busy_W)
 	BEGIN
 		CASE current_state IS
@@ -149,7 +156,7 @@ BEGIN
 				start_W <= '0';
 
 				-- output ports         
-				led_out <= '1';
+				led_out <= '1';	-- Success! led should turn on
 
 				-- transition                
 				nx_state <= success;

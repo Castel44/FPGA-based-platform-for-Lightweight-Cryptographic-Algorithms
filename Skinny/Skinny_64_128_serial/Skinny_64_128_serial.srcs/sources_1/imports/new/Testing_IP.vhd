@@ -243,7 +243,7 @@ BEGIN
 				cnt_rst_W <= '1'; -- reset cnt 
 
 				-- output ports         
-				led_out <= '1';
+				led_out <= '1';	 -- Success! led should turn on
 
 				-- transition            
 				nx_state <= success;

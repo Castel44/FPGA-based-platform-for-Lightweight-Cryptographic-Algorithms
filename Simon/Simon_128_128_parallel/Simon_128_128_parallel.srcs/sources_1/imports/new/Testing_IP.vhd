@@ -51,11 +51,13 @@ ARCHITECTURE Behavioral OF Testing_IP IS
 
 	END COMPONENT;
 	
-	-- internal signal 
-	SIGNAL key_tst : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"0f0e0d0c0b0a09080706050403020100";       -- key test vector
+------------------------------------------------------------------------------------------------------------
+    -- TEST VECTOR
+	SIGNAL key_tst : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"0f0e0d0c0b0a09080706050403020100";      
 	SIGNAL plaintext_tst : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := (X"63736564207372656c6c657661727420");   -- plaintext test vector	
-	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"49681b1e1e54fe3f65aa832af84e0bbc";  -- ciphertext test vector
+	SIGNAL correct_ciphertext : std_logic_vector(Datapath * 2 - 1 DOWNTO 0) := X"49681b1e1e54fe3f65aa832af84e0bbc"; 
 
+	-- INTERNAL SIGNALS
 	SIGNAL plaintext_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL key_reg : std_logic_vector(Datapath - 1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL ciphertext_out_W : std_logic_vector(Datapath - 1 DOWNTO 0);
@@ -139,7 +141,7 @@ BEGIN
 
 			WHEN loading =>
 				-- CIPHER inputs
-				data_ready_W <= '1'; -- data_ready goes high 
+				data_ready_W <= '1'; -- signal for cipher to start loading new key and plaintext
 				start_W <= '0';
 				plaintext_reg <= (OTHERS => '0');
 				key_reg <= (OTHERS => '0');

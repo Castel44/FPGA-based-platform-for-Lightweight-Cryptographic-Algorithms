@@ -40,9 +40,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
     -- Internal State shift register
     
     -- output ports are specified on various locations of the register because together 
-    -- with multiplexers will be used to perform the rotate right operations in 
-    -- the round function
-    
+    -- with multiplexers will be used to perform the rotate right operations in the round function    
 	COMPONENT IS_shift_reg
 		GENERIC (
 			width : INTEGER;
@@ -66,9 +64,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	-- Key Shift register
 	
 	-- output ports are specified on various locations of the register because together 
-    -- with multiplexers will be used to perform the rotate right operations in 
-    -- the key schedule. 
-	
+    -- with multiplexers will be used to perform the rotate right operations in the key schedule. 	
 	COMPONENT key_shiftreg
 		GENERIC (width, length : INTEGER);
 		PORT (
@@ -90,9 +86,8 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
     -- Simon round function
     
     -- is0_in is the rightmost bit in the internal state register
-    -- the other MUX inputs will be mapped to the outputs of the muxes used to perform the rotate right operations
-    -- this entity performs only XORs internally as the shifts will be done with muxes and control logic
-    
+    -- the other MUX inputs will be mapped to the outputs of the muxes used to perform the rotate left operations
+    -- this entity performs only XORs internally as the shifts will be done with muxes and control logic    
 	COMPONENT Rnd_function
 		GENERIC (
 			datapath : INTEGER
@@ -130,23 +125,20 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	-- Simon key schedule
 	
     -- const_in is the round_dependant constant and is mapped to the output of CONSTANT_GEN_MUX
-    -- the MUX inputs are mapped to the output of the muxes used to perform rotate right operations
-    
-    
-        COMPONENT KEY_SCHEDULE_FUNC
-            GENERIC (datapath : INTEGER);
-            PORT (
-                const_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-                KEYMUX3_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-                KEYMUX4_in, KEYMUX1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-                Ki_in, ki1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
-                key_schedule_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
-            );
-        END COMPONENT;
+    -- the MUX inputs are mapped to the output of the muxes used to perform rotate right operations       
+	COMPONENT KEY_SCHEDULE_FUNC
+		GENERIC (datapath : INTEGER);
+		PORT (
+			const_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+			KEYMUX3_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+			KEYMUX4_in, KEYMUX1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+			Ki_in, ki1_in : IN std_logic_vector(datapath - 1 DOWNTO 0);
+			key_schedule_out : OUT std_logic_vector(datapath - 1 DOWNTO 0)
+		);
+	END COMPONENT;
 
 
-    -- Counter
-    
+    -- Counter    
 	COMPONENT CNT
 		GENERIC (
 			size : INTEGER
@@ -160,9 +152,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_bit_serial IS
 	END COMPONENT;
 
     -- This is a two bit Johnson counter (shift register)
-    -- used to determine wether the encryption operation is completed. 
-   
-    
+    -- used to determine wether the encryption operation is completed.        
 	COMPONENT end_encrypt_shift_reg
 		PORT (
 			ce, clk, rst : IN std_logic;
@@ -262,8 +252,7 @@ BEGIN
     -- Internal State multiplexer
     
     -- this mux maps the internal state register input to the input port plaintext_in when loading
-    -- and when encrypting to the rnd function output 
-    
+    -- and when encrypting to the rnd function output     
 	INST_IS_INPUT_MUX : MUX
 	GENERIC MAP(datapath => 1)
 	PORT MAP(
@@ -275,8 +264,7 @@ BEGIN
 
     -- Internal State shift register
     
-    -- outputs are mapped to inputs of the muxes used for RORs operations
-    
+    -- outputs are mapped to inputs of the muxes used for ROLs operations    
 	INST_IS_SHIFTREG : IS_shift_reg
 	GENERIC MAP(
 		width => datapath,
@@ -298,9 +286,8 @@ BEGIN
 
     -- Round function
     
-    -- receives as input the outputs of the muxes used to perform RORs
-    -- also the rightmost bit of the internal state and the rnd key 
-    
+    -- receives as input the outputs of the muxes used to perform ROLs
+    -- also the rightmost bit of the internal state and the rnd key     
 	INST_rnd_func : RND_FUNCTION
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -312,9 +299,8 @@ BEGIN
 		rnd_function_out => rnd_function_out
 	);
 	
-    -- used to perform the ROR by one bit specified in Simon IS update algorithm
-    -- MUX1_sel is chosen accordingly in the cipher state machine
-    	
+    -- used to perform the ROL by one bit specified in Simon IS update algorithm
+    -- MUX1_sel is chosen accordingly in the cipher state machine    	
 	INST_MUX1 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -324,9 +310,8 @@ BEGIN
 		mux_out => MUX1_out
 	);
 	
-	-- used to perform the ROR by two bit specified in Simon IS update algorithm
+	-- used to perform the ROL by two bit specified in Simon IS update algorithm
     -- MUX2_sel is chosen accordingly in the cipher state machine
-
 	INST_MUX2 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -337,8 +322,7 @@ BEGIN
 	);
 	
 	-- used to perform the ROR by eight bit specified in Simon IS update algorithm
-    -- MUX8_sel is chosen accordingly in the cipher state machine
-	
+    -- MUX8_sel is chosen accordingly in the cipher state machine	
 	INST_MUX8 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -350,7 +334,6 @@ BEGIN
 	
 	 -- this mux maps the key register input to the input port key_in when loading
      -- and when encrypting to thekey schedule output 
-
 	INST_KEY_REG_IN_MUX : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -364,9 +347,7 @@ BEGIN
     -- Key shift register
     
     -- outputs are mapped to inputs of the muxes used for RORs operations
-    -- Q is the round key 
-    
-    
+    -- Q is the round key         
 	INST_KEY_REG : key_shiftreg
 	GENERIC MAP(width => datapath, length => 64)
 	PORT MAP(
@@ -385,8 +366,7 @@ BEGIN
 	);
 	
 	-- used to perform the ROR by 3 bit specified in Simon key scheduling algorithm
-    -- KEYMUX3_sel is chosen accordingly in the cipher state machine
-	
+    -- KEYMUX3_sel is chosen accordingly in the cipher state machine	
 	INST_KEYMUX3 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -410,7 +390,6 @@ BEGIN
 	
 	-- used to perform the ROR by 1 bit specified in Simon key scheduling algorithm
     -- KEYMUX1_sel is chosen accordingly in the cipher state machine
-
 	INST_KEYMUX1 : mux
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -423,8 +402,7 @@ BEGIN
     -- Simon key schedule
     -- as the RORs are performed by the muxes and control logic, 
     -- this takes in input the output of those muxes and the round constant
-    -- this entity simply computes the xor between those signals
-    
+    -- this entity simply computes the xor between those signals    
 	INST_KEYSCHEDULE : KEY_SCHEDULE_FUNC
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -436,11 +414,9 @@ BEGIN
 		ki1_in => KEY_REG_n_out,
 		KEY_SCHEDULE_OUT => KEY_SCHEDULE_OUT
 	);
-	
-	
+		
 	-- used for the round-dependant constants in the key schedule
-	-- takes in input the last bit of the counter used to count the individual bits processed in a round
-	
+	-- takes in input the last bit of the counter used to count the individual bits processed in a round	
 	INST_CONSTANT_GEN : CONSTANT_GEN_MUX
 	GENERIC MAP(datapath => datapath)
 	PORT MAP(
@@ -452,11 +428,9 @@ BEGIN
 	);
 	
 	-- element counter 
-	-- this counter is used to count the individual bits processed by the cipher which are 32
-	
-	
+	-- this counter is used to count the individual bits processed by the cipher which are 16	
 	INST_SERIAL_CNT : cnt
-	GENERIC MAP(size => 4) --32
+	GENERIC MAP(size => 4) --16
 	PORT MAP(
 		cnt_out => serial_cnt_out,
 		rst => serial_cnt_rst,
@@ -464,8 +438,9 @@ BEGIN
 		ce => serial_ce
 	);
 	
-	-- lfsr used to generate round constants
-	
+	-- lfsr used to generate round constants	
+	-- lsfr_out is only the MSB (4th bit) of lfsr_parallel_out
+	-- the lfsr should change his value every round, so when all the 16 individual bits are processed	
 	INST_lfsr : lfsr
 	PORT MAP(
 		lfsr_out => lfsr_out,
@@ -476,7 +451,6 @@ BEGIN
 	);
 	
 	-- end encrypt out will be used in the state machine to determine whether the cipher has done its work.
-
 	INST_END_ENCRYPT_FSR : end_encrypt_shift_reg
 	PORT MAP(
 		ce => end_encrypt_ce,
@@ -621,13 +595,13 @@ BEGIN
 				IF serial_cnt_out = b"0000" THEN 
 					MUX1_sel <= '0';
 				ELSE
-					MUX1_sel <= '1'; -- perform ROR by one 
+					MUX1_sel <= '1'; -- perform ROL by one 
 				END IF;
 
 				IF serial_cnt_out <= b"0001" THEN
 					MUX2_sel <= '0';
 				ELSE
-					MUX2_sel <= '1'; -- perform ROR by two
+					MUX2_sel <= '1'; -- perform ROL by two
 				END IF;
 
 				IF serial_cnt_out <= b"0111" THEN

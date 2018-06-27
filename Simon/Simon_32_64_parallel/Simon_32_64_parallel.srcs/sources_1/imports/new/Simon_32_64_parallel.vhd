@@ -27,7 +27,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 ------------------------------------------------------------------------------------------------------------
 ----Sub Components Definitions
 
-    -- Multiplexer to correct route signals 
+    -- Multiplexer to correctly route signals 
 	COMPONENT MUX
 		GENERIC (datapath : INTEGER := 16);
 		PORT (
@@ -47,8 +47,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 		);
 	END COMPONENT;
 
-    -- standard Shift Register
-    
+    -- Standard Shift Register   
 	COMPONENT normal_shift_reg
 		GENERIC (
 			width : INTEGER := 16; -- shift_reg width 
@@ -64,7 +63,6 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 
     -- Shift Register with right and left 16 bits output (length is 2)
     -- it will be used for the internal state 
-    
 	COMPONENT parallel_tapped_shift_reg
 		GENERIC (
 			width : INTEGER := 16; -- shift_reg width 
@@ -80,10 +78,9 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 	END COMPONENT;
 	
 	-- Simon Round function
-	
+
 	-- left in is the leftmost portion of the internal state (first 16 bits)
-	-- rigth_ in the rightmost (last 16 bits)
-	
+	-- rigth_ in the rightmost (last 16 bits)	
 	COMPONENT Rnd_function_parallel
 		GENERIC (datapath : INTEGER := 16);
 		PORT (
@@ -96,8 +93,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 	-- takes the ki_in which is the round key, and the 
 	-- other portion of the key register before ki_in (right_in below) 
 	-- and also left_in with its instead the leftmost portion of the key register 
-	-- and it implements the key schedule which consist in simply some RORs and XORs
-	
+	-- and it implements the key schedule which consist in simply some RORs and XORs	
 	COMPONENT Key_schedule_function_parallel
 		GENERIC (datapath : INTEGER := 16);
 		PORT (
@@ -108,8 +104,8 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 	END COMPONENT;
 
     -- The linear feedback shift register is used to generate round-unique constants 
-    -- but also to determine whether the cipher has done its job. 
-    
+    -- but also to determine whether the cipher has done its job.     
+	-- His primitive polynomial is: X5 + X4 + X2 + X + 1 
 	COMPONENT lfsr
 		PORT (
 			lfsr_out : OUT std_logic_vector(0 DOWNTO 0);
@@ -158,8 +154,7 @@ ARCHITECTURE Behavioral OF Simon_32_64_parallel IS
 BEGIN
     
     -- SubComponents Instantiation
-    -- Internal State mux
-    
+    -- Internal State mux    
 	INST_INMUX : MUX
 	GENERIC MAP(
 		datapath => Datapath
@@ -224,8 +219,7 @@ BEGIN
 	);
 
     -- Ki1 and ki2 shift register 
-    -- part of the key register (two middle registers)
-    
+    -- part of the key register (two middle registers)    
 	INST_Ki2_Ki1 : normal_shift_reg
 	GENERIC MAP(
 		width => Datapath,
@@ -241,8 +235,7 @@ BEGIN
     
     -- Ki0 register
     -- rightmost register part of the key register 
-    -- at each round contains the round key 
-    
+    -- at each round contains the round key     
 	INST_Ki0 : reg
 	GENERIC MAP(width => Datapath)
 	PORT MAP(
@@ -253,9 +246,9 @@ BEGIN
 	);
 	
 	-- Simon key schedule
-	-- left in is mapped to ki3 ki_in to ki0 (is the round key)
-    -- etc 	
-	
+	-- left in is mapped to ki3; right_in to ki2;
+	-- ki_in to ki0 (is the round key)
+    -- z_in is the MSB from the lsfr value 	
 	INST_KEY_SCHEDULE_FUNCTION : key_schedule_function_parallel
 	GENERIC MAP(
 		datapath => Datapath
@@ -268,6 +261,8 @@ BEGIN
 		rnd_out => key_schedule_out
 	);
 
+	-- Lsfr used to generate round-unique constants 
+	-- lsfr_out is only the MSB (4th bit) of lfsr_parallel_out	
 	INST_LFSR : lfsr
 	PORT MAP(
 		lfsr_out => lfsr_out,
@@ -309,9 +304,8 @@ BEGIN
 				SEL_IN <= '0'; --loading   
 				                                  
 				-- state transition    
-                -- lfsr output values used to determine when loading is done 
-                -- this to spare the need for another counter
-                
+                -- lfsr output values is used to determine when loading is done, 
+                -- this to spare the need for another counter                
 				IF lfsr_parallel_out = b"10011" THEN-- plaintext has been loaded keep loading the key         
 					nx_state <= loading;
 					IS_CE <= '0';

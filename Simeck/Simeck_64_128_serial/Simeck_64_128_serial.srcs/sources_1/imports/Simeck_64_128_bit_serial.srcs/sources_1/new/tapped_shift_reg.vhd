@@ -1,52 +1,41 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY tapped_shift_reg IS
 
+	GENERIC (
+		width : INTEGER := 1;
+		length : INTEGER := 16
+	);
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+	PORT (
+		clk : IN std_logic;
+		D : IN std_logic_vector(width - 1 DOWNTO 0);
+		Q : OUT std_logic_vector(width - 1 DOWNTO 0);
+		CE : IN std_logic;
+		bn1_out : OUT std_logic_vector(width - 1 DOWNTO 0);
+		bn5_out : OUT std_logic_vector(width - 1 DOWNTO 0)
 
+	);
+END tapped_shift_reg;
 
-entity tapped_shift_reg is
+ARCHITECTURE Behavioral OF tapped_shift_reg IS
 
-    generic( width: integer:=1; 
-             length:integer:=16
-        );   
-          
- port (          
-                   clk: in std_logic;
-                   D : in std_logic_vector(width-1 downto 0 ); 
-                   Q : out std_logic_vector(width-1 downto 0); 
-                   CE : in std_logic;           
-                   bn1_out: out std_logic_vector(width-1 downto 0 ); 
-                   bn5_out: out std_logic_vector(width-1 downto 0 ) 
-                   
-        );
-   
-   
-end tapped_shift_reg;
+	SIGNAL temp_reg : std_logic_vector((width * length) - 1 DOWNTO 0) := (OTHERS => '0');
+BEGIN
+	PROCESS (CLK, ce, D)
+	BEGIN
 
-architecture Behavioral of tapped_shift_reg is
+		IF rising_edge(CLK) THEN
+			IF (CE = '1') THEN
+				temp_reg <= D & temp_reg((width * length) - 1 DOWNTO width);
+			ELSE
+				temp_reg <= temp_reg;
+			END IF;
+		END IF;
+	END PROCESS;
 
-signal temp_reg: std_logic_vector((width*length)-1 downto 0) := (Others => '0');
+	Q <= temp_reg(width - 1 DOWNTO 0);
+	bn5_out <= temp_reg((width * length - 4 * width) - 1 DOWNTO ((width * length) - 5 * width));
+	bn1_out <= temp_reg(width * length - 1 DOWNTO width * length - width);
 
-
-
-
-begin 
-   
-
-process(CLK,ce,D)  
-begin 
-            
-    if rising_edge(CLK) then	    
-        if (CE = '1') then 
-                temp_reg <= D & temp_reg((width*length)-1 downto width)  ;
-         else        
-           temp_reg <= temp_reg;   
-           end if; 
-   end if;  
-end process;
-			
-Q <= temp_reg(width-1 downto 0); 
-bn5_out <= temp_reg((width*length-4*width)-1 downto ((width*length)-5*width));
-bn1_out <= temp_reg(width*length-1 downto width*length-width);
-
-end behavioral;
+END behavioral;
