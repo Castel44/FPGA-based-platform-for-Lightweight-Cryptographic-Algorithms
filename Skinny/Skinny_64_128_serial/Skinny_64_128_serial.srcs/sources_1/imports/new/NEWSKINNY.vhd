@@ -30,7 +30,7 @@ ARCHITECTURE Behavioral OF Skinny_64_128 IS
 
 	-- This is because skinny is a SPN cipher like the AES.
 	-- Each row of the cipher internal state is implemented as a shift register. 
-	-- The internal state is implemented via a shift register. 
+
 
     -- Internal State shift register
 	COMPONENT skinny_shift_reg_64

@@ -32,8 +32,12 @@ BEGIN
 		);
 	END GENERATE;
 
-	RCON_GEN : PROCESS (clk, rcon_rst, key_schedule_ce, rcon)
+	RCON_GEN : PROCESS (clk, rcon_rst, key_schedule_ce, rcon) --RCON generation 
 	BEGIN
+	
+	-- RCONs can be generated on the fly in each round
+	-- this is more resource efficient than storing them on memory
+	
 		IF rising_edge(clk) THEN
 			IF rcon_rst = '1' THEN
 				rcon <= x"01";

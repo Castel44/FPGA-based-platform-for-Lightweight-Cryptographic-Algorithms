@@ -9,7 +9,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY AES_128_parallel IS
 	PORT (
 		clk, data_ready, start : IN std_logic;
-		key_in : IN std_logic_vector(127 DOWNTO 0); -- met� caricata
+		key_in : IN std_logic_vector(127 DOWNTO 0); 
 		plaintext_in : IN std_logic_vector(127 DOWNTO 0);
 		busy : OUT std_logic := '0';
 		ciphertext_out : OUT std_logic_vector(127 DOWNTO 0) := (OTHERS => '0')
@@ -284,7 +284,7 @@ BEGIN
 				KEY_REG_CE <= '1';
 
 				--state transition                                                                         
-				IF cnt_out = b"1010" THEN --10 rounds passed                  
+				IF cnt_out = b"1010" THEN --10 rounds                 
 					nx_state <= end_encrypt;
 				ELSE
 					nx_state <= processing;
@@ -317,7 +317,7 @@ BEGIN
 
 	END PROCESS;
 
-	-- ASYNC OPERATION
+	-- at the last round do not perform mixcolumns
 	WITH cnt_out SELECT
 		AddRoundKey_in <= IS_OUT WHEN b"0000",
 		ShiftRows_out WHEN b"1010",
