@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Tue Jun 26 01:50:39 2018
-| Host             : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date             : Thu Jun 28 19:46:44 2018
+| Host             : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
 | Command          : report_power -file Testing_IP_power_routed.rpt -pb Testing_IP_power_summary_routed.pb -rpx Testing_IP_power_routed.rpx
 | Design           : Testing_IP
 | Device           : xc7z010clg400-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.091        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.002        |
+| Dynamic (W)              | 0.001        |
 | Device Static (W)        | 0.090        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.9         |
@@ -52,7 +52,7 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.001 |        3 |       --- |             --- |
+| Clocks                  |    <0.001 |        3 |       --- |             --- |
 | Slice Logic             |    <0.001 |      117 |       --- |             --- |
 |   LUT as Logic          |    <0.001 |       44 |     17600 |            0.25 |
 |   LUT as Shift Register |    <0.001 |       10 |      6000 |            0.17 |
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.005 |       0.002 |      0.004 |
+| Vccint    |       1.000 |     0.005 |       0.001 |      0.004 |
 | Vccaux    |       1.800 |     0.005 |       0.000 |      0.005 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -148,9 +148,9 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| Testing_IP            |     0.002 |
+| Testing_IP            |     0.001 |
 |   INST_CNT            |    <0.001 |
-|   Simeck_DUT          |     0.001 |
+|   Simeck_DUT          |    <0.001 |
 |     INST_A_KEY_REG    |    <0.001 |
 |     INST_B_KEY_REG    |    <0.001 |
 |     INST_IS_LEFT_REG  |    <0.001 |

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"Testing_IP_TB_func_impl.vhd" \
+"../../../../../AES.srcs/sim_1/imports/src/Testing_IP_TB.vhd" \
+
+# Do not sort compile order
+nosort

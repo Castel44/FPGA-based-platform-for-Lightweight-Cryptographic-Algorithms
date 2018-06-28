@@ -1,0 +1,34 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CNT
+INFO: [VRFC 10-307] analyzing entity lfsr
+INFO: [VRFC 10-307] analyzing entity normal_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg_0
+INFO: [VRFC 10-307] analyzing entity Simeck_64_128_parallel
+INFO: [VRFC 10-307] analyzing entity Testing_IP
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testing_IP_TB
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CNT
+INFO: [VRFC 10-307] analyzing entity lfsr
+INFO: [VRFC 10-307] analyzing entity normal_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg_0
+INFO: [VRFC 10-307] analyzing entity Simeck_64_128_parallel
+INFO: [VRFC 10-307] analyzing entity Testing_IP
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CNT
+INFO: [VRFC 10-307] analyzing entity lfsr
+INFO: [VRFC 10-307] analyzing entity normal_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg_0
+INFO: [VRFC 10-307] analyzing entity Simeck_64_128_parallel
+INFO: [VRFC 10-307] analyzing entity Testing_IP
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CNT
+INFO: [VRFC 10-307] analyzing entity lfsr
+INFO: [VRFC 10-307] analyzing entity normal_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg
+INFO: [VRFC 10-307] analyzing entity parallel_tapped_shift_reg_0
+INFO: [VRFC 10-307] analyzing entity Simeck_64_128_parallel
+INFO: [VRFC 10-307] analyzing entity Testing_IP

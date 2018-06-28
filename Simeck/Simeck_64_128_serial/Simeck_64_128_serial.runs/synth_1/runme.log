@@ -1,0 +1,493 @@
+
+*** Running vivado
+    with args -log Testing_IP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Testing_IP.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Testing_IP.tcl -notrace
+Command: synth_design -top Testing_IP -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 29428 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.172 ; gain = 84.891 ; free physical = 4144 ; free virtual = 16314
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Testing_IP' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd:28]
+	Parameter Datapath bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'Simeck_64_128_bit_serial' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:11' bound to instance 'Simeck_DUT' of component 'Simeck_64_128_bit_serial' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'Simeck_64_128_bit_serial' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:27]
+	Parameter datapath bound to: 1 - type: integer 
+	Parameter plaintext_size bound to: 64 - type: integer 
+	Parameter key_size bound to: 128 - type: integer 
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_IS_INPUT_MUX' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:229]
+INFO: [Synth 8-638] synthesizing module 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:17]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'MUX' (1#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:17]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'tapped_shift_reg' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:3' bound to instance 'INST_IS_LEFT_REG' of component 'tapped_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'tapped_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:21]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tapped_shift_reg' (2#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:21]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'tapped_shift_reg' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:3' bound to instance 'INST_IS_RIGHT_REG' of component 'tapped_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:256]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_MUX1' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:272]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_MUX5' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:285]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'rnd_function' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_function.vhd:4' bound to instance 'INST_RND_FUNCTION' of component 'Rnd_function' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'rnd_function' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_function.vhd:16]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rnd_function' (3#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_function.vhd:16]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_KEY_REG_INPUT_MUX' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:310]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'normal_shift_reg' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/normal_shift_reg.vhd:3' bound to instance 'INST_LEFT_KEY_REG' of component 'normal_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:320]
+INFO: [Synth 8-638] synthesizing module 'normal_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/normal_shift_reg.vhd:20]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'normal_shift_reg' (4#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/normal_shift_reg.vhd:20]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'tapped_shift_reg' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:3' bound to instance 'INST_B_KEY_REG' of component 'tapped_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:333]
+	Parameter width bound to: 1 - type: integer 
+	Parameter length bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'tapped_shift_reg' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/tapped_shift_reg.vhd:3' bound to instance 'INST_A_KEY_REG' of component 'tapped_shift_reg' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:348]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_MUX2' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:364]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/mux.vhd:4' bound to instance 'INST_MUX3' of component 'MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:375]
+	Parameter datapath bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'rnd_function' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_function.vhd:4' bound to instance 'INST_KEY_SCHEDULE_FUNCTION' of component 'Rnd_function' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:385]
+	Parameter datapath bound to: 1 - type: integer 
+	Parameter cnt_size bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'rnd_constants_MUX' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_constants_function.vhd:4' bound to instance 'INST_RND_CONSTANTS_GEN' of component 'rnd_constants_MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:398]
+INFO: [Synth 8-638] synthesizing module 'rnd_constants_MUX' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_constants_function.vhd:19]
+	Parameter datapath bound to: 1 - type: integer 
+	Parameter cnt_size bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rnd_constants_MUX' (5#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/rnd_constants_function.vhd:19]
+	Parameter size bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'CNT' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:4' bound to instance 'INST_SERIAL_CNT' of component 'CNT' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:408]
+INFO: [Synth 8-638] synthesizing module 'CNT' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:18]
+	Parameter size bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CNT' (6#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:18]
+	Parameter length bound to: 6 - type: integer 
+	Parameter width bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lfsr' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/lfsr.vhd:3' bound to instance 'INST_LFSR' of component 'lfsr' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:420]
+INFO: [Synth 8-638] synthesizing module 'lfsr' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/lfsr.vhd:19]
+	Parameter length bound to: 6 - type: integer 
+	Parameter width bound to: 1 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element long_lfsr.feedback_reg was removed.  [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/lfsr.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'lfsr' (7#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/lfsr.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'Simeck_64_128_bit_serial' (8#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/Simeck_64_128_bitserial.vhd:27]
+	Parameter size bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'CNT' declared at '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:4' bound to instance 'INST_CNT' of component 'cnt' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'CNT__parameterized0' [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:18]
+	Parameter size bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CNT__parameterized0' (8#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/Simeck_64_128_bit_serial.srcs/sources_1/new/cnt.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Testing_IP' (9#1) [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/sources_1/imports/new/Testing_IP.vhd:28]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1354.781 ; gain = 130.500 ; free physical = 4156 ; free virtual = 16326
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1354.781 ; gain = 130.500 ; free physical = 4155 ; free virtual = 16326
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1354.781 ; gain = 130.500 ; free physical = 4155 ; free virtual = 16326
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+Finished Parsing XDC File [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Testing_IP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Testing_IP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1714.352 ; gain = 0.000 ; free physical = 3902 ; free virtual = 16072
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3979 ; free virtual = 16150
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3979 ; free virtual = 16150
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3981 ; free virtual = 16151
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Simeck_64_128_bit_serial'
+INFO: [Synth 8-5546] ROM "sel_1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IS_ce" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IS_ce" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "lfsr_change" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sel_IN" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lfsr_rst" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "nx_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Testing_IP'
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 loading |                               00 |                               00
+                    idle |                               01 |                               01
+              processing |                               10 |                               10
+             end_encrypt |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Simeck_64_128_bit_serial'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                          0000001 |                              011
+                 loading |                          0000010 |                              001
+                 waiting |                          0000100 |                              101
+               start_enc |                          0001000 |                              000
+                     enc |                          0010000 |                              100
+                  ending |                          0100000 |                              010
+                 success |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'Testing_IP'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3972 ; free virtual = 16143
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 15    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 7     
+	   7 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Testing_IP 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   7 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 4     
+Module MUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module tapped_shift_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module rnd_function 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module normal_shift_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+Module rnd_constants_MUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module CNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+Module lfsr 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+Module Simeck_64_128_bit_serial 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 7     
+Module CNT__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3960 ; free virtual = 16132
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3832 ; free virtual = 16004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                      | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Testing_IP  | Simeck_DUT/INST_IS_LEFT_REG/temp_reg_reg[27]  | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simeck_DUT/INST_IS_LEFT_REG/temp_reg_reg[0]   | 27     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|Testing_IP  | Simeck_DUT/INST_IS_RIGHT_REG/temp_reg_reg[27] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simeck_DUT/INST_IS_RIGHT_REG/temp_reg_reg[0]  | 27     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|Testing_IP  | Simeck_DUT/INST_B_KEY_REG/temp_reg_reg[31]    | 65     | 1     | NO           | NO                 | YES               | 0      | 2       | 
+|Testing_IP  | Simeck_DUT/INST_B_KEY_REG/temp_reg_reg[27]    | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simeck_DUT/INST_B_KEY_REG/temp_reg_reg[0]     | 27     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|Testing_IP  | Simeck_DUT/INST_A_KEY_REG/temp_reg_reg[27]    | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Testing_IP  | Simeck_DUT/INST_A_KEY_REG/temp_reg_reg[0]     | 27     | 1     | NO           | NO                 | YES               | 0      | 1       | 
++------------+-----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |LUT1    |     3|
+|3     |LUT2    |     6|
+|4     |LUT3    |     8|
+|5     |LUT4    |     9|
+|6     |LUT5    |     8|
+|7     |LUT6    |    20|
+|8     |MUXF7   |     1|
+|9     |SRL16E  |     4|
+|10    |SRLC32E |     6|
+|11    |FDCE    |    12|
+|12    |FDPE    |     6|
+|13    |FDRE    |    21|
+|14    |FDSE    |     1|
+|15    |IBUF    |     3|
+|16    |OBUF    |     1|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------------------+-------------------------+------+
+|      |Instance              |Module                   |Cells |
++------+----------------------+-------------------------+------+
+|1     |top                   |                         |   110|
+|2     |  INST_CNT            |CNT__parameterized0      |    28|
+|3     |  Simeck_DUT          |Simeck_64_128_bit_serial |    69|
+|4     |    INST_A_KEY_REG    |tapped_shift_reg         |     7|
+|5     |    INST_B_KEY_REG    |tapped_shift_reg_0       |     5|
+|6     |    INST_IS_LEFT_REG  |tapped_shift_reg_1       |     7|
+|7     |    INST_IS_RIGHT_REG |tapped_shift_reg_2       |    13|
+|8     |    INST_LEFT_KEY_REG |normal_shift_reg         |     2|
+|9     |    INST_LFSR         |lfsr                     |    16|
+|10    |    INST_SERIAL_CNT   |CNT                      |    15|
++------+----------------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3831 ; free virtual = 16003
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1714.352 ; gain = 130.500 ; free physical = 3888 ; free virtual = 16060
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1714.352 ; gain = 490.070 ; free physical = 3888 ; free virtual = 16060
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+69 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1714.352 ; gain = 501.633 ; free physical = 3879 ; free virtual = 16051
+INFO: [Common 17-1381] The checkpoint '/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.runs/synth_1/Testing_IP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Testing_IP_utilization_synth.rpt -pb Testing_IP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1738.363 ; gain = 0.000 ; free physical = 3880 ; free virtual = 16052
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 28 19:45:43 2018...

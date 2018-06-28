@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1529963979">
-  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Testing_IP_drc_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1530187414">
   <File Type="REPORTS-TCL" Name="Testing_IP_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Testing_IP.vds"/>
-  <File Type="RDS-UTIL" Name="Testing_IP_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Testing_IP_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="Testing_IP.tcl"/>
   <File Type="RDS-DCP" Name="Testing_IP.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Testing_IP_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Testing_IP_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="Testing_IP.vds"/>
+  <File Type="RDS-UTIL-PB" Name="Testing_IP_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Testing_IP_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/new/CNT.vhd">
@@ -104,9 +101,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

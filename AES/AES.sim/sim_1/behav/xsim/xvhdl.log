@@ -22,5 +22,3 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_cipher
 INFO: [VRFC 10-307] analyzing entity sbox
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES/AES.srcs/sources_1/imports/src/subBytes.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity subBytes
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES/AES.srcs/sim_1/imports/src/Testing_IP_TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Testing_IP_TB

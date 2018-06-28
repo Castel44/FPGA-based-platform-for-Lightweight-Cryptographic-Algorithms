@@ -1,0 +1,82 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto 91381842b0814fb78d8ccf826fc8ab8c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Testing_IP_TB_func_impl xil_defaultlib.Testing_IP_TB -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="1000")(0,3)\]
+Compiling architecture fdse_v of entity unisim.FDSE [fdse_default]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10111010")(0,7)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000111110001000")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0000000000000100")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11110100001101010110...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0111111111111111")(0...]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0110")(0,3)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01111000")(0,7)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0111111110000000")(0...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01111111111111111000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01111111111111111111...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11111110")(0,7)\]
+Compiling architecture fdce_v of entity unisim.FDCE [fdce_default]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000111111110011...]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000101010100000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000101010100000...]
+Compiling architecture structure of entity xil_defaultlib.\CNT__parameterized0\ [\CNT__parameterized0_default\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11101010")(0,7)\]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
+Compiling architecture srlc32e_v of entity unisim.SRLC32E [\SRLC32E(0,31)\]
+Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(0,15)\]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01101111011000000110...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="01100101010101010110...]
+Compiling architecture structure of entity xil_defaultlib.tapped_shift_reg [tapped_shift_reg_default]
+Compiling architecture structure of entity xil_defaultlib.tapped_shift_reg_0 [tapped_shift_reg_0_default]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100110011010100110...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture structure of entity xil_defaultlib.tapped_shift_reg_1 [tapped_shift_reg_1_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="0100111101000100")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10001111111111111111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10001000111110001000...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10000000")(0,7)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1110101010101010")(0...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1001010101010101")(0...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100000011000000110...]
+Compiling architecture structure of entity xil_defaultlib.tapped_shift_reg_2 [tapped_shift_reg_2_default]
+Compiling architecture structure of entity xil_defaultlib.normal_shift_reg [normal_shift_reg_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11001100101110001111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00010000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture fdpe_v of entity unisim.FDPE [fdpe_default]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1100110010111000")(0...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="01010100")(0,7)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111101111111...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111111111...]
+Compiling architecture structure of entity xil_defaultlib.lfsr [lfsr_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111111111101111...]
+Compiling architecture structure of entity xil_defaultlib.CNT [cnt_default]
+Compiling architecture structure of entity xil_defaultlib.Simeck_64_128_bit_serial [simeck_64_128_bit_serial_default]
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture structure of entity xil_defaultlib.Testing_IP [testing_ip_default]
+Compiling architecture behavioral of entity xil_defaultlib.testing_ip_tb
+Built simulation snapshot Testing_IP_TB_func_impl

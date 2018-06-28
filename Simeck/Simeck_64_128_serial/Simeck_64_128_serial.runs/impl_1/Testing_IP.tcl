@@ -60,22 +60,22 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z010clg400-1
   set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.cache/wt} [current_project]
-  set_property parent.project_path {F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.xpr} [current_project]
-  set_property ip_output_repo {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.cache/ip}} [current_project]
+  set_property webtalk.parent_dir /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.cache/wt [current_project]
+  set_property parent.project_path /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.xpr [current_project]
+  set_property ip_output_repo /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.runs/synth_1/Testing_IP.dcp}}
-  read_xdc {{F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc}}
+  add_files -quiet /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.runs/synth_1/Testing_IP.dcp
+  read_xdc /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_serial/Simeck_64_128_serial.srcs/constrs_1/imports/Desktop/ZYBO_Master.xdc
   link_design -top Testing_IP -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -101,22 +101,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step power_opt_design
-set ACTIVE_STEP power_opt_design
-set rc [catch {
-  create_msg_db power_opt_design.pb
-  power_opt_design 
-  write_checkpoint -force Testing_IP_pwropt.dcp
-  close_msg_db -file power_opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed power_opt_design
-  return -code error $RESULT
-} else {
-  end_step power_opt_design
   unset ACTIVE_STEP 
 }
 
@@ -164,6 +148,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force Testing_IP.mmi }
+  write_bitstream -force Testing_IP.bit 
+  catch {write_debug_probes -quiet -force Testing_IP}
+  catch {file copy -force Testing_IP.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

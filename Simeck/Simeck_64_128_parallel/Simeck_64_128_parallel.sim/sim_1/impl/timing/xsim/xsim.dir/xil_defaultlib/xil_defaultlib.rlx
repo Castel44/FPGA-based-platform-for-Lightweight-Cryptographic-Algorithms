@@ -1,6 +1,6 @@
 0.6
 2018.1
 Apr  4 2018
-19:30:32
-F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/timing/xsim/Testing_IP_TB_time_impl.v,1529964303,verilog,,,,CNT;Simeck_64_128_parallel;Testing_IP;glbl;lfsr;normal_shift_reg;parallel_tapped_shift_reg;parallel_tapped_shift_reg_0,,,,,,,,
-F:/Documenti 2/University/Magistrale/Progettazione di Sistemi Integrati/VHDL projects/Xilinx_contest/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1529775585,vhdl,,,,testing_ip_tb,,,,,,,,
+18:43:17
+/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/timing/xsim/Testing_IP_TB_time_impl.v,1530189565,verilog,,,,CNT;Simeck_64_128_parallel;Testing_IP;glbl;lfsr;normal_shift_reg;parallel_tapped_shift_reg;parallel_tapped_shift_reg_0,,,,,,,,
+/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1530019536,vhdl,,,,testing_ip_tb,,,,,,,,

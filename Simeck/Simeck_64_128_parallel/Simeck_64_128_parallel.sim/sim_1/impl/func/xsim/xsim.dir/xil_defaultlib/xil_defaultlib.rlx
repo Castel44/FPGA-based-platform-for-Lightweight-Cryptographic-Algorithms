@@ -1,0 +1,6 @@
+0.6
+2018.1
+Apr  4 2018
+18:43:17
+/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd,1530189873,vhdl,,,,cnt;lfsr;normal_shift_reg;parallel_tapped_shift_reg;parallel_tapped_shift_reg_0;simeck_64_128_parallel;testing_ip,,,,,,,,
+/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd,1530019536,vhdl,,,,testing_ip_tb,,,,,,,,

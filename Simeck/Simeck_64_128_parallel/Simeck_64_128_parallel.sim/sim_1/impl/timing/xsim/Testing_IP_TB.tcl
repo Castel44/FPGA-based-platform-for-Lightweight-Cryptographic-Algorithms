@@ -8,4 +8,8 @@ if { [string length $curr_wave] == 0 } {
   }
 }
 
+open_saif "home/sam/Desktop/simeck.saif"
+log_saif [get_objects -r *]
+
 run 1000ns
+close_saif
