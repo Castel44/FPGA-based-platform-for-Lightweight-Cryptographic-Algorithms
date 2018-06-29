@@ -1,7 +1,0 @@
-0.6
-2018.1
-Apr  4 2018
-18:43:17
-/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.sim/sim_1/synth/func/xsim/Testing_IP_TB_func_synth.vhd,1529771363,vhdl,,,,clk_wiz_0;clk_wiz_0_clk_wiz_0_clk_wiz;cnt;lfsr;normal_shift_reg;parallel_tapped_shift_reg;reg;reg_0;simon_32_64_parallel;testing_ip,,,,,,,,
-/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.sim/sim_1/synth/func/xsim/glbl.v,1522801934,verilog,,,,glbl,,,,,,,,
-/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simon/Simon_32_64_parallel/Simon_32_64_parallel.srcs/sim_1/new/Testing_IP_TB.vhd,1529771360,vhdl,,,,testing_ip_tb,,,,,,,,

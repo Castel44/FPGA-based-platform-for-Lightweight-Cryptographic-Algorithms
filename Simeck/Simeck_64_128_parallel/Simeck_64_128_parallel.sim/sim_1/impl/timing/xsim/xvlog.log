@@ -1,9 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Simeck/Simeck_64_128_parallel/Simeck_64_128_parallel.sim/sim_1/impl/timing/xsim/Testing_IP_TB_time_impl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module CNT
-INFO: [VRFC 10-311] analyzing module Simeck_64_128_parallel
-INFO: [VRFC 10-311] analyzing module Testing_IP
-INFO: [VRFC 10-311] analyzing module lfsr
-INFO: [VRFC 10-311] analyzing module normal_shift_reg
-INFO: [VRFC 10-311] analyzing module parallel_tapped_shift_reg
-INFO: [VRFC 10-311] analyzing module parallel_tapped_shift_reg_0
-INFO: [VRFC 10-311] analyzing module glbl

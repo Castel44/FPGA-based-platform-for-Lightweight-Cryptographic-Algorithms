@@ -1,6 +1,0 @@
-Vivado Simulator 2018.1
-Time resolution is 1 ps
-Warning: Warning : [Unisim MMCME2_ADV-162] input CLKIN1 period and attribute CLKIN1_PERIOD are not same.
-Time: 1412 ns  Iteration: 4  Process: /Testing_IP_TB/uut/clock_div/inst/mmcm_adv_inst/pchk_p  File: /opt/Xilinx/Vivado/2018.1/data/vhdl/src/unisims/primitive/MMCME2_ADV.vhd
-Error:  Warning : [Unisim MMCME2_ADV-164] input CLKIN1 of MMCME2_ADV is stopped. Reset is required for MMCME2_ADV when input clock returns.
-Time: 5111750 ps  Iteration: 1  Process: /Testing_IP_TB/uut/clock_div/inst/mmcm_adv_inst/clkin_lost_out_p  File: /opt/Xilinx/Vivado/2018.1/data/vhdl/src/unisims/primitive/MMCME2_ADV.vhd

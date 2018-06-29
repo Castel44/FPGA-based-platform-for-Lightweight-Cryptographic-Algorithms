@@ -1,1 +1,0 @@
--wto "174ac90954c84a439a9652a5451f9ed6" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "AES128_axis_tb_behav" "xil_defaultlib.AES128_axis_tb" -log "elaborate.log" 
