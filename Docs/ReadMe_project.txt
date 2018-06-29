@@ -28,6 +28,10 @@ Files are structured as follows:
 
 Power estimator/7_Series_XPE.xlsm <- This is the XPE Excel sheet for the 7-Series board, it is already set up with the snapshot of ALL 21 the cipher's implementations power reports.
 
+Power_measuerements/ <-This folder contains the Python file, in form of JupyterNonebook (*.ipynb), necessary to post-process the raw data from measurements with oscilloscope.
+
+Power_measurements/<CipherName_csv>/ <- This folder contains the raw data from measurements.
+
 
 Instructions to build and test project;
 Step 1:

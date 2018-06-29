@@ -11,7 +11,6 @@
 !**/sim_1/**
 !**/constrs_1/**
 !**/sources_1/**
-!python/
 
 # ...even if they are in subdirectories
 !*/
