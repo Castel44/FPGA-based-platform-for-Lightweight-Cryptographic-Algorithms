@@ -1,11 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Wed Jun 20 14:29:37 2018
--- Host        : DESKTOP-II8OTGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -mode funcsim -nolib -force -file {F:/Documenti 2/University/Magistrale/Progettazione di
---               Sistemi Integrati/VHDL
---               projects/Xilinx_contest/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim/sim_1/impl/func/xsim/Testing_TB_func_impl.vhd}
+-- Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+-- Date        : Fri Jun 29 02:18:22 2018
+-- Host        : sam-xubuntu running 64-bit Ubuntu 16.04.4 LTS
+-- Command     : write_vhdl -mode funcsim -nolib -force -file
+--               /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim/sim_1/impl/func/xsim/Testing_TB_func_impl.vhd
 -- Design      : Testing_IP
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -430,15 +429,7 @@ entity reg is
     Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
     TW_REG_OUT : in STD_LOGIC_VECTOR ( 56 downto 0 );
     \Q_reg[127]_0\ : in STD_LOGIC_VECTOR ( 28 downto 0 );
-    clk_IBUF_BUFG : in STD_LOGIC;
-    lopt : out STD_LOGIC;
-    lopt_1 : out STD_LOGIC;
-    lopt_2 : out STD_LOGIC;
-    lopt_3 : out STD_LOGIC;
-    lopt_4 : out STD_LOGIC;
-    lopt_5 : out STD_LOGIC;
-    lopt_6 : out STD_LOGIC;
-    lopt_7 : out STD_LOGIC
+    clk_IBUF_BUFG : in STD_LOGIC
   );
 end reg;
 
@@ -519,21 +510,9 @@ architecture STRUCTURE of reg is
 begin
   AddRoundTWEAKEY_OUT(2 downto 0) <= \^addroundtweakey_out\(2 downto 0);
   \Q_reg[0]_0\ <= \^q_reg[0]_0\;
-  \Q_reg[123]_0\(3 downto 2) <= \^q_reg[123]_0\(3 downto 2);
-  \Q_reg[123]_0\(0) <= \^q_reg[123]_0\(0);
-  \Q_reg[95]_0\(43 downto 34) <= \^q_reg[95]_0\(43 downto 34);
-  \Q_reg[95]_0\(32 downto 0) <= \^q_reg[95]_0\(32 downto 0);
-  lopt <= IS_REG_OUT(122);
-  lopt_1 <= IS_REG_OUT(121);
-  lopt_2 <= IS_REG_OUT(126);
-  lopt_3 <= IS_REG_OUT(127);
-  lopt_4 <= IS_REG_OUT(113);
-  lopt_5 <= IS_REG_OUT(118);
-  lopt_6 <= IS_REG_OUT(119);
-  lopt_7 <= IS_REG_OUT(114);
+  \Q_reg[123]_0\(3 downto 0) <= \^q_reg[123]_0\(3 downto 0);
+  \Q_reg[95]_0\(43 downto 0) <= \^q_reg[95]_0\(43 downto 0);
   regs_ce <= \^regs_ce\;
-  \Q_reg[123]_0\(1) <= 'Z';
-  \Q_reg[95]_0\(33) <= 'Z';
 \FSM_onehot_current_state[5]_i_10\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000960000000000"
@@ -3124,6 +3103,19 @@ begin
       I4 => IS_REG_OUT(109),
       O => \^q_reg[95]_0\(32)
     );
+\Q[80]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFA05000014EB"
+    )
+        port map (
+      I0 => \^q_reg[95]_0\(40),
+      I1 => IS_REG_OUT(113),
+      I2 => IS_REG_OUT(118),
+      I3 => IS_REG_OUT(119),
+      I4 => \^q_reg[95]_0\(36),
+      I5 => IS_REG_OUT(114),
+      O => \^q_reg[95]_0\(33)
+    );
 \Q[83]_i_2\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"EB14"
@@ -3144,6 +3136,19 @@ begin
       I1 => IS_REG_OUT(119),
       I2 => IS_REG_OUT(116),
       O => \^q_reg[95]_0\(39)
+    );
+\Q[89]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"55566665AAA9999A"
+    )
+        port map (
+      I0 => Q(1),
+      I1 => \^q_reg[95]_0\(43),
+      I2 => IS_REG_OUT(122),
+      I3 => IS_REG_OUT(121),
+      I4 => IS_REG_OUT(126),
+      I5 => IS_REG_OUT(127),
+      O => \^q_reg[123]_0\(1)
     );
 \Q[8]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -4745,16 +4750,7 @@ entity reg_0 is
     \lfsr_internal_reg[3]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \FSM_sequential_current_state_reg[1]_0\ : in STD_LOGIC;
     regs_ce : in STD_LOGIC;
-    clk_IBUF_BUFG : in STD_LOGIC;
-    lopt : in STD_LOGIC;
-    lopt_1 : in STD_LOGIC;
-    lopt_2 : in STD_LOGIC;
-    lopt_3 : in STD_LOGIC;
-    lopt_4 : in STD_LOGIC;
-    lopt_5 : in STD_LOGIC;
-    lopt_6 : in STD_LOGIC;
-    lopt_7 : in STD_LOGIC;
-    lopt_8 : in STD_LOGIC
+    clk_IBUF_BUFG : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of reg_0 : entity is "reg";
@@ -4835,8 +4831,6 @@ architecture STRUCTURE of reg_0 is
   signal \Q_reg_n_0_[8]\ : STD_LOGIC;
   signal \Q_reg_n_0_[9]\ : STD_LOGIC;
   signal TW_REG_OUT : STD_LOGIC_VECTOR ( 127 downto 103 );
-  signal \xlnx_opt_Q_reg[95]_0[14]\ : STD_LOGIC;
-  signal \xlnx_opt_Q_reg[95]_0[23]\ : STD_LOGIC;
   signal \NLW_FSM_onehot_current_state_reg[5]_i_13_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \NLW_FSM_onehot_current_state_reg[5]_i_13_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_FSM_onehot_current_state_reg[5]_i_18_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -5087,6 +5081,15 @@ begin
       I1 => \Q_reg[125]_0\(13),
       O => \^q_reg[95]_0\(13)
     );
+\Q[80]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => TW_REG_OUT(112),
+      I1 => \Q_reg[125]_0\(14),
+      O => \^q_reg[95]_0\(14)
+    );
 \Q[81]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"6"
@@ -5158,6 +5161,15 @@ begin
       I0 => \^q_reg[62]_0\(51),
       I1 => \lfsr_internal_reg[3]\(0),
       O => \^q_reg[95]_0\(22)
+    );
+\Q[89]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => TW_REG_OUT(121),
+      I1 => \lfsr_internal_reg[3]\(1),
+      O => \^q_reg[95]_0\(23)
     );
 \Q[90]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -6612,50 +6624,6 @@ begin
       Q => \Q_reg_n_0_[9]\,
       S => \FSM_sequential_current_state_reg[1]_0\
     );
-\xlnx_opt_LUT_Q[80]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFA05000014EB"
-    )
-        port map (
-      I0 => \Q_reg[125]_0\(21),
-      I1 => lopt_5,
-      I2 => lopt_6,
-      I3 => lopt_7,
-      I4 => \Q_reg[125]_0\(17),
-      I5 => lopt_8,
-      O => \xlnx_opt_Q_reg[95]_0[14]\
-    );
-\xlnx_opt_LUT_Q[80]_i_1_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => TW_REG_OUT(112),
-      I1 => \xlnx_opt_Q_reg[95]_0[14]\,
-      O => \^q_reg[95]_0\(14)
-    );
-\xlnx_opt_LUT_Q[89]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAA9999A55566665"
-    )
-        port map (
-      I0 => lopt,
-      I1 => \Q_reg[125]_0\(24),
-      I2 => lopt_1,
-      I3 => lopt_2,
-      I4 => lopt_3,
-      I5 => lopt_4,
-      O => \xlnx_opt_Q_reg[95]_0[23]\
-    );
-\xlnx_opt_LUT_Q[89]_i_1_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => TW_REG_OUT(121),
-      I1 => \xlnx_opt_Q_reg[95]_0[23]\,
-      O => \^q_reg[95]_0\(23)
-    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -6672,7 +6640,6 @@ end SKINNY_128_128_parallel;
 architecture STRUCTURE of SKINNY_128_128_parallel is
   signal AddRoundConstants_OUT : STD_LOGIC_VECTOR ( 123 downto 120 );
   signal AddRoundTWEAKEY_OUT : STD_LOGIC_VECTOR ( 127 downto 96 );
-  signal \FSM_sequential_current_state_reg[1]_CE_cooolgate_en_sig_1\ : STD_LOGIC;
   signal INST_IS_REG_n_0 : STD_LOGIC;
   signal INST_IS_REG_n_1 : STD_LOGIC;
   signal INST_IS_REG_n_51 : STD_LOGIC;
@@ -6687,33 +6654,15 @@ architecture STRUCTURE of SKINNY_128_128_parallel is
   attribute RTL_KEEP : string;
   attribute RTL_KEEP of current_state : signal is "yes";
   signal lfsr_in : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal lopt : STD_LOGIC;
-  signal lopt_1 : STD_LOGIC;
-  signal lopt_2 : STD_LOGIC;
-  signal lopt_3 : STD_LOGIC;
-  signal lopt_4 : STD_LOGIC;
-  signal lopt_5 : STD_LOGIC;
-  signal lopt_6 : STD_LOGIC;
-  signal lopt_7 : STD_LOGIC;
   signal mixcolumns_out : STD_LOGIC_VECTOR ( 127 downto 4 );
   signal nx_state : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal regs_ce : STD_LOGIC;
-  signal \NLW_INST_IS_REG_Q_reg[123]_0_UNCONNECTED\ : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal \NLW_INST_IS_REG_Q_reg[95]_0_UNCONNECTED\ : STD_LOGIC_VECTOR ( 33 to 33 );
-  signal \NLW_INST_TW_REG_Q_reg[125]_0_UNCONNECTED\ : STD_LOGIC_VECTOR ( 14 to 14 );
-  signal \NLW_INST_TW_REG_lfsr_internal_reg[3]_UNCONNECTED\ : STD_LOGIC_VECTOR ( 1 to 1 );
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_sequential_current_state_reg[0]\ : label is "loading:00,processing:10,idle:01";
   attribute KEEP : string;
   attribute KEEP of \FSM_sequential_current_state_reg[0]\ : label is "yes";
   attribute FSM_ENCODED_STATES of \FSM_sequential_current_state_reg[1]\ : label is "loading:00,processing:10,idle:01";
-  attribute IS_CLOCK_GATED : boolean;
-  attribute IS_CLOCK_GATED of \FSM_sequential_current_state_reg[1]\ : label is std.standard.true;
-  attribute IS_PWROPT_IDT_ONLY : boolean;
-  attribute IS_PWROPT_IDT_ONLY of \FSM_sequential_current_state_reg[1]\ : label is std.standard.true;
   attribute KEEP of \FSM_sequential_current_state_reg[1]\ : label is "yes";
-  attribute POWER_OPTED_CE : string;
-  attribute POWER_OPTED_CE of \FSM_sequential_current_state_reg[1]\ : label is "CE=NEW";
 begin
 \FSM_sequential_current_state_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -6732,23 +6681,10 @@ begin
     )
         port map (
       C => clk_IBUF_BUFG,
-      CE => \FSM_sequential_current_state_reg[1]_CE_cooolgate_en_sig_1\,
+      CE => '1',
       D => nx_state(1),
       Q => current_state(1),
       R => \out\(0)
-    );
-\FSM_sequential_current_state_reg[1]_CE_cooolgate_en_gate_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"ffffffffffff0008"
-    )
-        port map (
-      I0 => lfsr_in(4),
-      I1 => lfsr_in(3),
-      I2 => lfsr_in(2),
-      I3 => lfsr_in(0),
-      I4 => \out\(0),
-      I5 => current_state(0),
-      O => \FSM_sequential_current_state_reg[1]_CE_cooolgate_en_sig_1\
     );
 INST_IS_REG: entity work.reg
      port map (
@@ -6762,9 +6698,7 @@ INST_IS_REG: entity work.reg
       \FSM_sequential_current_state_reg[1]\ => INST_LFSR_n_2,
       Q(5 downto 0) => lfsr_in(5 downto 0),
       \Q_reg[0]_0\ => INST_IS_REG_n_51,
-      \Q_reg[123]_0\(3 downto 2) => AddRoundConstants_OUT(123 downto 122),
-      \Q_reg[123]_0\(1) => \NLW_INST_IS_REG_Q_reg[123]_0_UNCONNECTED\(1),
-      \Q_reg[123]_0\(0) => AddRoundConstants_OUT(120),
+      \Q_reg[123]_0\(3 downto 0) => AddRoundConstants_OUT(123 downto 120),
       \Q_reg[126]_0\(0) => INST_TW_REG_n_0,
       \Q_reg[127]_0\(28 downto 26) => AddRoundTWEAKEY_OUT(127 downto 125),
       \Q_reg[127]_0\(25 downto 9) => AddRoundTWEAKEY_OUT(123 downto 107),
@@ -6790,9 +6724,7 @@ INST_IS_REG: entity work.reg
       \Q_reg[22]_0\(1) => mixcolumns_out(7),
       \Q_reg[22]_0\(0) => mixcolumns_out(4),
       \Q_reg[95]_0\(43 downto 41) => SUBCELLS_OUT(127 downto 125),
-      \Q_reg[95]_0\(40 downto 34) => SUBCELLS_OUT(119 downto 113),
-      \Q_reg[95]_0\(33) => \NLW_INST_IS_REG_Q_reg[95]_0_UNCONNECTED\(33),
-      \Q_reg[95]_0\(32 downto 28) => SUBCELLS_OUT(111 downto 107),
+      \Q_reg[95]_0\(40 downto 28) => SUBCELLS_OUT(119 downto 107),
       \Q_reg[95]_0\(27 downto 23) => SUBCELLS_OUT(105 downto 101),
       \Q_reg[95]_0\(22 downto 19) => SUBCELLS_OUT(99 downto 96),
       \Q_reg[95]_0\(18) => SUBCELLS_OUT(61),
@@ -6822,14 +6754,6 @@ INST_IS_REG: entity work.reg
       TW_REG_OUT(43 downto 39) => TW_REG_OUT(108 downto 104),
       TW_REG_OUT(38 downto 0) => TW_REG_OUT(102 downto 64),
       clk_IBUF_BUFG => clk_IBUF_BUFG,
-      lopt => lopt,
-      lopt_1 => lopt_1,
-      lopt_2 => lopt_2,
-      lopt_3 => lopt_3,
-      lopt_4 => lopt_4,
-      lopt_5 => lopt_5,
-      lopt_6 => lopt_6,
-      lopt_7 => lopt_7,
       \out\(1 downto 0) => current_state(1 downto 0),
       regs_ce => regs_ce
     );
@@ -6903,9 +6827,7 @@ INST_TW_REG: entity work.reg_0
       \Q_reg[105]_0\(0) => INST_IS_REG_n_55,
       \Q_reg[123]_0\(0) => INST_IS_REG_n_56,
       \Q_reg[125]_0\(24 downto 22) => SUBCELLS_OUT(127 downto 125),
-      \Q_reg[125]_0\(21 downto 15) => SUBCELLS_OUT(119 downto 113),
-      \Q_reg[125]_0\(14) => \NLW_INST_TW_REG_Q_reg[125]_0_UNCONNECTED\(14),
-      \Q_reg[125]_0\(13 downto 9) => SUBCELLS_OUT(111 downto 107),
+      \Q_reg[125]_0\(21 downto 9) => SUBCELLS_OUT(119 downto 107),
       \Q_reg[125]_0\(8 downto 4) => SUBCELLS_OUT(105 downto 101),
       \Q_reg[125]_0\(3 downto 0) => SUBCELLS_OUT(99 downto 96),
       \Q_reg[62]_0\(56 downto 52) => TW_REG_OUT(126 downto 122),
@@ -6921,18 +6843,7 @@ INST_TW_REG: entity work.reg_0
       \Q_reg[95]_0\(3 downto 0) => AddRoundTWEAKEY_OUT(99 downto 96),
       S(0) => INST_TW_REG_n_1,
       clk_IBUF_BUFG => clk_IBUF_BUFG,
-      \lfsr_internal_reg[3]\(3 downto 2) => AddRoundConstants_OUT(123 downto 122),
-      \lfsr_internal_reg[3]\(1) => \NLW_INST_TW_REG_lfsr_internal_reg[3]_UNCONNECTED\(1),
-      \lfsr_internal_reg[3]\(0) => AddRoundConstants_OUT(120),
-      lopt => lfsr_in(1),
-      lopt_1 => lopt,
-      lopt_2 => lopt_1,
-      lopt_3 => lopt_2,
-      lopt_4 => lopt_3,
-      lopt_5 => lopt_4,
-      lopt_6 => lopt_5,
-      lopt_7 => lopt_6,
-      lopt_8 => lopt_7,
+      \lfsr_internal_reg[3]\(3 downto 0) => AddRoundConstants_OUT(123 downto 120),
       regs_ce => regs_ce
     );
 end STRUCTURE;
@@ -6950,13 +6861,7 @@ entity Testing_IP is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of Testing_IP : entity is true;
   attribute ECO_CHECKSUM : string;
-  attribute ECO_CHECKSUM of Testing_IP : entity is "f616429e";
-  attribute POWER_OPT_BRAM_CDC : integer;
-  attribute POWER_OPT_BRAM_CDC of Testing_IP : entity is 0;
-  attribute POWER_OPT_BRAM_SR_ADDR : integer;
-  attribute POWER_OPT_BRAM_SR_ADDR of Testing_IP : entity is 0;
-  attribute POWER_OPT_LOOPED_NET_PERCENTAGE : integer;
-  attribute POWER_OPT_LOOPED_NET_PERCENTAGE of Testing_IP : entity is 0;
+  attribute ECO_CHECKSUM of Testing_IP : entity is "496df6a4";
 end Testing_IP;
 
 architecture STRUCTURE of Testing_IP is

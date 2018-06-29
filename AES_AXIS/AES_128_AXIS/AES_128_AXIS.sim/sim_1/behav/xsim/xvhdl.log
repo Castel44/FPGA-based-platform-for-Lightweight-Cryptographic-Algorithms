@@ -1,6 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_AXIS/AES_128_AXIS/AES_128_AXIS.srcs/sources_1/imports/AES.srcs/sources_1/imports/src/AES_128_parallel.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity AES_128_parallel
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_AXIS/AES_128_AXIS/AES_128_AXIS.srcs/sources_1/new/axi_stream_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_AXIS/AES_128_AXIS/AES_128_AXIS.srcs/sources_1/new/aes_axis_top.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity AES_AXIS_top
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_AXIS/AES_128_AXIS/AES_128_AXIS.srcs/sim_1/new/axi_stream_TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity AES128_axis_tb

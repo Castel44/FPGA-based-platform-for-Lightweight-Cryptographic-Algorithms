@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/sam/vivado/AES_128_AXI_stream/AES_128_AXI_stream.runs/synth_1'
+HD_PWD='/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_AXIS/AES_128_AXIS/AES_128_AXIS.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log axi_stream_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi_stream_wrapper.tcl
+EAStep vivado -log AES_AXIS_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_AXIS_top.tcl

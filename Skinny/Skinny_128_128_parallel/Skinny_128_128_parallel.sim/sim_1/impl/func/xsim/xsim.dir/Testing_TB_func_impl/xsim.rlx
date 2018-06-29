@@ -1,11 +1,11 @@
 
 { 
-    crc :  5506032109639777846  , 
+    crc :  1035091457959228754  , 
     ccp_crc :  0  , 
-    cmdline : " -wto 72c67f560b8d4d3d9846df2e545b5164 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testing_TB_func_impl xil_defaultlib.Testing_TB" , 
+    cmdline : " -wto 72c67f560b8d4d3d9846df2e545b5164 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Testing_TB_func_impl xil_defaultlib.Testing_TB" , 
     buildDate : "Apr  4 2018" , 
-    buildTime : "19:30:32" , 
-    linkCmd : "C:\\Xilinx\\Vivado\\2018.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/Testing_TB_func_impl/xsimk.exe\"   \"xsim.dir/Testing_TB_func_impl/obj/xsim_0.win64.obj\" \"xsim.dir/Testing_TB_func_impl/obj/xsim_1.win64.obj\" \"C:\\Xilinx\\Vivado\\2018.1\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"C:\\Xilinx\\Vivado\\2018.1\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    buildTime : "18:43:17" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/Testing_TB_func_impl/xsimk\"   \"xsim.dir/Testing_TB_func_impl/obj/xsim_0.lnx64.o\" \"xsim.dir/Testing_TB_func_impl/obj/xsim_1.lnx64.o\" \"/opt/Xilinx/Vivado/2018.1/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/opt/Xilinx/Vivado/2018.1/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
     aggregate_nets : 
     [ 
     ] 

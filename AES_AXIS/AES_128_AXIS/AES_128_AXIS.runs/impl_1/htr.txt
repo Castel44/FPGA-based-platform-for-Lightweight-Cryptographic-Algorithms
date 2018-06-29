@@ -6,4 +6,4 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log axi_stream_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source axi_stream_wrapper.tcl -notrace
+vivado -log AES_AXIS_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source AES_AXIS_top.tcl -notrace

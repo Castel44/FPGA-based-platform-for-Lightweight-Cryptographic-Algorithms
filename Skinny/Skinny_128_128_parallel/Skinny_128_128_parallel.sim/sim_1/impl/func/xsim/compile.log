@@ -1,0 +1,9 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.sim/sim_1/impl/func/xsim/Testing_TB_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MixColumns
+INFO: [VRFC 10-307] analyzing entity lfsr
+INFO: [VRFC 10-307] analyzing entity reg
+INFO: [VRFC 10-307] analyzing entity reg_0
+INFO: [VRFC 10-307] analyzing entity SKINNY_128_128_parallel
+INFO: [VRFC 10-307] analyzing entity Testing_IP
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/Skinny/Skinny_128_128_parallel/Skinny_128_128_parallel.srcs/sim_1/imports/sim_1/new/Testing_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testing_TB

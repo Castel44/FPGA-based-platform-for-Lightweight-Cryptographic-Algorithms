@@ -1,4 +1,7 @@
-Running: xsim.dir/AES128_axis_tb_behav/xsimk -simmode gui -wdb AES128_axis_tb_behav.wdb -simrunnum 0 -socket 41977
+Running: xsim.dir/AES128_axis_tb_behav/xsimk -simmode gui -wdb AES128_axis_tb_behav.wdb -simrunnum 0 -socket 41585
 Design successfully loaded
 Design Loading Memory Usage: 42528 KB (Peak: 42528 KB)
-Design Loading CPU Usage: 10 ms
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 132464 KB (Peak: 189800 KB)
+Simulation CPU Usage: 10 ms
