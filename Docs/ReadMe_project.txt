@@ -3,7 +3,7 @@ Project name: FPGA-based platform for Lightweight Cryptographic Algorithms
 Date: 29/06/2018
 Version of uploaded archive: 1
 
-University name: Universit‡ Politecnica delle Marche
+University name: Universit√† Politecnica delle Marche
 Supervisor name: Massimo Conti
 Supervisor e-mail: m.conti@staff.univpm.it
 Participant(s): Castellani Andrea, Cornell Samuele
@@ -12,7 +12,9 @@ Email: a.castellani93@gmail.com, cornellsamuele@gmail.com
 
 Board used: Digilent  Zybo  Zynq-7000
 Vivado Version: 2018.1
-Brief description of project: We will compare some different lightweight block ciphers on a common FPGA platform. Our focus is mostly on resource utilization and power consumption of those ciphers. For what regards power consumption we will obtain it from simulation and also experimentally probing the board.
+Brief description of project: We will compare some different lightweight block ciphers on a common FPGA platform. 
+Our focus is mostly on resource utilization and power consumption of those ciphers. 
+For what regards power consumption we will obtain it from simulation and also experimentally probing the board.
 
 
 Description of archive :
