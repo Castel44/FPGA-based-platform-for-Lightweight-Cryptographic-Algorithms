@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<POWERDATA author="Vivado Power Analysis" dataVersion="2018.1" design="Testing_IP" designState="routed" date="Thu Jun 28 17:23:04 2018" pwrOpt="BRAMPwropt" activityLevel="simulation">
+	<ENVIRONMENT>
+		<DEVICE part="xc7z010" grade="commercial" package="clg400" speed="-1" process="typical" vid="No">
+		</DEVICE>
+		<VOLTAGESOURCES>
+			<SOURCE name="Vcco33" voltage="3.300000" icc="0.000022" iccq="0.001000" power="0.003374">
+			</SOURCE>
+			<SOURCE name="Vccbram" voltage="1.000000" icc="0.000000" iccq="0.000212" power="0.000212">
+			</SOURCE>
+			<SOURCE name="Vccint" voltage="1.000000" icc="0.008625" iccq="0.003690" power="0.012315">
+			</SOURCE>
+			<SOURCE name="Vccaux" voltage="1.800000" icc="0.000003" iccq="0.005307" power="0.009557">
+			</SOURCE>
+			<SOURCE name="Vccpint" voltage="1.000000" icc="0.000000" iccq="0.016263" power="0.016263">
+			</SOURCE>
+			<SOURCE name="Vccpaux" voltage="1.800000" icc="0.000000" iccq="0.010330" power="0.018594">
+			</SOURCE>
+			<SOURCE name="Vccpll" voltage="1.800000" icc="0.000000" iccq="0.003000" power="0.005400">
+			</SOURCE>
+			<SOURCE name="Vccadc" voltage="1.800000" icc="0.000000" iccq="0.020000" power="0.036000">
+			</SOURCE>
+		</VOLTAGESOURCES>
+		<THERMAL>
+			<AMBIENT value="25.000000">
+			</AMBIENT>
+			<AIRFLOW value="250.000000">
+			</AIRFLOW>
+			<HEATSINK value="none">
+			</HEATSINK>
+			<BOARDSELECTION value="medium (10&quot;x10&quot;)">
+			</BOARDSELECTION>
+			<BOARDLAYERS value="8to11 (8 to 11 Layers)">
+			</BOARDLAYERS>
+			<TSA value="0.000000">
+			</TSA>
+			<TJB value="9.300000">
+			</TJB>
+			<BOARDTEMP value="25.0 (C)">
+			</BOARDTEMP>
+			<JUNCTION value="26.2 (C)">
+			</JUNCTION>
+		</THERMAL>
+	</ENVIRONMENT>
+	<BLOCKDETAILS>
+		<BYTYPE>
+			<BLOCKTYPE name="Clocks">
+				<CLOCK name="clk" freq="125.000004" belFanout="1" sliceFanout="1" FoPerSite="1.000000" sliceEnableRate="0.000000" leafs="0.000000" hrows="0.000000" power="0.000000">
+				</CLOCK>
+				<CLOCK name="clk_IBUF" freq="125.000004" belFanout="1" sliceFanout="1" FoPerSite="1.000000" sliceEnableRate="0.000000" leafs="0.000000" hrows="0.000000" power="0.000077" enableRate="1" bufType="I/O">
+				</CLOCK>
+				<CLOCK name="clk_IBUF_BUFG" freq="125.000004" belFanout="272" sliceFanout="82" FoPerSite="3.317073" sliceEnableRate="0.784403" leafs="7.000000" hrows="2.000000" power="0.002439" enableRate="1" bufType="BUFG">
+				</CLOCK>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="LOGIC">
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="5.903485" toggleRate2="5.891774" totalRate="39.046504" name="sys_clk_pin" hierName="Testing_IP/INST_CNT" writeRate="0.000000" enableRate="0.000000" fanout="1.666667" ru="5.172558" fanout2="1.666667" totalFanout="5.000000" fanoutRate="20.336721" numNets="6" extNets="3" luts="5" logicCap="2492300" signalCap="383.000000" power="0.000007" sp="0.000002">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="5.423125" toggleRate2="5.423126" totalRate="10.846251" name="sys_clk_pin" hierName="Testing_IP/INST_CNT" writeRate="0.000000" enableRate="0.064744" fanout="5.000000" ru="10.969100" fanout2="5.000000" totalFanout="10.000000" fanoutRate="36.606099" numNets="2" extNets="2" ffs="2" logicCap="90000" signalCap="1116.000000" power="0.000000" sp="0.000004">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="46.982423" toggleRate2="55.300398" totalRate="18977.685930" name="sys_clk_pin" hierName="Testing_IP/Simon_DUT" writeRate="0.000000" enableRate="0.000000" fanout="3.458333" ru="5.577918" fanout2="3.458333" totalFanout="166.000000" fanoutRate="2323.809425" numNets="226" extNets="48" carry4s="12" luts="192" logicCap="100261303" signalCap="15849.000000" power="0.002742" sp="0.000262">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="38.285220" toggleRate2="38.262640" totalRate="10145.583524" name="sys_clk_pin" hierName="Testing_IP/Simon_DUT" writeRate="0.000000" enableRate="0.785767" fanout="3.011321" ru="10.347873" fanout2="3.011321" totalFanout="798.000000" fanoutRate="18987.719350" numNets="265" extNets="265" ffs="265" logicCap="11925000" signalCap="104032.000000" power="0.000285" sp="0.002493">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="5.419327" toggleRate="5.780615" toggleRate2="5.965438" totalRate="23.861753" name="High_Fanout_Nets" hierName="Testing_IP/Simon_DUT" writeRate="0.000000" enableRate="1.000000" fanout="111.000000" ru="24.497817" fanout2="111.000000" totalFanout="444.000000" fanoutRate="1808.612433" numNets="4" extNets="4" ffs="2" luts="1" logicCap="1037200" signalCap="25586.000000" power="0.000004" sp="0.000090">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="2.139981" toggleRate2="1.084625" totalRate="1.084625" name="sys_clk_pin" hierName="Testing_IP" writeRate="0.000000" enableRate="0.000000" fanout="1.000000" ru="6.064922" fanout2="1.000000" totalFanout="1.000000" fanoutRate="0.677891" numNets="1" extNets="1" luts="1" logicCap="322400" signalCap="432.000000" power="0.000000" sp="0.000000">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="2.169250" toggleRate2="2.169250" totalRate="2.169250" name="sys_clk_pin" hierName="Testing_IP" writeRate="0.000000" enableRate="1.000000" fanout="10.000000" ru="14.471580" fanout2="10.000000" totalFanout="10.000000" fanoutRate="13.557815" numNets="1" extNets="1" ffs="1" logicCap="45000" signalCap="883.000000" power="0.000000" sp="0.000001">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="4.067344" toggleRate="3.253875" toggleRate2="3.253875" totalRate="6.507751" name="High_Fanout_Nets" hierName="Testing_IP" writeRate="0.000000" enableRate="1.000000" fanout="44.500000" ru="21.139434" fanout2="44.500000" totalFanout="89.000000" fanoutRate="182.352605" numNets="2" extNets="2" ffs="2" logicCap="90000" signalCap="8714.000000" power="0.000000" sp="0.000018">
+				</LOGIC>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="IO">
+				<MODULE name="clk" count="1">
+					<GROUPSUMMARY>
+						<IO name="clk" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="250.000000" toggleRate="200.000000" dataRate="Clock" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000080" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="led_out" count="1">
+					<GROUPSUMMARY>
+						<IO name="led_out" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33_12_SLOW" bidis="0" inputs="0" outputs="1" signalRate="1.355781" toggleRate="1.084625" outputEnableRate="1.000000" outputLoad="0.000000" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="NONE" outTerm="RDRV_NONE_NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000000" vccAux="0.000005" vcco="0.000074" vccoCurrent="0.000022" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="rst" count="1">
+					<GROUPSUMMARY>
+						<IO name="rst" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="2.711563" toggleRate="2.169250" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000001" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="start" count="1">
+					<GROUPSUMMARY>
+						<IO name="start" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="2.711563" toggleRate="2.169250" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000001" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="IOBANK">
+				<IOBANK numInternalVref="0" numDelayControl="0" numLVDSBanks="0">
+				</IOBANK>
+			</BLOCKTYPE>
+		</BYTYPE>
+	</BLOCKDETAILS>
+</POWERDATA>
+

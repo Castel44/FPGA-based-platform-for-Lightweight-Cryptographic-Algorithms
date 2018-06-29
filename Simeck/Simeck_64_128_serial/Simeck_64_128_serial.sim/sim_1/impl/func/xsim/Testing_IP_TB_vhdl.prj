@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"Testing_IP_TB_func_impl.vhd" \
-"../../../../../Simeck_64_128_serial.srcs/sim_1/imports/new/Testing_IP_TB.vhd" \
-
-# Do not sort compile order
-nosort

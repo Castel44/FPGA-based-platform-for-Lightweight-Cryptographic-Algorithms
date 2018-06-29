@@ -53,36 +53,23 @@ clocking: process
   
   
 stimulus: process
-begin
-    wait for clock_period;   
-    rst <= '1';   
-    wait for clock_period;
-    rst <= '0';
-    wait for 10*clock_period;
-    
-    start <= '1'; 
-    wait for clock_period;
-    start <= '0'; 
-    while (led_out = '0') loop
-    wait for clock_period;
-    end loop;
-    
-    rst <= '1';   
-    wait for clock_period;
-    rst <= '0';
-    wait for 10*clock_period;
-    
-    start <= '1'; 
-    wait for clock_period;
-    start <= '0'; 
-    while (led_out = '0') loop
-    wait for clock_period;
-    end loop;
-    
-    wait for 5*clock_period;
-    
-    stop_the_clock <= true;
-    wait;
+    begin
+        wait for clock_period;   
+        rst <= '1';   
+        wait for clock_period;
+        rst <= '0';
+        wait for 10*clock_period;
+        
+        start <= '1'; 
+        wait for clock_period;
+        start <= '0'; 
+        while (led_out = '0') loop
+        wait for clock_period;
+        end loop;        
+        wait for clock_period;
+        
+        stop_the_clock <= true;
+        wait;
 
 end process;
 

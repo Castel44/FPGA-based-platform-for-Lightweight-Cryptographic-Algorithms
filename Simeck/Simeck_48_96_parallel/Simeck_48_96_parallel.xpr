@@ -33,7 +33,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zybo"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="4"/>
+    <Option Name="WTXSimLaunchSim" Val="5"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -158,6 +158,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/imports/new/Testing_IP_TB.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Simeck_32_64_parallel/Simeck_32_64_parallel.srcs/sim_1/imports/new/Testing_IP_TB.vhd"/>
@@ -184,6 +185,9 @@
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="-all"/>
+        <Option Name="xsim.simulate.log_all_signals" Val="true"/>
+        <Option Name="xsim.simulate.saif" Val="default.saif"/>
       </Config>
     </FileSet>
   </FileSets>
@@ -224,7 +228,7 @@
         </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
-        <Step Id="power_opt_design" EnableStepBool="1"/>
+        <Step Id="power_opt_design"/>
         <Step Id="place_design"/>
         <Step Id="post_place_power_opt_design"/>
         <Step Id="phys_opt_design"/>

@@ -1,1 +1,0 @@
--wto "64889b2b09fe4e2f98b0e1aecc64e0c5" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "Skinny_64_64_tb_behav" "xil_defaultlib.Skinny_64_64_tb" -log "elaborate.log" 

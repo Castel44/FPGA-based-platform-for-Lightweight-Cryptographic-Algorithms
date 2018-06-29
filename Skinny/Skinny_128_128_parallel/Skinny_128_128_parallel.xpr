@@ -211,8 +211,14 @@
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+<<<<<<< HEAD
         <Option Name="xsim.simulate.saif" Val="/home/sam/Desktop/skinny_128.saif"/>
         <Option Name="NLNetlistMode" Val="funcsim"/>
+=======
+        <Option Name="xsim.simulate.runtime" Val="-all"/>
+        <Option Name="xsim.simulate.log_all_signals" Val="true"/>
+        <Option Name="xsim.simulate.saif" Val="default.saif"/>
+>>>>>>> 7d8b1e93a59938fdcee5d0839bf510412f343e14
       </Config>
     </FileSet>
   </FileSets>

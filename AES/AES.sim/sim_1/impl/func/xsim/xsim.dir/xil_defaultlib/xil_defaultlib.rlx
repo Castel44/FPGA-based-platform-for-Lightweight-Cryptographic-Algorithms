@@ -1,6 +1,0 @@
-0.6
-2018.1
-Apr  4 2018
-18:43:17
-/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES/AES.sim/sim_1/impl/func/xsim/Testing_IP_TB_func_impl.vhd,1530182426,vhdl,,,,\CNT__parameterized0\;aes_128_parallel;cnt;key_schedule;reg;reg_0;sbox;sbox_1;sbox_10;sbox_11;sbox_12;sbox_13;sbox_14;sbox_15;sbox_16;sbox_17;sbox_18;sbox_19;sbox_2;sbox_3;sbox_4;sbox_5;sbox_6;sbox_7;sbox_8;sbox_9;subbytes;testing_ip,,,,,,,,
-/home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES/AES.srcs/sim_1/imports/src/Testing_IP_TB.vhd,1529744200,vhdl,,,,testing_ip_tb,,,,,,,,

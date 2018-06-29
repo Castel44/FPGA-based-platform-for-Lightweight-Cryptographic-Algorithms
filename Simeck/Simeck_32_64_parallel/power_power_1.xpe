@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<POWERDATA author="Vivado Power Analysis" dataVersion="2018.1" design="Testing_IP" designState="routed" date="Thu Jun 28 18:44:33 2018" pwrOpt="BRAMPwropt" activityLevel="simulation">
+	<ENVIRONMENT>
+		<DEVICE part="xc7z010" grade="commercial" package="clg400" speed="-1" process="typical" vid="No">
+		</DEVICE>
+		<VOLTAGESOURCES>
+			<SOURCE name="Vcco33" voltage="3.300000" icc="0.000108" iccq="0.001000" power="0.003657">
+			</SOURCE>
+			<SOURCE name="Vccbram" voltage="1.000000" icc="0.000000" iccq="0.000211" power="0.000211">
+			</SOURCE>
+			<SOURCE name="Vccint" voltage="1.000000" icc="0.003247" iccq="0.003682" power="0.006930">
+			</SOURCE>
+			<SOURCE name="Vccaux" voltage="1.800000" icc="0.000014" iccq="0.005299" power="0.009563">
+			</SOURCE>
+			<SOURCE name="Vccpint" voltage="1.000000" icc="0.000000" iccq="0.016230" power="0.016230">
+			</SOURCE>
+			<SOURCE name="Vccpaux" voltage="1.800000" icc="0.000000" iccq="0.010330" power="0.018594">
+			</SOURCE>
+			<SOURCE name="Vccpll" voltage="1.800000" icc="0.000000" iccq="0.003000" power="0.005400">
+			</SOURCE>
+			<SOURCE name="Vccadc" voltage="1.800000" icc="0.000000" iccq="0.020000" power="0.036000">
+			</SOURCE>
+		</VOLTAGESOURCES>
+		<THERMAL>
+			<AMBIENT value="25.000000">
+			</AMBIENT>
+			<AIRFLOW value="250.000000">
+			</AIRFLOW>
+			<HEATSINK value="none">
+			</HEATSINK>
+			<BOARDSELECTION value="medium (10&quot;x10&quot;)">
+			</BOARDSELECTION>
+			<BOARDLAYERS value="8to11 (8 to 11 Layers)">
+			</BOARDLAYERS>
+			<TSA value="0.000000">
+			</TSA>
+			<TJB value="9.300000">
+			</TJB>
+			<BOARDTEMP value="25.0 (C)">
+			</BOARDTEMP>
+			<JUNCTION value="26.1 (C)">
+			</JUNCTION>
+		</THERMAL>
+	</ENVIRONMENT>
+	<BLOCKDETAILS>
+		<BYTYPE>
+			<BLOCKTYPE name="Clocks">
+				<CLOCK name="clk" freq="125.000004" belFanout="1" sliceFanout="1" FoPerSite="1.000000" sliceEnableRate="0.000000" leafs="0.000000" hrows="0.000000" power="0.000000">
+				</CLOCK>
+				<CLOCK name="clk_IBUF" freq="125.000004" belFanout="1" sliceFanout="1" FoPerSite="1.000000" sliceEnableRate="0.000000" leafs="0.000000" hrows="0.000000" power="0.000077" enableRate="1" bufType="I/O">
+				</CLOCK>
+				<CLOCK name="clk_IBUF_BUFG" freq="125.000004" belFanout="103" sliceFanout="30" FoPerSite="3.433333" sliceEnableRate="0.611891" leafs="4.000000" hrows="2.000000" power="0.001232" enableRate="1" bufType="BUFG">
+				</CLOCK>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="LOGIC">
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="28.470912" toggleRate2="26.921749" totalRate="498.271334" name="sys_clk_pin" hierName="Testing_IP/INST_CNT" writeRate="0.000000" enableRate="0.000000" fanout="1.500000" ru="2.562069" fanout2="1.500000" totalFanout="9.000000" fanoutRate="49.171514" numNets="13" extNets="6" luts="11" logicCap="5747600" signalCap="1191.000000" power="0.000097" sp="0.000007">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="10.489923" toggleRate2="10.489923" totalRate="20.979846" name="sys_clk_pin" hierName="Testing_IP/INST_CNT" writeRate="0.000000" enableRate="0.122470" fanout="13.500000" ru="15.563025" fanout2="13.500000" totalFanout="27.000000" fanoutRate="166.090448" numNets="2" extNets="2" ffs="2" logicCap="90000" signalCap="2371.000000" power="0.000001" sp="0.000015">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="33.229516" toggleRate2="43.493691" totalRate="3827.073524" name="sys_clk_pin" hierName="Testing_IP/Simeck_DUT" writeRate="0.000000" enableRate="0.000000" fanout="4.307692" ru="9.196045" fanout2="4.307692" totalFanout="168.000000" fanoutRate="1774.545319" numNets="66" extNets="39" luts="61" logicCap="31361201" signalCap="11583.000000" power="0.000609" sp="0.000208">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="13.121107" toggleRate2="33.218089" totalRate="166.090444" name="sys_clk_pin" hierName="Testing_IP/Simeck_DUT" writeRate="0.000000" enableRate="0.631998" fanout="0.000000" ru="0.000000" fanout2="0.000000" totalFanout="0.000000" fanoutRate="0.000000" numNets="5" extNets="0" SRL="4" logicCap="3180000" signalCap="0.000000" power="0.000021" sp="0.000000">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="27.653542" toggleRate2="27.653542" totalRate="2571.779397" name="sys_clk_pin" hierName="Testing_IP/Simeck_DUT" writeRate="0.000000" enableRate="0.642794" fanout="3.118280" ru="10.604948" fanout2="3.118280" totalFanout="290.000000" fanoutRate="4755.431787" numNets="93" extNets="93" ffs="93" logicCap="4185000" signalCap="40636.000000" power="0.000072" sp="0.000690">
+				</LOGIC>
+				<LOGIC clock="Unclocked_or_HFN_instance" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="6.756062" toggleRate2="5.244961" totalRate="5.244961" name="sys_clk_pin" hierName="Testing_IP" writeRate="0.000000" enableRate="0.000000" fanout="1.000000" ru="8.085039" fanout2="1.000000" totalFanout="1.000000" fanoutRate="3.278101" numNets="1" extNets="1" luts="1" logicCap="354500" signalCap="461.000000" power="0.000001" sp="0.000002">
+				</LOGIC>
+				<LOGIC clock="clk_IBUF_BUFG" clockFreq="125.000004" clockFreq2="125.000004" toggleRate="4.662188" toggleRate2="4.662188" totalRate="13.986564" name="sys_clk_pin" hierName="Testing_IP" writeRate="0.000000" enableRate="1.000000" fanout="19.666667" ru="16.812412" fanout2="19.666667" totalFanout="59.000000" fanoutRate="181.388253" numNets="3" extNets="3" ffs="3" logicCap="135000" signalCap="3913.000000" power="0.000000" sp="0.000013">
+				</LOGIC>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="IO">
+				<MODULE name="clk" count="1">
+					<GROUPSUMMARY>
+						<IO name="clk" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="250.000000" toggleRate="200.000000" dataRate="Clock" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000080" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="led_out" count="1">
+					<GROUPSUMMARY>
+						<IO name="led_out" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33_12_SLOW" bidis="0" inputs="0" outputs="1" signalRate="6.556202" toggleRate="5.244961" outputEnableRate="1.000000" outputLoad="0.000000" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="NONE" outTerm="RDRV_NONE_NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000000" vccAux="0.000025" vcco="0.000357" vccoCurrent="0.000108" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="rst" count="1">
+					<GROUPSUMMARY>
+						<IO name="rst" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="4.370801" toggleRate="3.496641" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000001" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+				<MODULE name="start" count="1">
+					<GROUPSUMMARY>
+						<IO name="start" clock="sys_clk_pin" clockFreq="125.000004" ioStandard="LVCMOS33" bidis="0" inputs="1" outputs="0" signalRate="4.370801" toggleRate="3.496641" dataRate="SDR" serdes="No" preEmphasis="No" ioDelay="No" ibufLowPower="No" inTerm="RTT_NONE" outTerm="NONE" numHR="1" ibufDisable="0.000000" dcitermDisable="0.000000" vccInt="0.000001" vccAux="0.000000" vcco="0.000000" vccoCurrent="0.000000" extTerm="NONE">
+						</IO>
+					</GROUPSUMMARY>
+				</MODULE>
+			</BLOCKTYPE>
+			<BLOCKTYPE name="IOBANK">
+				<IOBANK numInternalVref="0" numDelayControl="0" numLVDSBanks="0">
+				</IOBANK>
+			</BLOCKTYPE>
+		</BYTYPE>
+	</BLOCKDETAILS>
+</POWERDATA>
+

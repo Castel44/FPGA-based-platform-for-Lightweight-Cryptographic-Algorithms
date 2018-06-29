@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../Skinny_64_64_parallel.srcs/sim_1/imports/new/Testing_TB.vhd" \
-
-# Do not sort compile order
-nosort

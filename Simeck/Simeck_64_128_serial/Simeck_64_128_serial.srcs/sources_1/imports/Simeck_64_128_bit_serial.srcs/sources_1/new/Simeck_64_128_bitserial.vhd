@@ -112,8 +112,8 @@ ARCHITECTURE Behavioral OF Simeck_64_128_bit_serial IS
 		);
 	END COMPONENT;
 	
-	-- This component is used to generate the round constants which are given by the lfsr output xor (zj)i
-	-- where (zj)i constant depends on the cipher version    		
+	-- This is a two bit Johnson counter (shift register)
+    -- used to determine wether the encryption operation is completed. 		
 	COMPONENT rnd_constants_MUX
 		GENERIC (
 			datapath : INTEGER;

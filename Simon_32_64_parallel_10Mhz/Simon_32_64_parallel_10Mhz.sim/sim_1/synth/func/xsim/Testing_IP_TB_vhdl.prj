@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"Testing_IP_TB_func_synth.vhd" \
-"../../../../../Simon_32_64_parallel.srcs/sim_1/new/Testing_IP_TB.vhd" \
-
-# Do not sort compile order
-nosort

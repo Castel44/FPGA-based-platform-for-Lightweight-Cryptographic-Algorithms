@@ -1,0 +1,4 @@
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+Note: Ciphertext IS 29C3505F571420F6402299B31A02D73A (expected value: 29C3505F571420F6402299B31A02D73A)
+Time: 380 ns  Iteration: 0  Process: /AES128_axis_tb/stim_proc  File: /home/sam/Desktop/VIVADO_git_PSI_ciphers/VIVADO-lightweight-crypto-project/AES_128_AXIS/AES_128_AXIS.srcs/sim_1/new/axi_stream_TB.vhd
