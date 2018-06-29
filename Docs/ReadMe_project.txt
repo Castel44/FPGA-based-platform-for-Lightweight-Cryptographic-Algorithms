@@ -12,10 +12,11 @@ Email: a.castellani93@gmail.com, cornellsamuele@gmail.com
 
 Board used: Digilent  Zybo  Zynq-7000
 Vivado Version: 2018.1
-Brief description of project: We will compare some different lightweight block ciphers on a common FPGA platform. 
-Our focus is mostly on resource utilization and power consumption of those ciphers. 
-For what regards power consumption we will obtain it from simulation and also experimentally probing the board.
-
+Brief description of project: We will compare some different lightweight block ciphers on a common FPGA platform and 
+show how an FPGA board can be used effectively as a common evaluation platform for comparing cryptographic primitives.
+We are mostly focused in obtaining resource utilization and power consumption figures for those ciphers. 
+For what regards power consumption we will get it both from simulation and experimentally probing the board. 
+The results will be compared with the ones vailable in literature. 
 
 Description of archive :
 Every Cipher has his own directory, with the full vivado project on it. 
