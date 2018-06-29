@@ -13,6 +13,7 @@
 !**/sim_1/**
 !**/constrs_1/**
 !**/sources_1/**
+!**/Power estimator/**
 !*.bit
 !*.vhd
 !*.xpr
