@@ -32,9 +32,19 @@ Power_measuerements/ <-This folder contains the Python file, in form of JupyterN
 
 Power_measurements/<CipherName_csv>/ <- This folder contains the raw data from measurements.
 
+Docs/ <- This folder contains all the documentations relative to this project.
+
 
 Instructions to build and test project;
 Step 1:
 Open the Vivado project relative to a cipher
+Step 2:
+Run the Post-Implementation Timing Simulation
+Step 3:
+Verify the correctness of simulated data with with *.xpe files given in the Project folder.
+Step 4:
+Run the Python files and verify that real-world measured data are in agreement with simulated values.
+Step 5: (optional)
+Repeat with different ciphers.
 
-Link to YouTube Video(s):
+Link to YouTube Video(s): https://www.youtube.com/watch?v=dQw4w9WgXcQ
