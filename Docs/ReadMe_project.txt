@@ -15,7 +15,7 @@ Vivado Version: 2018.1
 Brief description of project: We will compare some different lightweight block ciphers on a common FPGA platform and 
 show how an FPGA board can be used effectively as a common evaluation platform for comparing cryptographic primitives.
 We are mostly focused in obtaining resource utilization and power consumption figures for those ciphers. 
-For what regards power consumption we will get it both from simulation and experimentally probing the board. 
+For what regards power consumption we will obtain it first from simulation and then experimentally, probing the physical board. 
 The results will be compared with the ones vailable in literature. 
 
 Description of archive :
