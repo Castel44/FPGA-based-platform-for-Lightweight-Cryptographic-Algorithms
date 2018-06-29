@@ -1,1 +1,20 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!.gitattributes
+
+# ...even if they are in subdirectories
+!*/
+
+# if the files to be tracked are in subdirectories
+!**/sim_1/**
+!**/constrs_1/**
+!**/sources_1/**
+!*.bit
+!*.vhd
+!*.xpr
+!.*xpe
 
