@@ -16,5 +16,5 @@
 !*.bit
 !*.vhd
 !*.xpr
-!.*xpe
+!*.xpe
 
