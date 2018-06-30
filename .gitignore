@@ -5,15 +5,20 @@
 !.gitignore
 !README.md
 !.gitattributes
+!ReadMe_project.txt
+
+#...neither those folders
+!**/sim_1/**
+!**/constrs_1/**
+!**/sources_1/**
 
 # ...even if they are in subdirectories
 !*/
 
 # if the files to be tracked are in subdirectories
-!**/sim_1/**
-!**/constrs_1/**
-!**/sources_1/**
-!**/Power estimator/**
+!Docs/*
+!Power estimator/*
+!Power_measurements/*
 !*.bit
 !*.vhd
 !*.xpr
