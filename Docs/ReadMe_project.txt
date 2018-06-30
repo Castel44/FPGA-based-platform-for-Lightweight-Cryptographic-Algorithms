@@ -52,4 +52,4 @@ Run the Python files and verify that real-world measured data are in agreement w
 Step 5: (optional)
 Repeat with different ciphers.
 
-Link to YouTube Video(s): https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Link to YouTube Video(s): https://youtu.be/prjaFSJ4Qm0
