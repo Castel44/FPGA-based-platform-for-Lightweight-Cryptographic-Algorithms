@@ -1,8 +1,12 @@
 # Open Hardware 2018 Design Contest
 Team number: xohw18-294
+
 Project name: FPGA-based platform for Lightweight Cryptographic Algorithms
-Date: 29/06/2018
+
+Date: 30/06/2018
+
 Version of uploaded archive: 1
+
 
 University name: Università Politecnica delle Marche
 
@@ -68,4 +72,4 @@ Step 5: (optional)
 
 Repeat with different ciphers.
 
-Link to YouTube Video(s): https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Link to YouTube Video(s): https://youtu.be/prjaFSJ4Qm0
